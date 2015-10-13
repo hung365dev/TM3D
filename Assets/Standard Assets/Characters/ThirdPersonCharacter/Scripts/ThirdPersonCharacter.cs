@@ -43,16 +43,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 		public void Update() {
-			if(UMAAnimator==null) {
-				if(GameObject.Find ("MyUMA")) {
-					UMAAnimator = GameObject.Find("MyUMA").GetComponent<Animator>();
+			if (UMAAnimator == null) {
+				if(transform.FindChild("MyUMA")!=null) {
+					UMAAnimator = transform.FindChild("MyUMA").GetComponent<Animator>();
 					m_Animator = UMAAnimator;
-					if(m_Animator!=null)
-						m_Animator.applyRootMotion = false;
+					m_Animator.applyRootMotion = false;
 				}
 			}
 		}
-
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{
 
@@ -65,7 +63,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
 			m_TurnAmount = Mathf.Atan2(move.x, move.z);
 			m_ForwardAmount = move.z;
-
 			ApplyExtraTurnRotation();
 
 			// control and velocity handling is different when grounded and airborne:
@@ -208,7 +205,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 
-
+		 
 		void CheckGroundStatus()
 		{
 			RaycastHit hitInfo;
@@ -228,7 +225,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			{
 				m_IsGrounded = false;
 				m_GroundNormal = Vector3.up;
-				m_Animator.applyRootMotion = false;
+				if(m_Animator!=null)
+			 		m_Animator.applyRootMotion = false;
 			}
 		}
 	}

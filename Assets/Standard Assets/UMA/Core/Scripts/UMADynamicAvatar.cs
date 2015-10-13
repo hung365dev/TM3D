@@ -27,6 +27,10 @@ public class UMADynamicAvatar : UMAAvatarBase
 			}
 		}
 	}
+	public void Update() {
+		this.transform.localPosition = new Vector3 (0f, 0f, 0f);
+		this.transform.localRotation = Quaternion.identity;
+	}
 #if UNITY_EDITOR
 	[UnityEditor.MenuItem("GameObject/Create Other/UMA/Dynamic Avatar")]
 	static void CreateDynamicAvatarMenuItem()

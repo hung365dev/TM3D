@@ -182,9 +182,13 @@ public class UMAMaker : MonoBehaviour {
 		this.LinkOverlay(6,0);
 		SetSlot(7,"Eyes");
 		
-		SetSlot(8,"Jeans");
+//		SetSlot(8,"Jeans");
+	//	SetSlot(9,"Jacket_Hoodie_001_MeshPart0");
+//		SetSlot(10,"Shoes");
 		this.AddOverlay(7,"EyesOverlay");
-		this.AddOverlay(8,"JeansOverlay");
+	//	this.AddOverlay(8,"JeansOverlay");
+	//	this.AddOverlay(9,"JacketOverlay");
+	//	this.AddOverlay(10,"ShoesOverlay");
 	//	this.AddOverlay(0,"DefaultOverlay");
 				
 
