@@ -44,7 +44,8 @@ public class UMAMaker : MonoBehaviour {
 
 	private float _height = 1.0f;
 	void Start() {
-		GenerateUMA();
+		if(this.GetComponent<NPCCharacter>()==null)
+			GenerateUMA();
 	}
 	void findUMAStuff() {
 		this.slotLibrary = GameObject.Find ("SlotLibrary").GetComponent<SlotLibrary>();
@@ -68,6 +69,13 @@ public class UMAMaker : MonoBehaviour {
 		}
 	}
 	void Update() {
+		if(this.load) {
+			load = false;
+			this.Load();
+		}	
+		if (umaDna == null) {
+			return;
+		}
 		if(bodyMass!=umaDna.upperMuscle) {
 			SetBodyMass(bodyMass);
 			umaData.isShapeDirty = true;
@@ -126,13 +134,10 @@ public class UMAMaker : MonoBehaviour {
 			save = false;
 			Save();
 		}
-		if(this.load) {
-			load = false;
-			this.Load();
-		}		
+	
 	}
-
-	void GenerateUMA() {
+	 
+	public void GenerateUMA() {
 		if(this.slotLibrary==null) {
 			findUMAStuff();
 		}
