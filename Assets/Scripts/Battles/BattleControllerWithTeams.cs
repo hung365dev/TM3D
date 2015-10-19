@@ -10,7 +10,6 @@
 using System;
 using UnityEngine;
 using System.Collections;
-using Multiplayer;
 using PixelCrushers.DialogueSystem;
 
 
@@ -31,7 +30,7 @@ namespace Battles
 		
 		public BattleControllerWithTeams ()
 		{ 
-			
+		
 		}
 		public virtual void Start() {
 			
@@ -107,7 +106,7 @@ namespace Battles
 		
 		private void onMonsterFainted(BattleTeamBase aTeam,BattleMonster aMonster) {
 			//if(aTeam.isLocalTeam) {
-			this._commentaryManager.addCommentaryMessage(aMonster.ownersName+"'s "+aMonster.name+" has Fainted!",ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage);
+				this._commentaryManager.addCommentaryMessage(aMonster.ownersName+"'s "+aMonster.name+" has Fainted!",ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage);
 			//}
 			if(aTeam.teamIsDead) {
 				handleBattleOver(aTeam as BattleTeam);
@@ -119,7 +118,7 @@ namespace Battles
 			} else {
 				return _teams[0];
 			}
-		}
+			}
 		private void findTargetInTeam(BattleTeam aAttacking,BattleTeam aDefending,BattleMonster aMonster,MoveQueueItem aMoveQueue,bool aAutomatic) {
 			if((aDefending.monsterCount==1)||(aAutomatic)) {
 				if(aAttacking.nextUnsetMonster!=null) {
@@ -158,7 +157,7 @@ namespace Battles
 			}
 		}
 		private void onMoveHasBeenSet(BattleTeam aTeam,BattleMonster aMonster,MoveQueueItem aMoveQueue,bool aAutomatic) {
-			//		Debug.Log ("onMoveHasbeenSet");
+	//		Debug.Log ("onMoveHasbeenSet");
 			if(aTeam.isLocalTeam) {
 				easyTarget.gameObject.SetActive(false);
 				this._positionOfMoveQueueEntry++;
@@ -175,7 +174,7 @@ namespace Battles
 						
 						BattleBase.MultiplayerDebugText("Is not boost for team, find target in opponent");
 						findTargetInTeam(aTeam,otherTeam(aTeam),aMonster,aMoveQueue,aAutomatic);
-					}
+						}
 				} else {
 					if(aMoveQueue.usedItem!=null) {
 						aMoveQueue.targetTeam = positionFromTeam(aTeam);
@@ -206,7 +205,7 @@ namespace Battles
 		private void onFoundTargetForMove(MoveQueueItem aItem) {
 			
 			opponentTeam.onTargetFound -= onFoundTargetForMove;
-			
+			 
 			playersTeam.onTargetFound -= onFoundTargetForMove;
 			easyTarget.gameObject.SetActive(false);
 			
@@ -288,7 +287,7 @@ namespace Battles
 				BattleBase.MultiplayerDebugText("My move queue is not active so I'm taking this move queue now.");
 				this.opponentTeam.handleMultiplayerMoveQueue(aMoveQueue);
 			}
-			
+
 		}
 		private void onTeamReady(BetterList<MoveQueueItem> aMoveQueue,BattleTeam aTeam) {
 			if(aTeam.name==opponentTeam.name) {
@@ -331,13 +330,13 @@ namespace Battles
 		}
 		protected void applyHPBoostsToTeams(MoveQueueItem aMoveQueueItem) {
 			if(_teams[0].applyHPBoostsToTeam(aMoveQueueItem,_commentaryManager)||_teams[1].applyHPBoostsToTeam(aMoveQueueItem,_commentaryManager)) {
-				
+			
 			} else {
 				aMoveQueueItem.advanceMoveQueueFromState(EMoveQueueItemStatus.HPBoosts);
 			}
 		}
 		
-		
+
 		protected void prepareTeamsForNextTurn() {
 			_teams[0].prepareTeamForNextTurn();
 			_teams[1].prepareTeamForNextTurn();
@@ -382,9 +381,9 @@ namespace Battles
 					} else {
 						BattleBase.QueueText("Checking my team for readiness"); 
 					}
-					
+
 					if(_teams[i].nextTurnReady!=EReadyForNextTurnStatus.Ready) {
-						
+
 						if(_teams[i]==opponentTeam) {
 							BattleBase.QueueText("Opponent team not ready"); 
 						} else {
@@ -401,15 +400,15 @@ namespace Battles
 		protected void handleMoveQueueEndPassiveEffects(MoveQueueItem aMoveQueue) {
 			BattleBase.DebugText("BattleControllerWithTeams->handleMoveQueueEndPassiveEffects");
 			PassiveEffect effect = aMoveQueue.actioningMonster.monster.hasPassiveEffectForTime(EWhenToApply.AtEndOfMoveQueue,
-			                                                                                   0f,
-			                                                                                   aMoveQueue.actioningMonster.monster.HpAsPercentage,
-			                                                                                   aMoveQueue.actioningMonster.monster.elementType,
-			                                                                                   ElementalLibrary.REF.getElement("Normal"),
-			                                                                                   aMoveQueue.actioningTeam.monstersApartFrom((BattleMonster) aMoveQueue.actioningMonster),
-			                                                                                   otherTeam(aMoveQueue.actioningTeam).monstersAsBattleMonster,
-			                                                                                   aMoveQueue.moveData.rangeStatus,
-			                                                                                   (BattleMonster) aMoveQueue.actioningMonster,
-			                                                                                   aMoveQueue.moveData.elementType);
+			                                                                                    0f,
+			                                                                                    aMoveQueue.actioningMonster.monster.HpAsPercentage,
+			                                                                                    aMoveQueue.actioningMonster.monster.elementType,
+			                                                                                    ElementalLibrary.REF.getElement("Normal"),
+			                                                                                    aMoveQueue.actioningTeam.monstersApartFrom((BattleMonster) aMoveQueue.actioningMonster),
+			                                                                                    otherTeam(aMoveQueue.actioningTeam).monstersAsBattleMonster,
+			                                                                                    aMoveQueue.moveData.rangeStatus,
+			                                                                                    (BattleMonster) aMoveQueue.actioningMonster,
+			                                                                                    aMoveQueue.moveData.elementType);
 			
 			float delayAmount = 0f;
 			if(effect!=null) {
@@ -446,7 +445,7 @@ namespace Battles
 					if(effect.applyToSelf) {
 						delayAmount += myTeam.applyPassiveEffectToMonsters(EWhenToApply.WhenHitByMoveTypeAtEndOfMoveQueue,effect,m,myTeam.positionForMonster(m),aMoveQueue);
 					} else {
-						
+					
 					}
 					_commentaryManager.passiveEffect = null;
 					_commentaryManager.battleMonster = null; 
@@ -454,7 +453,7 @@ namespace Battles
 					
 				}
 			}
-			
+
 			
 			
 			StartCoroutine(delayToAdvancedMoveQueue(EMoveQueueItemStatus.EndMoveQueuePassiveEffects,aMoveQueue,delayAmount));
@@ -467,7 +466,7 @@ namespace Battles
 		protected override void unpackInitData() {
 			
 			base.unpackInitData();
-			/*	easyTarget.onClicked += onEasyTargetClicked;;
+		/*	easyTarget.onClicked += onEasyTargetClicked;;
 			BattleInit initData = BattleInit.REF;
 			if(initData==null) {
 				Debug.LogError("BattleInit Data was null.");
@@ -504,7 +503,7 @@ namespace Battles
 			}
 			StartCoroutine(doBattleStartMessage());*/
 		}
-		
+
 		protected void unpackTeam1() {
 			easyTarget.onClicked += onEasyTargetClicked;;
 			BattleInit initData = BattleInit.REF;
@@ -614,7 +613,7 @@ namespace Battles
 				}
 			}*/
 		}
-		
+	
 		protected BattleTeam opponentTeam {
 			get {
 				if(_teams[0].isLocalTeam) {
@@ -681,16 +680,16 @@ namespace Battles
 			if(aMoveQueue.moveData.isBoost) {
 				allTargets = targetTeam.getBoostTargetsForMove(aMoveQueue.targetMonster,aMoveQueue.moveData,(BattleMonster) aMoveQueue.actioningMonster);
 			} else {
-				//	allTargets = targetTeam.getTargetsForMove(aMoveQueue.targetMonster,aMoveQueue.moveData);
+			//	allTargets = targetTeam.getTargetsForMove(aMoveQueue.targetMonster,aMoveQueue.moveData);
 				allTargets = aMoveQueue.hitMonsters;
-				
+
 			}
 			switch(aMoveQueue.moveData.cameraShake) {
-			case("No Shake"):break;
-			case("Tiny Shake"):this.GetComponent<CameraShake>().TinyShake();break;
-			case("Small Shake"):this.GetComponent<CameraShake>().SmallShake();break;
-			case("Large Shake"):this.GetComponent<CameraShake>().LargeShake();break;
-			case("Massive Shake"):this.GetComponent<CameraShake>().MassiveShake();break;
+				case("No Shake"):break;
+				case("Tiny Shake"):this.GetComponent<CameraShake>().TinyShake();break;
+				case("Small Shake"):this.GetComponent<CameraShake>().SmallShake();break;
+				case("Large Shake"):this.GetComponent<CameraShake>().LargeShake();break;
+				case("Massive Shake"):this.GetComponent<CameraShake>().MassiveShake();break;
 			}
 			bool isLeftMove = true;
 			if(aMoveQueue.actioningTeam.teamPosition==ETeamPosition.RightTeam) {
@@ -732,10 +731,10 @@ namespace Battles
 					}
 					adaptAnimPrefabPositionByOffset(animPrefab,isLeftMove,anim);
 				} else {
-					
+				
 				}
 			}
-			
+
 			putParticlesInfront();
 			
 		}
@@ -750,7 +749,7 @@ namespace Battles
 			aAnimPrefab.transform.localPosition = pos;
 		}
 		protected IEnumerator doAttackAnimation(MoveQueueItem aMoveQueue) {
-			
+
 			BattleTeam targetTeam = this.teamFromPosition(aMoveQueue.targetTeam);
 			BattleMonster targetMonster = targetTeam.monsterFromPosition(aMoveQueue.targetMonster);
 			BetterList<BattleMonster> allTargets;
@@ -774,7 +773,7 @@ namespace Battles
 						isLeftMove = false;
 					}
 					if(animPrefab!=null) {
-						animPrefab.tag = "ParticleSystems";
+				 		animPrefab.tag = "ParticleSystems";
 						MoveAnimationLibItem anim = aMoveQueue.moveData.attackAnimation;
 						if((anim.movementType=="Normal")||(anim.movementType=="OnTargetOnly")) {
 							if(animPrefab==null||animPrefab.transform==null) {
@@ -806,9 +805,9 @@ namespace Battles
 						adaptAnimPrefabPositionByOffset(animPrefab,isLeftMove,anim);
 						
 					}
-					
+
 				}
-				else {
+				 else {
 					if(aMoveQueue.moveData.isBoost) {
 						allTargets = targetTeam.getBoostTargetsForMove(aMoveQueue.targetMonster,aMoveQueue.moveData,(BattleMonster) aMoveQueue.actioningMonster);
 					} else {
@@ -816,10 +815,10 @@ namespace Battles
 					}
 					break;
 				}
-				
+
 			}
 			putParticlesInfront();
-			//		StartCoroutine(pauseForDefenseAnim(targetMonster,0.01f/*aMoveQueue.moveData.attackAnimation.seconds*0.5f*/));
+	//		StartCoroutine(pauseForDefenseAnim(targetMonster,0.01f/*aMoveQueue.moveData.attackAnimation.seconds*0.5f*/));
 			StartCoroutine(pauseForAttack(aMoveQueue,aMoveQueue.moveData.attackAnimation.seconds));
 		}
 		

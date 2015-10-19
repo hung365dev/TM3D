@@ -21,7 +21,7 @@ namespace Battles
 {
 	public class BattleControllerWithInterface : BattleControllerWithParticleEngines
 	{
-		
+	
 		public GameObject movesBar;
 		public GameObject worldStoreBtn;
 		public UILabel topLabel;
@@ -34,7 +34,7 @@ namespace Battles
 		private WorldStoreMain _ws;
 		public BattleControllerWithInterface ()
 		{
-			
+
 		}
 		
 		protected void startConversation() {
@@ -75,7 +75,7 @@ namespace Battles
 			if(!_battleComplete) {
 				this.barController.show = true;
 			}
-			/*	SendMessageOnDialogueEvent s = this.GetComponent<SendMessageOnDialogueEvent>();
+		/*	SendMessageOnDialogueEvent s = this.GetComponent<SendMessageOnDialogueEvent>();
 			for(int i = 0;i<s.onEnd.Length;i++) {
 				s.onEnd[i].methodName = "testHighlightButtons";
 				s.onEnd[i].target = this.transform;
@@ -151,7 +151,7 @@ namespace Battles
 			}
 		}
 		protected void onBaitUsed(ItemBait aBaitItem) {
-			
+		
 		}
 		protected void showMovesForMonster(GameObject aMonster) {
 			
@@ -169,11 +169,11 @@ namespace Battles
 			topLabel.text = "";//aMonster.name+" L"+aMonster.monster.level;
 			topLabel.gameObject.SetActive(true);
 		}
-		
+
 		protected void moveMonsterToLayer(BattleMonster aMonster,string aLayer) {
 			aMonster.sortingLayer = aLayer;
 		}
-		
+			
 	}
 }
 

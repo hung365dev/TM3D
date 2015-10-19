@@ -21,13 +21,13 @@ namespace Battles
 		public static int MOVE_TURN = 0;
 		private float _lastUpdateTime = 0.0f;
 		public GameObject lookAtObject;
-		
+			
 		protected void cancelMoveQueue() {
 			while(_moveQueue!=null&&_moveQueue.size>0) {
 				_moveQueue.Pop();
 			}
 			if(this._currentItem!=null)
-				this._currentItem.onMoveQueueItemChange -= this.onMoveQueueItemChanged;
+			this._currentItem.onMoveQueueItemChange -= this.onMoveQueueItemChanged;
 			_currentItem = null;
 			this.onMoveQueueGenerated -= onMoveQueueCreated;
 			this.onMonstersIdle -= onMonstersIdled;
@@ -66,16 +66,16 @@ namespace Battles
 			this.onMonstersIdle += onMonstersIdled;
 			
 		}
-		
+
 		protected virtual void onMonsterCaughtResult(ItemBait aItem,EMonsterCatchResult aResult) {
 			this.playersTeam.setMovesToUseBait(aItem,aResult);
 			
 		}
 		
-		
+
 		protected void onMonstersIdled() {
 			if(_currentItem!=null) {
-				//		Debug.Log ("onMonstersIdled");
+		//		Debug.Log ("onMonstersIdled");
 				this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.HPHits);
 			}
 		}
@@ -96,11 +96,11 @@ namespace Battles
 					i--;
 				}
 				else
-					_moveQueue[i].setTimesToHit();
+				_moveQueue[i].setTimesToHit();
 			}
 			processMoveQueue();
 			
-			
+		
 		}
 		private void processMoveQueue() {
 			if(_moveQueue==null) {
@@ -133,7 +133,7 @@ namespace Battles
 			_lastUpdateTime = Time.time;
 			yield return new WaitForSeconds(0.01f);
 			if(Time.time-_lastUpdateTime<1.0f) {
-				//	Debug.LogError("There was not enough time between changes");
+			//	Debug.LogError("There was not enough time between changes");
 			}
 			BattleControllerMain.REF.addDebug("onMoveQueueItemChanged: "+_currentItem.status);
 			switch(_currentItem.status) {
@@ -232,8 +232,8 @@ namespace Battles
 								
 								_currentItem.targetTeam = positionFromTeam(teamFromMonster((BattleMonster) _currentItem.actioningMonster));
 								switch(_currentItem.moveData.splashRange) {
-								case(ESplashRange.BoostMe):
-									_currentItem.targetMonster = teamFromPosition(_currentItem.targetTeam).positionForMonster((BattleMonster) _currentItem.actioningMonster);
+									case(ESplashRange.BoostMe):
+										_currentItem.targetMonster = teamFromPosition(_currentItem.targetTeam).positionForMonster((BattleMonster) _currentItem.actioningMonster);
 									break;  
 								}
 							} else {
@@ -317,12 +317,12 @@ namespace Battles
 							
 							if(_currentItem.actioningMonster.energy>= energyForMove)
 								_currentItem.actioningMonster.energy -= _currentItem.moveData.energy; else {
-								_currentItem.moveData = MovesLib.REF.struggleMove;
-								BattleTeam ownersTeam = this.teamFromMonster((BattleMonster) _currentItem.actioningMonster);
-								BattleTeam otherTeam = this.otherTeam(ownersTeam);
-								ETeamPosition otherPosition = this.positionFromTeam(otherTeam);
-								_currentItem.targetTeam = otherPosition;
-							}
+									_currentItem.moveData = MovesLib.REF.struggleMove;
+									BattleTeam ownersTeam = this.teamFromMonster((BattleMonster) _currentItem.actioningMonster);
+									BattleTeam otherTeam = this.otherTeam(ownersTeam);
+									ETeamPosition otherPosition = this.positionFromTeam(otherTeam);
+									_currentItem.targetTeam = otherPosition;
+								}
 							this._currentItem.firstHit = false;
 						} else {
 							Debug.Log ("<color=blue>This was not the first hit, I'm not taking: "+_currentItem.moveData.energy+"</color>");
@@ -332,10 +332,10 @@ namespace Battles
 							iTween.MoveTo(actionMonster.gameObject,new Vector3(targetMonsterPosition.x,targetMonsterPosition.y,targetMonsterPosition.z),1.0f);
 							StartCoroutine(pauseToAttackAnimation(0.1f,(BattleMonster) actionMonster));
 						} else
-							if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly")
-						{
+						if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly")
+						  {
 							StartCoroutine(pauseToAttackAnimation(0.1f,(BattleMonster) actionMonster));
-						} else {
+							} else {
 							actionMonster.doAttackAnimation();	
 							
 							this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
@@ -349,18 +349,18 @@ namespace Battles
 						_currentItem.actioningMonster.showStatusEffect(reasonForNoMove);
 						string reasonForNoMoveString = "";
 						switch(reasonForNoMove.ToString().ToLower()) {
-						case("sleep"):reasonForNoMoveString = "is Asleep!";break;
-						case("flinch"):reasonForNoMoveString = "Flinched!";break;
-						case("paralyze"):reasonForNoMoveString = "is Paralyzed!";break;
-						case("freeze"):reasonForNoMoveString = "is Frozen!";break;
-						case("confusion"):reasonForNoMoveString = "is too Confused!";break;
+							case("sleep"):reasonForNoMoveString = "is Asleep!";break;
+							case("flinch"):reasonForNoMoveString = "Flinched!";break;
+							case("paralyze"):reasonForNoMoveString = "is Paralyzed!";break;
+							case("freeze"):reasonForNoMoveString = "is Frozen!";break;
+							case("confusion"):reasonForNoMoveString = "is too Confused!";break;
 						}
 						MoveLibItem responsible = _currentItem.actioningMonster.reasonForLastNoMove();
 						if(responsible!=null)
 							this._commentaryManager.addCommentaryMessage(_currentItem.actioningTeam.name+"'s "+_currentItem.actioningMonster.name+" "+reasonForNoMoveString+" Due to: "+responsible.Name,ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage); else
 							this._commentaryManager.addCommentaryMessage(_currentItem.actioningTeam.name+"'s "+_currentItem.actioningMonster.name+" "+reasonForNoMoveString+"",ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage); 
 						_currentItem.actioningMonster.doDefenseAnimation();
-						
+						 
 						StartCoroutine(pauseToSkipToFinish());
 					} 
 				} else {
@@ -374,19 +374,19 @@ namespace Battles
 					if(this._currentItem.usedItem!=null) {
 						if(!this._currentItem.hasMoveQueueListener)
 							this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged; else {
-							Debug.LogError("Move Queue item had listener already!");
-						}
+								Debug.LogError("Move Queue item had listener already!");
+							}
 						this._commentaryManager.addCommentaryMessage(this.playersTeam.name+" used "+_currentItem.usedItem.Name()+" on "+_currentItem.actioningMonster.monster.name,ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage);
 						doItemConsume();
 					} else
-						// What case causes this?
-						StartCoroutine(pauseMiniSkipToFinish());
+					// What case causes this?
+					StartCoroutine(pauseMiniSkipToFinish());
 				}
 			}
 		}
 		private void doItemConsume() {
 			StartCoroutine(this._currentItem.actioningMonster.consumeItem(_currentItem.usedItem,_currentItem));
-			
+		
 		}
 		
 		private IEnumerator doCaptureAttempt() {

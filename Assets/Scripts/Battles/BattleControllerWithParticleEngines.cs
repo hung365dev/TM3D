@@ -40,7 +40,7 @@ namespace Battles
 		}
 		protected virtual void unpackInitData() {
 			
-			
+
 		}
 		public static void putParticlesInfront() {
 			GameObject[] allParticles = GameObject.FindGameObjectsWithTag("ParticleSystems");
@@ -53,7 +53,7 @@ namespace Battles
 				}
 			}
 		}
-		 
+		
 	}
 }
 
