@@ -74,7 +74,7 @@ namespace MTX
 		/// This will be called if a user opts to cancel a purchase
 		/// after going to the billing system's purchase menu.
 		/// </summary>
-		private void onCancelled(PurchasableItem item) {
+	/*	private void onCancelled(PurchasableItem item) {
 			Debug.Log("Purchase cancelled: " + item.Id);
 		}
 
@@ -152,7 +152,7 @@ namespace MTX
 			Debug.Log ("UniBiller State now: "+aState.ToString());
 			billingAvailable = aState;
 		}	
-		
+		*/
 		
 	}
 }

@@ -40,7 +40,7 @@ namespace Battles
 		private Vector2 _originalColliderCenter;
 		public bool oneHitKOImmune = false;
 		public bool criticalHitImmune = false;
-		protected BoxCollider2D _collider; 
+		protected Collider _collider; 
 		
 		public float minMultihitMultiplier = 1.0f;
 		public BetterList<ElementalType> removedWeaknesses = new BetterList<ElementalType>();
@@ -100,7 +100,7 @@ namespace Battles
 		
 		public void Start() {
 			Debug.Log(this.name);
-			_collider = (BoxCollider2D) this.GetComponent<Collider2D>();
+			_collider = (Collider) this.GetComponent<Collider>();
 			if(_collider==null) {
 				Debug.LogError("Monster: "+this.name+" has no collider");
 			} else
@@ -300,7 +300,7 @@ namespace Battles
 		
 		public void doRestAnimation() {
 			if(this._monsterRef.restingStatus!=ERestingStatus.Awake&&!_makeupFaded&&_monsterMakeup!=null) {
-				iTween.FadeTo(this._monsterMakeup.gameObject,0f,1f);
+		//		iTween.FadeTo(this._monsterMakeup.gameObject,0f,1f);
 				_makeupFaded = true;
 			}
 			_anim.SetInteger("attackState",3);
@@ -323,13 +323,13 @@ namespace Battles
 			if(this.onFaintComplete!=null) {
 				this.onFaintComplete(this as BattleMonster);
 			}
-			iTween.FadeTo(this.gameObject,0.5f,1f);
+		//	iTween.FadeTo(this.gameObject,0.5f,1f);
 			this.doRestAnimation();
 			moveFlags =  moveFlags & ~EMoveFlag.Fainting;
 		}
 	
 		private void createHealthBar() {
-			
+			/*
 			BattleControllerMain bControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleControllerMain>();
 			
 			if(bControl!=null) {
@@ -357,13 +357,14 @@ namespace Battles
 				energy = this._monsterRef.energy;
 				prefab.transform.localScale = new Vector3(1.0f,1.0f,1.0f);
 				Resources.UnloadUnusedAssets();
-			}
+			}*/
 		}
 		public GameObject healthBar {
 			get {
 				if(_monsterMakeup==null) {
 					createHealthBar();
 				}
+				return null;
 				return _monsterMakeup.gameObject;
 			}
 		}

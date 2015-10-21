@@ -111,10 +111,10 @@ namespace Battles
 			this.transform.FindChild("MovesBtn").FindChild("Glow").gameObject.SetActive(false);
 		}
 		public void onInventoryClicked() {
-			InventoryDisplay i = AlertGUI.REF.LaunchInventory(this._monsterRef.monster);
+	/*		InventoryDisplay i = AlertGUI.REF.LaunchInventory(this._monsterRef.monster);
 			i.onItemSelected += onItemSelected;
 			i.onHideInventory += onHideInventory;
-			_inventoryRef = i;
+			_inventoryRef = i; */
 		}
 		private void onHideInventory() {
 			_inventoryRef.onItemSelected -= onItemSelected;
@@ -128,7 +128,7 @@ namespace Battles
 			
 		}
 		public void onMovePointsClicked() {
-			AlertGUI.REF.LaunchMonsterMoveTree(this._monsterRef);
+		//	AlertGUI.REF.LaunchMonsterMoveTree(this._monsterRef);
 		}
 		
 		private void checkAvailableMovePoints() {

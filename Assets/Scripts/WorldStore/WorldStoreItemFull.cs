@@ -61,7 +61,7 @@ public class WorldStoreItemFull : MonoBehaviour
 	}
 	private void onBuyMoreTerraDollars() {
 		removeWindowReferences();
-		AlertGUI.REF.BuyMoreTerraDollars("","");
+	//	AlertGUI.REF.BuyMoreTerraDollars("","");
 	}
 	private void removeWindowReferences() {
 		
@@ -72,7 +72,7 @@ public class WorldStoreItemFull : MonoBehaviour
 	}
 	private void onBuyMoreTerraCoins() {
 		removeWindowReferences();
-		AlertGUI.REF.BuyMoreTerraCoins();
+	//	AlertGUI.REF.BuyMoreTerraCoins();
 	}
 	public void onBuyItem() {
 		if(PlayerMain.REF.canBuyItem(_itemRef)) {
@@ -82,15 +82,15 @@ public class WorldStoreItemFull : MonoBehaviour
 			init (_itemRef);
 		} else {
 			if(_itemRef.HardCost()>PlayerMain.REF.hardCurrency) {
-				AlertQuestionWindow window = AlertGUI.REF.DoQuestionAlert("Not Enough Terra Dollars","You cannot currently afford "+_itemRef.Name()+". Buy more Terra Dollars?","Yes","No");
+			/*	AlertQuestionWindow window = AlertGUI.REF.DoQuestionAlert("Not Enough Terra Dollars","You cannot currently afford "+_itemRef.Name()+". Buy more Terra Dollars?","Yes","No");
 				window.onLeftAnswer += onLeftAnswer;
 				window.onAnswered += onBuyMoreTerraDollars;
-				_questionWindow = window;
+				_questionWindow = window;*/
 			} else {
-				AlertQuestionWindow window = AlertGUI.REF.DoQuestionAlert("Not Enough Terra Dollars","You cannot currently afford "+_itemRef.Name()+". Buy more Terra Coins?","Yes","No");
+			/*	AlertQuestionWindow window = AlertGUI.REF.DoQuestionAlert("Not Enough Terra Dollars","You cannot currently afford "+_itemRef.Name()+". Buy more Terra Coins?","Yes","No");
 				window.onLeftAnswer += onLeftAnswer;
 				window.onAnswered += onBuyMoreTerraCoins;
-				_questionWindow = window;
+				_questionWindow = window;*/
 			}
 		}
 	}

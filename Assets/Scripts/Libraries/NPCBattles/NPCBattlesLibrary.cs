@@ -9,7 +9,7 @@
 // ------------------------------------------------------------------------------
 using System;
 using Battles;
-using GoogleFu;
+using Google2u;
 using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
@@ -30,9 +30,9 @@ public class NPCBattlesLibrary
 			List<NPCBattlesRow> all = NPCBattles.Instance.Rows;
 		
 			for(int i = 0;i<all.Count;i++) {
-				string varName = DialogueLua.GetVariable(all[i]._battlename).AsString;
+				string varName = DialogueLua.GetVariable(all[i]._BattleName).AsString;
 				if(varName.Length==0||varName=="nil") {
-						DialogueLua.SetVariable(all[i]._battlename,500);
+						DialogueLua.SetVariable(all[i]._BattleName,500);
 					} else {
 					}
 			}
@@ -41,7 +41,7 @@ public class NPCBattlesLibrary
 			BetterList<NPCBattleMonstersRow> r = new BetterList<NPCBattleMonstersRow>();
 			List<NPCBattleMonstersRow> l = NPCBattleMonsters.Instance.Rows;
 			for(int i = 0;i<l.Count&&r.size<3;i++) {
-				if(l[i]._battlename==aBattleName) {
+				if(l[i]._BattleName==aBattleName) {
 					r.Add(l[i]);
 				}
 			}
@@ -53,8 +53,8 @@ public class NPCBattlesLibrary
 		public static BattleInit getNPCBattleData(string aBattleName) {
 			List<NPCBattlesRow> all = NPCBattles.Instance.Rows;
 			for(int i = 0;i<all.Count;i++) {
-				if(all[i]._battlename==aBattleName) {
-					
+				if(all[i]._BattleName==aBattleName) {
+					 
 					return new BattleInit(all[i],getMonstersForBattle(aBattleName));
 				}
 			}

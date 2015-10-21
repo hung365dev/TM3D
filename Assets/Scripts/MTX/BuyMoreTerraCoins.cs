@@ -29,7 +29,7 @@ namespace MTX
 		
 		public void Start() {
 			this.gameObject.name = "BuyMoreTerraCoins";
-			PurchasableItem handful = Unibiller.GetPurchasableItemById("com.socialtitans.terramonsters2.handfulcoins");
+		/*	PurchasableItem handful = Unibiller.GetPurchasableItemById("com.socialtitans.terramonsters2.handfulcoins");
 			handfulPrice.text = handful.localizedPriceString;
 			
 			PurchasableItem smallBag = Unibiller.GetPurchasableItemById("com.socialtitans.terramonsters2.smallbagcoins");
@@ -63,7 +63,7 @@ namespace MTX
 			
 		}
 		public void restorePurchasesClick() {
-			Unibiller.restoreTransactions();
+		//	Unibiller.restoreTransactions();
 		}
 		public void OnClose() {
 			if(this.onClosed!=null) {
@@ -72,19 +72,19 @@ namespace MTX
 			Destroy(this.gameObject);
 		}
 		public void onBuyHandful() {
-			Unibiller.initiatePurchase("com.socialtitans.terramonsters2.handfulcoins");
+	//		Unibiller.initiatePurchase("com.socialtitans.terramonsters2.handfulcoins");
 		}
 		public void onBuySmallBag() {
 			
-			Unibiller.initiatePurchase("com.socialtitans.terramonsters2.smallbagcoins");
+	//		Unibiller.initiatePurchase("com.socialtitans.terramonsters2.smallbagcoins");
 		}
 		public void onBuyBigBag() {
 			
-			Unibiller.initiatePurchase("com.socialtitans.terramonsters2.largebagcoins");
+	//		Unibiller.initiatePurchase("com.socialtitans.terramonsters2.largebagcoins");
 		}
 		public void onBuyMassiveChest() {
 			
-			Unibiller.initiatePurchase("com.socialtitans.terramonsters2.massivechestcoins");
+		//	Unibiller.initiatePurchase("com.socialtitans.terramonsters2.massivechestcoins");
 			
 		}
 	}

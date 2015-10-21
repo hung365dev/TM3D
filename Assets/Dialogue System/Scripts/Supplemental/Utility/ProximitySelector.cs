@@ -253,8 +253,8 @@ namespace PixelCrushers.DialogueSystem {
 				if (SelectedUsableObject != null) SelectedUsableObject(usable);
 			}
 		}
-		
-		private void CheckTriggerExit(GameObject other) {
+		 
+		public void CheckTriggerExit(GameObject other) {
 			Usable usable = other.GetComponent<Usable>();
 			if (usable != null) {
 				if (usablesInRange.Contains(usable)) usablesInRange.Remove(usable);

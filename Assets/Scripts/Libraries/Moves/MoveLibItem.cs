@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using GoogleFu;
+using Google2u;
 using Battles;
 using System;
 
@@ -85,30 +85,30 @@ public class MoveLibItem {
 	public MoveLibItem(MoveDataRow aInitData) {
 		 
 	
-		this._id = aInitData._id;
-		this._name = aInitData._movename;
-		this._moveSpeedMultiplier = aInitData._movespeedmultiplier;
+		this._id = aInitData._ID;
+		this._name = aInitData._MoveName;
+		this._moveSpeedMultiplier = aInitData._MoveSpeedMultiplier;
 
-		switch (aInitData._powerapplicationtype) {
+		switch (aInitData._PowerApplicationType) {
 			case("Normal"):this._powerApplicationType = EPowerApplicationTypes.Normal;break;
 			case("Power is HP"): this._powerApplicationType = EPowerApplicationTypes.PowerIsHP;break;
 			case("Power is Percentage of HP"): this._powerApplicationType = EPowerApplicationTypes.PowerIsPercentOfHP;break;
 		}
-		this._description = aInitData._description;
-		oneHitKillInvulnerable = aInitData._addsonehitkoinvulnerability;
-		decisiveBlowsImmunity = aInitData._decisiveblowsimmunity;
+		this._description = aInitData._Description;
+		oneHitKillInvulnerable = aInitData._AddsOneHitKOInvulnerability;
+		decisiveBlowsImmunity = aInitData._DecisiveBlowsImmunity;
 		
-		this._elementalType = ElementalLibrary.REF.getElement (aInitData._elementaltype);
-		switch (aInitData._meleerangedstatus) {
+		this._elementalType = ElementalLibrary.REF.getElement (aInitData._ElementalType);
+		switch (aInitData._MeleeRangedStatus) {
 			case("Melee"):this._meleeRangedStatus = ERangedStatus.Melee;break;
 			case("Ranged"):this._meleeRangedStatus = ERangedStatus.Ranged;break;
 		}
 
-		this._effort = aInitData._effort;
-		this._power = aInitData._power;
-		this._splashpercent = aInitData._splashpercent;
-		cameraShake = aInitData._camerashake;
-		switch (aInitData._splashrange) {
+		this._effort = aInitData._Effort;
+		this._power = aInitData._Power;
+		this._splashpercent = aInitData._SplashPercent;
+		cameraShake = aInitData._CameraShake;
+		switch (aInitData._SplashRange) {
 			case("Hit 1 Only"):this._splashRange = ESplashRange.Hit1Only;break;
 			case("Hit All"):this._splashRange = ESplashRange.HitAll;break;		
 			case("Splash Range 1"):this._splashRange = ESplashRange.SplashRange1;break;
@@ -120,52 +120,52 @@ public class MoveLibItem {
 			case("Boost whole Field"):this._splashRange = ESplashRange.BoostWholeField;break;
 			case("Random Opponent"):this._splashRange = ESplashRange.RandomOpponent;break;
 		}
-		this._accuracy = aInitData._accuracy;
-		this._animation = MovesAnimationLib.REF.getAnimation(aInitData._attackanimation);
-		_hitAnimation = MovesAnimationLib.REF.getAnimation(aInitData._attackanimationhit);
-		this._paralyzePercent = aInitData._paralyzepercent;
-		this._sleepPercent = aInitData._sleeppercent;
-		this._poisonPercent = aInitData._poisonpercent;
-		this._freezePercent = aInitData._freezepercent;
-		this._flinchPercent = aInitData._flinchpercent;
-		this._confusionPercent = aInitData._confusionpercent;
-		this._burnPercent = aInitData._burnpercent;
-		this._rangeAttackMultiplier = aInitData._rangeattackmultiplier;
-		this._meleeAttackMultiplier = aInitData._meleeattackmultiplier;
-		this._rangeDefenseMultiplier = aInitData._rangedefensemultiplier;
-		this._meleeDefenseMultiplier = aInitData._meleedefensemultiplier;
-		this._speedStatMultiplier = aInitData._speedstatmultiplier;
-		this.agilityMultiplier = aInitData._agilitymultiplier;
-		this._accuracyMultiplier = aInitData._accuracymultiplier;
-		this._minHitsPerTurn = aInitData._minhitsperturn;
-		this._maxHitsPerTurn = aInitData._maxhitsperturn;
-		this._minTurns = aInitData._minturns;
-		this._maxTurns = aInitData._maxturns;
-		this._effectsDuration = aInitData._effectsduration;
-		this._criticalHitChance = aInitData._criticalhitchance;
-		this.powerOnlyIfTheseStatusEffects = (EStatusEffects) aInitData._onlyapplypoweriftheirstatuseffect;
-		switch (aInitData._damagedistribution) {
+		this._accuracy = aInitData._Accuracy;
+		this._animation = MovesAnimationLib.REF.getAnimation(aInitData._AttackAnimation);
+		_hitAnimation = MovesAnimationLib.REF.getAnimation(aInitData._AttackAnimationHit);
+		this._paralyzePercent = aInitData._ParalyzePercent;
+		this._sleepPercent = aInitData._SleepPercent;
+		this._poisonPercent = aInitData._PoisonPercent;
+		this._freezePercent = aInitData._FreezePercent;
+		this._flinchPercent = aInitData._FlinchPercent;
+		this._confusionPercent = aInitData._ConfusionPercent;
+		this._burnPercent = aInitData._BurnPercent;
+		this._rangeAttackMultiplier = aInitData._RangeAttackMultiplier;
+		this._meleeAttackMultiplier = aInitData._MeleeAttackMultiplier;
+		this._rangeDefenseMultiplier = aInitData._RangeDefenseMultiplier;
+		this._meleeDefenseMultiplier = aInitData._MeleeDefenseMultiplier;
+		this._speedStatMultiplier = aInitData._SpeedStatMultiplier;
+		this.agilityMultiplier = aInitData._AgilityMultiplier;
+		this._accuracyMultiplier = aInitData._AccuracyMultiplier;
+		this._minHitsPerTurn = aInitData._MinHitsPerTurn;
+		this._maxHitsPerTurn = aInitData._MaxHitsPerTurn;
+		this._minTurns = aInitData._MinTurns;
+		this._maxTurns = aInitData._MaxTurns;
+		this._effectsDuration = aInitData._EffectsDuration;
+		this._criticalHitChance = aInitData._CriticalHitChance;
+		this.powerOnlyIfTheseStatusEffects = (EStatusEffects) aInitData._OnlyApplyPowerIfTheirStatusEffect;
+		switch (aInitData._DamageDistribution) {
 			case("Standard"):default:this._damageDistribution = EDamageDistributionTypes.Standard;break;		
 		}
-		this._addsVulnerability = ElementalLibrary.REF.getElement (aInitData._addvulnerabilitytype);
-		this._changeIfIHaveStatusEffects = aInitData._ifmystatuseffect;
-		this._changeToThisIfIHaveStatusEffects = aInitData._doalternativemove;
-		this._changeIfTheyHaveStatusEffects = aInitData._iftheirstatuseffect;
-		this._changeToThisIfIHaveStatusEffects = aInitData._doalternativemove2;
-		this._maxUnlockLevel = (byte) aInitData._maxunlocklevel;
-		this._chanceOfAddVulnerability = aInitData._percentchangeofvulnerability;
-		this._addsInvulnerabilityStatTo = (EMonsterStat) aInitData._addinvulnerabilitytostatchange;
-		this._addsInvulnerabilityToStatus = (EStatusEffects) aInitData._addinvulnerabilitytostatus;
-		this.isPassiveEffect = aInitData._ispassiveeffect;
-		this.decisiveBlowsChangeMultiplier = aInitData._decisiveblowschancemultiplier;
-		_selfHitPercent = aInitData._hitmyselfwiththispercentageofmove;
-		removesWeaknessesTo = aInitData._removesweaknessto;
+		this._addsVulnerability = ElementalLibrary.REF.getElement (aInitData._AddVulnerabilityType);
+		this._changeIfIHaveStatusEffects = aInitData._IfMyStatusEffect;
+		this._changeToThisIfIHaveStatusEffects = aInitData._DoAlternativeMove;
+		this._changeIfTheyHaveStatusEffects = aInitData._IfTheirStatusEffect;
+		this._changeToThisIfIHaveStatusEffects = aInitData._DoAlternativeMove;
+		this._maxUnlockLevel = (byte) aInitData._MaxUnlockLevel;
+		this._chanceOfAddVulnerability = aInitData._PercentChangeOfVulnerability;
+		this._addsInvulnerabilityStatTo = (EMonsterStat) aInitData._AddInvulnerabilityToStatChange;
+		this._addsInvulnerabilityToStatus = (EStatusEffects) aInitData._AddInvulnerabilityToStatus;
+		this.isPassiveEffect = aInitData._IsPassiveEffect;
+		this.decisiveBlowsChangeMultiplier = aInitData._DecisiveBlowsChanceMultiplier;
+		_selfHitPercent = aInitData._HitMyselfWithThisPercentageOfMove;
+		removesWeaknessesTo = aInitData._RemovesWeaknessTo;
 		
-		mirrorStatusEffects = aInitData._mirrorstatuseffects;
-		this.alsoApplyThisString = aInitData._alsoapplythismove;
-		this.percentChanceOfFollowOn = aInitData._percentchanceoffollowon;
+		mirrorStatusEffects = aInitData._MirrorStatusEffects;
+		this.alsoApplyThisString = aInitData._AlsoApplyThisMove;
+		this.percentChanceOfFollowOn = aInitData._PercentChanceOfFollowOn;
 		
-		if(aInitData._struggle==1) {
+		if(aInitData._Struggle==1) {
 			isStruggleMove = true;
 		}
 //		this.removesWeaknessesTo = aInitData._

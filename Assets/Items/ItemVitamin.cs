@@ -21,18 +21,18 @@ namespace Items
 		private int _value;
 		public ItemVitamin (ItemsVitaminsRow aVitaminRow)
 		{
-			_name = aVitaminRow._itemname;
-			_description = aVitaminRow._itemdescription;
-			_tintColour = new Color(aVitaminRow._spritetintr/255,aVitaminRow._spritetintg/255,aVitaminRow._spritetintb/255,aVitaminRow._spritetinta/255);
-			_spritePrefab = aVitaminRow._sprite;
+			_name = aVitaminRow._ItemName;
+			_description = aVitaminRow._ItemDescription;
+			_tintColour = new Color(aVitaminRow._SpriteTintR/255,aVitaminRow._SpriteTintG/255,aVitaminRow._SpriteTintB/255,aVitaminRow._SpriteTintA/255);
+			_spritePrefab = aVitaminRow._Sprite;
 			_itemType = EItemType.Vitamin;
-			_softCost = aVitaminRow._softcurrency;
-			this._hardCost = aVitaminRow._hardcurrency;
-			this._id = aVitaminRow._id;
+			_softCost = aVitaminRow._SoftCurrency;
+			this._hardCost = aVitaminRow._HardCurrency;
+			this._id = aVitaminRow._ID;
 			/*
 			BoostAccuracy,BoostAgility,BoostRangeAtck,BoostRangeDef,BoostMeleeAtck,BoostMeleeDef,BoostSpeed,BoostAll,BoostXP
 			*/
-			switch(aVitaminRow._boostarea) {
+			switch(aVitaminRow._BoostArea) {
 				case("BoostAccuracy"):_area = EBoostableArea.BoostAccuracy;break;
 				case("BoostAgility"):_area = EBoostableArea.BoostAgility;break;
 				case("BoostRangeAtck"):_area = EBoostableArea.BoostRangeAtck;break;
@@ -44,12 +44,12 @@ namespace Items
 				case("BoostLevel"):_area = EBoostableArea.BoostXP;break;
 			}
 			
-			_value = aVitaminRow._boostvalue;
+			_value = aVitaminRow._BoostValue;
 			
 		}
 		public int boostValue {
 			get {
-				return _value;
+				return _value; 
 			}
 		}
 		public EBoostableArea boostArea {

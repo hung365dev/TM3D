@@ -80,8 +80,7 @@ namespace Items
 			isActive = false;
 			assignItem.gameObject.SetActive(false);
 			this.gameObject.SetActive(isActive);
-			AvatarMover.setJoystickActive(true);
-			if(onHideInventory!=null) {
+				if(onHideInventory!=null) {
 				onHideInventory();
 			}
 			
@@ -92,7 +91,6 @@ namespace Items
 			isActive = false;
 			assignItem.gameObject.SetActive(false);
 			this.gameObject.SetActive(isActive);
-			AvatarMover.setJoystickActive(true);
 			if(onHideInventory!=null) {
 				onHideInventory();
 			}
@@ -102,7 +100,6 @@ namespace Items
 		}
 		public void hideInventoryAndDestroy() {
 			isActive = false;
-			AvatarMover.setJoystickActive(true);
 			if(onHideInventory!=null) {
 				onHideInventory();
 			}
@@ -117,12 +114,10 @@ namespace Items
 			if(isActive) {
 				PlayerMain.REF.onInventoryChanged += onInventoryChanged;
 				createTableItems();
-				
-				AvatarMover.setJoystickActive(false);
+
 			} else {
 				
 				PlayerMain.REF.onInventoryChanged -= onInventoryChanged;
-				AvatarMover.setJoystickActive(true);
 			}
 		}
 		public void Toggle(bool aShowAll) {
@@ -133,11 +128,8 @@ namespace Items
 				PlayerMain.REF.onInventoryChanged += onInventoryChanged;
 				if(aShowAll)
 					createTableItems();
-				
-				AvatarMover.setJoystickActive(false);
+
 			} else {
-				AvatarMover.setJoystickActive(true);
-				
 				PlayerMain.REF.onInventoryChanged -= onInventoryChanged;
 			}
 		}

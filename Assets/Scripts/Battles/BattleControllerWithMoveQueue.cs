@@ -145,9 +145,9 @@ namespace Battles
 					this._currentItem.timesToHit = 0;
 					this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.MoveBackToPosition);
 					
-					this.GetComponent<CameraTrack>().SetTarget(null);
+					this.GetComponent<CameraTrack>().target = null;
 					
-				} else {
+				} else { 
 					this._currentItem.onMoveQueueItemChange -= onMoveQueueItemChanged;
 					
 					this.performMove();
@@ -159,7 +159,7 @@ namespace Battles
 				break;
 			case(EMoveQueueItemStatus.AttackAnimation):
 				
-				this.GetComponent<CameraTrack>().SetTarget(this._currentItem.actioningMonster.transform);
+				this.GetComponent<CameraTrack>().target = this._currentItem.actioningMonster.transform;
 				StartCoroutine(this.doAttackAnimation(this._currentItem));
 				break;
 			case(EMoveQueueItemStatus.HPHits):
@@ -202,7 +202,7 @@ namespace Battles
 				killExhaustedMonsters();
 				deleteDeadMonstersFromQueue();
 				
-				this.GetComponent<CameraTrack>().SetTarget(null);
+				this.GetComponent<CameraTrack>().target = null;
 				if(battleComplete) {
 					hideExtraButtons();
 					if(playersTeam.teamIsDead&&BattleBase.COST_TO_CONTINUE>0&&!multiplayerBattle) {
@@ -329,7 +329,7 @@ namespace Battles
 							
 						}
 						if(_currentItem.moveData.attackAnimation.movementType=="Normal"&&targetTeam!=this.teamFromMonster((BattleMonster) actionMonster)) {
-							iTween.MoveTo(actionMonster.gameObject,new Vector3(targetMonsterPosition.x,targetMonsterPosition.y,targetMonsterPosition.z),1.0f);
+						//	iTween.MoveTo(actionMonster.gameObject,new Vector3(targetMonsterPosition.x,targetMonsterPosition.y,targetMonsterPosition.z),1.0f);
 							StartCoroutine(pauseToAttackAnimation(0.1f,(BattleMonster) actionMonster));
 						} else
 						if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly")
@@ -430,7 +430,7 @@ namespace Battles
 					this._commentaryManager.addCommentaryMessage(opp.name+" took the bait!",ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage);
 					opp.hasBeenCaught = true;
 					opp.healthBarEnabled = false;
-					iTween.MoveTo(opp.gameObject,new Vector3(0.0f,-0.5f,0.0f),1.0f);
+				//	iTween.MoveTo(opp.gameObject,new Vector3(0.0f,-0.5f,0.0f),1.0f);
 					this.playersTeam.fadeOutTeam();
 					this._currentItem.skipToFinish();
 				}

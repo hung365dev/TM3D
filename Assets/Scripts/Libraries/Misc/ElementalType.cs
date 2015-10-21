@@ -35,11 +35,11 @@ public class ElementalType
 			strengthVsWater = aRow._StrengthVsWater;
 			strengthVsIce = aRow._StrengthVsIce;
 			strengthVsAir = aRow._StrengthVsAir;
-			strengthVsFire = aRow._strengthvsfire;
-			strengthVsArcane = aRow._strengthvsarcane;
-			strengthVsElectric = aRow._strengthvselectric;
-			_binaryFlag = aRow._elementflag;
-			_color = new Color(aRow._elementalcolorred/255f,aRow._elementalcolorgreen/255f,aRow._elementalcolorblue/255f,1.0f);
+			strengthVsFire = aRow._StrengthVsFire;
+			strengthVsArcane = aRow._StrengthVsArcane;
+			strengthVsElectric = aRow._StrengthVsElectric;
+			_binaryFlag = aRow._ElementFlag;
+			_color = new Color(aRow._ElementalColorRed/255f,aRow._ElementalColorGreen/255f,aRow._ElementalColorBlue/255f,1.0f);
 			//_color = new Color(aRow._ELEMENTALCOLORRED,aRow._ELEMENTALCOLORGREEN,aRow._ELEMENTALCOLORBLUE);
 		}
 		
@@ -70,7 +70,7 @@ public class ElementalType
 			case("Electric"):return strengthVsElectric;
 		}
 		return 1.0f;
-	}
+	} 
 	public string Name {
 		get {
 			return name;	

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using GoogleFu;
+using Google2u;
 
 [System.Serializable]
 public class MoveTreeItem {
@@ -14,12 +14,12 @@ public class MoveTreeItem {
 	private EMoveBranch _moveBranch;
 	const byte MAXUNLOCKLEVELS = 3;
 	public MoveTreeItem(MoveTreeDataRow aInitData) {
-		_id = aInitData._id;
-		_preceedingMoveID = aInitData._preceedingmoveontree;
-		_levelToUnlock = (byte) aInitData._leveltounlock;
-		_move = MovesLib.REF.getMove (aInitData._move);
-		_requiresEvolutionLevel = (byte) aInitData._requiresevolutionlevel;
-		switch(aInitData._branch) {
+		_id = aInitData._ID;
+		_preceedingMoveID = aInitData._PreceedingMoveOnTree;
+		_levelToUnlock = (byte) aInitData._LevelToUnlock;
+		_move = MovesLib.REF.getMove (aInitData._Move);
+		_requiresEvolutionLevel = (byte) aInitData._RequiresEvolutionLevel;
+		switch(aInitData._Branch) {
 		case("Attacking Branch 1"):_moveBranch = EMoveBranch.AttackingBranch1;break;
 		case("Attacking Branch 2"):_moveBranch = EMoveBranch.AttackingBranch2;break;
 		case("Status Effect Branch"):_moveBranch = EMoveBranch.StatusEffectBranch;break;

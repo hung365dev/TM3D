@@ -30,37 +30,37 @@ namespace Items
 		public float criticalHitMulti = 1f;
 		public BattleBoostItem (ItemsBattleBoostsRow aRow)
 		{
-			_name = aRow._itemname;
-			_description = aRow._itemdescription;
-			_tintColour = new Color(aRow._spritetintr/255,aRow._spritetintg/255,aRow._spritetintb/255,aRow._spritetinta/255);
-			_spritePrefab = aRow._sprite;
-			this._softCost = aRow._softcurrency;
-			this._hardCost = aRow._hardcurrency;
-			switch(aRow._boosttype) {
+			_name = aRow._ItemName;
+			_description = aRow._ItemDescription;
+			_tintColour = new Color(aRow._SpriteTintR/255,aRow._SpriteTintG/255,aRow._SpriteTintB/255,aRow._SpriteTintA/255);
+			_spritePrefab = aRow._Sprite;
+			this._softCost = aRow._SoftCurrency;
+			this._hardCost = aRow._HardCurrency;
+			switch(aRow._BoostType) {
 				/*BoostAccuracy,BoostAgility,BoostRangeAtck,BoostRangeDef,BoostMeleeAtck,BoostMeleeDef,BoostSpeed,BoostAll
 				RemoveWeaknessTo,InvulnerableToStatChange,CriticalHitMultiplier
 				*/
-				case("BoostAccuracy"):accuracyMulti = aRow._boostpercent;break;
-				case("BoostAgility"):agilityMulti = aRow._boostpercent;break;
-				case("BoostRangeAtck"):rangeAtckMulti = aRow._boostpercent;break;
-				case("BoostRangeDef"):rangeDefMulti = aRow._boostpercent;break;
-				case("BoostMeleeAtck"):meleeAtckMulti = aRow._boostpercent;break;
-				case("BoostMeleeDef"):meleeDefMulti = aRow._boostpercent;break;
-				case("BoostSpeed"):speedMulti = aRow._boostpercent;break;
-				case("BoostAll"):accuracyMulti = aRow._boostpercent;
-								agilityMulti = aRow._boostpercent;
-								rangeAtckMulti = aRow._boostpercent;
-								rangeDefMulti = aRow._boostpercent;
-								meleeAtckMulti = aRow._boostpercent;
-								meleeDefMulti = aRow._boostpercent;
-								speedMulti = aRow._boostpercent;
+				case("BoostAccuracy"):accuracyMulti = aRow._BoostPercent;break;
+				case("BoostAgility"):agilityMulti = aRow._BoostPercent;break;
+				case("BoostRangeAtck"):rangeAtckMulti = aRow._BoostPercent;break;
+				case("BoostRangeDef"):rangeDefMulti = aRow._BoostPercent;break;
+				case("BoostMeleeAtck"):meleeAtckMulti = aRow._BoostPercent;break;
+				case("BoostMeleeDef"):meleeDefMulti = aRow._BoostPercent;break;
+				case("BoostSpeed"):speedMulti = aRow._BoostPercent;break;
+				case("BoostAll"):accuracyMulti = aRow._BoostPercent;
+					agilityMulti = aRow._BoostPercent;
+					rangeAtckMulti = aRow._BoostPercent;
+					rangeDefMulti = aRow._BoostPercent;
+					meleeAtckMulti = aRow._BoostPercent;
+					meleeDefMulti = aRow._BoostPercent;
+					speedMulti = aRow._BoostPercent;
 				break;
-				case("RemoveWeaknessTo"):weaknessBinaryVal = Convert.ToInt32(aRow._boostpercent);break;
-				case("InvulnerableToStatChange"):weaknessBinaryVal = Convert.ToInt32(aRow._boostpercent);break;
-				case("CriticalHitMultiplier"):weaknessBinaryVal = Convert.ToInt32(aRow._boostpercent);break;
+				case("RemoveWeaknessTo"):weaknessBinaryVal = Convert.ToInt32(aRow._BoostPercent);break;
+				case("InvulnerableToStatChange"):weaknessBinaryVal = Convert.ToInt32(aRow._BoostPercent);break;
+				case("CriticalHitMultiplier"):weaknessBinaryVal = Convert.ToInt32(aRow._BoostPercent);break;
 				
 			}
-			this._id = aRow._id;
+			this._id = aRow._ID;
 			_itemType = EItemType.BattleBoost;
 		}
 		

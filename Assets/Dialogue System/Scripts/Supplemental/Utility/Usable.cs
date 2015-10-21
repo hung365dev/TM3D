@@ -15,6 +15,8 @@ namespace PixelCrushers.DialogueSystem {
 		/// <summary>
 		/// (Optional) Overrides the name shown by the Selector.
 		/// </summary>
+		/// 
+		public string defaultActionText;
 		public string overrideName;
 		
 		/// <summary>

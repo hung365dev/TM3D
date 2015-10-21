@@ -39,9 +39,9 @@ namespace ManageMonster
 		public void releaseMonster() {
 			if(PlayerMain.REF.monsterCount>1) {
 				if(!PlayerMain.REF.monsterIsBattleMonster(monster)) {
-					AlertQuestionWindow aqw = AlertGUI.REF.DoQuestionAlert("Release "+this.monster.name,"Are you sure you want to release "+this.monster.name+". This cannot be undone!","Yes","No");
-					aqw.onAnswered += onYesRelease;
-					aqw.onLeftAnswer += onNoRelease;
+			//		AlertQuestionWindow aqw = AlertGUI.REF.DoQuestionAlert("Release "+this.monster.name,"Are you sure you want to release "+this.monster.name+". This cannot be undone!","Yes","No");
+			//		aqw.onAnswered += onYesRelease;
+			//		aqw.onLeftAnswer += onNoRelease;
 				} else {
 					AlertGUI.REF.DoGeneralAlert("Cannot Release","You cannot release a Terra Monster that is in your current battle line-up");
 				}

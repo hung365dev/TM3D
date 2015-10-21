@@ -12,10 +12,10 @@ public class BattleBGLibrary {
 		{
 			Debug.Log ("Loading: "+aName);
 			if(all[i]._BackgroundName.Replace(" ","").Equals(aName.Replace(" ",""))||aName==null||aName=="") {
-				GameObject prefab = UnityEngine.Object.Instantiate(Resources.Load("Battles/Backgrounds/Prefabs/"+all[i]._BackgroundFile)) as GameObject;;
-				prefab.GetComponent<Renderer>().sortingLayerName = "BackgroundLayer";
-				prefab.transform.localPosition = new Vector3();
-				return (GameObject) prefab;
+//				GameObject prefab = UnityEngine.Object.Instantiate(Resources.Load("Battles/Backgrounds/Prefabs/"+all[i]._BackgroundFile)) as GameObject;;
+			//	prefab.GetComponent<Renderer>().sortingLayerName = "BackgroundLayer";
+		//		prefab.transform.localPosition = new Vector3();
+				return null; 
 			}
 		}
 		return null;

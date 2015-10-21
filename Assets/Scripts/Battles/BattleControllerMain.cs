@@ -28,7 +28,9 @@ namespace Battles {
 			BattleConstants.controllerRef = this;
 			REF = this;
 			this.onBattleCompleted += onBattleComplete;
-			this.battleOverScreen.gameObject.SetActive(false);
+
+			if(this.battleOverScreen!=null)
+				this.battleOverScreen.gameObject.SetActive(false);
 			this.commentaryEngine.gameObject.SetActive(false);
 			if(BattleInit.REF!=null)
 				StartCoroutine(delayToInitBattle()); else {
@@ -51,10 +53,10 @@ namespace Battles {
 				this.onMonstersIdle += onMonstersIdled;
 				onMoveQueueCreated(this.playersTeam.reviveMoveQueue());
 			} else {
-				AlertQuestionWindow aqw = AlertGUI.REF.DoQuestionAlert("More Terra Dollars Needed","You need at least "+BattleBase.COST_TO_CONTINUE+" Terra Dollars to Revive your monsters","Buy More","Cancel");
-				aqw.onAnswered += onBuyMore;
-				aqw.onLeftAnswer += onDidntRevive;
-				buyMoreTDsBtn = aqw;
+		//		AlertQuestionWindow aqw = AlertGUI.REF.DoQuestionAlert("More Terra Dollars Needed","You need at least "+BattleBase.COST_TO_CONTINUE+" Terra Dollars to Revive your monsters","Buy More","Cancel");
+		//		aqw.onAnswered += onBuyMore;
+		//		aqw.onLeftAnswer += onDidntRevive;
+		//		buyMoreTDsBtn = aqw;
 				
 			}
 		}
@@ -68,7 +70,7 @@ namespace Battles {
 		}
 		public void onBuyMore() {
 			cleanQuestionWindow();
-			AlertGUI.REF.BuyMoreTerraDollars("","");
+	//		AlertGUI.REF.BuyMoreTerraDollars("","");
 		}
 		public void onDidntRevive() {
 			cleanQuestionWindow();
@@ -114,14 +116,14 @@ namespace Battles {
 			this.playersTeam.bringMonsterToFront(playersTeam.nextUnsetMonster);
 			
 			this.topLabel.gameObject.SetActive(true);
-			iTween.FadeFrom(this.topLabel.gameObject,0f,0.25f);
-			if(multiplayer&&SmartfoxHandler.REF!=null&&allowSendingOfMultiplayerTeam) {
-
-			} else {
+	//		iTween.FadeFrom(this.topLabel.gameObject,0f,0.25f);
+	//		if(multiplayer&&SmartfoxHandler.REF!=null&&allowSendingOfMultiplayerTeam) {
+			//
+	//		} else {
 				if(this.countdownTimer!=null&&!multiplayer)
 					this.countdownTimer.gameObject.SetActive(false);
 				topLabel.text = PlayerMain.REF.name+" vs "+this.opponentTeam.displayName;
-			}
+	//		}
 			 
 			
 
@@ -133,13 +135,13 @@ namespace Battles {
 		}
 		
 		private void onLostConnection() {
-			SmartfoxHandler.REF.fullDisconnect();
+	//		SmartfoxHandler.REF.fullDisconnect();
 			this.StopAllCoroutines();
 			this.cancelMoveQueue();
 			this.barController.show = false;
-			SmartfoxHandler.REF.onMoveQueuePrepared -= onMultiplayerMoveQueueReceived;
-			SmartfoxHandler.REF.onConnectionLost -= onLostConnection;
-			SmartfoxHandler.REF.OutputHandlersStatus();
+	//		SmartfoxHandler.REF.onMoveQueuePrepared -= onMultiplayerMoveQueueReceived;
+	//		SmartfoxHandler.REF.onConnectionLost -= onLostConnection;
+	//		SmartfoxHandler.REF.OutputHandlersStatus();
 			AlertGUI.REF.DoGeneralAlert("Connection Lost","You have lost connection to the server, please check your connection and reconnect");
 			
 			cleanInventoryListeners();
@@ -171,19 +173,19 @@ namespace Battles {
 			if (battleOverScreen != null) {
 				if(battleOverScreen.evolutionsToConsume) {
 					BattleMonster monsterEvolving = battleOverScreen.monsterEvolving;
-					AlertQuestionWindow aqw = AlertGUI.REF.DoQuestionAlert("Terra Monsters are Evolving!","Your "+monsterEvolving.name+" is trying to Evolve! It can only evolve when it has levelled up during battle. Are you sure you want to "+monsterEvolving.name+" from Evolving?","Allow Evolution","Cancel Evolution");
+		/*			AlertQuestionWindow aqw = AlertGUI.REF.DoQuestionAlert("Terra Monsters are Evolving!","Your "+monsterEvolving.name+" is trying to Evolve! It can only evolve when it has levelled up during battle. Are you sure you want to "+monsterEvolving.name+" from Evolving?","Allow Evolution","Cancel Evolution");
 					aqw.onLeftAnswer += onCancelEvolution;
 					aqw.onAnswered += onContinueEvolving;
-					cancelEvolves = aqw;
+					cancelEvolves = aqw;*/
 					battleOverScreen.pauseCurrentEvolution();
 					return;
 				}
 			}
-			SmartfoxHandler.REF.onMoveQueuePrepared -= onMultiplayerMoveQueueReceived;
-			SmartfoxHandler.REF.onConnectionLost -= onLostConnection;
-			SmartfoxHandler.REF.OutputHandlersStatus();
+		//	SmartfoxHandler.REF.onMoveQueuePrepared -= onMultiplayerMoveQueueReceived;
+		//	SmartfoxHandler.REF.onConnectionLost -= onLostConnection;
+		//	SmartfoxHandler.REF.OutputHandlersStatus();
 			BattleInit.REF = null;
-			SplashScreenManager.ADTIME = EAdTime.BattleEnd;
+		//	SplashScreenManager.ADTIME = EAdTime.BattleEnd;
 			Application.LoadLevel("MapChangeSplashScreen");
 		}
 		//TODO Reenable when multiplayer
@@ -191,7 +193,7 @@ namespace Battles {
 		public void goMultiplayerBattle() {
 			allowSendingOfMultiplayerTeam = false;
 			StartCoroutine(delayToInitBattle());
-			SmartfoxHandler.REF.onMoveQueuePrepared += onMultiplayerMoveQueueReceived;
+		//	SmartfoxHandler.REF.onMoveQueuePrepared += onMultiplayerMoveQueueReceived;
 		}
 		
 		public void useBait() {
@@ -219,11 +221,11 @@ namespace Battles {
 		
 		public void createInventoryForBaits(MonsterDataMain aMonster) {
 			if(!moveQueueActive&&opponentTeam.monsterCount==1) {
-				InventoryDisplay i = AlertGUI.REF.LaunchInventory(EInventoryType.BaitView);
-				InventoryDisplay.setInventoryTarget(aMonster);
-				i.createBaitsTable();
-				i.onHideInventory += this.onHideInventory;
-				_inventory = i;
+			//	InventoryDisplay i = AlertGUI.REF.LaunchInventory(EInventoryType.BaitView);
+			//	InventoryDisplay.setInventoryTarget(aMonster);
+			//	i.createBaitsTable();
+			//	i.onHideInventory += this.onHideInventory;
+			//	_inventory = i;
 			} else { 
 				if(opponentTeam.monsterCount>1) {
 					AlertGUI.REF.DoGeneralAlert("Cannot Use Bait","You cannot use baits when there is more than one wild monster!");
@@ -244,7 +246,7 @@ namespace Battles {
 		
 		
 		private void createBattleInventory() {
-			this._inventory = AlertGUI.REF.LaunchInventory(EInventoryType.Battleview);
+	//		this._inventory = AlertGUI.REF.LaunchInventory(EInventoryType.Battleview);
 			_inventory.createBattleItemsTable();
 			_inventory.onItemSelected += onItemSelected;
 			
@@ -369,7 +371,7 @@ namespace Battles {
 			this.playersTeam.allMonstersBackInPlace();
 			this.playersTeam.healthBars = true;
 			this.opponentTeam.healthBars = true;
-			SmartfoxHandler.REF.stopListeningForBattles();
+	//		SmartfoxHandler.REF.stopListeningForBattles();
 		}
 		private void initMonsterCaughtScreen() {
 			this.battleOverScreen.init (this.opponentTeam.caughtMonster);
@@ -382,11 +384,11 @@ namespace Battles {
 				this.countdownTimer.onStandardTimerExpired -= onAutoSelectMoves;
 				this.countdownTimer.onLongTimerExpired -= onFailoverToAI; 
 			}
-			if(SmartfoxHandler.REF!=null) {
+	/*		if(SmartfoxHandler.REF!=null) {
 				SmartfoxHandler.REF.stopListeningForBattles();
 				SmartfoxHandler.REF.onMoveQueuePrepared -=  onMultiplayerMoveQueueReceived;
 				SmartfoxHandler.REF.OutputHandlersStatus();
-			}
+			}*/
 			if(PlayerMain.REF!=null) {
 				PlayerMain.REF.allowMonsterSave = true;
 		//	SaveGameUtils.REF.SaveStatsAndQuests();

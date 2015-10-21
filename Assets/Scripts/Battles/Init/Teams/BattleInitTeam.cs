@@ -77,22 +77,22 @@ namespace Battles
 				
 				public void initTeamFromBattlesRow(NPCBattlesRow aData,BetterList<NPCBattleMonstersRow> aMonsters) {
 					for(int i = 0;i<aMonsters.size;i++) {
-						MonsterLibraryRecord m = MonsterLibrary.REF.getMonster(aMonsters[i]._monster);
+						MonsterLibraryRecord m = MonsterLibrary.REF.getMonster(aMonsters[i]._Monster);
 						if(m!=null) {
-							if(aData._npcinbattlename.Length==0) {
-								aData._npcinbattlename = aData._npcname;
+							if(aData._NPCInBattleName.Length==0) {
+								aData._NPCInBattleName = aData._NPCName;
 							}
-							MonsterDataMain monster = addNPCMonster(m.ID,Convert.ToByte(aMonsters[i]._level),EMoveBranch.NoMove,aData._npcinbattlename,aMonsters[i]._overridemove1,aMonsters[i]._overridemove2,aMonsters[i]._overridemove3,aMonsters[i]._overridemove4);
-							if(aMonsters[i]._overridename!=null&&aMonsters[i]._overridename.Length>0) {
-								monster.name = aMonsters[i]._overridename;
+							MonsterDataMain monster = addNPCMonster(m.ID,Convert.ToByte(aMonsters[i]._Level),EMoveBranch.NoMove,aData._NPCInBattleName,aMonsters[i]._OverrideMove1,aMonsters[i]._OverrideMove2,aMonsters[i]._OverrideMove3,aMonsters[i]._OverrideMove4);
+							if(aMonsters[i]._OverrideName!=null&&aMonsters[i]._OverrideName.Length>0) {
+								monster.name = aMonsters[i]._OverrideName;
 							}
 							PlayerMain.REF.addMonsterToSeen(monster.monsterBreedRef.ID);
 						} else {  
-							Debug.LogError ("Monster that I wanted to add is: "+aMonsters[i]._monster);
+							Debug.LogError ("Monster that I wanted to add is: "+aMonsters[i]._Monster);
 						}
 					}
-					this.name = aData._npcname;
-					battlesConversation = aData._forcedconversation;
+					this.name = aData._NPCName;
+					battlesConversation = aData._ForcedConversation;
 				}
 		
 				public BetterList<MonsterDataMain> monsters {

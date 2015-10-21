@@ -170,7 +170,7 @@ namespace PixelCrushers.DialogueSystem.NGUI {
 				}
 				secondsLeft = duration;
 				playerCameraTransform = Camera.main.transform;
-				playerCameraCollider = (playerCameraTransform != null) ? playerCameraTransform.collider : null;
+				playerCameraCollider = (playerCameraTransform != null) ? playerCameraTransform.GetComponent<Collider>() : null;
 			}
 		}
 		

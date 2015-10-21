@@ -35,7 +35,7 @@ namespace MTX
 		}
 		
 		public void reinit() {
-			PurchasableItem backpacker = Unibiller.GetPurchasableItemById("com.socialtitans.terramonsters2.backpacker");
+	/*		PurchasableItem backpacker = Unibiller.GetPurchasableItemById("com.socialtitans.terramonsters2.backpacker");
 			smallPackage.text = backpacker.localizedPriceString;
 			
 			PurchasableItem adventurer = Unibiller.GetPurchasableItemById("com.socialtitans.terramonsters2.adventurer");
@@ -59,7 +59,7 @@ namespace MTX
 			if(rancherOwned) {
 				largePackageLabel.text = "OWNED!";
 				this.largePackageBtn.isEnabled = false;
-			}
+			}*/
 		}
 		public void Start()  {
 			this.gameObject.name = "UnlockFullGame";
@@ -67,13 +67,13 @@ namespace MTX
 			
 		}
 		public void onBuySmallBag() {
-			Unibiller.initiatePurchase("com.socialtitans.terramonsters2.backpacker");
+		//	Unibiller.initiatePurchase("com.socialtitans.terramonsters2.backpacker");
 		}
 		public void onBuyBigBag() {
-			Unibiller.initiatePurchase("com.socialtitans.terramonsters2.adventurer");
+		//	Unibiller.initiatePurchase("com.socialtitans.terramonsters2.adventurer");
 		}
 		public void onBuyMassiveChest() {
-			Unibiller.initiatePurchase("com.socialtitans.terramonsters2.rancher");
+		//	Unibiller.initiatePurchase("com.socialtitans.terramonsters2.rancher");
 		}
 		
 		public void OnDestroy() {

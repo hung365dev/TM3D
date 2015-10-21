@@ -122,8 +122,8 @@ public class BattleOverScreen : MonoBehaviour
 			StartCoroutine(findMonstersForEvolve(monsters.size*0.5f+0.5f));
 		} else {
 			
-			audio.audioFilename = "Music/POL-war-victims-short";
-			audio.Play();
+		//	GetComponent<AudioSource>(). = "Music/POL-war-victims-short";
+		//	GetComponent<AudioSource>().Play();
 			PlayerMain.REF.futureDoorway.targetXY = PlayerMain.REF.futureDoorway.targetMap.defaultStart;
 			PlayerMain.REF.futureDoorway.futureNPCChat = "";
 			victoryAnim.gameObject.SetActive(false);
@@ -131,7 +131,7 @@ public class BattleOverScreen : MonoBehaviour
 		}
 		PlayerMain.REF.saveMonsters();
 		GameObject mLobby = GameObject.FindGameObjectWithTag("MultiplayerPreGame");
-		if(mLobby!=null) {
+	/*	if(mLobby!=null) {
 			MultiplayerPregame l = mLobby.GetComponentInChildren<MultiplayerPregame>();
 			l.active = true;
 			l.isPostGame = true; 
@@ -146,7 +146,7 @@ public class BattleOverScreen : MonoBehaviour
 					}
 				}
 			}
-		}
+		}*/
 	
 	}
 	private void hidePrizes() {
@@ -178,9 +178,9 @@ public class BattleOverScreen : MonoBehaviour
 		yield return new WaitForSeconds(2.0f);
 		
 		yield return new WaitForSeconds(0.1f);
-		_monsterStats = AlertGUI.REF.ShowManageMonsterScreen(_caughtMonster);
+	/*	_monsterStats = AlertGUI.REF.ShowManageMonsterScreen(_caughtMonster);
 		TweenAlpha.Begin(this._monsterStats.gameObject,0.01f,0.0f);
-		TweenAlpha.Begin(this._monsterStats.gameObject,2.0f,1.0f);
+		TweenAlpha.Begin(this._monsterStats.gameObject,2.0f,1.0f);*/
 		
 	}
 	private IEnumerator findMonstersForEvolve(float aDelay) {
@@ -207,7 +207,7 @@ public class BattleOverScreen : MonoBehaviour
 		for(int i = 0;i<monsters.size;i++) {
 			if(monsters[i]==aMonsterToIgnore) {
 			} else {
-				iTween.FadeTo(monsters[i].gameObject,aAlpha,0.25f);
+		//		iTween.FadeTo(monsters[i].gameObject,aAlpha,0.25f);
 			}
 		}
 	}
@@ -250,10 +250,10 @@ public class BattleOverScreen : MonoBehaviour
 	}
 	private IEnumerator WaitForEvolutionToComplete() {
 		yield return new WaitForSeconds(4.0f);
-		_monsterStats = AlertGUI.REF.ShowManageMonsterScreen(this._evolvingMonster);
+	/*	_monsterStats = AlertGUI.REF.ShowManageMonsterScreen(this._evolvingMonster);
 		_monsterStats.onClose += onContinueEvolutions;
 		TweenAlpha.Begin(this._monsterStats.gameObject,0.01f,0.0f);
-		TweenAlpha.Begin(this._monsterStats.gameObject,2.0f,1.0f);
+		TweenAlpha.Begin(this._monsterStats.gameObject,2.0f,1.0f);*/
 		PlayerMain.REF.saveMonsters();
 		_evolvingMonster = null;
 		
@@ -271,9 +271,9 @@ public class BattleOverScreen : MonoBehaviour
 	
 	public IEnumerator continueToNextEvo() {
 		
-		if(_monsterStats!=null)
-		Destroy (this._monsterStats.gameObject);
-		this._monsterStats = null;
+//		if(_monsterStats!=null)
+		//	Destroy (this._monsterStats.gameObject);
+	//	this._monsterStats = null;
 		fadeCompleteMonsters(1f);
 		fadeMonstersApartFrom(null,1.0f);
 		yield return new WaitForSeconds(0.25f);

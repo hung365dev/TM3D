@@ -19,17 +19,17 @@ namespace Items
 		private BetterList<RecoveryTriplet> _recoveryTypes = new BetterList<RecoveryTriplet>();
 		public ItemRecoveryItem (ItemsRecoveryRow aRecoveryRow)
 		{
-			_name = aRecoveryRow._itemname;
-			_id = aRecoveryRow._id;
-			_description = aRecoveryRow._itemdescription;
-			_tintColour = new Color(aRecoveryRow._spritetintr/255,aRecoveryRow._spritetintg/255,aRecoveryRow._spritetintb/255,aRecoveryRow._spritetinta/255);
-			_spritePrefab = aRecoveryRow._sprite;
-			this._hardCost = aRecoveryRow._hardcurrency;
-			this._softCost = aRecoveryRow._softcurrency;
+			_name = aRecoveryRow._ItemName;
+			_id = aRecoveryRow._ID;
+			_description = aRecoveryRow._ItemDescription;
+			_tintColour = new Color(aRecoveryRow._SpriteTintR/255,aRecoveryRow._SpriteTintG/255,aRecoveryRow._SpriteTintB/255,aRecoveryRow._SpriteTintA/255);
+			_spritePrefab = aRecoveryRow._Sprite;
+			this._hardCost = aRecoveryRow._HardCurrency;
+			this._softCost = aRecoveryRow._SoftCurrency;
 			_itemType = EItemType.Recovery;
-			_recoveryTypes.Add(new RecoveryTriplet(aRecoveryRow._torecovera,aRecoveryRow._recoveratype,aRecoveryRow._recoveravalue));
-			if(aRecoveryRow._torecoverb!=null) 
-				_recoveryTypes.Add(new RecoveryTriplet(aRecoveryRow._torecoverb,aRecoveryRow._recoverbtype,aRecoveryRow._recoverbvalue));
+			_recoveryTypes.Add(new RecoveryTriplet(aRecoveryRow._ToRecoverA,aRecoveryRow._RecoverAType,aRecoveryRow._RecoverAValue));
+			if(aRecoveryRow._ToRecoverB!=null) 
+				_recoveryTypes.Add(new RecoveryTriplet(aRecoveryRow._ToRecoverB,aRecoveryRow._RecoverBType,aRecoveryRow._RecoverBValue));
 			
 		}
 		/*

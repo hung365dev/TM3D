@@ -52,7 +52,7 @@ namespace Utils
 			REF = this;
 		
 		}
-		public MultiplayerLobby launchMultiplayerLobby() {
+	/*	public MultiplayerLobby launchMultiplayerLobby() {
 			GameObject g = GameObject.FindGameObjectWithTag("UIRoot");
 			if(GameObject.Find("MultiplayerLobby")==null) {
 				if(multiplayerScreen!=null) {
@@ -182,7 +182,7 @@ namespace Utils
 			return null;
 			
 		}
-
+*/
 		public AlertWindowMain DoGeneralAlert(string aTitle,string aMessage) {
 			GameObject g = GameObject.FindGameObjectWithTag("UIRoot");
 			if(generalAlertPrefab==null) {
@@ -197,7 +197,7 @@ namespace Utils
 			return null;
 			
 		}
-		
+		/*
 		public WorldStoreMain LaunchStore() {
 			
 			GameObject g = GameObject.FindGameObjectWithTag("UIRoot");
@@ -270,7 +270,7 @@ namespace Utils
 			}
 			return null;
 			
-		}*/
+		}*/ 
 		
 	}
 }

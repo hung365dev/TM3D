@@ -10,7 +10,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using GoogleFu;
+using Google2u;
 public class XPDevModelLib
 {
 	BetterList<XPDevModel> list = new BetterList<XPDevModel>();

@@ -107,7 +107,7 @@ namespace Battles
 						DialogueLua.SetVariable(orVariableWhenWon,newVal);
 					}
 					if(_npcRef!=null) {
-						DialogueLua.SetVariable(_npcRef._battlename,aStatus); 
+						DialogueLua.SetVariable(_npcRef._BattleName,aStatus); 
 						if(aStatus==2) {
 							SaveGameUtils.REF.incrementLuaStat("LossesCount",1);
 						} else if(aStatus==1) {
@@ -123,11 +123,7 @@ namespace Battles
 						}
 					}
 					if(_npcRef!=null) {
-			UnityAnalytics.CustomEvent("battleComplete", new Dictionary<string, object>
-			                           {
-						{ "battleName", _npcRef._battlename },
-						{ "status", aStatus }
-					});
+
 			}
 					SaveGameUtils.REF.SaveStatsAndQuests();
 					

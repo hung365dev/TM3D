@@ -54,8 +54,8 @@ namespace ManageMonster
 		}
 		public void onUseInventory() {
 			InventoryDisplay.inventoryType = EInventoryType.Ranchview;
-			_inventory = AlertGUI.REF.LaunchInventory(previewMonster.monster);
-			_inventory.onHideInventory += onInventoryClosed;;
+		//	_inventory = AlertGUI.REF.LaunchInventory(previewMonster.monster);
+		//	_inventory.onHideInventory += onInventoryClosed;;
 			rightSide.gameObject.SetActive(false);
 		}
 		
@@ -109,8 +109,8 @@ namespace ManageMonster
 		void accessJSONData(JSONObject obj){
 			int type = 0;
 			int coins = 0;
-			int dollars = 0;
-			switch(obj.type){
+			int dollars = 0; 
+			switch(obj.type){ 
 			case JSONObject.Type.OBJECT:
 				for(int i = 0; i < obj.list.Count; i++){
 					string key = (string)obj.keys[i];

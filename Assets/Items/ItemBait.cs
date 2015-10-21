@@ -20,15 +20,15 @@ namespace Items
 		public ElementalType specialityType;
 		public ItemBait (ItemsBaitsRow aRow)
 		{
-			this._name = aRow._itemname;
-			this._description = aRow._itemdescription;
-			this._hardCost = (int) aRow._hardcurrency;
-			this._softCost = (int) aRow._softcurrency;
-			this._spritePrefab = aRow._sprite;
-			this._id = (int) aRow._id;
-			ballStrength = (float) aRow._strength;
+			this._name = aRow._ItemName;
+			this._description = aRow._ItemDescription;
+			this._hardCost = (int) aRow._HardCurrency;
+			this._softCost = (int) aRow._SoftCurrency;
+			this._spritePrefab = aRow._Sprite;
+			this._id = (int) aRow._ID;
+			ballStrength = (float) aRow._Strength;
 			_itemType = EItemType.Bait;
-			this._tintColour = new Color((float) aRow._spritetintr/255f,(float) aRow._spritetintg/255f,(float) aRow._spritetintb/255f,(float) aRow._spritetinta/255f);
+			this._tintColour = new Color((float) aRow._SpriteTintR/255f,(float) aRow._SpriteTintG/255f,(float) aRow._SpriteTintB/255f,(float) aRow._SpriteTintA/255f);
 		}
 		 
 	}

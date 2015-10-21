@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using GoogleFu;
+using Google2u;
 public class MovesAnimationLib {
 	
 	private BetterList<MoveAnimationLibItem> animations = new BetterList<MoveAnimationLibItem>();

@@ -9,7 +9,7 @@
 // ------------------------------------------------------------------------------
 using System;
 using UnityEngine;
-using GoogleFu;
+using Google2u;
 using System.Collections.Generic;
 public class Map
 {
@@ -67,7 +67,7 @@ public class Map
 	public void initSpawns() {
 		List<MapSpawnsRow> allSpawns = MapSpawns.Instance.Rows;
 		for(int i = 0;i<allSpawns.Count;i++) {
-			if(allSpawns[i]._mapname==_name) {
+			if(allSpawns[i]._MapName==_name) {
 				_spawnAreas.Add(new SpawnArea(allSpawns[i]));
 			}
 		}

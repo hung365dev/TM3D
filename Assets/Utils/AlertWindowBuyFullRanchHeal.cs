@@ -33,7 +33,7 @@ namespace Utils
 				return;
 			}
 			if(PlayerMain.REF.hardCurrency<=RANCH_HEAL_COST) {
-				AlertGUI.REF.BuyMoreTerraDollars("","");
+		//		AlertGUI.REF.BuyMoreTerraDollars("","");
 				Destroy (this.gameObject);
 			} else {
 				PlayerMain.REF.changeHardCurrency(RANCH_HEAL_COST*-1);

@@ -32,7 +32,7 @@ namespace ManageMonster
 			if(Application.loadedLevelName.ToLower().Contains("managemonster")) {
 		
 			} else {
-				AlertGUI.REF.LaunchMonsterMoveTree(this.monster);
+			//	AlertGUI.REF.LaunchMonsterMoveTree(this.monster);
 				Destroy (this.gameObject);
 			}
 		}
@@ -104,8 +104,8 @@ namespace ManageMonster
 						h.Add ("oncompletetarget",this.gameObject);
 						h.Add ("oncomplete","AttackAnimationFinish");
 						h.Add ("oncompleteparams",animPrefab);
-						h.Add("easetype",iTween.EaseType.easeInQuad);
-						iTween.MoveTo(animPrefab,h);
+					//	h.Add("easetype",iTween.EaseType.easeInQuad);
+					//	iTween.MoveTo(animPrefab,h);
 					}
 				}
 			}

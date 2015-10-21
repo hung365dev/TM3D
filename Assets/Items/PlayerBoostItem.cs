@@ -21,21 +21,21 @@ namespace Items
 		public int time;
 		public PlayerBoostItem (ItemsPlayerBoostsRow aRow)
 		{
-			this._name = aRow._itemname;
-			this._description = aRow._itemdescription;
-			this._hardCost = (int) aRow._hardcurrency;
-			this._softCost = (int) aRow._softcurrency;
-			this._spritePrefab = aRow._sprite;
-			this._id = (int) aRow._id;
+			this._name = aRow._ItemName;
+			this._description = aRow._ItemDescription;
+			this._hardCost = (int) aRow._HardCurrency;
+			this._softCost = (int) aRow._SoftCurrency;
+			this._spritePrefab = aRow._Sprite;
+			this._id = (int) aRow._ID;
 			
-			this.itemStrength = (float) aRow._strength;
-			switch(aRow._type) {
+			this.itemStrength = (float) aRow._Strength;
+			switch(aRow._Type) {
 				case("BoostXP"):boostType = EPlayerBoostType.XPBoost;break;
 				case("Repel"):boostType = EPlayerBoostType.Repel;break;
 			}
-			time = aRow._seconds;
+			time = aRow._Seconds;
 			_itemType = EItemType.PlayerBoost;
-			this._tintColour = new Color((float) aRow._spritetintr/255f,(float) aRow._spritetintg/255f,(float) aRow._spritetintb/255f,(float) aRow._spritetinta/255f);
+			this._tintColour = new Color((float) aRow._SpriteTintR/255f,(float) aRow._SpriteTintG/255f,(float) aRow._SpriteTintB/255f,(float) aRow._SpriteTintA/255f);
 		}
 		
 	}

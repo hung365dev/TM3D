@@ -301,7 +301,7 @@ namespace Battles
 					BattleBase.DebugText("sendMyMoveQueue");
 					BattleBase.QueueText("I am sending my move queue over."); 
 					
-					SmartfoxHandler.REF.sendMyMoveQueue(aMoveQueue);
+					//.REF.sendMyMoveQueue(aMoveQueue);
 					if(countdownTimer!=null) {
 						countdownTimer.startLongTimer();
 						countdownTimer.preLabel = "Waiting for Opponent: ";
@@ -356,7 +356,7 @@ namespace Battles
 		protected IEnumerator moveMonsterBackToPosition(MoveQueueItem aItem) {
 			BattleTeam myTeam = aItem.actioningTeam;
 			Vector3 pos = BattleConstants.getMyPosition(this.positionFromTeam(myTeam),myTeam.positionForMonster(aItem.actioningMonster.gameObject));
-			iTween.MoveTo(aItem.actioningMonster.gameObject,pos,0.25f);
+	//		iTween.MoveTo(aItem.actioningMonster.gameObject,pos,0.25f);
 			yield return new WaitForSeconds(0.25f);
 			aItem.advanceMoveQueueFromState(EMoveQueueItemStatus.MoveBackToPosition);
 		}
@@ -712,8 +712,8 @@ namespace Battles
 						h.Add ("oncompletetarget",this.gameObject);
 						h.Add ("oncomplete","AttackAnimationFinish");
 						h.Add ("oncompleteparams",animPrefab);
-						h.Add("easetype",iTween.EaseType.easeInQuad);
-						iTween.MoveTo(animPrefab,h);
+			//			h.Add("easetype",iTween.EaseType.easeInQuad);
+			//			iTween.MoveTo(animPrefab,h);
 					} else if(anim.movementType=="OnOriginOnly") {
 						animPrefab.transform.position = aMoveQueue.actioningMonster.SpawnPosition;
 						Hashtable h = new Hashtable();
@@ -722,7 +722,7 @@ namespace Battles
 						h.Add ("oncompletetarget",this.gameObject);
 						h.Add ("oncomplete","AttackAnimationFinish");
 						h.Add ("oncompleteparams",animPrefab);
-						iTween.MoveTo(animPrefab,h);
+			//			iTween.MoveTo(animPrefab,h);
 					}
 					if(!isLeftMove&&aMoveQueue.moveData.attackAnimation.leftSideRotation!=0f) {
 						animPrefab.transform.rotation = Quaternion.Euler(0f,anim.rightSideRotation,0f);
@@ -791,8 +791,8 @@ namespace Battles
 							h.Add ("oncompletetarget",this.gameObject);
 							h.Add ("oncomplete","AttackAnimationFinish");
 							h.Add ("oncompleteparams",animPrefab);
-							h.Add("easetype",iTween.EaseType.easeInQuad);
-							iTween.MoveTo(animPrefab,h);
+				//			h.Add("easetype",iTween.EaseType.easeInQuad);
+				//			iTween.MoveTo(animPrefab,h);
 						}
 						if(!isLeftMove&&aMoveQueue.moveData.attackAnimation.leftSideRotation!=0f) {
 							animPrefab.transform.rotation = Quaternion.Euler(0f,anim.rightSideRotation,0f);

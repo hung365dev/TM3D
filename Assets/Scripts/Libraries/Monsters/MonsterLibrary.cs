@@ -37,9 +37,9 @@ public class MonsterLibrary : MonoBehaviour
 	public void initLib() {
 		List<TMMonstersRow> monsters = TMMonsters.Instance.Rows;
 		for (int i = 0; i < monsters.Count; i++) {
-			if(monsters[i]._currentlyworking==1) {
+			if(monsters[i]._CurrentlyWorking==1) {
 				list.Add(new MonsterLibraryRecord(monsters[i]));
-			}
+			} 
 		}
 		for(int i = 0;i<list.size;i++) {
 			list[i].initEvolvesTo();

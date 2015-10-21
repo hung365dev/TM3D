@@ -415,14 +415,14 @@ public class MonsterDataBase
 	public GameObject prefab {
 		get {
 			
-			GameObject prefab = Resources.Load("BattleMonsters/"+this._monsterBreed.Name+"") as GameObject;
+			GameObject prefab = Resources.Load("Monsters/"+this._monsterBreed.Name+"") as GameObject;
 
 			if(prefab==null)
 			{
-				prefab = Resources.Load("BattleMonsters/"+this._monsterBreed.Name+"A") as GameObject;
+				prefab = Resources.Load("Monsters/"+this._monsterBreed.Name+"") as GameObject;
 				if(prefab==null) {
 					Debug.LogError("Prefab for "+this._monsterBreed.Name+" is null");
-					prefab = Resources.Load("BattleMonsters/DandlionA") as GameObject;
+					prefab = Resources.Load("Monsters/Cyclonine") as GameObject;
 					
 				}
 			}

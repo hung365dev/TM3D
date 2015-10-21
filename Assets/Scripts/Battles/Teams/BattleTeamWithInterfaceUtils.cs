@@ -105,8 +105,8 @@ namespace Battles
 					iTween.ColorTo(ms[c].gameObject,new UnityEngine.Color(0.5f,0.5f,0.5f),0.25f);
 				
 				} else {*/
-					if(ms[c]!=null&&ms[c].monster.restingStatus==ERestingStatus.Awake)
-						iTween.ColorTo(ms[c].gameObject,new UnityEngine.Color(1.0f,1.0f,1.0f),0.25f);
+				//	if(ms[c]!=null&&ms[c].monster.restingStatus==ERestingStatus.Awake)
+					//	iTween.ColorTo(ms[c].gameObject,new UnityEngine.Color(1.0f,1.0f,1.0f),0.25f);
 				//}
 			}
 			
@@ -116,13 +116,13 @@ namespace Battles
 			BetterList<BattleMonster> ms = this.monstersAsBattleMonster;
 			for(byte c = 0;c<ms.size;c++) {
 				if(ms[c].monster.restingStatus==ERestingStatus.Awake) {
-					iTween.ColorTo(ms[c].gameObject,new UnityEngine.Color(1.0f,1.0f,1.0f),0.25f);
+					//iTween.ColorTo(ms[c].gameObject,new UnityEngine.Color(1.0f,1.0f,1.0f),0.25f);
 				}
 			}
 		}
 		public void disappearMonster(BattleMonster aMonster,float aFadeTime) {
 			aMonster.doRestAnimation();
-			iTween.ColorTo(aMonster.gameObject,new UnityEngine.Color(0.1f,0.1f,0.1f),1.00f);
+		//	iTween.ColorTo(aMonster.gameObject,new UnityEngine.Color(0.1f,0.1f,0.1f),1.00f);
 		}
 		public void bringMonsterToFront(BattleMonster aMonster) {
 			EMonsterPos pos = this.positionForMonster(aMonster);

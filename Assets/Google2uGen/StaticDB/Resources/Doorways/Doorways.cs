@@ -20,7 +20,7 @@ namespace Google2u
 		public int _TriggerID;
 		public int _TargetXPos;
 		public int _TargetYPos;
-		public DoorwaysRow(string __GOOGLEFU_ID, string __ID, string __HostMap, string __TargetMap, string __TriggerID, string __TargetXPos, string __TargetYPos) 
+		public DoorwaysRow(string __Google2u_ID, string __ID, string __HostMap, string __TargetMap, string __TriggerID, string __TargetXPos, string __TargetYPos) 
 		{
 			{
 			int res;

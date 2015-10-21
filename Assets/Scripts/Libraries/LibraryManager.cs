@@ -10,6 +10,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using Battles;
 
 	public class LibraryManager : MonoBehaviour
 	{
@@ -37,7 +38,12 @@ using System.Collections;
 			moveTreeLib.initMoveTrees ();
 			yield return new WaitForEndOfFrame();
 			monsterLib.initLib();
+			new PlayerMain ();
+			SpawnAreaMonster m = new SpawnAreaMonster ("Cyclonine", 20, 1f, "");
 			
+			PlayerMain.REF.initForDebug ();
+			new BattleInit (m,""); 
+			Application.LoadLevel ("BattleSceneA");
 		}
 	}
 

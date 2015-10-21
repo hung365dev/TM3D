@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using GoogleFu;
+using Google2u;
 public class MoveAnimationLibItem {
 	
 	private int _id;
@@ -16,17 +16,17 @@ public class MoveAnimationLibItem {
 	public float rightSideRotation = 0f;
 	public MoveAnimationLibItem(MoveAnimationNamesRow aMoveAnimationName) {
 		
-		this._id = aMoveAnimationName._id;
-		this._name = aMoveAnimationName._moveanimations;
-		this._movementType = aMoveAnimationName._movementtype;
-		this._seconds = aMoveAnimationName._moveonseconds;
-		this._prefab = aMoveAnimationName._prefabname;
-		this.category = aMoveAnimationName._animtype;
-		yOffset = aMoveAnimationName._yoffset;
-		xOffset = aMoveAnimationName._xoffset;
+		this._id = aMoveAnimationName._ID;
+		this._name = aMoveAnimationName._MoveAnimations;
+		this._movementType = aMoveAnimationName._MovementType;
+		this._seconds = aMoveAnimationName._MoveOnSeconds;
+		this._prefab = aMoveAnimationName._PrefabName;
+		this.category = aMoveAnimationName._AnimType;
+		yOffset = aMoveAnimationName._YOffset;
+		xOffset = aMoveAnimationName._XOffset;
 		
-		leftSideRotation = aMoveAnimationName._yrotationforleftmove;
-		rightSideRotation = aMoveAnimationName._yrotationforrightmove;
+		leftSideRotation = aMoveAnimationName._YRotationForLeftMove;
+		rightSideRotation = aMoveAnimationName._YRotationForRightMove;
 	}
 	
 	public string name {

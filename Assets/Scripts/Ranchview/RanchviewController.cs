@@ -20,9 +20,6 @@ using utils;
 
 	public class RanchviewController : MonoBehaviour
 	{
-		public CustomUIGridController leftGridController;
-		public CustomUIGridController middleGridController;
-		public CustomUIGridController rightGridController;
 		public UIGrid leftBattlePos;
 		public UIGrid middleBattlePos;  
 		public UIGrid rightBattlePos;
@@ -79,7 +76,7 @@ using utils;
 			updateStats();
 		}
 		public void onFullHealUsed() {
-			AlertGUI.REF.DoFullRanchHeal("");
+		//	AlertGUI.REF.DoFullRanchHeal("");
 		}
 		protected IEnumerator startTutorialConversation() {
 			yield return new WaitForSeconds(0.5f);

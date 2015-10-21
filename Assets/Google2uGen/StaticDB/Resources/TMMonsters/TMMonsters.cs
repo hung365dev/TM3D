@@ -14,104 +14,320 @@ namespace Google2u
 	[System.Serializable]
 	public class TMMonstersRow : IGoogle2uRow
 	{
-		public string _ID;
+		public int _ID;
 		public string _Name;
 		public string _Description;
 		public string _EvolvesTo;
-		public string _Primary_Element;
-		public string _Secondary_Element;
-		public string _EvolvesAt;
-		public string _HP;
-		public string _HPPerLevel;
-		public string _HPAt50;
-		public string _HPAt100;
-		public string _Energy;
-		public string _EnergyPerLevel;
-		public string _EnergyAt50;
-		public string _EnergyAt100;
-		public string _MeleeAttack;
-		public string _MeleeDefense;
-		public string _RangeAttack;
-		public string _RangeDefense;
-		public string _Speed;
-		public string _Resistance;
-		public string _Accuracy;
-		public string _Agility;
-		public string _MeleeAttackPerLevel;
-		public string _MeleeAttackAt50;
-		public string _MeleeDefensePerLevel;
-		public string _MeleeDefenseAt50;
-		public string _RangeAttackPerLevel;
-		public string _RangeAttackAt50;
-		public string _RangeDefensePerLevel;
-		public string _AccuracyPerLevel;
-		public string _RangeDefenseAt50;
-		public string _SpeedPerLevel;
-		public string _SpeedAt50;
-		public string _Move_Tree_1;
-		public string _Move_Tree_2;
-		public string _Move_Tree_3;
-		public string _Move_Tree_4;
+		public string _PrimaryElement;
+		public string _SecondaryElement;
+		public byte _EvolvesAt;
+		public float _HP;
+		public float _HPPerLevel;
+		public float _HPAt50;
+		public float _HPAt100;
+		public float _Energy;
+		public float _EnergyPerLevel;
+		public float _EnergyAt50;
+		public float _EnergyAt100;
+		public float _MeleeAttack;
+		public float _MeleeDefense;
+		public float _RangeAttack;
+		public float _RangeDefense;
+		public float _Speed;
+		public float _Resistance;
+		public float _Accuracy;
+		public float _Agility;
+		public float _MeleeAttackPerLevel;
+		public float _MeleeAttackAt50;
+		public float _MeleeDefensePerLevel;
+		public float _MeleeDefenseAt50;
+		public float _RangeAttackPerLevel;
+		public float _RangeAttackAt50;
+		public float _RangeDefensePerLevel;
+		public float _AccuracyPerLevel;
+		public float _RangeDefenseAt50;
+		public float _SpeedPerLevel;
+		public float _SpeedAt50;
+		public string _MoveTree1;
+		public string _MoveTree2;
+		public string _MoveTree3;
+		public string _MoveTree4;
 		public string _XPDevModel;
-		public string _CatchRate;
-		public string _PassiveEffectClasses;
-		public string _CurrentlyWorking;
-		public string _BaseExperienceYield;
-		public string _IsStarterMonster;
+		public int _CatchRate;
+		public int _PassiveEffectClasses;
+		public int _CurrentlyWorking;
+		public int _BaseExperienceYield;
+		public int _IsStarterMonster;
 		public string _CompanionA;
-		public string _CompanionALevelDiff;
+		public int _CompanionALevelDiff;
 		public string _CompanionB;
-		public string _CompanionBLevelDiff;
-		public TMMonstersRow(string __ve, string __ID, string __Name, string __Description, string __EvolvesTo, string __Primary_Element, string __Secondary_Element, string __EvolvesAt, string __HP, string __HPPerLevel, string __HPAt50, string __HPAt100, string __Energy, string __EnergyPerLevel, string __EnergyAt50, string __EnergyAt100, string __MeleeAttack, string __MeleeDefense, string __RangeAttack, string __RangeDefense, string __Speed, string __Resistance, string __Accuracy, string __Agility, string __MeleeAttackPerLevel, string __MeleeAttackAt50, string __MeleeDefensePerLevel, string __MeleeDefenseAt50, string __RangeAttackPerLevel, string __RangeAttackAt50, string __RangeDefensePerLevel, string __AccuracyPerLevel, string __RangeDefenseAt50, string __SpeedPerLevel, string __SpeedAt50, string __Move_Tree_1, string __Move_Tree_2, string __Move_Tree_3, string __Move_Tree_4, string __XPDevModel, string __CatchRate, string __PassiveEffectClasses, string __CurrentlyWorking, string __BaseExperienceYield, string __IsStarterMonster, string __CompanionA, string __CompanionALevelDiff, string __CompanionB, string __CompanionBLevelDiff) 
+		public int _CompanionBLevelDiff;
+		public TMMonstersRow(string __ve, string __ID, string __Name, string __Description, string __EvolvesTo, string __PrimaryElement, string __SecondaryElement, string __EvolvesAt, string __HP, string __HPPerLevel, string __HPAt50, string __HPAt100, string __Energy, string __EnergyPerLevel, string __EnergyAt50, string __EnergyAt100, string __MeleeAttack, string __MeleeDefense, string __RangeAttack, string __RangeDefense, string __Speed, string __Resistance, string __Accuracy, string __Agility, string __MeleeAttackPerLevel, string __MeleeAttackAt50, string __MeleeDefensePerLevel, string __MeleeDefenseAt50, string __RangeAttackPerLevel, string __RangeAttackAt50, string __RangeDefensePerLevel, string __AccuracyPerLevel, string __RangeDefenseAt50, string __SpeedPerLevel, string __SpeedAt50, string __MoveTree1, string __MoveTree2, string __MoveTree3, string __MoveTree4, string __XPDevModel, string __CatchRate, string __PassiveEffectClasses, string __CurrentlyWorking, string __BaseExperienceYield, string __IsStarterMonster, string __CompanionA, string __CompanionALevelDiff, string __CompanionB, string __CompanionBLevelDiff) 
 		{
-			_ID = __ID.Trim();
+			{
+			int res;
+				if(int.TryParse(__ID, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_ID = res;
+				else
+					Debug.LogError("Failed To Convert _ID string: "+ __ID +" to int");
+			}
 			_Name = __Name.Trim();
 			_Description = __Description.Trim();
 			_EvolvesTo = __EvolvesTo.Trim();
-			_Primary_Element = __Primary_Element.Trim();
-			_Secondary_Element = __Secondary_Element.Trim();
-			_EvolvesAt = __EvolvesAt.Trim();
-			_HP = __HP.Trim();
-			_HPPerLevel = __HPPerLevel.Trim();
-			_HPAt50 = __HPAt50.Trim();
-			_HPAt100 = __HPAt100.Trim();
-			_Energy = __Energy.Trim();
-			_EnergyPerLevel = __EnergyPerLevel.Trim();
-			_EnergyAt50 = __EnergyAt50.Trim();
-			_EnergyAt100 = __EnergyAt100.Trim();
-			_MeleeAttack = __MeleeAttack.Trim();
-			_MeleeDefense = __MeleeDefense.Trim();
-			_RangeAttack = __RangeAttack.Trim();
-			_RangeDefense = __RangeDefense.Trim();
-			_Speed = __Speed.Trim();
-			_Resistance = __Resistance.Trim();
-			_Accuracy = __Accuracy.Trim();
-			_Agility = __Agility.Trim();
-			_MeleeAttackPerLevel = __MeleeAttackPerLevel.Trim();
-			_MeleeAttackAt50 = __MeleeAttackAt50.Trim();
-			_MeleeDefensePerLevel = __MeleeDefensePerLevel.Trim();
-			_MeleeDefenseAt50 = __MeleeDefenseAt50.Trim();
-			_RangeAttackPerLevel = __RangeAttackPerLevel.Trim();
-			_RangeAttackAt50 = __RangeAttackAt50.Trim();
-			_RangeDefensePerLevel = __RangeDefensePerLevel.Trim();
-			_AccuracyPerLevel = __AccuracyPerLevel.Trim();
-			_RangeDefenseAt50 = __RangeDefenseAt50.Trim();
-			_SpeedPerLevel = __SpeedPerLevel.Trim();
-			_SpeedAt50 = __SpeedAt50.Trim();
-			_Move_Tree_1 = __Move_Tree_1.Trim();
-			_Move_Tree_2 = __Move_Tree_2.Trim();
-			_Move_Tree_3 = __Move_Tree_3.Trim();
-			_Move_Tree_4 = __Move_Tree_4.Trim();
+			_PrimaryElement = __PrimaryElement.Trim();
+			_SecondaryElement = __SecondaryElement.Trim();
+			{
+			byte res;
+				if(byte.TryParse(__EvolvesAt, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_EvolvesAt = res;
+				else
+					Debug.LogError("Failed To Convert _EvolvesAt string: "+ __EvolvesAt +" to byte");
+			}
+			{
+			float res;
+				if(float.TryParse(__HP, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_HP = res;
+				else
+					Debug.LogError("Failed To Convert _HP string: "+ __HP +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__HPPerLevel, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_HPPerLevel = res;
+				else
+					Debug.LogError("Failed To Convert _HPPerLevel string: "+ __HPPerLevel +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__HPAt50, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_HPAt50 = res;
+				else
+					Debug.LogError("Failed To Convert _HPAt50 string: "+ __HPAt50 +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__HPAt100, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_HPAt100 = res;
+				else
+					Debug.LogError("Failed To Convert _HPAt100 string: "+ __HPAt100 +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__Energy, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_Energy = res;
+				else
+					Debug.LogError("Failed To Convert _Energy string: "+ __Energy +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__EnergyPerLevel, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_EnergyPerLevel = res;
+				else
+					Debug.LogError("Failed To Convert _EnergyPerLevel string: "+ __EnergyPerLevel +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__EnergyAt50, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_EnergyAt50 = res;
+				else
+					Debug.LogError("Failed To Convert _EnergyAt50 string: "+ __EnergyAt50 +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__EnergyAt100, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_EnergyAt100 = res;
+				else
+					Debug.LogError("Failed To Convert _EnergyAt100 string: "+ __EnergyAt100 +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__MeleeAttack, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_MeleeAttack = res;
+				else
+					Debug.LogError("Failed To Convert _MeleeAttack string: "+ __MeleeAttack +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__MeleeDefense, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_MeleeDefense = res;
+				else
+					Debug.LogError("Failed To Convert _MeleeDefense string: "+ __MeleeDefense +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__RangeAttack, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_RangeAttack = res;
+				else
+					Debug.LogError("Failed To Convert _RangeAttack string: "+ __RangeAttack +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__RangeDefense, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_RangeDefense = res;
+				else
+					Debug.LogError("Failed To Convert _RangeDefense string: "+ __RangeDefense +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__Speed, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_Speed = res;
+				else
+					Debug.LogError("Failed To Convert _Speed string: "+ __Speed +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__Resistance, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_Resistance = res;
+				else
+					Debug.LogError("Failed To Convert _Resistance string: "+ __Resistance +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__Accuracy, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_Accuracy = res;
+				else
+					Debug.LogError("Failed To Convert _Accuracy string: "+ __Accuracy +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__Agility, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_Agility = res;
+				else
+					Debug.LogError("Failed To Convert _Agility string: "+ __Agility +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__MeleeAttackPerLevel, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_MeleeAttackPerLevel = res;
+				else
+					Debug.LogError("Failed To Convert _MeleeAttackPerLevel string: "+ __MeleeAttackPerLevel +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__MeleeAttackAt50, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_MeleeAttackAt50 = res;
+				else
+					Debug.LogError("Failed To Convert _MeleeAttackAt50 string: "+ __MeleeAttackAt50 +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__MeleeDefensePerLevel, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_MeleeDefensePerLevel = res;
+				else
+					Debug.LogError("Failed To Convert _MeleeDefensePerLevel string: "+ __MeleeDefensePerLevel +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__MeleeDefenseAt50, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_MeleeDefenseAt50 = res;
+				else
+					Debug.LogError("Failed To Convert _MeleeDefenseAt50 string: "+ __MeleeDefenseAt50 +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__RangeAttackPerLevel, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_RangeAttackPerLevel = res;
+				else
+					Debug.LogError("Failed To Convert _RangeAttackPerLevel string: "+ __RangeAttackPerLevel +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__RangeAttackAt50, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_RangeAttackAt50 = res;
+				else
+					Debug.LogError("Failed To Convert _RangeAttackAt50 string: "+ __RangeAttackAt50 +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__RangeDefensePerLevel, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_RangeDefensePerLevel = res;
+				else
+					Debug.LogError("Failed To Convert _RangeDefensePerLevel string: "+ __RangeDefensePerLevel +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__AccuracyPerLevel, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_AccuracyPerLevel = res;
+				else
+					Debug.LogError("Failed To Convert _AccuracyPerLevel string: "+ __AccuracyPerLevel +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__RangeDefenseAt50, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_RangeDefenseAt50 = res;
+				else
+					Debug.LogError("Failed To Convert _RangeDefenseAt50 string: "+ __RangeDefenseAt50 +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__SpeedPerLevel, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_SpeedPerLevel = res;
+				else
+					Debug.LogError("Failed To Convert _SpeedPerLevel string: "+ __SpeedPerLevel +" to float");
+			}
+			{
+			float res;
+				if(float.TryParse(__SpeedAt50, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_SpeedAt50 = res;
+				else
+					Debug.LogError("Failed To Convert _SpeedAt50 string: "+ __SpeedAt50 +" to float");
+			}
+			_MoveTree1 = __MoveTree1.Trim();
+			_MoveTree2 = __MoveTree2.Trim();
+			_MoveTree3 = __MoveTree3.Trim();
+			_MoveTree4 = __MoveTree4.Trim();
 			_XPDevModel = __XPDevModel.Trim();
-			_CatchRate = __CatchRate.Trim();
-			_PassiveEffectClasses = __PassiveEffectClasses.Trim();
-			_CurrentlyWorking = __CurrentlyWorking.Trim();
-			_BaseExperienceYield = __BaseExperienceYield.Trim();
-			_IsStarterMonster = __IsStarterMonster.Trim();
+			{
+			int res;
+				if(int.TryParse(__CatchRate, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_CatchRate = res;
+				else
+					Debug.LogError("Failed To Convert _CatchRate string: "+ __CatchRate +" to int");
+			}
+			{
+			int res;
+				if(int.TryParse(__PassiveEffectClasses, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_PassiveEffectClasses = res;
+				else
+					Debug.LogError("Failed To Convert _PassiveEffectClasses string: "+ __PassiveEffectClasses +" to int");
+			}
+			{
+			int res;
+				if(int.TryParse(__CurrentlyWorking, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_CurrentlyWorking = res;
+				else
+					Debug.LogError("Failed To Convert _CurrentlyWorking string: "+ __CurrentlyWorking +" to int");
+			}
+			{
+			int res;
+				if(int.TryParse(__BaseExperienceYield, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_BaseExperienceYield = res;
+				else
+					Debug.LogError("Failed To Convert _BaseExperienceYield string: "+ __BaseExperienceYield +" to int");
+			}
+			{
+			int res;
+				if(int.TryParse(__IsStarterMonster, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_IsStarterMonster = res;
+				else
+					Debug.LogError("Failed To Convert _IsStarterMonster string: "+ __IsStarterMonster +" to int");
+			}
 			_CompanionA = __CompanionA.Trim();
-			_CompanionALevelDiff = __CompanionALevelDiff.Trim();
+			{
+			int res;
+				if(int.TryParse(__CompanionALevelDiff, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_CompanionALevelDiff = res;
+				else
+					Debug.LogError("Failed To Convert _CompanionALevelDiff string: "+ __CompanionALevelDiff +" to int");
+			}
 			_CompanionB = __CompanionB.Trim();
-			_CompanionBLevelDiff = __CompanionBLevelDiff.Trim();
+			{
+			int res;
+				if(int.TryParse(__CompanionBLevelDiff, NumberStyles.Any, CultureInfo.InvariantCulture, out res))
+					_CompanionBLevelDiff = res;
+				else
+					Debug.LogError("Failed To Convert _CompanionBLevelDiff string: "+ __CompanionBLevelDiff +" to int");
+			}
 		}
 
 		public int Length { get { return 48; } }
@@ -142,10 +358,10 @@ namespace Google2u
 					ret = _EvolvesTo.ToString();
 					break;
 				case 4:
-					ret = _Primary_Element.ToString();
+					ret = _PrimaryElement.ToString();
 					break;
 				case 5:
-					ret = _Secondary_Element.ToString();
+					ret = _SecondaryElement.ToString();
 					break;
 				case 6:
 					ret = _EvolvesAt.ToString();
@@ -232,16 +448,16 @@ namespace Google2u
 					ret = _SpeedAt50.ToString();
 					break;
 				case 34:
-					ret = _Move_Tree_1.ToString();
+					ret = _MoveTree1.ToString();
 					break;
 				case 35:
-					ret = _Move_Tree_2.ToString();
+					ret = _MoveTree2.ToString();
 					break;
 				case 36:
-					ret = _Move_Tree_3.ToString();
+					ret = _MoveTree3.ToString();
 					break;
 				case 37:
-					ret = _Move_Tree_4.ToString();
+					ret = _MoveTree4.ToString();
 					break;
 				case 38:
 					ret = _XPDevModel.ToString();
@@ -295,11 +511,11 @@ namespace Google2u
 				case "EvolvesTo":
 					ret = _EvolvesTo.ToString();
 					break;
-				case "Primary Element":
-					ret = _Primary_Element.ToString();
+				case "PrimaryElement":
+					ret = _PrimaryElement.ToString();
 					break;
-				case "Secondary Element":
-					ret = _Secondary_Element.ToString();
+				case "SecondaryElement":
+					ret = _SecondaryElement.ToString();
 					break;
 				case "EvolvesAt":
 					ret = _EvolvesAt.ToString();
@@ -385,17 +601,17 @@ namespace Google2u
 				case "SpeedAt50":
 					ret = _SpeedAt50.ToString();
 					break;
-				case "Move Tree 1":
-					ret = _Move_Tree_1.ToString();
+				case "MoveTree1":
+					ret = _MoveTree1.ToString();
 					break;
-				case "Move Tree 2":
-					ret = _Move_Tree_2.ToString();
+				case "MoveTree2":
+					ret = _MoveTree2.ToString();
 					break;
-				case "Move Tree 3":
-					ret = _Move_Tree_3.ToString();
+				case "MoveTree3":
+					ret = _MoveTree3.ToString();
 					break;
-				case "Move Tree 4":
-					ret = _Move_Tree_4.ToString();
+				case "MoveTree4":
+					ret = _MoveTree4.ToString();
 					break;
 				case "XPDevModel":
 					ret = _XPDevModel.ToString();
@@ -438,8 +654,8 @@ namespace Google2u
 			ret += "{" + "Name" + " : " + _Name.ToString() + "} ";
 			ret += "{" + "Description" + " : " + _Description.ToString() + "} ";
 			ret += "{" + "EvolvesTo" + " : " + _EvolvesTo.ToString() + "} ";
-			ret += "{" + "Primary Element" + " : " + _Primary_Element.ToString() + "} ";
-			ret += "{" + "Secondary Element" + " : " + _Secondary_Element.ToString() + "} ";
+			ret += "{" + "PrimaryElement" + " : " + _PrimaryElement.ToString() + "} ";
+			ret += "{" + "SecondaryElement" + " : " + _SecondaryElement.ToString() + "} ";
 			ret += "{" + "EvolvesAt" + " : " + _EvolvesAt.ToString() + "} ";
 			ret += "{" + "HP" + " : " + _HP.ToString() + "} ";
 			ret += "{" + "HPPerLevel" + " : " + _HPPerLevel.ToString() + "} ";
@@ -468,10 +684,10 @@ namespace Google2u
 			ret += "{" + "RangeDefenseAt50" + " : " + _RangeDefenseAt50.ToString() + "} ";
 			ret += "{" + "SpeedPerLevel" + " : " + _SpeedPerLevel.ToString() + "} ";
 			ret += "{" + "SpeedAt50" + " : " + _SpeedAt50.ToString() + "} ";
-			ret += "{" + "Move Tree 1" + " : " + _Move_Tree_1.ToString() + "} ";
-			ret += "{" + "Move Tree 2" + " : " + _Move_Tree_2.ToString() + "} ";
-			ret += "{" + "Move Tree 3" + " : " + _Move_Tree_3.ToString() + "} ";
-			ret += "{" + "Move Tree 4" + " : " + _Move_Tree_4.ToString() + "} ";
+			ret += "{" + "MoveTree1" + " : " + _MoveTree1.ToString() + "} ";
+			ret += "{" + "MoveTree2" + " : " + _MoveTree2.ToString() + "} ";
+			ret += "{" + "MoveTree3" + " : " + _MoveTree3.ToString() + "} ";
+			ret += "{" + "MoveTree4" + " : " + _MoveTree4.ToString() + "} ";
 			ret += "{" + "XPDevModel" + " : " + _XPDevModel.ToString() + "} ";
 			ret += "{" + "CatchRate" + " : " + _CatchRate.ToString() + "} ";
 			ret += "{" + "PassiveEffectClasses" + " : " + _PassiveEffectClasses.ToString() + "} ";
@@ -488,30 +704,30 @@ namespace Google2u
 	public sealed class TMMonsters : IGoogle2uDB
 	{
 		public enum rowIds {
-			TM_NOCREATURE, TM_NINEVOLT, TM_DIREVOLT, TM_WEREVOLT, TM_VIPERNO, TM_PYROLISK, TM_BLAZILISK, TM_FREYON, TM_LYONYCE, TM_DIAMANE, TM_JAGWAR, TM_JAGROAR, TM_JAGGOON, TM_RACKET, TM_RATCHET, TM_RACRUEL, TM_CHIPMUNKEY, TM_MOXTAIL, TM_VEXTAIL
-			, TM_THRASHTAIL, TM_TOMALING, TM_TOMAHAWK, TM_DRAGONFRY, TM_DRAGONFLARE, TM_LOTIS, TM_MANTISLASH, TM_MOTHBALL, TM_FLUSTER, TM_MOTHARCH, TM_EQUINAIR, TM_EQUINESS, TM_GLACELEAP, TM_FROSTSAUT, TM_SCUDA, TM_PREDACUDA, TM_LEVIACUDA, TM_ALISTINKER, TM_FOULIGATOR, TM_CHIBCHIB
-			, TM_CHIBKEN, TM_CHIBMERA, TM_SNOZO, TM_SERPQUIN, TM_COBROZO, TM_CHICKLIT, TM_CALEAF, TM_BISOAK, TM_SPREW, TM_SHROZEN, TM_STRUTWING, TM_STRUTWIND, TM_BANANTEATER, TM_BANANIVORE, TM_BRAK, TM_BUFFLOW, TM_PEAMATO, TM_MONSTROSIPEA, TM_TOMATOPEA, TM_RIPEMARE
-			, TM_WOLVUS, TM_MAULVERINE, TM_CORALPIE, TM_TIDALHORN, TM_TORTIPOUS, TM_TORTITANK, TM_KRABKEN, TM_CLAWBSTER, TM_CLAWLOSSAL, TM_LOTHEO, TM_HYTHEO, TM_LOTHEA, TM_HYTHEA, TM_FLOWGO, TM_FLOATANGO, TM_FLAIRMINGO, TM_FLARMIAN, TM_FIRMITAUR, TM_FIRENAUGHT, TM_SOOTIMANDER
-			, TM_SOOTIRAPTOR, TM_SOOTRAGON, TM_FLAFFEE, TM_IGNIRAFFE, TM_SCORCHLING, TM_CINDUCK, TM_IGNITLER, TM_FLAMOOSE, TM_MANTICUB, TM_MANTERI, TM_AMPEROR, TM_AMPINT, TM_GORILLAMP, TM_JOLTERMITE, TM_VOLTERMITE, TM_GEKOWATT, TM_GAZOLT, TM_VOLTEER, TM_SHADOWVOLT, TM_RIFFIN
-			, TM_RIFFINDOR, TM_SHINO, TM_RHIYEW, TM_SAPPRESS, TM_OAKLORE, TM_SWINX, TM_SONAX, TM_SHRIKEN, TM_JASTRIKE, TM_HOODWINK, TM_ROBBINGHOOD, TM_VILEWING, TM_YANTIS, TM_BUNTIS, TM_HOOTENANT, TM_GENEROWL, TM_SOARPHIN, TM_HALOPHIN, TM_SNOWYRM, TM_RAGEWYRM
-			, TM_OARION, TM_URSNOBAL, TM_URSICLE, TM_URSTORM, TM_YETICRAB, TM_YETICLAW, TM_YETIKING, TM_TURANOM, TM_PENDRILL, TM_CHILLBEAK, TM_OCTICUTE, TM_TENTAPULSE, TM_ODDCAT, TM_PINCLAW, TM_QUIRKAT, TM_GRYNN, TM_HECKYLL, TM_CACKYLL, TM_STARIA, TM_CELESTAIL
-			, TM_CELESTROAH, TM_SPOOMPKIN, TM_FOXPAW, TM_PRANKTAIL, TM_JESTAR, TM_PEACHIC, TM_PEACANE, TM_PEAQUEEN, TM_DOZER, TM_PYRODILUS, TM_ELECTROSAURUS, TM_GALAVANNIS, TM_SHARKUIT, TM_SHARKBYTE, TM_MAKOWATT, TM_ELECTRIPINE, TM_SPORKUPINE, TM_TORQUPINE, TM_MAGMELEON, TM_MEGAMELEON
-			, TM_MAGMAMELEON, TM_DANDYLION, TM_PURRPETAL, TM_VIONESS, TM_FLOFOX, TM_WINTAIL, TM_CYCLONINE, TM_PANDEMITE, TM_PANDORA, TM_PANDORUM, TM_NIPTUNE, TM_AQUANINE, TM_CARNIVICE, TM_VENOX, TM_RAPTOX, TM_VELOCIRAX, TM_BULLIBEE, TM_TARGABEE, TM_MISSILBEE, TM_SKULLYWAG
-			, TM_SHARPOON, TM_VILLIANEARD, TM_TUFFIN, TM_ARMOTIDE, TM_OCEANITE, TM_BRRIZARD, TM_SLIZZARD, TM_GLACIAGON, TM_CLOVICE, TM_LUMINEER, TM_MAJESTICE, TM_SNAILIX, TM_EXOLLUSK, TM_SLUGGERNAUGHT, TM_NARWHALITE, TM_TAURYSOS, TM_SKELINOTH, TM_GALYNX, TM_SQUALLAN, TM_INFERRAM
-			, TM_GLACIOLIN, TM_AQUARIN, TM_TERRY, GOOGLEFU_TYPE
+			TM_NOCREATURE, TM_NINEVOLT, TM_DIREVOLT, TM_WEREVOLT, TM_VIPERNO, TM_PYROLISK, TM_BLAZILISK, TM_FREYON, TM_LYONYCE, TM_DIAMANE, TM_JAGWAR, TM_JAGROAR, TM_JAGGOON, TM_RACKET, TM_RATCHET, TM_RACRUEL, TM_CHIPMUNKEY, TM_MOXTAIL
+			, TM_VEXTAIL, TM_THRASHTAIL, TM_TOMALING, TM_TOMAHAWK, TM_DRAGONFRY, TM_DRAGONFLARE, TM_LOTIS, TM_MANTISLASH, TM_MOTHBALL, TM_FLUSTER, TM_MOTHARCH, TM_EQUINAIR, TM_EQUINESS, TM_GLACELEAP, TM_FROSTSAUT, TM_SCUDA, TM_PREDACUDA, TM_LEVIACUDA, TM_ALISTINKER, TM_FOULIGATOR
+			, TM_CHIBCHIB, TM_CHIBKEN, TM_CHIBMERA, TM_SNOZO, TM_SERPQUIN, TM_COBROZO, TM_CHICKLIT, TM_CALEAF, TM_BISOAK, TM_SPREW, TM_SHROZEN, TM_STRUTWING, TM_STRUTWIND, TM_BANANTEATER, TM_BANANIVORE, TM_BRAK, TM_BUFFLOW, TM_PEAMATO, TM_MONSTROSIPEA, TM_TOMATOPEA
+			, TM_RIPEMARE, TM_WOLVUS, TM_MAULVERINE, TM_CORALPIE, TM_TIDALHORN, TM_TORTIPOUS, TM_TORTITANK, TM_KRABKEN, TM_CLAWBSTER, TM_CLAWLOSSAL, TM_LOTHEO, TM_HYTHEO, TM_LOTHEA, TM_HYTHEA, TM_FLOWGO, TM_FLOATANGO, TM_FLAIRMINGO, TM_FLARMIAN, TM_FIRMITAUR, TM_FIRENAUGHT
+			, TM_SOOTIMANDER, TM_SOOTIRAPTOR, TM_SOOTRAGON, TM_FLAFFEE, TM_IGNIRAFFE, TM_SCORCHLING, TM_CINDUCK, TM_IGNITLER, TM_FLAMOOSE, TM_MANTICUB, TM_MANTERI, TM_AMPEROR, TM_AMPINT, TM_GORILLAMP, TM_JOLTERMITE, TM_VOLTERMITE, TM_GEKOWATT, TM_GAZOLT, TM_VOLTEER, TM_SHADOWVOLT
+			, TM_RIFFIN, TM_RIFFINDOR, TM_SHINO, TM_RHIYEW, TM_SAPPRESS, TM_OAKLORE, TM_SWINX, TM_SONAX, TM_SHRIKEN, TM_JASTRIKE, TM_HOODWINK, TM_ROBBINGHOOD, TM_VILEWING, TM_YANTIS, TM_BUNTIS, TM_HOOTENANT, TM_GENEROWL, TM_SOARPHIN, TM_HALOPHIN, TM_SNOWYRM
+			, TM_RAGEWYRM, TM_OARION, TM_URSNOBAL, TM_URSICLE, TM_URSTORM, TM_YETICRAB, TM_YETICLAW, TM_YETIKING, TM_TURANOM, TM_PENDRILL, TM_CHILLBEAK, TM_OCTICUTE, TM_TENTAPULSE, TM_ODDCAT, TM_PINCLAW, TM_QUIRKAT, TM_GRYNN, TM_HECKYLL, TM_CACKYLL, TM_STARIA
+			, TM_CELESTAIL, TM_CELESTROAH, TM_SPOOMPKIN, TM_FOXPAW, TM_PRANKTAIL, TM_JESTAR, TM_PEACHIC, TM_PEACANE, TM_PEAQUEEN, TM_DOZER, TM_PYRODILUS, TM_ELECTROSAURUS, TM_GALAVANNIS, TM_SHARKUIT, TM_SHARKBYTE, TM_MAKOWATT, TM_ELECTRIPINE, TM_SPORKUPINE, TM_TORQUPINE, TM_MAGMELEON
+			, TM_MEGAMELEON, TM_MAGMAMELEON, TM_DANDYLION, TM_PURRPETAL, TM_VIONESS, TM_FLOFOX, TM_WINTAIL, TM_CYCLONINE, TM_PANDEMITE, TM_PANDORA, TM_PANDORUM, TM_NIPTUNE, TM_AQUANINE, TM_CARNIVICE, TM_VENOX, TM_RAPTOX, TM_VELOCIRAX, TM_BULLIBEE, TM_TARGABEE, TM_MISSILBEE
+			, TM_SKULLYWAG, TM_SHARPOON, TM_VILLIANEARD, TM_TUFFIN, TM_ARMOTIDE, TM_OCEANITE, TM_BRRIZARD, TM_SLIZZARD, TM_GLACIAGON, TM_CLOVICE, TM_LUMINEER, TM_MAJESTICE, TM_SNAILIX, TM_EXOLLUSK, TM_SLUGGERNAUGHT, TM_NARWHALITE, TM_TAURYSOS, TM_SKELINOTH, TM_GALYNX, TM_SQUALLAN
+			, TM_INFERRAM, TM_GLACIOLIN, TM_AQUARIN, TM_TERRY
 		};
 		public string [] rowNames = {
-			"TM_NOCREATURE", "TM_NINEVOLT", "TM_DIREVOLT", "TM_WEREVOLT", "TM_VIPERNO", "TM_PYROLISK", "TM_BLAZILISK", "TM_FREYON", "TM_LYONYCE", "TM_DIAMANE", "TM_JAGWAR", "TM_JAGROAR", "TM_JAGGOON", "TM_RACKET", "TM_RATCHET", "TM_RACRUEL", "TM_CHIPMUNKEY", "TM_MOXTAIL", "TM_VEXTAIL"
-			, "TM_THRASHTAIL", "TM_TOMALING", "TM_TOMAHAWK", "TM_DRAGONFRY", "TM_DRAGONFLARE", "TM_LOTIS", "TM_MANTISLASH", "TM_MOTHBALL", "TM_FLUSTER", "TM_MOTHARCH", "TM_EQUINAIR", "TM_EQUINESS", "TM_GLACELEAP", "TM_FROSTSAUT", "TM_SCUDA", "TM_PREDACUDA", "TM_LEVIACUDA", "TM_ALISTINKER", "TM_FOULIGATOR", "TM_CHIBCHIB"
-			, "TM_CHIBKEN", "TM_CHIBMERA", "TM_SNOZO", "TM_SERPQUIN", "TM_COBROZO", "TM_CHICKLIT", "TM_CALEAF", "TM_BISOAK", "TM_SPREW", "TM_SHROZEN", "TM_STRUTWING", "TM_STRUTWIND", "TM_BANANTEATER", "TM_BANANIVORE", "TM_BRAK", "TM_BUFFLOW", "TM_PEAMATO", "TM_MONSTROSIPEA", "TM_TOMATOPEA", "TM_RIPEMARE"
-			, "TM_WOLVUS", "TM_MAULVERINE", "TM_CORALPIE", "TM_TIDALHORN", "TM_TORTIPOUS", "TM_TORTITANK", "TM_KRABKEN", "TM_CLAWBSTER", "TM_CLAWLOSSAL", "TM_LOTHEO", "TM_HYTHEO", "TM_LOTHEA", "TM_HYTHEA", "TM_FLOWGO", "TM_FLOATANGO", "TM_FLAIRMINGO", "TM_FLARMIAN", "TM_FIRMITAUR", "TM_FIRENAUGHT", "TM_SOOTIMANDER"
-			, "TM_SOOTIRAPTOR", "TM_SOOTRAGON", "TM_FLAFFEE", "TM_IGNIRAFFE", "TM_SCORCHLING", "TM_CINDUCK", "TM_IGNITLER", "TM_FLAMOOSE", "TM_MANTICUB", "TM_MANTERI", "TM_AMPEROR", "TM_AMPINT", "TM_GORILLAMP", "TM_JOLTERMITE", "TM_VOLTERMITE", "TM_GEKOWATT", "TM_GAZOLT", "TM_VOLTEER", "TM_SHADOWVOLT", "TM_RIFFIN"
-			, "TM_RIFFINDOR", "TM_SHINO", "TM_RHIYEW", "TM_SAPPRESS", "TM_OAKLORE", "TM_SWINX", "TM_SONAX", "TM_SHRIKEN", "TM_JASTRIKE", "TM_HOODWINK", "TM_ROBBINGHOOD", "TM_VILEWING", "TM_YANTIS", "TM_BUNTIS", "TM_HOOTENANT", "TM_GENEROWL", "TM_SOARPHIN", "TM_HALOPHIN", "TM_SNOWYRM", "TM_RAGEWYRM"
-			, "TM_OARION", "TM_URSNOBAL", "TM_URSICLE", "TM_URSTORM", "TM_YETICRAB", "TM_YETICLAW", "TM_YETIKING", "TM_TURANOM", "TM_PENDRILL", "TM_CHILLBEAK", "TM_OCTICUTE", "TM_TENTAPULSE", "TM_ODDCAT", "TM_PINCLAW", "TM_QUIRKAT", "TM_GRYNN", "TM_HECKYLL", "TM_CACKYLL", "TM_STARIA", "TM_CELESTAIL"
-			, "TM_CELESTROAH", "TM_SPOOMPKIN", "TM_FOXPAW", "TM_PRANKTAIL", "TM_JESTAR", "TM_PEACHIC", "TM_PEACANE", "TM_PEAQUEEN", "TM_DOZER", "TM_PYRODILUS", "TM_ELECTROSAURUS", "TM_GALAVANNIS", "TM_SHARKUIT", "TM_SHARKBYTE", "TM_MAKOWATT", "TM_ELECTRIPINE", "TM_SPORKUPINE", "TM_TORQUPINE", "TM_MAGMELEON", "TM_MEGAMELEON"
-			, "TM_MAGMAMELEON", "TM_DANDYLION", "TM_PURRPETAL", "TM_VIONESS", "TM_FLOFOX", "TM_WINTAIL", "TM_CYCLONINE", "TM_PANDEMITE", "TM_PANDORA", "TM_PANDORUM", "TM_NIPTUNE", "TM_AQUANINE", "TM_CARNIVICE", "TM_VENOX", "TM_RAPTOX", "TM_VELOCIRAX", "TM_BULLIBEE", "TM_TARGABEE", "TM_MISSILBEE", "TM_SKULLYWAG"
-			, "TM_SHARPOON", "TM_VILLIANEARD", "TM_TUFFIN", "TM_ARMOTIDE", "TM_OCEANITE", "TM_BRRIZARD", "TM_SLIZZARD", "TM_GLACIAGON", "TM_CLOVICE", "TM_LUMINEER", "TM_MAJESTICE", "TM_SNAILIX", "TM_EXOLLUSK", "TM_SLUGGERNAUGHT", "TM_NARWHALITE", "TM_TAURYSOS", "TM_SKELINOTH", "TM_GALYNX", "TM_SQUALLAN", "TM_INFERRAM"
-			, "TM_GLACIOLIN", "TM_AQUARIN", "TM_TERRY", "GOOGLEFU_TYPE"
+			"TM_NOCREATURE", "TM_NINEVOLT", "TM_DIREVOLT", "TM_WEREVOLT", "TM_VIPERNO", "TM_PYROLISK", "TM_BLAZILISK", "TM_FREYON", "TM_LYONYCE", "TM_DIAMANE", "TM_JAGWAR", "TM_JAGROAR", "TM_JAGGOON", "TM_RACKET", "TM_RATCHET", "TM_RACRUEL", "TM_CHIPMUNKEY", "TM_MOXTAIL"
+			, "TM_VEXTAIL", "TM_THRASHTAIL", "TM_TOMALING", "TM_TOMAHAWK", "TM_DRAGONFRY", "TM_DRAGONFLARE", "TM_LOTIS", "TM_MANTISLASH", "TM_MOTHBALL", "TM_FLUSTER", "TM_MOTHARCH", "TM_EQUINAIR", "TM_EQUINESS", "TM_GLACELEAP", "TM_FROSTSAUT", "TM_SCUDA", "TM_PREDACUDA", "TM_LEVIACUDA", "TM_ALISTINKER", "TM_FOULIGATOR"
+			, "TM_CHIBCHIB", "TM_CHIBKEN", "TM_CHIBMERA", "TM_SNOZO", "TM_SERPQUIN", "TM_COBROZO", "TM_CHICKLIT", "TM_CALEAF", "TM_BISOAK", "TM_SPREW", "TM_SHROZEN", "TM_STRUTWING", "TM_STRUTWIND", "TM_BANANTEATER", "TM_BANANIVORE", "TM_BRAK", "TM_BUFFLOW", "TM_PEAMATO", "TM_MONSTROSIPEA", "TM_TOMATOPEA"
+			, "TM_RIPEMARE", "TM_WOLVUS", "TM_MAULVERINE", "TM_CORALPIE", "TM_TIDALHORN", "TM_TORTIPOUS", "TM_TORTITANK", "TM_KRABKEN", "TM_CLAWBSTER", "TM_CLAWLOSSAL", "TM_LOTHEO", "TM_HYTHEO", "TM_LOTHEA", "TM_HYTHEA", "TM_FLOWGO", "TM_FLOATANGO", "TM_FLAIRMINGO", "TM_FLARMIAN", "TM_FIRMITAUR", "TM_FIRENAUGHT"
+			, "TM_SOOTIMANDER", "TM_SOOTIRAPTOR", "TM_SOOTRAGON", "TM_FLAFFEE", "TM_IGNIRAFFE", "TM_SCORCHLING", "TM_CINDUCK", "TM_IGNITLER", "TM_FLAMOOSE", "TM_MANTICUB", "TM_MANTERI", "TM_AMPEROR", "TM_AMPINT", "TM_GORILLAMP", "TM_JOLTERMITE", "TM_VOLTERMITE", "TM_GEKOWATT", "TM_GAZOLT", "TM_VOLTEER", "TM_SHADOWVOLT"
+			, "TM_RIFFIN", "TM_RIFFINDOR", "TM_SHINO", "TM_RHIYEW", "TM_SAPPRESS", "TM_OAKLORE", "TM_SWINX", "TM_SONAX", "TM_SHRIKEN", "TM_JASTRIKE", "TM_HOODWINK", "TM_ROBBINGHOOD", "TM_VILEWING", "TM_YANTIS", "TM_BUNTIS", "TM_HOOTENANT", "TM_GENEROWL", "TM_SOARPHIN", "TM_HALOPHIN", "TM_SNOWYRM"
+			, "TM_RAGEWYRM", "TM_OARION", "TM_URSNOBAL", "TM_URSICLE", "TM_URSTORM", "TM_YETICRAB", "TM_YETICLAW", "TM_YETIKING", "TM_TURANOM", "TM_PENDRILL", "TM_CHILLBEAK", "TM_OCTICUTE", "TM_TENTAPULSE", "TM_ODDCAT", "TM_PINCLAW", "TM_QUIRKAT", "TM_GRYNN", "TM_HECKYLL", "TM_CACKYLL", "TM_STARIA"
+			, "TM_CELESTAIL", "TM_CELESTROAH", "TM_SPOOMPKIN", "TM_FOXPAW", "TM_PRANKTAIL", "TM_JESTAR", "TM_PEACHIC", "TM_PEACANE", "TM_PEAQUEEN", "TM_DOZER", "TM_PYRODILUS", "TM_ELECTROSAURUS", "TM_GALAVANNIS", "TM_SHARKUIT", "TM_SHARKBYTE", "TM_MAKOWATT", "TM_ELECTRIPINE", "TM_SPORKUPINE", "TM_TORQUPINE", "TM_MAGMELEON"
+			, "TM_MEGAMELEON", "TM_MAGMAMELEON", "TM_DANDYLION", "TM_PURRPETAL", "TM_VIONESS", "TM_FLOFOX", "TM_WINTAIL", "TM_CYCLONINE", "TM_PANDEMITE", "TM_PANDORA", "TM_PANDORUM", "TM_NIPTUNE", "TM_AQUANINE", "TM_CARNIVICE", "TM_VENOX", "TM_RAPTOX", "TM_VELOCIRAX", "TM_BULLIBEE", "TM_TARGABEE", "TM_MISSILBEE"
+			, "TM_SKULLYWAG", "TM_SHARPOON", "TM_VILLIANEARD", "TM_TUFFIN", "TM_ARMOTIDE", "TM_OCEANITE", "TM_BRRIZARD", "TM_SLIZZARD", "TM_GLACIAGON", "TM_CLOVICE", "TM_LUMINEER", "TM_MAJESTICE", "TM_SNAILIX", "TM_EXOLLUSK", "TM_SLUGGERNAUGHT", "TM_NARWHALITE", "TM_TAURYSOS", "TM_SKELINOTH", "TM_GALYNX", "TM_SQUALLAN"
+			, "TM_INFERRAM", "TM_GLACIOLIN", "TM_AQUARIN", "TM_TERRY"
 		};
 		public System.Collections.Generic.List<TMMonstersRow> Rows = new System.Collections.Generic.List<TMMonstersRow>();
 
@@ -528,7 +744,7 @@ namespace Google2u
 
 		private TMMonsters()
 		{
-			Rows.Add( new TMMonstersRow("TM_NOCREATURE", "0", "No Creature", "Oy! This should never be seen...", "No Creature", "Earth", "", "0", "20", "9", "470", "900", "200", "4.5", "425", "650", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "2", "0", "0", "0", "Normal Move Tree", "", "", "", "Medium", "128", "7", "1", "1", "0", "string", "int", "string", "int"));
+			Rows.Add( new TMMonstersRow("TM_NOCREATURE", "0", "No Creature", "Oy! This should never be seen...", "No Creature", "Earth", "", "0", "20", "9", "470", "900", "200", "4.5", "425", "650", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "2", "0", "0", "0", "Normal Move Tree", "", "", "", "Medium", "128", "7", "1", "1", "0", "", "0", "", "0"));
 			Rows.Add( new TMMonstersRow("TM_NINEVOLT", "1", "Ninevolt", "The fur of a Ninevolt generates small amounts of static electricity. One should be very careful when petting one. (Electric)", "Direvolt", "Electric", "", "15", "36", "9.3", "501", "945", "200", "4.5", "425", "650", "40", "28", "35", "30", "55", "30", "37", "43", "3.3", "165", "3.3", "165", "3.3", "165", "3.3", "2", "165", "3.5", "175", "Normal Move Tree", "Electric Move Tree", "", "", "Medium", "10", "7", "1", "1", "0", "", "0", "", "0"));
 			Rows.Add( new TMMonstersRow("TM_DIREVOLT", "2", "Direvolt", "There is a light-reflecting layer on Direvolt's eyes that contributes to its superior night vision. This layer also causes the eyes to glow when contacted by light in the dark. (Electric)", "Werevolt", "Electric", "", "37", "57", "9.3", "522", "967", "265", "4", "465", "665", "55", "40", "53", "41", "72", "50", "40", "49", "3.3", "165", "3.3", "165", "3.3", "165", "3.3", "2", "165", "3.4", "170", "Normal Move Tree", "Electric Move Tree", "", "", "Medium", "128", "7", "1", "1", "0", "", "0", "", "0"));
 			Rows.Add( new TMMonstersRow("TM_WEREVOLT", "3", "Werevolt", "A Werevolt's howl is often mistaken as the crash of thunder. It is so loud that it can temporarily impair hearing or cause permanent hearing loss in rare cases. (Electric)", "No Creature", "Electric", "", "1", "78", "9.3", "543", "931", "335", "3.5", "510", "685", "78", "55", "76", "50", "85", "50", "55", "70", "3.3", "165", "3.3", "165", "3.3", "165", "3.3", "2", "165", "3.3", "165", "Normal Move Tree", "Electric Move Tree", "", "", "Medium", "128", "7", "1", "1", "0", "", "0", "", "0"));
@@ -730,7 +946,6 @@ namespace Google2u
 			Rows.Add( new TMMonstersRow("TM_GLACIOLIN", "199", "Glaciolin", "It was once believed that angering Glaciolin would result in a long and harsh winter. It became an inauspicious sign of upcoming hardship. (Ice)", "No Creature", "Ice", "", "0", "67", "9", "517", "900", "220", "3.8", "410", "600", "56", "47", "68", "59", "62", "100", "49", "65", "3.3", "165", "3.3", "165", "3.2", "160", "3.2", "2", "160", "2.7", "135", "Normal Move Tree", "Ice Move Tree", "", "", "Medium", "40", "7", "1", "1", "0", "", "0", "", "0"));
 			Rows.Add( new TMMonstersRow("TM_AQUARIN", "200", "Aquarin", "It is customary for sailors to have a small feast in honor of Aquarin before setting sail. Fish and seaweed dishes are offered in exchange for safe passage during their journey. (Water)", "No Creature", "Water", "", "0", "67", "9", "517", "900", "220", "3.8", "410", "600", "56", "47", "68", "59", "62", "100", "49", "65", "3.3", "165", "3.3", "165", "3.2", "160", "3.2", "2", "160", "2.7", "135", "Normal Move Tree", "Water Move Tree", "", "", "Medium", "40", "7", "1", "1", "0", "", "0", "", "0"));
 			Rows.Add( new TMMonstersRow("TM_TERRY", "201", "Rubiclawn", "Not much is known about this Ancient Terra Monster. It is rarely seen let alone studied. (Earth/Ice) ", "No Creature", "Earth", "Ice", "0", "67", "9", "517", "900", "220", "3.8", "410", "600", "56", "47", "68", "59", "62", "100", "49", "65", "3.3", "165", "3.3", "165", "3.2", "160", "3.2", "2", "160", "2.7", "135", "Arcane Move Tree", "Air Move Tree", "Ice Move Tree", "", "Medium", "40", "7", "1", "1", "0", "", "0", "", "0"));
-			Rows.Add( new TMMonstersRow("GOOGLEFU_TYPE", "int", "string", "string", "string", "string", "string", "int", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "float", "string", "string", "string", "string", "string", "int", "int", "int", "int", "int", "", "0", "", "0"));
 		}
 		public IGoogle2uRow GetGenRow(string in_RowString)
 		{

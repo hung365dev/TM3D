@@ -123,7 +123,7 @@ namespace Battles
 			}
 		}
 		protected void FadeBlackScreen (float aEndLevel,float aTime) {
-			iTween.FadeTo(this.blackScreen,aEndLevel,aTime);
+		//	iTween.FadeTo(this.blackScreen,aEndLevel,aTime);
 		}
 		void Awake() {
 			barController = movesBar.GetComponent(typeof(MovesBarController)) as MovesBarController;
@@ -131,9 +131,7 @@ namespace Battles
 			barController.gameObject.SetActive(false);
 		}
 		public void onWorldStore() {
-			WorldStoreMain ws = AlertGUI.REF.LaunchStore();
-			_ws = ws;
-			ws.initForBattle();
+	
 		}
 		protected void onHideInventory() {
 			if(this._inventory!=null) {

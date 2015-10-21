@@ -72,9 +72,7 @@ namespace utils
 			}
 			set {
 				_globalSettings[(int) EGlobalSettings.Music] = Convert.ToString(value);
-				if(Jukebox.REF!=null) {
-					Jukebox.REF.checkShouldPlay();
-				}
+			
 				saveSettings();
 			}
 		}
@@ -123,7 +121,7 @@ namespace utils
 			if(ES2.Exists(SETTINGS_NAME)) {
 				_globalSettings = ES2.LoadList<string>(SETTINGS_NAME);
 			} else {
-				_globalSettings = new List<string>();
+				_globalSettings = new List<string>(); 
 				for(int i = 0;i<(int) EGlobalSettings.MaxSize;i++) {
 					_globalSettings.Add("");
 				}
@@ -570,8 +568,6 @@ namespace utils
 				_requireDiskUpdate = false;
 				ES2.Save(this.playerData,USING_SAVE_GAME_INDEX+DATA_NAME);
 				
-				SplashScreenManager.ADTIME = EAdTime.StartGame;
-				LoadingGameScreen.GAME_TO_LOAD = USING_SAVE_GAME_INDEX;
 				_handleCloudRetrieve = false;
 				Application.LoadLevel("LoadAGameSplashScreen");
 				
@@ -610,7 +606,7 @@ namespace utils
 				if(qs==QuestState.Success||((this.isCloudGame()&&PlayerMain.REF.monsterCount<=1))) {
 					ES2.Save(this.playerData,USING_SAVE_GAME_INDEX+DATA_NAME);
 				}
-			}
+			} 
 
 		}
 		public void UpdateLastMap(string aLastMap) {
@@ -620,7 +616,7 @@ namespace utils
 				ParseUser u = ParseUser.CurrentUser;
 				u["LastMap"] = playerData[(int) EPlayerArray.LastUsedMap];
 				this._requireSave = true;
-			}
+			} 
 		}
 		
 	}
