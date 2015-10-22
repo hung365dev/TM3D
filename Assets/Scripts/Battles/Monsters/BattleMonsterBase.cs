@@ -302,9 +302,9 @@ namespace Battles
 		//		iTween.FadeTo(this._monsterMakeup.gameObject,0f,1f);
 				_makeupFaded = true;
 			}
-			_anim.SetInteger("attackState",3);
+			_anim.SetInteger("AnimState",(int) EMonsterAnimations.Rest);
 			
-		}
+		} 
 		
 		
 		

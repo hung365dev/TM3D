@@ -186,8 +186,8 @@ namespace Battles
 		}
 		IEnumerator returnToIdleAnim(){   
 			
-			yield return new WaitForSeconds(0.1f);
-			_anim.SetInteger("attackState",0);
+			yield return new WaitForSeconds(0.1f); 
+			_anim.SetInteger("AnimState",(int) EMonsterAnimations.Idle);
 		}
 		public void fadeInMakeup() {
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&_makeupFaded) {
@@ -205,7 +205,7 @@ namespace Battles
 		}
 		public void doIdleAnimation() {
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
-				myAnimator.SetInteger("attackState",0);
+				myAnimator.SetInteger("AnimState",(int) EMonsterAnimations.Idle);
 				fadeInMakeup();
 			}
 			
@@ -213,22 +213,22 @@ namespace Battles
 		
 		public void doAttackAnimation() {
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
-				_anim.SetInteger("attackState",1);
-				fadeInMakeup();
+				_anim.SetInteger("AnimState",(int) EMonsterAnimations.ScratchAttack);
+				fadeInMakeup(); 
 				StartCoroutine(returnToIdleAnim());
 			}
 		}
 		
 		public void doDefenseAnimation() {
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
-				_anim.SetInteger("attackState",2);
+				_anim.SetInteger("AnimState",(int) EMonsterAnimations.HitAnimation);
 				fadeInMakeup();
 				StartCoroutine(returnToIdleAnim());
 			}
-		} 
+		}  
 		public void addXP(int aXPToAdd) {
 			_xpToAdd = aXPToAdd;
-		}
+		}  
 		public void showTargetOption() {
 			removeTargetOption();
 			if(Resources.Load("Battles/TargetMonsterLight")==null) {

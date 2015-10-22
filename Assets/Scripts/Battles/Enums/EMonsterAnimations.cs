@@ -19,6 +19,12 @@ namespace Battles
 		InstantFaint = 4,
 		JumpFromRun = 5,
 		JumpFromStandstill = 6,
+		RangeAttack = 7,
+		Rest = 8,
+		Run = 9,
+		ScratchAttack = 10,
+		TackleRun = 11,
+		Walk = 12,
 	}
 }
 
