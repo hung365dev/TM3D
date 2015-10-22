@@ -3,24 +3,25 @@ using Battles;
 namespace Battles {
 	public class BattleConstants : MonoBehaviour{
 		public const int MAX_MONSTERS_PER_TEAM = 3;
-		public const float floor = -1.2f;
+		public const float floor = 0f;
 		
-		public const float zPositionBack = 0.5f;
-		public const float zPositionFront = -0.75f; 
+		public const float zPosition = 3.75f;
+		public const float zPositionMiddle = 2.5f; 
 		public const float bottomXPosition = 2.6f;
-		public const float topXPosition = 2.15f;
-		public const float middleXPosition = 0.8f;
-		public static Vector3 POSITION_LEFT_TOP = new Vector3(topXPosition*-1,floor,zPositionBack);
-		public static Vector3 POSITION_LEFT_MIDDLE = new Vector3(middleXPosition*-1,floor,0f);
-		public static Vector3 POSITION_LEFT_BOTTOM = new Vector3(bottomXPosition*-1,floor,zPositionFront);
+		public const float topXPosition = -2f;
+		public const float middleXPosition = 0f;
+		public static Vector3 POSITION_TEAM1_1 = new Vector3(topXPosition,floor,zPosition);
+		public static Vector3 POSITION_TEAM1_MIDDLE = new Vector3(middleXPosition,floor,zPositionMiddle);
+		public static Vector3 POSITION_TEAM1_2 = new Vector3(topXPosition*-1,floor,zPosition);
 		
 		
 		public static Vector2 POSITION_PREVIEW = new Vector2(-1.8f,-1.2f);
 		public static Vector2 POSITION_PREVIEW_RIGHT = new Vector2(2.42f,-0.3f);
-		
-		public static Vector3 POSITION_RIGHT_TOP = new Vector3(topXPosition,floor,zPositionBack);
-		public static Vector3 POSITION_RIGHT_MIDDLE = new Vector3(middleXPosition,floor,0f);
-		public static Vector3 POSITION_RIGHT_BOTTOM = new Vector3(bottomXPosition,floor,zPositionFront);
+
+		public static Vector3 POSITION_TEAM2_1 = new Vector3(topXPosition,floor,zPosition*-1);
+		public static Vector3 POSITION_TEAM2_MIDDLE = new Vector3(middleXPosition,floor,zPositionMiddle*-1);
+		public static Vector3 POSITION_TEAM2_2 = new Vector3(topXPosition*-1,floor,zPosition*-1);
+
 		
 		public static Vector3 MONSTER_SCALE = new Vector3(1f,1f,1f);
 		/*
@@ -62,13 +63,13 @@ namespace Battles {
 				case(ETeamPosition.LeftTeam):default: 
 					switch(aMonster) {
 						case(EMonsterPos.Top):
-							return new Vector3(POSITION_LEFT_TOP.x+faceOffNegator,POSITION_LEFT_TOP.y,POSITION_LEFT_TOP.z);
+							return new Vector3(POSITION_TEAM1_1.x+faceOffNegator,POSITION_TEAM1_1.y,POSITION_TEAM1_1.z);
 						break;
 					case(EMonsterPos.Front):default:
-							return new Vector3(POSITION_LEFT_MIDDLE.x+faceOffNegator,POSITION_LEFT_MIDDLE.y,POSITION_LEFT_MIDDLE.z);
+							return new Vector3(POSITION_TEAM1_MIDDLE.x+faceOffNegator,POSITION_TEAM1_MIDDLE.y,POSITION_TEAM1_MIDDLE.z);
 						break;
 						case(EMonsterPos.Bottom):
-							return new Vector3(POSITION_LEFT_BOTTOM.x+faceOffNegator,POSITION_LEFT_BOTTOM.y,POSITION_LEFT_BOTTOM.z);
+							return new Vector3(POSITION_TEAM1_2.x+faceOffNegator,POSITION_TEAM1_2.y,POSITION_TEAM1_2.z);
 						break;
 					
 					}
@@ -76,17 +77,17 @@ namespace Battles {
 			case(ETeamPosition.RightTeam):
 				switch(aMonster) {
 				case(EMonsterPos.Top):
-					return new Vector3(POSITION_RIGHT_TOP.x-faceOffNegator,POSITION_RIGHT_TOP.y);
+					return new Vector3(POSITION_TEAM2_1.x-faceOffNegator,POSITION_TEAM2_1.y,POSITION_TEAM2_MIDDLE.z);
 					break;
 				case(EMonsterPos.Front):default:
-					return new Vector3(POSITION_RIGHT_MIDDLE.x-faceOffNegator,POSITION_RIGHT_MIDDLE.y);
+					return new Vector3(POSITION_TEAM2_MIDDLE.x-faceOffNegator,POSITION_TEAM2_MIDDLE.y,POSITION_TEAM2_MIDDLE.z);
 					break;
 				case(EMonsterPos.Bottom):
-					return new Vector3(POSITION_RIGHT_BOTTOM.x-faceOffNegator,POSITION_RIGHT_BOTTOM.y);
+					return new Vector3(POSITION_TEAM2_2.x-faceOffNegator,POSITION_TEAM2_2.y,POSITION_TEAM2_2.z);
 					break;
 					
 				}
-				break;
+				break; 
 			}
 		}
 		public static Vector3 getMyPosition(ETeamPosition aPosition,EMonsterPos aMonster) {
@@ -95,13 +96,13 @@ namespace Battles {
 			case(ETeamPosition.LeftTeam):default:
 				switch(aMonster) {
 				case(EMonsterPos.Top):
-					return new Vector3(POSITION_LEFT_TOP.x,POSITION_LEFT_TOP.y,POSITION_LEFT_TOP.z);
+					return new Vector3(POSITION_TEAM1_1.x,POSITION_TEAM1_1.y,POSITION_TEAM1_1.z);
 					break;
 				case(EMonsterPos.Front):default:
-					return new Vector3(POSITION_LEFT_MIDDLE.x,POSITION_LEFT_MIDDLE.y,POSITION_LEFT_MIDDLE.z);
+					return new Vector3(POSITION_TEAM1_MIDDLE.x,POSITION_TEAM1_MIDDLE.y,POSITION_TEAM1_MIDDLE.z);
 					break;
 				case(EMonsterPos.Bottom):
-					return new Vector3(POSITION_LEFT_BOTTOM.x,POSITION_LEFT_BOTTOM.y,POSITION_LEFT_BOTTOM.z);
+					return new Vector3(POSITION_TEAM1_2.x,POSITION_TEAM1_2.y,POSITION_TEAM1_2.z);
 					break;
 					
 				}
@@ -109,13 +110,13 @@ namespace Battles {
 			case(ETeamPosition.RightTeam):
 				switch(aMonster) {
 				case(EMonsterPos.Top):
-					return new Vector3(POSITION_RIGHT_TOP.x,POSITION_RIGHT_TOP.y,POSITION_RIGHT_TOP.z);
+					return new Vector3(POSITION_TEAM2_1.x,POSITION_TEAM2_1.y,POSITION_TEAM2_1.z);
 					break;
 				case(EMonsterPos.Front):default:
-					return new Vector3(POSITION_RIGHT_MIDDLE.x,POSITION_RIGHT_MIDDLE.y,POSITION_RIGHT_MIDDLE.z);
+					return new Vector3(POSITION_TEAM2_MIDDLE.x,POSITION_TEAM2_MIDDLE.y,POSITION_TEAM2_MIDDLE.z);
 					break;
 				case(EMonsterPos.Bottom):
-					return new Vector3(POSITION_RIGHT_BOTTOM.x,POSITION_RIGHT_BOTTOM.y,POSITION_RIGHT_BOTTOM.z);
+					return new Vector3(POSITION_TEAM2_2.x,POSITION_TEAM2_2.y,POSITION_TEAM2_2.z);
 					break;
 					
 				}
@@ -124,24 +125,24 @@ namespace Battles {
 		}
 		public static void positionMonster(GameObject aMonsterObject,ETeamPosition aTeam,EMonsterPos aMonsterPosition) {
 		
-			Vector3 useVec = POSITION_LEFT_MIDDLE;
+			Vector3 useVec = POSITION_TEAM1_MIDDLE;
 			Quaternion useQ = new Quaternion(0,0,0,0);
 			int layer = 8;
 			switch(aTeam) {
-				case(ETeamPosition.LeftTeam): {
+				case(ETeamPosition.RightTeam): {
 				
 					switch(aMonsterPosition) {
-						case(EMonsterPos.Top): useVec = POSITION_LEFT_TOP;useQ = Quaternion.Euler(0,12,0);break;
-						case(EMonsterPos.Front): useVec = POSITION_LEFT_MIDDLE;useQ = Quaternion.Euler(0,0,0);break;
-						case(EMonsterPos.Bottom): useVec = POSITION_LEFT_BOTTOM;useQ = Quaternion.Euler(0,-10,0);break;
+						case(EMonsterPos.Top): useVec = POSITION_TEAM2_1;useQ = Quaternion.Euler(0,12,0);break;
+						case(EMonsterPos.Front): useVec = POSITION_TEAM2_MIDDLE;useQ = Quaternion.Euler(0,0,0);break;
+						case(EMonsterPos.Bottom): useVec = POSITION_TEAM2_2;useQ = Quaternion.Euler(0,-10,0);break;
 					}
 				}
 				break;
-				case(ETeamPosition.RightTeam): {
+				case(ETeamPosition.LeftTeam): {
 					switch(aMonsterPosition) {
-						case(EMonsterPos.Top): useVec = POSITION_RIGHT_TOP;useQ = Quaternion.Euler(0,170,0);;break;
-						case(EMonsterPos.Front): useVec = POSITION_RIGHT_MIDDLE;useQ = Quaternion.Euler(0,180,0);break;
-						case(EMonsterPos.Bottom): useVec = POSITION_RIGHT_BOTTOM;useQ =useQ = Quaternion.Euler(0,-170,0);break;
+						case(EMonsterPos.Top): useVec = POSITION_TEAM1_1;useQ = Quaternion.Euler(0,170,0);;break;
+						case(EMonsterPos.Front): useVec = POSITION_TEAM1_MIDDLE;useQ = Quaternion.Euler(0,180,0);break;
+						case(EMonsterPos.Bottom): useVec = POSITION_TEAM1_2;useQ =useQ = Quaternion.Euler(0,-170,0);break;
 					}
 				}
 				break;

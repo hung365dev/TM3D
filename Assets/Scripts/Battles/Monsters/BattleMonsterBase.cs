@@ -101,10 +101,9 @@ namespace Battles
 		public void Start() {
 			Debug.Log(this.name);
 			_collider = (Collider) this.GetComponent<Collider>();
-			if(_collider==null) {
+			if(_collider==null) { 
 				Debug.LogError("Monster: "+this.name+" has no collider");
-			} else
-			_collider.isTrigger = true;
+			}
 		}
 		public void OnDisable() {
 			if(_monsterMakeup!=null)
@@ -329,7 +328,7 @@ namespace Battles
 		}
 	
 		private void createHealthBar() {
-			/*
+
 			BattleControllerMain bControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BattleControllerMain>();
 			
 			if(bControl!=null) {
@@ -357,14 +356,13 @@ namespace Battles
 				energy = this._monsterRef.energy;
 				prefab.transform.localScale = new Vector3(1.0f,1.0f,1.0f);
 				Resources.UnloadUnusedAssets();
-			}*/
+			}
 		}
 		public GameObject healthBar {
 			get {
 				if(_monsterMakeup==null) {
 					createHealthBar();
 				}
-				return null;
 				return _monsterMakeup.gameObject;
 			}
 		}

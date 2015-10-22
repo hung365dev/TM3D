@@ -126,11 +126,12 @@ namespace Battles {
 	//		}
 			 
 			
-
+			 
 			
 			
 			yield return new WaitForEndOfFrame();
-			NGUITools.AddChild(null,this.smokePuffPrefab);
+			if(smokePuffPrefab!=null)
+				NGUITools.AddChild(null,this.smokePuffPrefab);
 			
 		}
 		

@@ -69,8 +69,16 @@ ModelImporter:
     7400000: Idle
     7400002: Walk
     7400004: Run
-    7400006: Armature.002|Armature.002Action.0012
-    7400008: Armature.002|Armature.002Action.0013
+    7400006: JumpFromStandstill
+    7400008: JumpFromRun
+    7400010: TackleRun
+    7400012: ScratchAttack
+    7400014: HitAnimation
+    7400016: RangeAttack
+    7400018: Faint
+    7400020: InstantFaint
+    7400022: Rest
+    7400024: Flying
     9500000: //RootNode
     13700000: Cyclonine
   materials:
@@ -352,10 +360,10 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Armature.002|Armature.002Action.0012
+      name: JumpFromStandstill
       takeName: Armature.002|Armature.002Action.001
-      firstFrame: 0
-      lastFrame: 363
+      firstFrame: 77
+      lastFrame: 96
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -438,9 +446,697 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Armature.002|Armature.002Action.0013
+      name: JumpFromRun
       takeName: Armature.002|Armature.002Action.001
-      firstFrame: 0
+      firstFrame: 79
+      lastFrame: 94
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Root
+        weight: 1
+      - path: Armature.002/Root/Spine.01
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: Armature.002/Root/Tail.01
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Armature.002/Wing_L
+        weight: 1
+      - path: Armature.002/Wing_L/Wing_L_end
+        weight: 1
+      - path: Armature.002/Wing_R
+        weight: 1
+      - path: Armature.002/Wing_R/Wing_R_end
+        weight: 1
+      - path: Cyclonine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TackleRun
+      takeName: Armature.002|Armature.002Action.001
+      firstFrame: 97
+      lastFrame: 107
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Root
+        weight: 1
+      - path: Armature.002/Root/Spine.01
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: Armature.002/Root/Tail.01
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Armature.002/Wing_L
+        weight: 1
+      - path: Armature.002/Wing_L/Wing_L_end
+        weight: 1
+      - path: Armature.002/Wing_R
+        weight: 1
+      - path: Armature.002/Wing_R/Wing_R_end
+        weight: 1
+      - path: Cyclonine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ScratchAttack
+      takeName: Armature.002|Armature.002Action.001
+      firstFrame: 108
+      lastFrame: 142
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Root
+        weight: 1
+      - path: Armature.002/Root/Spine.01
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: Armature.002/Root/Tail.01
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Armature.002/Wing_L
+        weight: 1
+      - path: Armature.002/Wing_L/Wing_L_end
+        weight: 1
+      - path: Armature.002/Wing_R
+        weight: 1
+      - path: Armature.002/Wing_R/Wing_R_end
+        weight: 1
+      - path: Cyclonine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: HitAnimation
+      takeName: Armature.002|Armature.002Action.001
+      firstFrame: 143
+      lastFrame: 164
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Root
+        weight: 1
+      - path: Armature.002/Root/Spine.01
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: Armature.002/Root/Tail.01
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Armature.002/Wing_L
+        weight: 1
+      - path: Armature.002/Wing_L/Wing_L_end
+        weight: 1
+      - path: Armature.002/Wing_R
+        weight: 1
+      - path: Armature.002/Wing_R/Wing_R_end
+        weight: 1
+      - path: Cyclonine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RangeAttack
+      takeName: Armature.002|Armature.002Action.001
+      firstFrame: 164
+      lastFrame: 208
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Root
+        weight: 1
+      - path: Armature.002/Root/Spine.01
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: Armature.002/Root/Tail.01
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Armature.002/Wing_L
+        weight: 1
+      - path: Armature.002/Wing_L/Wing_L_end
+        weight: 1
+      - path: Armature.002/Wing_R
+        weight: 1
+      - path: Armature.002/Wing_R/Wing_R_end
+        weight: 1
+      - path: Cyclonine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Faint
+      takeName: Armature.002|Armature.002Action.001
+      firstFrame: 207
+      lastFrame: 297
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Root
+        weight: 1
+      - path: Armature.002/Root/Spine.01
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: Armature.002/Root/Tail.01
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Armature.002/Wing_L
+        weight: 1
+      - path: Armature.002/Wing_L/Wing_L_end
+        weight: 1
+      - path: Armature.002/Wing_R
+        weight: 1
+      - path: Armature.002/Wing_R/Wing_R_end
+        weight: 1
+      - path: Cyclonine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: InstantFaint
+      takeName: Armature.002|Armature.002Action.001
+      firstFrame: 287
+      lastFrame: 297
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Root
+        weight: 1
+      - path: Armature.002/Root/Spine.01
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: Armature.002/Root/Tail.01
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Armature.002/Wing_L
+        weight: 1
+      - path: Armature.002/Wing_L/Wing_L_end
+        weight: 1
+      - path: Armature.002/Wing_R
+        weight: 1
+      - path: Armature.002/Wing_R/Wing_R_end
+        weight: 1
+      - path: Cyclonine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Rest
+      takeName: Armature.002|Armature.002Action.001
+      firstFrame: 298
+      lastFrame: 346
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Root
+        weight: 1
+      - path: Armature.002/Root/Spine.01
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: Armature.002/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: Armature.002/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: Armature.002/Root/Tail.01
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: Armature.002/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Armature.002/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Armature.002/Root/Thigh_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Armature.002/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Armature.002/Wing_L
+        weight: 1
+      - path: Armature.002/Wing_L/Wing_L_end
+        weight: 1
+      - path: Armature.002/Wing_R
+        weight: 1
+      - path: Armature.002/Wing_R/Wing_R_end
+        weight: 1
+      - path: Cyclonine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Flying
+      takeName: Armature.002|Armature.002Action.001
+      firstFrame: 347
       lastFrame: 363
       wrapMode: 0
       orientationOffsetY: 0
@@ -526,7 +1222,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .5
+    globalScale: .200000003
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

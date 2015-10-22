@@ -30,9 +30,9 @@ namespace Battles
 				BetterList<BattleMonster> ms = this.monstersAsBattleMonster;
 				for(byte c = 0 ; c<ms.size;c++) {
 					if(value==true) {
-						if(ms[c].monster.restingStatus==ERestingStatus.Awake)
+						if(ms[c].monster.restingStatus==ERestingStatus.Awake&&ms[c].healthBar!=null)
 							ms[c].healthBar.SetActive(value);
-					} else 
+					} else  
 					{
 						ms[c].healthBar.SetActive(value);
 					}
