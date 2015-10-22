@@ -98,7 +98,7 @@ namespace Battles
 		}
 		private IEnumerator evolveProcedure() {
 			yield return new WaitForSeconds(1.25f);
-		//	iTween.FadeTo(this.gameObject,0f,2f);
+			iTween.FadeTo(this.gameObject,0f,2f);
 			yield return new WaitForSeconds(2f);
 			completedEvolving = true;
 			this.monster.evolve();
@@ -115,7 +115,7 @@ namespace Battles
 		 
 		public void pauseEvolution() {
 			
-		//	iTween.FadeTo(this.gameObject,1f,0.01f);
+			iTween.FadeTo(this.gameObject,1f,0.01f);
 			this.StopAllCoroutines ();
 		}
 		public GameObject createCaughtAnimEffect(int aStage) {
@@ -191,7 +191,7 @@ namespace Battles
 		}
 		public void fadeInMakeup() {
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&_makeupFaded) {
-			//	iTween.FadeTo(this._monsterMakeup.gameObject,1f,1f);
+				iTween.FadeTo(this._monsterMakeup.gameObject,1f,1f);
 				_makeupFaded = false;
 			}
 		}
@@ -294,7 +294,7 @@ namespace Battles
 					Destroy (rend[i].gameObject);
 				}
 				
-		//		iTween.ScaleFrom(g,new Vector3(0f,0f,0f),0.5f);
+				iTween.ScaleFrom(g,new Vector3(0f,0f,0f),0.5f);
 				Renderer[] allRenderers = g.GetComponentsInChildren<Renderer>();
 				for(int i = 0;i<allRenderers.Length;i++) {
 					allRenderers[i].sortingLayerName = "MonsterLayer3";

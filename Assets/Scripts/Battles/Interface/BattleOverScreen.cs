@@ -207,7 +207,7 @@ public class BattleOverScreen : MonoBehaviour
 		for(int i = 0;i<monsters.size;i++) {
 			if(monsters[i]==aMonsterToIgnore) {
 			} else {
-		//		iTween.FadeTo(monsters[i].gameObject,aAlpha,0.25f);
+				iTween.FadeTo(monsters[i].gameObject,aAlpha,0.25f);
 			}
 		}
 	}

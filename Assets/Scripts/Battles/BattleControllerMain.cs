@@ -116,7 +116,7 @@ namespace Battles {
 			this.playersTeam.bringMonsterToFront(playersTeam.nextUnsetMonster);
 			
 			this.topLabel.gameObject.SetActive(true);
-	//		iTween.FadeFrom(this.topLabel.gameObject,0f,0.25f);
+			iTween.FadeFrom(this.topLabel.gameObject,0f,0.25f);
 	//		if(multiplayer&&SmartfoxHandler.REF!=null&&allowSendingOfMultiplayerTeam) {
 			//
 	//		} else {

@@ -329,17 +329,23 @@ namespace Battles
 							
 						}
 						if(_currentItem.moveData.attackAnimation.movementType=="Normal"&&targetTeam!=this.teamFromMonster((BattleMonster) actionMonster)) {
-						//	iTween.MoveTo(actionMonster.gameObject,new Vector3(targetMonsterPosition.x,targetMonsterPosition.y,targetMonsterPosition.z),1.0f);
+							// Make our monster run at their opponent
+							iTween.MoveTo(actionMonster.gameObject,new Vector3(targetMonsterPosition.x,targetMonsterPosition.y,targetMonsterPosition.z),1.0f);
+							actionMonster.setAnimation(EMonsterAnimations.Run);
 							StartCoroutine(pauseToAttackAnimation(0.1f,(BattleMonster) actionMonster));
 						} else
-						if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly")
-						  {
-							StartCoroutine(pauseToAttackAnimation(0.1f,(BattleMonster) actionMonster));
+						if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly") {
+								// The attacks effects only appear on the opponents side
+								actionMonster.setAnimation(EMonsterAnimations.ScratchAttack);
+								StartCoroutine(pauseToAttackAnimation(0.1f,(BattleMonster) actionMonster));
 							} else {
-							actionMonster.doAttackAnimation();	
+							// Attack probably starts here and ends on opponent
 							
-							this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
-							this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
+								actionMonster.setAnimation(EMonsterAnimations.RangeAttack);
+								actionMonster.doAttackAnimation();	
+							
+								this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
+								this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
 						}
 						if((_currentItem.timesToHit==_currentItem.maxTimesToHit||_currentItem.maxTimesToHit==0)&&(!_currentItem.followOnMove))
 							this._commentaryManager.addCommentaryMessage(_currentItem.actioningTeam.name+"'s "+_currentItem.actioningMonster.name+" used "+_currentItem.moveData.Name,ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage);
@@ -430,7 +436,7 @@ namespace Battles
 					this._commentaryManager.addCommentaryMessage(opp.name+" took the bait!",ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage);
 					opp.hasBeenCaught = true;
 					opp.healthBarEnabled = false;
-				//	iTween.MoveTo(opp.gameObject,new Vector3(0.0f,-0.5f,0.0f),1.0f);
+					iTween.MoveTo(opp.gameObject,new Vector3(0.0f,-0.5f,0.0f),1.0f);
 					this.playersTeam.fadeOutTeam();
 					this._currentItem.skipToFinish();
 				}

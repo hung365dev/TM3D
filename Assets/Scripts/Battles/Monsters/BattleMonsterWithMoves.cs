@@ -26,7 +26,10 @@ namespace Battles
 		public BattleMonsterWithMoves ()
 		{
 		}
-		
+
+		public void setAnimation(EMonsterAnimations aAnimation) {
+			this._anim.SetInteger ("AnimState", (int) aAnimation);
+		}
 		public IEnumerator consumeItem(ITMItem aItem,MoveQueueItem aMoveQueue) {
 			yield return new WaitForSeconds(0.5f);
 			float hpBefore = this._monsterRef.hp;
