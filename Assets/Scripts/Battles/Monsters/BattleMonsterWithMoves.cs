@@ -27,6 +27,9 @@ namespace Battles
 		{
 		}
 
+		public void setAnimation(string aAnimation) {
+			this._anim.SetTrigger (aAnimation);
+		}
 		public void setAnimation(EMonsterAnimations aAnimation) {
 			this._anim.SetInteger ("AnimState", (int) aAnimation);
 		}

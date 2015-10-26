@@ -13,18 +13,10 @@ namespace Battles
 	public enum EMonsterAnimations
 	{
 		Idle = 0,
-		Faint = 1,
-		Flying = 2,
-		HitAnimation = 3,
-		InstantFaint = 4,
-		JumpFromRun = 5,
-		JumpFromStandstill = 6,
-		RangeAttack = 7,
-		Rest = 8,
-		Run = 9,
-		ScratchAttack = 10,
-		TackleRun = 11,
-		Walk = 12,
+		Rest = 1,
+		Walk = 2,
+		Run = 3,
+		Flying = 4,
 	}
 }
 

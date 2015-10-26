@@ -753,9 +753,6 @@ namespace Battles
 			BattleTeam targetTeam = this.teamFromPosition(aMoveQueue.targetTeam);
 			BattleMonster targetMonster = targetTeam.monsterFromPosition(aMoveQueue.targetMonster);
 			BetterList<BattleMonster> allTargets;
-			if(aMoveQueue.actioningMonster.name.StartsWith("Alisti")) {
-				Debug.Log ("Alistinker");
-			}
 			if(aMoveQueue.moveData.isBoost) {
 				allTargets = targetTeam.getBoostTargetsForMove(aMoveQueue.targetMonster,aMoveQueue.moveData,(BattleMonster) aMoveQueue.actioningMonster);
 			} else {

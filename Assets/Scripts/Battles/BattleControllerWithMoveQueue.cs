@@ -330,18 +330,19 @@ namespace Battles
 						}
 						if(_currentItem.moveData.attackAnimation.movementType=="Normal"&&targetTeam!=this.teamFromMonster((BattleMonster) actionMonster)) {
 							// Make our monster run at their opponent
-							iTween.MoveTo(actionMonster.gameObject,new Vector3(targetMonsterPosition.x,targetMonsterPosition.y,targetMonsterPosition.z),1.0f);
 							actionMonster.setAnimation(EMonsterAnimations.Run);
-							StartCoroutine(pauseToAttackAnimation(0.1f,(BattleMonster) actionMonster));
+							iTween.MoveTo(actionMonster.gameObject,new Vector3(targetMonsterPosition.x,targetMonsterPosition.y,targetMonsterPosition.z),1.0f);
+							
+							StartCoroutine(pauseToAttackAnimation(0.2f,(BattleMonster) actionMonster));
 						} else
 						if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly") {
 								// The attacks effects only appear on the opponents side
-								actionMonster.setAnimation(EMonsterAnimations.ScratchAttack);
-								StartCoroutine(pauseToAttackAnimation(0.1f,(BattleMonster) actionMonster));
+								actionMonster.setAnimation("RangeAttack");
+								StartCoroutine(pauseToAttackAnimation(0.2f,(BattleMonster) actionMonster));
 							} else {
 							// Attack probably starts here and ends on opponent
 							
-								actionMonster.setAnimation(EMonsterAnimations.RangeAttack);
+								actionMonster.setAnimation("RangeAttack");
 								actionMonster.doAttackAnimation();	
 							
 								this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;

@@ -37,7 +37,6 @@ namespace Battles
 				ChangeLayerTo (child,aNewLayer);
 			}
 		}
-		
 		public void ChangeLayerTo(Transform aChild,string aNewLayer) {
 			aChild.gameObject.layer = 15;
 			foreach (Transform child in aChild.transform) {
@@ -186,7 +185,7 @@ namespace Battles
 		}
 		IEnumerator returnToIdleAnim(){   
 			
-			yield return new WaitForSeconds(0.1f); 
+			yield return new WaitForSeconds(0.5f); 
 			_anim.SetInteger("AnimState",(int) EMonsterAnimations.Idle);
 		}
 		public void fadeInMakeup() {
@@ -213,17 +212,16 @@ namespace Battles
 		
 		public void doAttackAnimation() {
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
-				_anim.SetInteger("AnimState",(int) EMonsterAnimations.ScratchAttack);
+				myAnimator.SetInteger("AnimState",(int) EMonsterAnimations.Idle);
+				_anim.SetTrigger("ScratchAttack");
 				fadeInMakeup(); 
-				StartCoroutine(returnToIdleAnim());
 			}
 		}
 		
 		public void doDefenseAnimation() {
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
-				_anim.SetInteger("AnimState",(int) EMonsterAnimations.HitAnimation);
+				_anim.SetTrigger("HitAnim");
 				fadeInMakeup();
-				StartCoroutine(returnToIdleAnim());
 			}
 		}  
 		public void addXP(int aXPToAdd) {
