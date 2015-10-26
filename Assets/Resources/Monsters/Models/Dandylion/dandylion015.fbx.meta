@@ -1,0 +1,1707 @@
+fileFormatVersion: 2
+guid: 5012e1c52193f4c46a8f38a3a3d65cb8
+timeCreated: 1445612081
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: 4 Leg Bones
+    100002: Cube.006
+    100004: //RootNode
+    100006: Foot_L
+    100008: Foot_L_end
+    100010: Foot_R
+    100012: Foot_R_end
+    100014: FrontShin_L
+    100016: FrontShin_L_end
+    100018: FrontShin_R
+    100020: FrontShin_R_end
+    100022: FrontThigh_L
+    100024: FrontThigh_R
+    100026: Head
+    100028: Head_end
+    100030: Hemi
+    100032: Hemi.001
+    100034: Neck
+    100036: Root
+    100038: Shin_L
+    100040: Shin_R
+    100042: Spine.01
+    100044: Tail.01
+    100046: Tail.02
+    100048: Tail.03
+    100050: Tail.03_end
+    100052: Thigh_L
+    100054: Thigh_R
+    400000: 4 Leg Bones
+    400002: Cube.006
+    400004: //RootNode
+    400006: Foot_L
+    400008: Foot_L_end
+    400010: Foot_R
+    400012: Foot_R_end
+    400014: FrontShin_L
+    400016: FrontShin_L_end
+    400018: FrontShin_R
+    400020: FrontShin_R_end
+    400022: FrontThigh_L
+    400024: FrontThigh_R
+    400026: Head
+    400028: Head_end
+    400030: Hemi
+    400032: Hemi.001
+    400034: Neck
+    400036: Root
+    400038: Shin_L
+    400040: Shin_R
+    400042: Spine.01
+    400044: Tail.01
+    400046: Tail.02
+    400048: Tail.03
+    400050: Tail.03_end
+    400052: Thigh_L
+    400054: Thigh_R
+    4300000: Cube.006
+    7400000: Idle
+    7400002: Walk
+    7400004: Run
+    7400006: JumpFromStill
+    7400008: JumpFromRun
+    7400010: TackleRun
+    7400012: ScratchAttack
+    7400014: HitAnimation
+    7400016: RangeAttack
+    7400018: Faint
+    7400020: InstantFaint
+    7400022: Rest
+    7400024: Flying
+    7400026: RearUpAndRoar
+    7400028: RearUpandRoar2
+    7400030: Flip
+    7400032: FootStamp
+    7400034: TailShake
+    7400036: RangeHit
+    9500000: //RootNode
+    13700000: Cube.006
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 41
+      lastFrame: 64
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 66
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JumpFromStill
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 77
+      lastFrame: 96
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JumpFromRun
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 79
+      lastFrame: 94
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TackleRun
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 97
+      lastFrame: 107
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ScratchAttack
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 108
+      lastFrame: 142
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: HitAnimation
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 143
+      lastFrame: 164
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RangeAttack
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 164
+      lastFrame: 208
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Faint
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 207
+      lastFrame: 297
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: InstantFaint
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 287
+      lastFrame: 297
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Rest
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 298
+      lastFrame: 346
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Flying
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 347
+      lastFrame: 362
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RearUpAndRoar
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 363
+      lastFrame: 460
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RearUpandRoar2
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 461
+      lastFrame: 508
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Flip
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 508
+      lastFrame: 544
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FootStamp
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 545
+      lastFrame: 638
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TailShake
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 639
+      lastFrame: 735
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RangeHit
+      takeName: 4 Leg Bones|Armature.002Action.000
+      firstFrame: 746
+      lastFrame: 798
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 4 Leg Bones
+        weight: 1
+      - path: 4 Leg Bones/Root
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_L/FrontShin_L/FrontShin_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/FrontThigh_R/FrontShin_R/FrontShin_R_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head
+        weight: 1
+      - path: 4 Leg Bones/Root/Spine.01/Neck/Head/Head_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03
+        weight: 1
+      - path: 4 Leg Bones/Root/Tail.01/Tail.02/Tail.03/Tail.03_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_L/Shin_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: 4 Leg Bones/Root/Thigh_R/Shin_R/Foot_R/Foot_R_end
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Hemi
+        weight: 1
+      - path: Hemi.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .25
+    meshCompression: 3
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
