@@ -307,8 +307,8 @@ namespace Battles
 						switch(UnityEngine.Random.Range (1,4)) {
 							case(1):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("Flip");break;
 							case(2):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("FootStamp");break;
-							case(3):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("RearUpAndRoar");break;
-							case(4):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("RearUpAndRoar2");break;
+							case(3):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("RearupAndRoar");break;
+							case(4):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("RearupAndRoar2");break;
 
 						}
 					}
