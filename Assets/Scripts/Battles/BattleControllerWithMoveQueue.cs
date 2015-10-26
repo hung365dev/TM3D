@@ -131,13 +131,14 @@ namespace Battles
 		}
 		private IEnumerator onDelayedWaitForQueueChange() {
 			_lastUpdateTime = Time.time;
-			yield return new WaitForSeconds(0.01f);
+			yield return new WaitForEndOfFrame ();
 			if(Time.time-_lastUpdateTime<1.0f) {
 			//	Debug.LogError("There was not enough time between changes");
 			}
 			BattleControllerMain.REF.addDebug("onMoveQueueItemChanged: "+_currentItem.status);
 			switch(_currentItem.status) {
 			case(EMoveQueueItemStatus.Start):
+
 				// THe only way we can ever get here is in a multi-hit move, so we want to remove the listener for onMoveQueueItemChanged,
 				// Because we will add a new listener in the next function.
 				if(this.battleComplete) {
@@ -152,20 +153,20 @@ namespace Battles
 					
 					this.performMove();
 				}
-				
+
 				break;
 			case(EMoveQueueItemStatus.ChangeToOtherMove):
 				this.checkIfMoveNeedsToChange(this._currentItem);
 				break;
 			case(EMoveQueueItemStatus.AttackAnimation):
-				
-				this.GetComponent<CameraTrack>().target = this._currentItem.actioningMonster.transform;
+
 				StartCoroutine(this.doAttackAnimation(this._currentItem));
 				break;
 			case(EMoveQueueItemStatus.HPHits):
 				this.applyHPEffectsToTeams(this._currentItem);
 				
 				// No advance move queue here.
+
 				this.doAttackHitAnimation(this._currentItem);	
 				if(allTeamsIdle) {
 					this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.HPHits);
@@ -302,8 +303,12 @@ namespace Battles
 			if(this._currentItem!=null) {
 				if(_currentItem.moveData!=null) {
 					EStatusEffects reasonForNoMove = actionMonster.lingeringEffectsAllowMove();
-					
-					
+
+					this.GetComponent<CameraTrack>().target = this._currentItem.actioningMonster.gameObject.transform;
+					this.GetComponent<CameraTrack>().stickTo = this._currentItem.actioningMonster.transform.FindChild("CameraMount");
+					this.teamACameraPath.gameObject.SetActive(false);
+					this.teamBCameraPath.gameObject.SetActive(false);
+
 					if(reasonForNoMove==EStatusEffects.None) {
 						
 						BattleTeam targetTeam = teamFromPosition(_currentItem.targetTeam);
@@ -330,10 +335,17 @@ namespace Battles
 						}
 						if(_currentItem.moveData.attackAnimation.movementType=="Normal"&&targetTeam!=this.teamFromMonster((BattleMonster) actionMonster)) {
 							// Make our monster run at their opponent
-							actionMonster.setAnimation(EMonsterAnimations.Run);
-							iTween.MoveTo(actionMonster.gameObject,new Vector3(targetMonsterPosition.x,targetMonsterPosition.y,targetMonsterPosition.z),1.0f);
-							
-							StartCoroutine(pauseToAttackAnimation(0.2f,(BattleMonster) actionMonster));
+							actionMonster.setAnimation(EMonsterAnimations.Walk);
+							StartCoroutine(delayedToStartRunAnim(actionMonster,0.35f));
+							Hashtable h = new Hashtable();
+							h.Add("position",targetMonsterPosition);
+							h.Add ("time",1.5f); 
+							h.Add ("oncompletetarget",this.gameObject);
+							h.Add ("oncomplete","onDoAttackAnimation"); 
+							h.Add ("oncompleteparams",actionMonster);
+							h.Add("easetype",iTween.EaseType.easeInQuad); 
+							iTween.MoveTo(actionMonster.gameObject,h);
+
 						} else
 						if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly") {
 								// The attacks effects only appear on the opponents side
@@ -395,7 +407,12 @@ namespace Battles
 			StartCoroutine(this._currentItem.actioningMonster.consumeItem(_currentItem.usedItem,_currentItem));
 		
 		}
-		
+
+		private IEnumerator delayedToStartRunAnim(BattleMonsterWithMoves aActionMonster,float aDelay) {
+			yield return new WaitForSeconds (aDelay);
+			
+			aActionMonster.setAnimation(EMonsterAnimations.Run);
+		}
 		private IEnumerator doCaptureAttempt() {
 			BattleMonster opp = this.opponentTeam.monstersAsBattleMonster[BattleConstants.FRONT_INDEX];
 			
@@ -457,6 +474,17 @@ namespace Battles
 			yield return new WaitForSeconds(aDelay);
 			aActionMonster.doAttackAnimation();	
 			
+			this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
+			this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
+		}
+
+		public void onDoAttackAnimation(BattleMonster aActionMonster) {
+			aActionMonster.doAttackAnimation();	
+			
+			this.GetComponent<CameraTrack> ().target = null;
+			this.GetComponent<CameraTrack> ().stickTo = null;
+
+			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject));
 			this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
 			this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
 		}

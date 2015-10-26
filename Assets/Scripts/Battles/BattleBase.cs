@@ -20,7 +20,8 @@ namespace Battles
 		protected CommentaryManager _commentaryManager;
 		protected InventoryDisplay _inventory;
 		protected MoveQueueItem _currentItem;
-		
+		public CameraPath teamACameraPath;
+		public CameraPath teamBCameraPath;
 		public UILabel debugText;
 		
 		public Camera UICamera;

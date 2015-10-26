@@ -159,10 +159,11 @@ namespace Battles
 		
 		protected void showMovesForMonster(BattleMonster aMonster) {
 			startConversation();
-			
 			barController.gameObject.SetActive(true);
 			barController.show = true;
 			barController.setMonsterMoves(aMonster);
+			if(aMonster!=null)
+				this.GetComponent<CameraTrack> ().target = aMonster.transform;
 			this.FadeBlackScreen(0.8f,0.1f);
 			topLabel.text = "";//aMonster.name+" L"+aMonster.monster.level;
 			topLabel.gameObject.SetActive(true);

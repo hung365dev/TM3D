@@ -22,6 +22,9 @@ namespace Battles
 		private GameObject _targetOptionEffect;
 		private GameObject _targetOptionOrb;
 		public bool completedEvolving = false;
+		private float _lastAnimAction;
+		public const float IDLE_ACTION = 1f;
+		public Vector3 returnPosition;
 		public BattleMonsterWithAnimations ()
 		{
 		}
@@ -133,10 +136,12 @@ namespace Battles
 		}
 		
 		public void doStatLoweringAnim() {
+			_lastAnimAction = Time.time;
 			GameObject g = getEffect("StatLowering");
 			g.transform.position = this.SpawnPosition;
 		}
 		public void doStatRaisingAnim() {
+			_lastAnimAction = Time.time;
 			GameObject g = getEffect("StatRaising");
 			g.transform.position = this.SpawnPosition;
 		}
@@ -185,6 +190,7 @@ namespace Battles
 		}
 		IEnumerator returnToIdleAnim(){   
 			
+			_lastAnimAction = Time.time;
 			yield return new WaitForSeconds(0.5f); 
 			_anim.SetInteger("AnimState",(int) EMonsterAnimations.Idle);
 		}
@@ -203,6 +209,7 @@ namespace Battles
 			}
 		}
 		public void doIdleAnimation() {
+			_lastAnimAction = Time.time;
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
 				myAnimator.SetInteger("AnimState",(int) EMonsterAnimations.Idle);
 				fadeInMakeup();
@@ -211,14 +218,30 @@ namespace Battles
 		}
 		
 		public void doAttackAnimation() {
+			_lastAnimAction = Time.time;
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
-				myAnimator.SetInteger("AnimState",(int) EMonsterAnimations.Idle);
 				_anim.SetTrigger("ScratchAttack");
 				fadeInMakeup(); 
+				StartCoroutine(doReturnToIdle());
+
+			}
+		}
+
+		public IEnumerator doReturnToIdle() {
+			_lastAnimAction = Time.time;
+			yield return new WaitForEndOfFrame ();
+			myAnimator.SetInteger("AnimState",(int) EMonsterAnimations.Idle);
+			if (returnPosition != null && returnPosition.magnitude != 0f) {
+				Hashtable h = new Hashtable();
+				h.Add("position",this.returnPosition);
+				h.Add ("time",0.5f);
+				h.Add ("oncompletetarget",this.gameObject);
+				iTween.MoveTo(this.gameObject,h);
 			}
 		}
 		
 		public void doDefenseAnimation() {
+			_lastAnimAction = Time.time;
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
 				_anim.SetTrigger("HitAnim");
 				fadeInMakeup();
@@ -277,6 +300,26 @@ namespace Battles
 		}
 		
 		public void Update() {
+			if (Time.time - _lastAnimAction > IDLE_ACTION) {
+				_lastAnimAction = Time.time;
+				if(_anim.GetInteger("AnimState")==0) {
+					if(UnityEngine.Random.Range(1,3)==1) {
+						switch(UnityEngine.Random.Range (1,4)) {
+							case(1):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("Flip");break;
+							case(2):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("FootStamp");break;
+							case(3):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("RearUpAndRoar");break;
+							case(4):_anim.SetInteger("AnimState",-1);_anim.SetTrigger("RearUpAndRoar2");break;
+
+						}
+					}
+				} else {
+					AnimatorStateInfo inf = _anim.GetCurrentAnimatorStateInfo(0);
+					int idleState = Animator.StringToHash("Base.Idle");
+					if(idleState == inf.fullPathHash) {
+						_anim.SetInteger("AnimState",0);
+					}
+				}
+			}
 			if(_proceedEvolution) {
 				_proceedEvolution = false;
 				GameObject g = UnityEngine.Object.Instantiate(this._monsterRef.prefab) as GameObject;

@@ -36,6 +36,10 @@ namespace Battles
 			}
 			
 			yield return new WaitForSeconds(aSeconds);
+			
+			this.GetComponent<CameraTrack> ().target = null;
+			this.GetComponent<CameraTrack> ().stickTo = null;
+
 			aMoveQueueItem.advanceMoveQueueFromState(EMoveQueueItemStatus.AttackAnimation);
 		}
 		protected virtual void unpackInitData() {

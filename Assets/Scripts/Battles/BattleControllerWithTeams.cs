@@ -338,6 +338,7 @@ namespace Battles
 		
 
 		protected void prepareTeamsForNextTurn() {
+			this.teamACameraPath.gameObject.SetActive (true);
 			_teams[0].prepareTeamForNextTurn();
 			_teams[1].prepareTeamForNextTurn();
 		}
@@ -356,8 +357,16 @@ namespace Battles
 		protected IEnumerator moveMonsterBackToPosition(MoveQueueItem aItem) {
 			BattleTeam myTeam = aItem.actioningTeam;
 			Vector3 pos = BattleConstants.getMyPosition(this.positionFromTeam(myTeam),myTeam.positionForMonster(aItem.actioningMonster.gameObject));
-			iTween.MoveTo(aItem.actioningMonster.gameObject,pos,0.25f);
-			yield return new WaitForSeconds(0.25f);
+			Hashtable h = new Hashtable();
+			h.Add("position",pos);
+			h.Add ("time",0.5f);
+		/*	h.Add ("oncompletetarget",this.gameObject);
+			h.Add ("oncomplete","onDoAttackAnimation"); 
+			h.Add ("oncompleteparams",actionMonster);*/
+			h.Add("easetype",iTween.EaseType.easeOutCubic); 
+			iTween.MoveTo(aItem.actioningMonster.gameObject,h);
+
+			yield return new WaitForSeconds(0.5f);
 			aItem.advanceMoveQueueFromState(EMoveQueueItemStatus.MoveBackToPosition);
 		}
 		protected ETeamPosition positionFromTeam(BattleTeam aTeam) {
@@ -696,7 +705,12 @@ namespace Battles
 				isLeftMove = false;
 			}
 			for(int i = 0;i<allTargets.size;i++) {
-				
+				if(i==0) {
+					
+					this.GetComponent<CameraTrack>().target = allTargets[0].transform;
+					this.GetComponent<CameraTrack> ().stickTo = null;
+
+				} 
 				GameObject animPrefab = aMoveQueue.moveData.attackAnimationHitPrefab;
 				if(animPrefab!=null) {
 					animPrefab.tag = "ParticleSystems";
@@ -758,7 +772,7 @@ namespace Battles
 			} else {
 				allTargets = targetTeam.getTargetsForMove(aMoveQueue.targetMonster,aMoveQueue.moveData);
 			}
-			yield return new WaitForSeconds(0.45f);
+			yield return new WaitForSeconds(0.01f);
 			for(int i = 0;i<allTargets.size;i++) {
 				
 				GameObject animPrefab = aMoveQueue.moveData.attackAnimationPrefab;

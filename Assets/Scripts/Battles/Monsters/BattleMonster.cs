@@ -50,7 +50,9 @@ namespace Battles
 		}
 
 		public void Update() {
-			hp = this._monsterRef.hp;
+			if(this._monsterRef!=null)
+				hp = this._monsterRef.hp;
+			base.Update ();
 		}
 		
 		public Quaternion rotation {

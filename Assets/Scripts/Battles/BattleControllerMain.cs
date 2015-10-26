@@ -107,6 +107,8 @@ namespace Battles {
 			this.unpackTeam2();
 			
 			yield return new WaitForEndOfFrame();
+
+			this.GetComponent<CameraTrack> ().target = this.opponentTeam.monstersAsBattleMonster [0].transform;
 			_teams[0].initBattleStartPassiveEffects(_teams[1]);
 			_teams[1].initBattleStartPassiveEffects(_teams[0]);
 			if(initData!=null) {
