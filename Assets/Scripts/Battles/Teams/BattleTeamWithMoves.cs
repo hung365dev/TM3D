@@ -26,7 +26,7 @@ namespace Battles
 					monsters[i].monster.hp =1f;
 					monsters[i].hp = 1f;
 					monsters[i].removeAllLingeringEffects();
-					iTween.FadeTo(monsters[i].gameObject,1f,0.5f);
+					///iTween.FadeTo(monsters[i].gameObject,1f,0.5f);
 					
 					MoveQueueItem mq = new MoveQueueItem(float.MaxValue,MovesLib.REF.getMove("Full Revive"),this.teamPosition,this.positionForMonster(monsters[i]),this.positionForMonster(monsters[i]));
 					mq.actioningMonster = (BattleMonsterWithMoves) monsters[i];
