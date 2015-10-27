@@ -20,7 +20,18 @@ namespace Battles
 			this.teamType = ETeamControllerType.WildAI;
 		}
 		
-		
+		public BattleMonster getClosestMonsterTo(Vector3 aPosition) {
+			BetterList<BattleMonster> ms = this.monstersAsBattleMonster;
+			float closestDist = float.MaxValue;
+			BattleMonster closestMonster = null;
+			for(int i = 0;i<ms.size;i++) {
+				if(Vector3.Distance(aPosition,ms[i].transform.position)<closestDist) {
+					closestDist = Vector3.Distance(aPosition,ms[i].transform.position);
+					closestMonster = ms[i];
+				}
+			}
+			return closestMonster;
+		}
 		public float bestMeleeAtck {
 			get {
 				BetterList<BattleMonster> bm = this.monstersAsBattleMonster;

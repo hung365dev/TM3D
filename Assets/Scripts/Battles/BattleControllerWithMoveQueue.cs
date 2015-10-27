@@ -304,7 +304,7 @@ namespace Battles
 				if(_currentItem.moveData!=null) {
 					EStatusEffects reasonForNoMove = actionMonster.lingeringEffectsAllowMove();
 
-					this.GetComponent<CameraTrack>().target = this._currentItem.actioningMonster.gameObject.transform;
+					this.GetComponent<CameraTrack>().setTarget(this._currentItem.actioningMonster.gameObject.transform);
 					this.GetComponent<CameraTrack>().stickTo = this._currentItem.actioningMonster.transform.FindChild("CameraMount");
 					this.teamACameraPath.gameObject.SetActive(false);
 					this.teamBCameraPath.gameObject.SetActive(false);
@@ -479,10 +479,13 @@ namespace Battles
 		}
 
 		public void onDoAttackAnimation(BattleMonster aActionMonster) {
-			aActionMonster.doAttackAnimation();	
-			
-			this.GetComponent<CameraTrack> ().target = null;
-			this.GetComponent<CameraTrack> ().stickTo = null;
+			aActionMonster.doAttackAnimation();
+
+			// Stick the camera to the closets opponent monters side camera mount
+			BattleMonster closestOpponent = this.otherTeam (this.teamFromMonster (aActionMonster)).getClosestMonsterTo (aActionMonster.transform.position);
+			this.GetComponent<CameraTrack> ().setTarget(closestOpponent.transform);
+			this.GetComponent<CameraTrack> ().stickTo = closestOpponent.transform.FindChild ("SideCameraMount");
+		//	this.GetComponent<CameraTrack> ().smooth = true;
 
 			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject));
 			this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;

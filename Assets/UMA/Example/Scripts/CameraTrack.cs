@@ -17,6 +17,7 @@ public class CameraTrack : MonoBehaviour {
 	public float minDistance = 10.0f;	//How far the target is from the camera
 	public string property = "";
 	public Transform stickTo;
+	private Transform oldStickTo;
 	private Color color;
 	private float alpha = 1.0f;
 	private Transform _myTransform;
@@ -43,35 +44,37 @@ public class CameraTrack : MonoBehaviour {
 	void Update () {
 		 
 	}
-	void LateUpdate() {
+
+	public void setTarget(Transform aTarget) {
+		target = aTarget;
+		if(target!=null)
+			immediateLook ();
+	}
+	public void immediateLook() {
+		//damping = 0f;
+		smooth = false;
+		//_myTransform.LookAt (target.transform.position);
+		LateUpdate ();
+		smooth = true;
+	}
+	public void LateUpdate() {
+		smooth = false;
 		if (stickTo) {
+			if(stickTo!=oldStickTo) {
+				_myTransform.LookAt(target.transform.position);
+
+			}
 			this.transform.position = stickTo.transform.position;
 		}
+		oldStickTo = stickTo;
 		if(target) {
 			if(smooth) {
-				
 				//Look at and dampen the rotation
 				Quaternion rotation = Quaternion.LookRotation(target.position - _myTransform.position);
 				_myTransform.rotation = Quaternion.Slerp(_myTransform.rotation, rotation, Time.deltaTime * damping);
 			}
 			else { //Just look at
-				_myTransform.rotation = Quaternion.FromToRotation(-Vector3.forward, (new Vector3(target.position.x, target.position.y, target.position.z) - _myTransform.position).normalized);
-				
-				float distance = Vector3.Distance(target.position, _myTransform.position);
-				
-				if(distance < minDistance) {
-					alpha = Mathf.Lerp(alpha, 0.0f, Time.deltaTime * 2.0f);
-				}
-				else {
-					alpha = Mathf.Lerp(alpha, 1.0f, Time.deltaTime * 2.0f);
-					
-				}
-				//				if(!string.IsNullOrEmpty(property)) {
-				//					color.a = Mathf.Clamp(alpha, 0.0f, 1.0f);
-				
-				//					renderer.material.SetColor(property, color);
-				
-				//				}
+				_myTransform.LookAt(target.transform.position);
 			}
 		}
 	}

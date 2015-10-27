@@ -108,7 +108,7 @@ namespace Battles {
 			
 			yield return new WaitForEndOfFrame();
 
-			this.GetComponent<CameraTrack> ().target = this.opponentTeam.monstersAsBattleMonster [0].transform;
+			this.GetComponent<CameraTrack> ().setTarget (this.opponentTeam.monstersAsBattleMonster [0].transform);
 			_teams[0].initBattleStartPassiveEffects(_teams[1]);
 			_teams[1].initBattleStartPassiveEffects(_teams[0]);
 			if(initData!=null) {
@@ -289,7 +289,7 @@ namespace Battles {
 			this.topLabel.gameObject.SetActive(false);
 			this.barController.hintLabel.gameObject.SetActive(false);
 			_battleComplete = true;
-			this.GetComponent<CameraTrack>().target = null;
+			this.GetComponent<CameraTrack> ().setTarget (null);
 			if(aWinning==this.playersTeam) {
 				
 				this._battleTurn = -10;

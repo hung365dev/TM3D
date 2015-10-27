@@ -338,6 +338,8 @@ namespace Battles
 		
 
 		protected void prepareTeamsForNextTurn() {
+			
+			this.GetComponent<CameraTrack> ().stickTo = null;
 			this.teamACameraPath.gameObject.SetActive (true);
 			_teams[0].prepareTeamForNextTurn();
 			_teams[1].prepareTeamForNextTurn();
@@ -706,10 +708,8 @@ namespace Battles
 			}
 			for(int i = 0;i<allTargets.size;i++) {
 				if(i==0) {
-					
-					this.GetComponent<CameraTrack>().target = allTargets[0].transform;
-					this.GetComponent<CameraTrack> ().stickTo = null;
-
+					this.GetComponent<CameraTrack>().setTarget(allTargets[0].transform);
+					this.GetComponent<CameraTrack>().stickTo =allTargets[0].transform.FindChild("SideCameraMount");
 				} 
 				GameObject animPrefab = aMoveQueue.moveData.attackAnimationHitPrefab;
 				if(animPrefab!=null) {
