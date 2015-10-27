@@ -39,7 +39,7 @@ using Battles;
 			yield return new WaitForEndOfFrame();
 			monsterLib.initLib();
 			new PlayerMain ();
-			SpawnAreaMonster m = new SpawnAreaMonster ("Dandylion", 20, 1f, "");
+			SpawnAreaMonster m = new SpawnAreaMonster ("Dandylion",50, 1f, "");
 			
 			PlayerMain.REF.initForDebug ();
 			new BattleInit (m,""); 

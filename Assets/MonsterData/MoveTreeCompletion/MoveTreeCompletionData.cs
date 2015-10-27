@@ -140,7 +140,6 @@ public class MoveTreeCompletionData
 			
 			if(unlockTreeItem(available[0].itemRef.ID, aEvolutionLevel, aLevel,aMaxEvolution)) {
 				
-				Debug.Log ("Unlocked move: "+_items[0].moveData.Name+" - On Branch: "+this._items[0].moveBranch);
 				return true;
 			} 
 		}

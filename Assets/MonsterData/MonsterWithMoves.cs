@@ -151,19 +151,12 @@ public class MonsterWithMoves : MonsterDataWithPassiveEffects
 		}
 		protected void initRandomMoves() {
 			byte c = 0;
-			if(QuestLog.GetQuestState("Save_the_Town")==QuestState.Success) {
-				while((this.movesAssigned==0)||(movePointsAvailable>1 && c < 255)) {
-					assignMoveAtRandom();
-					c++;
-				}
-			} else {
-				if(this.movesAssigned<2) {
-					int tree = 0;
-					this.assignBasicMoveToTree(moveTrees[0]);
-					this.assignBasicMoveToTree(moveTrees[0]);
-				}
+			
+			while((this.movesAssigned==0)||(movePointsAvailable>1 && c < 20)) {
+				assignMoveAtRandom();
+				c++;
 			}
-
+			
 		}
 		protected int movesAssigned {
 			get {
