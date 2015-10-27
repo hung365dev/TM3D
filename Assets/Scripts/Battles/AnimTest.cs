@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using GoogleFu;
+using Google2u;
 using System.Collections.Generic;
 using Battles;
 
