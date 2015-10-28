@@ -315,7 +315,7 @@ namespace Battles
 		}
 		
 		public void Update() {
-			if (Time.time - _lastAnimAction > IDLE_ACTION) {
+			if (Time.time - _lastAnimAction > IDLE_ACTION&&!BattleControllerMain.REF.moveQueueActive) {
 				_lastAnimAction = Time.time;
 				if(_anim.GetInteger("AnimState")==0) {
 					if(UnityEngine.Random.Range(1,4)==1) {
