@@ -160,7 +160,7 @@ namespace Battles
 				break;
 			case(EMoveQueueItemStatus.AttackAnimation):
 
-				StartCoroutine(this.doAttackAnimation(this._currentItem));
+				StartCoroutine(this.doAttackParticlesAnimation(this._currentItem));
 				break;
 			case(EMoveQueueItemStatus.HPHits):
 				this.applyHPEffectsToTeams(this._currentItem);
@@ -333,6 +333,16 @@ namespace Battles
 							Debug.Log ("<color=blue>This was not the first hit, I'm not taking: "+_currentItem.moveData.energy+"</color>");
 							
 						}
+						if(_currentItem==null) {
+							Debug.LogError("performMove - _currentItem is null");
+						}
+						if(_currentItem.moveData==null) {
+							Debug.LogError("performMove - _currentItem.moveData is null");
+						}
+						if(_currentItem.moveData.attackAnimation==null) {
+							Debug.LogError("performMove - Move data: "+_currentItem.moveData.Name+" is null!");
+						}
+
 						if(_currentItem.moveData.attackAnimation.movementType=="Normal"&&targetTeam!=this.teamFromMonster((BattleMonster) actionMonster)) {
 							// Make our monster run at their opponent
 							actionMonster.setAnimation(EMonsterAnimations.Walk);
@@ -480,16 +490,23 @@ namespace Battles
 
 		public void onDoAttackAnimation(BattleMonster aActionMonster) {
 			aActionMonster.doAttackAnimation();
-
+			aActionMonster.onSpawnAttack += onDoSpawnAttack;
 			// Stick the camera to the closets opponent monters side camera mount
+	/*	 */
+		}
+
+		private void onDoSpawnAttack(BattleMonster aActionMonster) {
+			
+			aActionMonster.onSpawnAttack -= onDoSpawnAttack;
+			this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
+			this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
 			BattleMonster closestOpponent = this.otherTeam (this.teamFromMonster (aActionMonster)).getClosestMonsterTo (aActionMonster.transform.position);
 			this.GetComponent<CameraTrack> ().setTarget(closestOpponent.transform);
 			this.GetComponent<CameraTrack> ().stickTo = closestOpponent.transform.FindChild ("SideCameraMount");
-		//	this.GetComponent<CameraTrack> ().smooth = true;
 
 			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject));
-			this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
-			this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
+			
+
 		}
 	}
 } 

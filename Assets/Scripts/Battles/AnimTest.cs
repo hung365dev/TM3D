@@ -165,10 +165,10 @@ public class AnimTest : MonoBehaviour {
 		GameObject[] allParticles = GameObject.FindGameObjectsWithTag("ParticleSystems");
 		for(int i = 0;i<allParticles.Length;i++) {
 			
-			allParticles[i].GetComponent<ParticleSystem>().renderer.sortingLayerName = "ParticleLayer";
+			allParticles[i].GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "ParticleLayer";
 			ParticleSystem[] children = allParticles[i].GetComponentsInChildren<ParticleSystem>();
 			for(int j = 0;j<children.Length;j++) {
-				children[j].renderer.sortingLayerName = "ParticleLayer";
+				children[j].GetComponent<Renderer>().sortingLayerName = "ParticleLayer";
 			}
 		}
 	}

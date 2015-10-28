@@ -5,9 +5,9 @@ namespace Battles {
 		public const int MAX_MONSTERS_PER_TEAM = 3;
 		public const float floor = 0f;
 		
-		public const float zPosition = 3.75f;
-		public const float zPositionMiddle = 2.5f; 
-		public const float topXPosition = -2f;
+		public const float zPosition = 6.75f;
+		public const float zPositionMiddle = 3.75f; 
+		public const float topXPosition = -4f;
 		public const float middleXPosition = 0f;
 		public static Vector3 POSITION_TEAM1_1 = new Vector3(topXPosition,floor,zPosition);
 		public static Vector3 POSITION_TEAM1_MIDDLE = new Vector3(middleXPosition,floor,zPositionMiddle);

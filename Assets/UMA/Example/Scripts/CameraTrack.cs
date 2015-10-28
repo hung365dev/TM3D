@@ -64,7 +64,8 @@ public class CameraTrack : MonoBehaviour {
 				_myTransform.LookAt(target.transform.position);
 
 			}
-			this.transform.position = stickTo.transform.position;
+			Vector3 vel = new Vector3();
+			this.transform.position = Vector3.SmoothDamp(this.transform.position,stickTo.transform.position,ref vel,0.05f);
 		}
 		oldStickTo = stickTo;
 		if(target) {

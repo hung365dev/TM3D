@@ -87,16 +87,16 @@ namespace Battles
 
 		public Vector3 SpawnPosition {
 			get {
-				return new Vector3(this.transform.position.x,this.transform.position.y+0.5f*0.75f);
+				return new Vector3(this.transform.position.x,this.transform.position.y,this.transform.position.z);
 			}
 		}
 		public Vector3 ConfuseSpawnPosition {
 			get {
 				
 				if(this.transform!=null)
-					return new Vector3(this.transform.position.x,this.transform.position.y+1f*0.75f); else return new Vector3();
+					return new Vector3(this.transform.position.x,this.transform.position.y,this.transform.position.z); else return new Vector3();
 			}
-		}
+		} 
 		
 		public void Start() {
 			Debug.Log(this.name);
@@ -214,9 +214,11 @@ namespace Battles
 		public string name
 		{
 			get {
-			
-				return this._monsterRef.name;
-			}
+				if(this._monsterRef!=null)
+					return this._monsterRef.name; else {
+					return "Test";
+				}
+			}	
 		}
 		
 		public virtual void cleanUp() {

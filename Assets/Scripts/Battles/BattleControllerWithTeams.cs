@@ -762,7 +762,7 @@ namespace Battles
 			pos.y += aLibItem.yOffset;
 			aAnimPrefab.transform.localPosition = pos;
 		}
-		protected IEnumerator doAttackAnimation(MoveQueueItem aMoveQueue) {
+		protected IEnumerator doAttackParticlesAnimation(MoveQueueItem aMoveQueue) {
 
 			BattleTeam targetTeam = this.teamFromPosition(aMoveQueue.targetTeam);
 			BattleMonster targetMonster = targetTeam.monsterFromPosition(aMoveQueue.targetMonster);
