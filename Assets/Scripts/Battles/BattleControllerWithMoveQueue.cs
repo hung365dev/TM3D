@@ -359,13 +359,12 @@ namespace Battles
 						} else
 						if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly") {
 								// The attacks effects only appear on the opponents side
-								actionMonster.setAnimation("RangeAttack");
+								actionMonster.doAttackAnimation(_currentItem);	
 								StartCoroutine(pauseToAttackAnimation(0.2f,(BattleMonster) actionMonster));
 							} else {
 							// Attack probably starts here and ends on opponent
-							
-								actionMonster.setAnimation("RangeAttack");
-								actionMonster.doAttackAnimation();	
+
+								actionMonster.doAttackAnimation(_currentItem);	
 							
 								this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
 								this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
@@ -388,7 +387,8 @@ namespace Battles
 						if(responsible!=null)
 							this._commentaryManager.addCommentaryMessage(_currentItem.actioningTeam.name+"'s "+_currentItem.actioningMonster.name+" "+reasonForNoMoveString+" Due to: "+responsible.Name,ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage); else
 							this._commentaryManager.addCommentaryMessage(_currentItem.actioningTeam.name+"'s "+_currentItem.actioningMonster.name+" "+reasonForNoMoveString+"",ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage); 
-						_currentItem.actioningMonster.doDefenseAnimation();
+
+						_currentItem.actioningMonster.doDefenseAnimation(this._currentItem);
 						 
 						StartCoroutine(pauseToSkipToFinish());
 					} 
@@ -482,14 +482,14 @@ namespace Battles
 		}
 		private IEnumerator pauseToAttackAnimation(float aDelay,BattleMonster aActionMonster) {
 			yield return new WaitForSeconds(aDelay);
-			aActionMonster.doAttackAnimation();	
+			aActionMonster.doAttackAnimation(this._currentItem);	
 			
 			this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
 			this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
 		}
 
 		public void onDoAttackAnimation(BattleMonster aActionMonster) {
-			aActionMonster.doAttackAnimation();
+			aActionMonster.doAttackAnimation(this._currentItem);
 			aActionMonster.onSpawnAttack += onDoSpawnAttack;
 			// Stick the camera to the closets opponent monters side camera mount
 	/*	 */

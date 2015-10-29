@@ -72,7 +72,7 @@ namespace ManageMonster
 		
 		private void doMove(int aIndex) {
 			if(monster.moves.size>=aIndex) {
-				monster.doAttackAnimation();
+				monster.doAttackAnimation(null);
 				SelectedMoveData m = monster.moves[aIndex];
 				MoveLibItem i = m.moveData;
 				//Vector2 targetMonsterPosition = BattleConstants.getFaceOffPosition(_currentItem.targetTeam,targetTeam.updatedTargetPosition(_currentItem.targetMonster));

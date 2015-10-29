@@ -19,8 +19,10 @@ public class MoveLibItem {
 	private float _splashpercent;
 	private ESplashRange _splashRange;
 	private float _accuracy;
-	private MoveAnimationLibItem _animation;
-	private MoveAnimationLibItem _hitAnimation;
+	private string _attackMecanim;
+	private string _hitMecanim;
+	private MoveAnimationLibItem _particlesAnimation;
+	private MoveAnimationLibItem _hitParticlesAnimation;
 	private float _paralyzePercent;
 	private float _sleepPercent;
 	private float _poisonPercent;
@@ -121,8 +123,10 @@ public class MoveLibItem {
 			case("Random Opponent"):this._splashRange = ESplashRange.RandomOpponent;break;
 		}
 		this._accuracy = aInitData._Accuracy;
-		this._animation = MovesAnimationLib.REF.getAnimation(aInitData._AttackAnimation);
-		_hitAnimation = MovesAnimationLib.REF.getAnimation(aInitData._AttackAnimationHit);
+		this._particlesAnimation = MovesAnimationLib.REF.getAnimation(aInitData._AttackParticlesAnimation);
+		this._hitParticlesAnimation = MovesAnimationLib.REF.getAnimation(aInitData._AttackParticlesAnimationHit);
+		this._attackMecanim = aInitData._AttackMecanim;
+		this._hitMecanim = aInitData._HitMecanim;
 		this._paralyzePercent = aInitData._ParalyzePercent;
 		this._sleepPercent = aInitData._SleepPercent;
 		this._poisonPercent = aInitData._PoisonPercent;
@@ -170,6 +174,17 @@ public class MoveLibItem {
 		}
 //		this.removesWeaknessesTo = aInitData._
 	//	this.agilityMultiplier = aInitData.A
+	}
+
+	public string attackMecanim {
+		get {
+			return this._attackMecanim;
+		}
+	}
+	public string hitMecanim {
+		get {
+			return this._hitMecanim;
+		}
 	}
 	public byte effectsDuration {
 		get {
@@ -269,8 +284,8 @@ public class MoveLibItem {
 	}
 	public GameObject attackAnimationHitPrefab {
 		get {
-			if(this._hitAnimation!=null)
-			return this._hitAnimation.prefab; else {
+			if(this._hitParticlesAnimation!=null)
+			return this._hitParticlesAnimation.prefab; else {
 				return null;
 			}
 		}
@@ -278,19 +293,19 @@ public class MoveLibItem {
 	
 	public MoveAnimationLibItem attackHitAnimation {
 		get {
-			return this._hitAnimation;
+			return this._hitParticlesAnimation;
 		}
 	}
 	
 	public GameObject attackAnimationPrefab {
 		get {
-			return this._animation.prefab;
+			return this._particlesAnimation.prefab;
 		}
 	}
 	
 	public MoveAnimationLibItem attackAnimation {
 		get {
-			return this._animation;
+			return this._particlesAnimation;
 		}
 	}
 	public int id {

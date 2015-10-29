@@ -148,7 +148,7 @@ public class AnimTest : MonoBehaviour {
 	}
 	public void AttackAnimationFinish(UnityEngine.Object aAnimation) {
 		Destroy ((GameObject) aAnimation);
-		this.rightMonster.doDefenseAnimation();
+		this.rightMonster.doDefenseAnimation(null);
 	}
 	
 	protected void adaptAnimPrefabPositionByOffset(GameObject aAnimPrefab,bool aIsLeftMove,MoveAnimationLibItem aLibItem) {
@@ -158,7 +158,7 @@ public class AnimTest : MonoBehaviour {
 		} else {
 			pos.x -= aLibItem.xOffset;
 		}
-		aAnimPrefab.transform.localPosition = pos;
+		aAnimPrefab.transform.localPosition = pos; 
 	}
 	
 	public static void putParticlesInfront() {

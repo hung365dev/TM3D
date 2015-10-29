@@ -106,7 +106,7 @@ namespace Battles
 		}
 		private IEnumerator evolveProcedure() {
 			yield return new WaitForSeconds(1.25f);
-			iTween.FadeTo(this.gameObject,0f,2f);
+		//	iTween.FadeTo(this.gameObject,0f,2f);
 			yield return new WaitForSeconds(2f);
 			completedEvolving = true;
 			this.monster.evolve();
@@ -122,8 +122,7 @@ namespace Battles
 		}
 		 
 		public void pauseEvolution() {
-			
-			iTween.FadeTo(this.gameObject,1f,0.01f);
+
 			this.StopAllCoroutines ();
 		}
 		public GameObject createCaughtAnimEffect(int aStage) {
@@ -222,11 +221,11 @@ namespace Battles
 			
 		}
 		
-		public void doAttackAnimation() {
-			_lastAnimAction = Time.time;
+		public void doAttackAnimation(MoveQueueItem aCurrentItem) {
+			_lastAnimAction = Time.time; 
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
 				_anim.SetInteger("AnimState",-1);
-				_anim.SetTrigger("ScratchAttack");
+				_anim.SetTrigger(aCurrentItem.moveData.attackMecanim);
 			//	fadeInMakeup(); 
 			//	StartCoroutine(doReturnToIdle());
 			}
@@ -247,11 +246,11 @@ namespace Battles
 			}
 		}
 		
-		public void doDefenseAnimation() {
+		public void doDefenseAnimation(MoveQueueItem aCurrentItem) {
 			_lastAnimAction = Time.time;
 			
 			if(this._monsterRef==null||(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep))) {
-				_anim.SetTrigger("HitAnim");
+				_anim.SetTrigger(aCurrentItem.moveData.hitMecanim);
 				fadeInMakeup();
 			}
 		}  

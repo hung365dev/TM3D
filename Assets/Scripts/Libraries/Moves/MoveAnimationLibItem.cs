@@ -11,7 +11,8 @@ public class MoveAnimationLibItem {
 	public string category;
 	public float yOffset;
 	public float xOffset;
-	
+
+	public static BetterList<BetterList<GameObject>> prefabs = new BetterList<BetterList<GameObject>>();
 	public float leftSideRotation = 0f;
 	public float rightSideRotation = 0f;
 	public MoveAnimationLibItem(MoveAnimationNamesRow aMoveAnimationName) {
@@ -39,8 +40,38 @@ public class MoveAnimationLibItem {
 			return _movementType;
 		}
 	}
+	public static void putBackParticles(GameObject aParticles) {
+		ParticleSystem p1 = aParticles.GetComponent<ParticleSystem> ();
+		p1.Clear ();
+		ParticleSystem[] ps = aParticles.GetComponentsInChildren<ParticleSystem> ();
+		for (int i = 0; i<ps.Length; i++) {
+			ps[i].Clear();
+		}
+		aParticles.gameObject.SetActive (false);
+		for (int i = 0; i<prefabs.size; i++) {
+			if(prefabs[i][0].name==aParticles.name) {
+				prefabs[i].Add(aParticles);
+				return;
+			}
+		}
+		prefabs.Add (new BetterList<GameObject> ());
+		prefabs [prefabs.size - 1].Add (aParticles);
+	}
 	public GameObject prefab {
 		get {
+			for(int i = 0;i<prefabs.size;i++) {
+				if(prefabs[i].size>0) {
+					if(prefabs[i][0].name==this._prefab) {
+						GameObject r = prefabs[i][0];
+						prefabs[i].RemoveAt(0);
+						if(prefabs[i].size==0) {
+							prefabs.RemoveAt(i);
+						}
+						r.gameObject.SetActive(true);
+						return r;
+					}
+				}
+			}
 			Object o = Resources.Load("Battles/MoveEffects/"+this._prefab);
 			
 			if(o==null) {
@@ -48,6 +79,7 @@ public class MoveAnimationLibItem {
 				return null;
 			}
 			GameObject prefab = UnityEngine.Object.Instantiate(o) as GameObject;
+			prefab.name = this._prefab;
 			return prefab;
 		}
 	}

@@ -51,7 +51,7 @@ namespace Battles
 					if (dmg > this._monsterRef.hp) {
 						dmg = this._monsterRef.hp;
 					}
-					this.doDefenseAnimation ();
+					this.doDefenseAnimation (null);
 					this.hp -= dmg;
 				
 					StartCoroutine (doneHPChange ());
@@ -68,7 +68,7 @@ namespace Battles
 					if (dmg > this._monsterRef.hp) {
 						dmg = this._monsterRef.hp;
 					}
-					this.doDefenseAnimation ();
+					this.doDefenseAnimation (null);
 					this.hp -= dmg;
 				
 					StartCoroutine (doneHPChange ());

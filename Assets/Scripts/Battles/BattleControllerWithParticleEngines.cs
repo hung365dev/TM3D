@@ -27,10 +27,10 @@ namespace Battles
 				if(aMoveQueueItem.moveData!=null) {
 					if(!aMoveQueueItem.moveData.isBoost) {
 						
-						allTargets[i].doDefenseAnimation();
+						allTargets[i].doDefenseAnimation(this._currentItem);
 					} else {
-						
-						allTargets[i].doAttackAnimation();
+						 
+						allTargets[i].doDefenseAnimation(this._currentItem);
 					}
 				}
 			}

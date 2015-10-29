@@ -174,7 +174,7 @@ public class BattleOverScreen : MonoBehaviour
 	
 	private IEnumerator monsterCaughtRoutine() {
 		yield return new WaitForSeconds(0.5f);
-		_caughtMonster.doAttackAnimation();
+		_caughtMonster.doAttackAnimation(null);
 		yield return new WaitForSeconds(2.0f);
 		
 		yield return new WaitForSeconds(0.1f);
@@ -207,7 +207,7 @@ public class BattleOverScreen : MonoBehaviour
 		for(int i = 0;i<monsters.size;i++) {
 			if(monsters[i]==aMonsterToIgnore) {
 			} else {
-				iTween.FadeTo(monsters[i].gameObject,aAlpha,0.25f);
+			//	iTween.FadeTo(monsters[i].gameObject,aAlpha,0.25f);
 			}
 		}
 	}

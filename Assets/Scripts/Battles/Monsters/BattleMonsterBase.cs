@@ -301,7 +301,7 @@ namespace Battles
 		
 		public void doRestAnimation() {
 			if(this._monsterRef.restingStatus!=ERestingStatus.Awake&&!_makeupFaded&&_monsterMakeup!=null) {
-				iTween.FadeTo(this._monsterMakeup.gameObject,0f,1f);
+			//	iTween.FadeTo(this._monsterMakeup.gameObject,0f,1f);
 				_makeupFaded = true;
 			}
 			_anim.SetInteger("AnimState",(int) EMonsterAnimations.Rest);
@@ -324,7 +324,6 @@ namespace Battles
 			if(this.onFaintComplete!=null) {
 				this.onFaintComplete(this as BattleMonster);
 			}
-			iTween.FadeTo(this.gameObject,0.5f,1f);
 			this.doRestAnimation();
 			moveFlags =  moveFlags & ~EMoveFlag.Fainting;
 		}

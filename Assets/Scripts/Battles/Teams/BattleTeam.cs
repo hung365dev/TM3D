@@ -203,7 +203,7 @@ namespace Battles
 		public void fadeTeam(float aFinalAlpha) {
 			for(int i = 0;i<this._monsters.Length;i++) {
 				if(_monsters[i]!=null) {
-					iTween.FadeTo(_monsters[i],aFinalAlpha,0.5f);
+				//	iTween.FadeTo(_monsters[i],aFinalAlpha,0.5f);
 				}
 			}
 			this.healthBars = false;
