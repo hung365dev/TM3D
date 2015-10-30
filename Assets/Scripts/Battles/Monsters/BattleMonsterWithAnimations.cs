@@ -233,6 +233,11 @@ namespace Battles
 		public void OnEndOfAnim() {
 			Debug.Log ("OnEndOfAnim()");
 		}
+		public void OnSmallCameraShake() {
+			GameObject g = GameObject.FindGameObjectWithTag ("MainCamera");
+			CameraShake c = g.GetComponent<CameraShake> ();
+			c.SmallShake ();
+		}
 		public IEnumerator doReturnToIdle() {
 			_lastAnimAction = Time.time;
 			yield return new WaitForEndOfFrame ();

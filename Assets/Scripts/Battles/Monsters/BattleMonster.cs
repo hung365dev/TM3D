@@ -48,15 +48,17 @@ namespace Battles
 				moveDataRef[i] = aMonsterRef.selectedMoves[i];
 
 				for(int j = 0;j<3;j++) {
-					GameObject g = moveDataRef[i].moveData.attackAnimationPrefab;
-					if(g!=null) {
-						g.SetActive(false);
-						MoveAnimationLibItem.putBackParticles(g);
-					}
-					g = moveDataRef[i].moveData.attackAnimationHitPrefab;
-					if(g!=null) {
-						g.SetActive(false); 
-						MoveAnimationLibItem.putBackParticles(g);
+					if(moveDataRef[i].moveData!=null) {
+						GameObject g = moveDataRef[i].moveData.attackAnimationPrefab;
+						if(g!=null) {
+							g.SetActive(false);
+							MoveAnimationLibItem.putBackParticles(g);
+						}
+						g = moveDataRef[i].moveData.attackAnimationHitPrefab;
+						if(g!=null) {
+							g.SetActive(false); 
+							MoveAnimationLibItem.putBackParticles(g);
+						}
 					}
 				}
 			}
