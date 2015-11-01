@@ -346,7 +346,7 @@ namespace Battles
 						if(_currentItem.moveData.attackAnimation.movementType=="Normal"&&targetTeam!=this.teamFromMonster((BattleMonster) actionMonster)) {
 							// Make our monster run at their opponent
 							actionMonster.setAnimation(EMonsterAnimations.Walk);
-							StartCoroutine(delayedToStartRunAnim(actionMonster,0.35f));
+							StartCoroutine(delayedToStartRunAnim(actionMonster,0.35f,0.75f));
 							Hashtable h = new Hashtable();
 							h.Add("position",targetMonsterPosition);
 							h.Add ("time",1.5f); 
@@ -355,6 +355,7 @@ namespace Battles
 							h.Add ("oncompleteparams",actionMonster);
 							h.Add("easetype",iTween.EaseType.easeInQuad); 
 							iTween.MoveTo(actionMonster.gameObject,h);
+							
 
 						} else
 						if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly") {
@@ -418,10 +419,23 @@ namespace Battles
 		
 		}
 
-		private IEnumerator delayedToStartRunAnim(BattleMonsterWithMoves aActionMonster,float aDelay) {
+		private IEnumerator delayedToStartRunAnim(BattleMonsterWithMoves aActionMonster,float aDelay,float aSecondDelay) {
 			yield return new WaitForSeconds (aDelay);
-			
 			aActionMonster.setAnimation(EMonsterAnimations.Run);
+			BetterList<BattleMonster> allTargets;
+			if(this._currentItem.moveData.isBoost) {
+				allTargets = this.teamFromMonster(aActionMonster).getBoostTargetsForMove(_currentItem.targetMonster,_currentItem.moveData,(BattleMonster) aActionMonster);
+			} else {
+				//	allTargets = targetTeam.getTargetsForMove(aMoveQueue.targetMonster,aMoveQueue.moveData);
+				allTargets = this.otherTeam(this.teamFromMonster(aActionMonster)).
+				
+			}
+
+			this.GetComponent<CameraTrack> ().setTarget(closestOpponent.transform);
+			this.GetComponent<CameraTrack> ().stickTo = closestOpponent.transform.FindChild ("SideCameraMount");
+			
+			// Get targets
+			
 		}
 		private IEnumerator doCaptureAttempt() {
 			BattleMonster opp = this.opponentTeam.monstersAsBattleMonster[BattleConstants.FRONT_INDEX];
