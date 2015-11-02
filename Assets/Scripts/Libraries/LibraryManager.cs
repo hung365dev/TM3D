@@ -43,7 +43,7 @@ using Battles;
 			
 			PlayerMain.REF.initForDebug ();
 			new BattleInit (m,""); 
-			Application.LoadLevel ("BattleSceneA");
+			Application.LoadLevel ("Greenaway");
 		}
 	}
 

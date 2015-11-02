@@ -12,7 +12,6 @@ public class WorldExplorerBase : MonoBehaviour {
 	public DialogueSystemController dialogue;
 	protected Map _mapRef;
 	public NPCManager npcManager;
-	public GameObject attentionGrabber;
 	private byte _doorwaysLayer;
 	private byte _collidersLayer;
 	public UILabel mapName;
@@ -39,11 +38,12 @@ public class WorldExplorerBase : MonoBehaviour {
 		}
 		
 		//Tile.SetCamera ();
-		
-		this.xpBoostLabel.gameObject.SetActive(false);
-		ranchInfoLabel.gameObject.SetActive(false);
-		ranchInfoObject.gameObject.SetActive(false);
-		this.repellantLabel.gameObject.SetActive(false);
+		if (this.xpBoostLabel != null) {
+			this.xpBoostLabel.gameObject.SetActive (false);
+			ranchInfoLabel.gameObject.SetActive (false);
+			ranchInfoObject.gameObject.SetActive (false);
+			this.repellantLabel.gameObject.SetActive (false);
+		}
 		PlayerMain player = PlayerMain.REF;
 		if(PlayerMain.REF.futureDoorway==null) {
 		
@@ -55,7 +55,7 @@ public class WorldExplorerBase : MonoBehaviour {
 			mapToLoad = _mapRef.fileName;
 		}
 		MAP_NAME = PlayerMain.REF.futureDoorway.targetMap.fileName;
-
+		/*
 		if(this.mapToLoad.Length>0) {
 			_mapRef = MapLibrary.getMap(mapToLoad);
 		}
@@ -64,8 +64,9 @@ public class WorldExplorerBase : MonoBehaviour {
 			mapToLoad = _mapRef.name;
 		} 
 		StartCoroutine(delayedSavingThings(mapToLoad));
-		
-		this.mapName.text = _mapRef.name;
+
+		if(this.mapName!=null)
+			this.mapName.text = _mapRef.name;
 		GameObject map;
 		if(mapToLoad.Contains("Guild")) {
 			map = UnityEngine.Object.Instantiate(Resources.Load("Maps/Indoors/Guilds/"+mapToLoad) as GameObject) as GameObject;
@@ -77,15 +78,12 @@ public class WorldExplorerBase : MonoBehaviour {
 		else map = UnityEngine.Object.Instantiate(Resources.Load("Maps/"+mapToLoad) as GameObject) as GameObject;
 		allMap = map;
 		locator = map.GetComponentInChildren<RanchLocatorFinder>();
+;*/
+		 
 
-		
-		
-		if (QuestLog.GetQuestState ("Save_the_Town") == QuestState.Success) {
-			Destroy (attentionGrabber);
-		}
 		putParticlesInfront();
 		GameTimer.REF.OnTimerTick += onSecondTimer;
-		StartCoroutine(UpdateTrackerAfterOneFrame(mapToLoad,map));
+		StartCoroutine(UpdateTrackerAfterOneFrame(mapToLoad));
 	 }
 	 
 	public void changeScene(string aNewScene) {
@@ -97,7 +95,12 @@ public class WorldExplorerBase : MonoBehaviour {
 	}
 	private void onSecondTimer() {
 		bool anyRanchNotes = false;
-		this.ranchInfoLabel.text = "";
+		if (this.ranchInfoLabel == null) {
+			return;
+		}
+
+		if(this.ranchInfoLabel!=null)
+			this.ranchInfoLabel.text = "";
 		if(MonsterWithClock.monstersAtRanch.size>0) {
 			string s = "Return to Ranch for: ";
 			for(int i = 0;i<MonsterWithClock.monstersAtRanch.size;i++) {
@@ -189,20 +192,21 @@ public class WorldExplorerBase : MonoBehaviour {
 			yield return new WaitForSeconds(2.5f);
 		
 		}
-		private IEnumerator UpdateTrackerAfterOneFrame(string aMapToLoad,GameObject aMap) {
-		if(PlayerMain.REF.monsterCount==0) {
-			// Start of game forced convo
-			Debug.Log ("My monster count is zero");
-			npcManager.initNpcsForMap(aMapToLoad,this as WorldExplorer,selectedAvatar,"ZinaPreSelectMonster",aMap);
+		private IEnumerator UpdateTrackerAfterOneFrame(string aMapToLoad) {
+		if (npcManager != null) {
+			if (PlayerMain.REF.monsterCount == 0) {
+				// Start of game forced convo
+				Debug.Log ("My monster count is zero");
+				npcManager.initNpcsForMap (aMapToLoad, this as WorldExplorer, selectedAvatar, "ZinaPreSelectMonster");
 			
-		} else 
-		if(PlayerMain.REF.futureDoorway!=null&&PlayerMain.REF.futureDoorway.futureNPCChat!=null) {
-			npcManager.initNpcsForMap(aMapToLoad,this as WorldExplorer,selectedAvatar,PlayerMain.REF.futureDoorway.futureNPCChat,aMap);
-		} else {
-			npcManager.initNpcsForMap(aMapToLoad,this as WorldExplorer,selectedAvatar,aMap);
+			} else 
+		if (PlayerMain.REF.futureDoorway != null && PlayerMain.REF.futureDoorway.futureNPCChat != null) {
+				npcManager.initNpcsForMap (aMapToLoad, this as WorldExplorer, selectedAvatar, PlayerMain.REF.futureDoorway.futureNPCChat);
+			} else {
+				npcManager.initNpcsForMap (aMapToLoad, this as WorldExplorer, selectedAvatar);
 			
+			}
 		}
-		
 		yield return null;
 
 
@@ -218,13 +222,13 @@ public class WorldExplorerBase : MonoBehaviour {
 	//	Tile.LoadLevel(_mapRef.tileData);
 	public void ranchLocationUpdate() {
 		if(ranchLocationUpdater==null) {
-			ranchLocationUpdater = UnityEngine.Object.Instantiate(Resources.Load("Maps/RanchLocationDisplay") as GameObject) as GameObject;
+//			ranchLocationUpdater = UnityEngine.Object.Instantiate(Resources.Load("Maps/RanchLocationDisplay") as GameObject) as GameObject;
 			
 			putParticlesInfront();
 		}
 		if(locator!=null) {
 			Vector2 vec = locator.findLocation();
-			ranchLocationUpdater.transform.position = new Vector3(vec.x,vec.y);
+		//	ranchLocationUpdater.transform.position = new Vector3(vec.x,vec.y);
 		}
 	}
 	public void initVariables() {
@@ -258,30 +262,6 @@ public class WorldExplorerBase : MonoBehaviour {
 				children[j].GetComponent<Renderer>().sortingLayerName = "ParticleLayer";
 			}
 		}
-		
-		allParticles = GameObject.FindGameObjectsWithTag("ParticlesUnderPlayer");
-		for(int i = 0;i<allParticles.Length;i++) {
-			
-			if(allParticles[i].GetComponent<ParticleSystem>()!=null) {
-				allParticles[i].GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "ParticlesUnderPlayer";
-			ParticleSystem[] children = allParticles[i].GetComponentsInChildren<ParticleSystem>();
-			for(int j = 0;j<children.Length;j++) {
-				children[j].GetComponent<Renderer>().sortingLayerName = "ParticlesUnderPlayer";
-			}
-			}
-		}
-		allParticles = GameObject.FindGameObjectsWithTag("ParticlesUnderBuildings");
-		for(int i = 0;i<allParticles.Length;i++) {
-			if(allParticles[i].GetComponent<ParticleSystem>()!=null) {
-				allParticles[i].GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "PlayerLower";
-				ParticleSystem[] children = allParticles[i].GetComponentsInChildren<ParticleSystem>();
-				for(int j = 0;j<children.Length;j++) {
-					children[j].GetComponent<Renderer>().sortingLayerName = "PlayerLower";
-				}
-			}
-		}
-		
-		//,
 	}
 	
 	public Map map {

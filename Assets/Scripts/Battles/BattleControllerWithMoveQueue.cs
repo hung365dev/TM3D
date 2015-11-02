@@ -422,18 +422,17 @@ namespace Battles
 		private IEnumerator delayedToStartRunAnim(BattleMonsterWithMoves aActionMonster,float aDelay,float aSecondDelay) {
 			yield return new WaitForSeconds (aDelay);
 			aActionMonster.setAnimation(EMonsterAnimations.Run);
-			BetterList<BattleMonster> allTargets;
-			if(this._currentItem.moveData.isBoost) {
-				allTargets = this.teamFromMonster(aActionMonster).getBoostTargetsForMove(_currentItem.targetMonster,_currentItem.moveData,(BattleMonster) aActionMonster);
-			} else {
-				//	allTargets = targetTeam.getTargetsForMove(aMoveQueue.targetMonster,aMoveQueue.moveData);
-				allTargets = this.otherTeam(this.teamFromMonster(aActionMonster)).
-				
-			}
+			yield return new WaitForSeconds (aSecondDelay);
+			BattleTeam targetTeam = teamFromPosition(_currentItem.targetTeam);			
+			EMonsterPos pos = targetTeam.updatedTargetPosition(_currentItem.targetMonster);
 
-			this.GetComponent<CameraTrack> ().setTarget(closestOpponent.transform);
-			this.GetComponent<CameraTrack> ().stickTo = closestOpponent.transform.FindChild ("SideCameraMount");
-			
+			Vector3 targetMonsterPosition = BattleConstants.getFaceOffPosition(this._currentItem.targetTeam,pos);
+			BattleMonster b = targetTeam.getClosestMonsterTo (targetMonsterPosition);
+			this.GetComponent<CameraTrack> ().stickTo = b.transform.FindChild ("SideCameraMount");
+			this.GetComponent<CameraTrack> ().target = b.transform;
+			this.GetComponent<CameraTrack> ().immediateLook ();
+			this.GetComponent<CameraTrack> ().immediateStick ();
+
 			// Get targets
 			
 		}

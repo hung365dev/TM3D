@@ -73,13 +73,19 @@ public class MoveAnimationLibItem {
 				}
 			}
 			Object o = Resources.Load("Battles/MoveEffects/"+this._prefab);
-			
+		
 			if(o==null) {
 				Debug.Log(this._prefab+" could not load particle effect");
 				return null;
 			}
 			GameObject prefab = UnityEngine.Object.Instantiate(o) as GameObject;
 			prefab.name = this._prefab;
+			ParticleSystem ps = prefab.GetComponent<ParticleSystem>();
+		//	ps.startSize = ps.startSize * 4;
+			ParticleSystem[] particleS = prefab.GetComponentsInChildren<ParticleSystem>();
+			for(int i = 0;i<particleS.Length;i++) {
+		//		particleS[i].startSize = particleS[i].startSize * 4;
+			}
 			return prefab;
 		}
 	}

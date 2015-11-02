@@ -48,7 +48,7 @@ public class CameraTrack : MonoBehaviour {
 	public void setTarget(Transform aTarget) {
 		target = aTarget;
 		if(target!=null)
-			immediateLook ();
+			immediateLook (); 
 	}
 	public void immediateLook() {
 		//damping = 0f;
@@ -56,6 +56,9 @@ public class CameraTrack : MonoBehaviour {
 		//_myTransform.LookAt (target.transform.position);
 		LateUpdate ();
 		smooth = true;
+	}
+	public void immediateStick() {
+		this._myTransform.transform.position = stickTo.transform.position;
 	}
 	public void LateUpdate() {
 		smooth = false;

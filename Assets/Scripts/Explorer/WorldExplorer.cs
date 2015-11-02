@@ -11,8 +11,7 @@ public class WorldExplorer : WorldExplorerWithButtons
 {
 	public GameObject QuestArrowPrefab;
 	public UIRoot uiRoot;
-	public GameObject maleAvatar;
-	public GameObject femaleAvatar;
+	public UMAMaker umaAvatar;
 	public GameObject mountTransitionGraphic;
 	public static bool MOUNTED = false;
 	public WorldExplorer ()
@@ -21,19 +20,10 @@ public class WorldExplorer : WorldExplorerWithButtons
 	
 	
 	public void Awake() {
-		Lua.Result maleStatus = DialogueLua.GetActorField("Player","Gender");
-		if(maleStatus.AsString=="Male") {
-			
-			Destroy (this.femaleAvatar);
-			maleAvatar.gameObject.SetActive(true);
-			selectedAvatar = maleAvatar;
-			
-		} else {
-			femaleAvatar.gameObject.SetActive(true);
-			selectedAvatar = femaleAvatar;
-				Destroy (this.maleAvatar);
-		}
-	
+		Lua.Result maleStatus = DialogueLua.GetActorField("Player","UMA");
+
+		// TODO Make UMA here!
+
 		StartCoroutine(createArrowsAfter1Frame());
 	}
 	public void onLaunchSettings() {

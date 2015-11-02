@@ -75,9 +75,11 @@ public class WorldExplorerWithButtons : WorldExplorerBase
 	public void showInterface(bool aShow) {
 		
 		AvatarMover.setJoystickActive(aShow);
-		menuButtons.gameObject.SetActive(aShow);
+		if(menuButtons!=null)
+			menuButtons.gameObject.SetActive(aShow);
 		Lua.Result r = DialogueLua.GetVariable("InterfaceButtonsEnabled");
-		mapNameObject.gameObject.SetActive(aShow);
+		if(mapNameObject!=null)
+			mapNameObject.gameObject.SetActive(aShow);
 		for(int i = 1;i<interfaceButtons.Length;i++) {
 			switch(i) {
 				case(1):if((r.AsInt&1)==1)	interfaceButtons[1].gameObject.SetActive(true); else interfaceButtons[1].gameObject.SetActive(false);break;

@@ -26,11 +26,11 @@ public class NPCManager : MonoBehaviour {
 		REF = this;
 		CONVO_OPEN = false;
 	}
-	public void initNpcsForMap(string aMapName,WorldExplorer aExplorer,GameObject aAvatar,GameObject aMap) {
+	public void initNpcsForMap(string aMapName,WorldExplorer aExplorer,GameObject aAvatar) {
 		_explorer = aExplorer;
 		_avatar = aAvatar;
 		DialogueManager.AllowLuaExceptions = true;
-		SendMessageOnDialogueEvent[] allSendMessages = aMap.GetComponentsInChildren<SendMessageOnDialogueEvent>();
+		SendMessageOnDialogueEvent[] allSendMessages = FindObjectsOfType<SendMessageOnDialogueEvent>(); 
 		
 		for(int i = 0;i<allSendMessages.Length;i++) {
 			SendMessageOnDialogueEvent.SendMessageAction[] onConversationEnds = allSendMessages[i].onEnd;
@@ -49,11 +49,10 @@ public class NPCManager : MonoBehaviour {
 			}
 			
 		}
-		_npcs = aMap;
 		doTriggerMovers(true);
 	}
-	public void initNpcsForMap(string aMapName,WorldExplorer aExplorer,GameObject aAvatar,string aConversationToTrigger,GameObject aMap) {
-		this.initNpcsForMap(aMapName,aExplorer,aAvatar,aMap);
+	public void initNpcsForMap(string aMapName,WorldExplorer aExplorer,GameObject aAvatar,string aConversationToTrigger) {
+		this.initNpcsForMap(aMapName,aExplorer,aAvatar);
 		StartCoroutine(waitToTriggerMapStartConvo(aAvatar,aConversationToTrigger));
 		
 	}
