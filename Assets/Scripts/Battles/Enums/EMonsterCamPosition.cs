@@ -16,6 +16,8 @@ namespace Battles
 		ChaseCamera = 0,
 		SideCamera = 1,
 		FrontCamera = 2,
+		FrontSide = 3,
+		TVCamera = 4,
 	}
 }
 

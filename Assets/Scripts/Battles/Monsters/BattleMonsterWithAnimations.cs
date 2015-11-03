@@ -255,7 +255,9 @@ namespace Battles
 			_lastAnimAction = Time.time;
 			
 			if(this._monsterRef==null||(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep))) {
-				_anim.SetTrigger(aCurrentItem.moveData.hitMecanim);
+				if(this._anim!=null&&aCurrentItem!=null&&aCurrentItem.moveData!=null)
+					_anim.SetTrigger(aCurrentItem.moveData.hitMecanim);
+				
 				fadeInMakeup();
 			}
 		}  

@@ -798,6 +798,7 @@ namespace Battles
 							h.Add ("oncompleteparams",animPrefab);
 							h.Add("easetype",iTween.EaseType.easeInQuad);
 							iTween.MoveTo(animPrefab,h);
+							this.setCamera(null,EMonsterCamPosition.TVCamera,true,true,false,animPrefab.transform);
 						}
 						if(!isLeftMove&&aMoveQueue.moveData.attackAnimation.leftSideRotation!=0f) {
 							animPrefab.transform.rotation = Quaternion.Euler(0f,anim.rightSideRotation,0f);

@@ -426,7 +426,7 @@ namespace Battles
 		private IEnumerator delayToStartRangeAtck(BattleMonster aMonster,float aDelay) {
 
 			yield return new WaitForSeconds (aDelay);
-			this.onDoAttackAnimation((BattleMonster) aMonster);
+			this.onDoRangeAttackAnimation((BattleMonster) aMonster);
 		}
 
 		private IEnumerator delayedToStartRunAnim(BattleMonsterWithMoves aActionMonster,float aDelay,float aSecondDelay) {
@@ -440,9 +440,9 @@ namespace Battles
 			BattleMonster b = targetTeam.getClosestMonsterTo (targetMonsterPosition);
 
 			//TODO ANIM set camera mounts for running here...
-			this.setCamera (b.gameObject, EMonsterCamPosition.FrontCamera,false, true, false, b.transform);
+			this.setCamera (b.gameObject, EMonsterCamPosition.FrontSide,false, true, false, b.transform);
 			// Get targets
-			
+			 
 		}
 		private IEnumerator doCaptureAttempt() {
 			BattleMonster opp = this.opponentTeam.monstersAsBattleMonster[BattleConstants.FRONT_INDEX];
@@ -515,19 +515,36 @@ namespace Battles
 			// Stick the camera to the closets opponent monters side camera mount
 	/*	 */
 		}
-
+		public void onDoRangeAttackAnimation(BattleMonster aActionMonster) {
+			aActionMonster.doAttackAnimation(this._currentItem);
+			aActionMonster.onSpawnAttack += onDoSpawnRangeAttack;
+			// Stick the camera to the closets opponent monters side camera mount
+			/*	 */
+		}
 		private void onDoSpawnAttack(BattleMonster aActionMonster) {
 			
 			aActionMonster.onSpawnAttack -= onDoSpawnAttack;
 			this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
 			this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
 			BattleMonster closestOpponent = this.otherTeam (this.teamFromMonster (aActionMonster)).getClosestMonsterTo (aActionMonster.transform.position);
-
-			this.setCamera (closestOpponent.gameObject, EMonsterCamPosition.SideCamera, true, false, true, closestOpponent.transform); 
+			
+			this.setCamera (closestOpponent.gameObject, EMonsterCamPosition.FrontSide, true, false, true, closestOpponent.transform); 
 			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject));
 			
 
 		}
+		private void onDoSpawnRangeAttack(BattleMonster aActionMonster) {
+			
+			aActionMonster.onSpawnAttack -= onDoSpawnRangeAttack;
+			this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
+			this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
+			this.setCamera(aActionMonster.gameObject,EMonsterCamPosition.TVCamera,true,true,false,aActionMonster.transform);
+			//this.setCamera (closestOpponent.gameObject, EMonsterCamPosition.FrontSide, true, false, true, closestOpponent.transform); 
+			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject));
+			
+			
+		}
+
 	}
 } 
 

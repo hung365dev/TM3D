@@ -55,6 +55,8 @@ namespace Battles
 			case(EMonsterCamPosition.ChaseCamera):findCam = "CameraMount";break;
 			case(EMonsterCamPosition.SideCamera):findCam = "SideCameraMount";break;
 			case(EMonsterCamPosition.FrontCamera):findCam = "FrontCameraMount";break;
+			case(EMonsterCamPosition.FrontSide):findCam = "FrontSideMount";break;
+			case(EMonsterCamPosition.TVCamera):findCam = "TVCamMountMiddle";break;
 			}
 			/*
 			 * 
@@ -66,6 +68,10 @@ namespace Battles
 				return;
 			}
 			Transform camHolder = aCameraContainer.transform.FindChild (findCam);
+			if(findCam=="TVCamMountMiddle") {
+				camHolder = GameObject.Find ("TVCamMountMiddle").transform;
+			}
+
 			if(camHolder == null) {
 				return;
 			}
