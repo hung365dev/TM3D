@@ -100,6 +100,8 @@ namespace Battles {
 			
 			yield return new WaitForSeconds(0.1f);
 			this.commentaryEngine.gameObject.SetActive(true);
+			this.teamACameraPath.gameObject.SetActive (false);
+			this.teamBCameraPath.gameObject.SetActive (false);
 			BattleInit initData = BattleInit.REF;
 			baseCreate();
 			this.unpackTeam1();

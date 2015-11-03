@@ -97,7 +97,7 @@ public class Gesture : BaseFinger{
 	/// <returns><c>true</c> if this instance is over rect transform the specified tr camera; otherwise, <c>false</c>.</returns>
 	/// <param name="tr">Tr.</param>
 	/// <param name="camera">Camera.</param>
-	public bool IsOverRectTransform(RectTransform tr,Camera camera=null){
+	public bool IsOverRectTransform(RectTransform tr,Camera camera){
 
 		if (camera == null){
 			camera = Camera.main;

@@ -565,7 +565,7 @@ public class EasyTouch : MonoBehaviour {
 			
 			// do we touch a pickable gameobject ?
 			if (autoSelect){
-				if (GetPickedGameObject(fingers[fingerIndex])){
+				if (GetPickedGameObject(fingers[fingerIndex],false)){
 					fingers[fingerIndex].pickedObject = pickedObject.pickedObj;
 					fingers[fingerIndex].isGuiCamera = pickedObject.isGUI;
 					fingers[fingerIndex].pickedCamera = pickedObject.pickedCamera;
@@ -750,7 +750,7 @@ public class EasyTouch : MonoBehaviour {
 
 		// NGui
 		if (enabledNGuiMode  && message == EventName.On_TouchStart){
-			finger.isOverGui = finger.isOverGui || IsTouchOverNGui(finger.position);
+			finger.isOverGui = finger.isOverGui || IsTouchOverNGui(finger.position,false);
 		}
 
 		// firing event ?
@@ -764,7 +764,7 @@ public class EasyTouch : MonoBehaviour {
 		// Auto update picked object
 		if (autoUpdatePickedObject && autoSelect){
 			if (message != EventName.On_Drag && message != EventName.On_DragEnd && message != EventName.On_DragStart){
-				if (GetPickedGameObject(finger)){
+				if (GetPickedGameObject(finger,false)){
 					gesture.pickedObject = pickedObject.pickedObj;
 					gesture.pickedCamera = pickedObject.pickedCamera;
 					gesture.isGuiCamera = pickedObject.isGUI;
@@ -1158,7 +1158,7 @@ public class EasyTouch : MonoBehaviour {
 
 		// NGui
 		if (enabledNGuiMode && message == EventName.On_TouchStart2Fingers){
-			gesture.isOverGui = gesture.isOverGui || ( IsTouchOverNGui(twoFinger.position) && IsTouchOverNGui(twoFinger.position));
+			gesture.isOverGui = gesture.isOverGui || ( IsTouchOverNGui(twoFinger.position,false) && IsTouchOverNGui(twoFinger.position,false));
 		}
 
 		gesture.touchCount=2;
@@ -1476,11 +1476,11 @@ public class EasyTouch : MonoBehaviour {
 		}
 	}
 
-	private bool GetPickedGameObject(Finger finger, bool isTowFinger=false){
+	private bool GetPickedGameObject(Finger finger, bool isTowFinger){
 
 		if (finger == null){
 			return false;
-		}
+		} 
 
 		pickedObject.isGUI = false;
 		pickedObject.pickedObj = null;
@@ -1573,7 +1573,7 @@ public class EasyTouch : MonoBehaviour {
 		}
 	}
 
-	private bool IsTouchOverNGui(Vector2 position, bool isTwoFingers=false){
+	private bool IsTouchOverNGui(Vector2 position, bool isTwoFingers){
 		
 		bool returnValue = false;
 		
@@ -1700,7 +1700,7 @@ public class EasyTouch : MonoBehaviour {
 		if (EasyTouch.instance!=null){
 			Finger finger = EasyTouch.instance.GetFinger(fingerIndex);
 
-			if (finger!=null && EasyTouch.instance.GetPickedGameObject(finger)){
+			if (finger!=null && EasyTouch.instance.GetPickedGameObject(finger,false)){
 				return EasyTouch.instance.pickedObject.pickedObj;
 			}
 			else{
@@ -1812,7 +1812,7 @@ public class EasyTouch : MonoBehaviour {
 			return LayerMask.GetMask("Default");
 	}
 
-	public static void AddCamera(Camera cam,bool guiCam=false){
+	public static void AddCamera(Camera cam,bool guiCam){
 		if (EasyTouch.instance)
 			EasyTouch.instance.touchCameras.Add(new ECamera(cam,guiCam));
 	}
@@ -1835,7 +1835,7 @@ public class EasyTouch : MonoBehaviour {
 
 	}
 
-	public static Camera GetCamera(int index=0){
+	public static Camera GetCamera(int index){
 		if (EasyTouch.instance){
 			if (index< EasyTouch.instance.touchCameras.Count){
 				return EasyTouch.instance.touchCameras[index].camera;	

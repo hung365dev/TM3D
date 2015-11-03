@@ -179,9 +179,9 @@ public class EasyTouchInput{
 			return pos;
 		}
 		else if (Input.GetKey(KeyCode.LeftAlt)|| Input.GetKey(EasyTouch.instance.twistKey) ){	
-			pos =  GetPinchTwist2Finger();
+			pos =  GetPinchTwist2Finger(false);
 			bComplex = false;
-			return pos;
+			return pos; 
 		}else if (Input.GetKey(KeyCode.LeftControl)|| Input.GetKey(EasyTouch.instance.swipeKey) ){	
 			
 			pos =GetComplex2finger();
@@ -210,7 +210,7 @@ public class EasyTouchInput{
 	}
 	
 	// Simulate for a twist or pinc
-	private Vector2 GetPinchTwist2Finger(bool newSim=false){
+	private Vector2 GetPinchTwist2Finger(bool newSim){
 		
 		Vector2 position;
 

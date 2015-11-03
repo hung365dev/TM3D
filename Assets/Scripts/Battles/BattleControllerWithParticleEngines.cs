@@ -17,7 +17,7 @@ namespace Battles
 	public class BattleControllerWithParticleEngines : BattleBase
 	{
 		public BattleControllerWithParticleEngines ()
-		{
+		{ 
 		}
 		protected IEnumerator pauseForAttack(MoveQueueItem aMoveQueueItem,float aSeconds) {
 			BetterList<BattleMonster> allTargets = aMoveQueueItem.targettedMonster;
@@ -36,9 +36,6 @@ namespace Battles
 			}
 			
 			yield return new WaitForSeconds(aSeconds);
-			
-			this.GetComponent<CameraTrack> ().target = null;
-			this.GetComponent<CameraTrack> ().stickTo = null;
 
 			aMoveQueueItem.advanceMoveQueueFromState(EMoveQueueItemStatus.AttackAnimation);
 		}

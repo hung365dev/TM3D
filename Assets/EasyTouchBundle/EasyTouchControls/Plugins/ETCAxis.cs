@@ -122,7 +122,7 @@ public class ETCAxis {
 		startAngle = GetAngle();
 	}
 
-	public void UpdateAxis(float realValue, bool isOnDrag, ETCBase.ControlType type,bool deltaTime=true){
+	public void UpdateAxis(float realValue, bool isOnDrag, ETCBase.ControlType type,bool deltaTime){
 
 
 		// Auto stabilization

@@ -294,8 +294,8 @@ public class ETCTouchPad : ETCBase,IBeginDragHandler, IDragHandler,IPointerEnter
 		OldTmpAxis.x = axisX.axisValue;
 		OldTmpAxis.y = axisY.axisValue;
 		
-		axisX.UpdateAxis( tmpAxis.x,isOnDrag,ETCBase.ControlType.DPad);
-		axisY.UpdateAxis( tmpAxis.y,isOnDrag, ETCBase.ControlType.DPad);
+		axisX.UpdateAxis( tmpAxis.x,isOnDrag,ETCBase.ControlType.DPad,false);
+		axisY.UpdateAxis( tmpAxis.y,isOnDrag, ETCBase.ControlType.DPad,false);
 		
 		axisX.DoGravity();
 		axisY.DoGravity();

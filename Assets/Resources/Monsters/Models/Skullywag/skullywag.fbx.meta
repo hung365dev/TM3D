@@ -1,0 +1,731 @@
+fileFormatVersion: 2
+guid: c97c99fc6c652914e8c528221b95aa07
+timeCreated: 1446546243
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BottomFin_L
+    100002: BottomFin_L_end
+    100004: BottomFin_R
+    100006: BottomFin_R_end
+    100008: Fish Bones
+    100010: Head
+    100012: Head Fin
+    100014: Head Fin_end
+    100016: Mouth
+    100018: Mouth_end
+    100020: Neck
+    100022: Root
+    100024: Root.001
+    100026: Root.001_end
+    100028: Skullywag
+    100030: //RootNode
+    100032: Spine
+    100034: Spine.02
+    100036: Top Fin
+    100038: Top Fin_end
+    400000: BottomFin_L
+    400002: BottomFin_L_end
+    400004: BottomFin_R
+    400006: BottomFin_R_end
+    400008: Fish Bones
+    400010: Head
+    400012: Head Fin
+    400014: Head Fin_end
+    400016: Mouth
+    400018: Mouth_end
+    400020: Neck
+    400022: Root
+    400024: Root.001
+    400026: Root.001_end
+    400028: Skullywag
+    400030: //RootNode
+    400032: Spine
+    400034: Spine.02
+    400036: Top Fin
+    400038: Top Fin_end
+    4300000: Skullywag
+    7400000: Idle
+    7400002: Swim
+    7400004: RapidSwim
+    7400006: RangeAttack
+    7400008: Slap
+    7400010: Hit
+    7400012: Flip
+    7400014: Rest
+    7400016: Faint
+    9500000: //RootNode
+    13700000: Skullywag
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Swim
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 22
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RapidSwim
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 63
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RangeAttack
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 74
+      lastFrame: 113
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .277972043
+        functionName: OnSpawnEffect
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Slap
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 113
+      lastFrame: 155
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .225538716
+        functionName: OnSpawnEffect
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Hit
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 155
+      lastFrame: 230
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Flip
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 325
+      lastFrame: 346
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Faint
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 230
+      lastFrame: 270
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Rest
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 268
+      lastFrame: 322
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .360000014
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -39,12 +39,52 @@ namespace Battles
 		
 		public static int COST_TO_CONTINUE = 10;
 		public GameObject continueBattleScreen;
-		
+
+
+		public EOrbitCamOptions orbitCamera; 
 		public BattleBase ()
 		{
 
 		}
 		
+
+		public void setCamera(GameObject aCameraContainer,EMonsterCamPosition aCamPosition,bool aImmediateLookAt,bool aImmediateStickTo,bool aOnlyMoveTo,Transform aLookAt) {
+			
+			string findCam = "";
+			switch (aCamPosition) {
+			case(EMonsterCamPosition.ChaseCamera):findCam = "CameraMount";break;
+			case(EMonsterCamPosition.SideCamera):findCam = "SideCameraMount";break;
+			case(EMonsterCamPosition.FrontCamera):findCam = "FrontCameraMount";break;
+			}
+			/*
+			 * 
+			 */ 
+			CameraTrack c = this.GetComponent<CameraTrack> ();
+			if (aCameraContainer == null) {
+				c.stickTo = null;
+				c.target = aLookAt;
+				return;
+			}
+			Transform camHolder = aCameraContainer.transform.FindChild (findCam);
+			if(camHolder == null) {
+				return;
+			}
+			if (aOnlyMoveTo) {
+				this.gameObject.transform.position = camHolder.transform.position;
+			} else {
+				c.stickTo = camHolder;
+			}
+			if (aImmediateStickTo) {
+				c.immediateStick();
+			}
+			if (aLookAt != null) {
+				c.target = aLookAt;
+			}
+			if (aImmediateLookAt && aLookAt != null) {
+				c.immediateLook();
+			}
+			
+		}
 
 		public bool moveQueueActive {
 			get {

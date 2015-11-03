@@ -58,7 +58,8 @@ public class CameraTrack : MonoBehaviour {
 		smooth = true;
 	}
 	public void immediateStick() {
-		this._myTransform.transform.position = stickTo.transform.position;
+		if(stickTo!=null)
+			this._myTransform.transform.position = stickTo.transform.position;
 	}
 	public void LateUpdate() {
 		smooth = false;

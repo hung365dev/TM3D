@@ -20,7 +20,7 @@ using worldstore;
 namespace Battles
 {
 	public class BattleControllerWithInterface : BattleControllerWithParticleEngines
-	{
+	{ 
 	
 		public GameObject movesBar;
 		public GameObject worldStoreBtn;
@@ -36,7 +36,7 @@ namespace Battles
 		{
 
 		}
-		
+		 
 		protected void startConversation() {
 			if(_battlesConversation!=null&&_battlesConversation.Length>0) {
 				Lua.Result r = DialogueLua.GetVariable("battleTurn");
@@ -162,11 +162,14 @@ namespace Battles
 			barController.gameObject.SetActive(true);
 			barController.show = true;
 			barController.setMonsterMoves(aMonster);
-			if(aMonster!=null)
-				this.GetComponent<CameraTrack> ().target = aMonster.transform;
+			if (aMonster != null) {
+				this.setCamera(aMonster.gameObject,EMonsterCamPosition.FrontCamera,true,true,false,aMonster.transform);
+			}
 			this.FadeBlackScreen(0.8f,0.1f);
 			topLabel.text = "";//aMonster.name+" L"+aMonster.monster.level;
 			topLabel.gameObject.SetActive(true);
+
+			 
 		}
 
 		protected void moveMonsterToLayer(BattleMonster aMonster,string aLayer) {

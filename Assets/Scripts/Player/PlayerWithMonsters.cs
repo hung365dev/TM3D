@@ -257,10 +257,10 @@ public class PlayerWithMonsters : PlayerBase
 			this.saveMonsters();
 		}
 		
-		public bool canBattle() {
+		public bool canBattle() { 
 			return true;
 		}
-		public int getCreaturesCountForBattle(bool aAliveOnly = false) {
+		public int getCreaturesCountForBattle(bool aAliveOnly) {
 			int c = 0;
 			BetterList<MonsterDataMain> m = this.battleMonsters;
 			for (int i = 0; i < m.size&&i<3; i++) {
@@ -381,7 +381,7 @@ public class PlayerWithMonsters : PlayerBase
 		/// <summary>
 		/// adds a monster by pre-existing MonsterDataMain data, not sure if it needs wild creature value here or not anymore
 		/// </summary>
-		public void addMonster(MonsterDataMain aMonster,bool aIsWildCreature = false)
+		public void addMonster(MonsterDataMain aMonster,bool aIsWildCreature)
 		{
 			aMonster.ownershipStatus = EOwnershipStatus.LocalPlayerOwned; 
 			aMonster.Changed += onMonsterChanged;

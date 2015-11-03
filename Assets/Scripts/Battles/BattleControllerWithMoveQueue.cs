@@ -303,9 +303,6 @@ namespace Battles
 			if(this._currentItem!=null) {
 				if(_currentItem.moveData!=null) {
 					EStatusEffects reasonForNoMove = actionMonster.lingeringEffectsAllowMove();
-
-					this.GetComponent<CameraTrack>().setTarget(this._currentItem.actioningMonster.gameObject.transform);
-					this.GetComponent<CameraTrack>().stickTo = this._currentItem.actioningMonster.transform.FindChild("CameraMount");
 					this.teamACameraPath.gameObject.SetActive(false);
 					this.teamBCameraPath.gameObject.SetActive(false);
 
@@ -346,6 +343,8 @@ namespace Battles
 						if(_currentItem.moveData.attackAnimation.movementType=="Normal"&&targetTeam!=this.teamFromMonster((BattleMonster) actionMonster)) {
 							// Make our monster run at their opponent
 							actionMonster.setAnimation(EMonsterAnimations.Walk);
+							
+							this.setCamera(actionMonster.gameObject,EMonsterCamPosition.ChaseCamera,true,true,false,actionMonster.transform);
 							StartCoroutine(delayedToStartRunAnim(actionMonster,0.35f,0.75f));
 							Hashtable h = new Hashtable();
 							h.Add("position",targetMonsterPosition);
@@ -360,15 +359,20 @@ namespace Battles
 						} else
 						if(_currentItem.moveData.attackAnimation.movementType=="OnTargetOnly") {
 								// The attacks effects only appear on the opponents side
-								actionMonster.doAttackAnimation(_currentItem);	
-								StartCoroutine(pauseToAttackAnimation(0.2f,(BattleMonster) actionMonster));
+							//	actionMonster.doAttackAnimation(_currentItem);	
+								StartCoroutine(pauseToAttackAnimation(0.6f,(BattleMonster) actionMonster));
+								this.setCamera(actionMonster.gameObject,EMonsterCamPosition.FrontCamera,true,false,true,actionMonster.transform);
+								StartCoroutine(delayToStartRangeAtck((BattleMonster) actionMonster,1.5f));
+
+
 							} else {
 							// Attack probably starts here and ends on opponent
-
-								actionMonster.doAttackAnimation(_currentItem);	
+								this.setCamera(actionMonster.gameObject,EMonsterCamPosition.FrontCamera,true,false,true,actionMonster.transform);
+								StartCoroutine(delayToStartRangeAtck((BattleMonster) actionMonster,1.5f));
+							//	this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
 							
-								this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
-								this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
+							//	this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
+							//	StartCoroutine(delayToDoRangeAttackAnim());
 						}
 						if((_currentItem.timesToHit==_currentItem.maxTimesToHit||_currentItem.maxTimesToHit==0)&&(!_currentItem.followOnMove))
 							this._commentaryManager.addCommentaryMessage(_currentItem.actioningTeam.name+"'s "+_currentItem.actioningMonster.name+" used "+_currentItem.moveData.Name,ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage);
@@ -419,6 +423,12 @@ namespace Battles
 		
 		}
 
+		private IEnumerator delayToStartRangeAtck(BattleMonster aMonster,float aDelay) {
+
+			yield return new WaitForSeconds (aDelay);
+			this.onDoAttackAnimation((BattleMonster) aMonster);
+		}
+
 		private IEnumerator delayedToStartRunAnim(BattleMonsterWithMoves aActionMonster,float aDelay,float aSecondDelay) {
 			yield return new WaitForSeconds (aDelay);
 			aActionMonster.setAnimation(EMonsterAnimations.Run);
@@ -428,11 +438,9 @@ namespace Battles
 
 			Vector3 targetMonsterPosition = BattleConstants.getFaceOffPosition(this._currentItem.targetTeam,pos);
 			BattleMonster b = targetTeam.getClosestMonsterTo (targetMonsterPosition);
-			this.GetComponent<CameraTrack> ().stickTo = b.transform.FindChild ("SideCameraMount");
-			this.GetComponent<CameraTrack> ().target = b.transform;
-			this.GetComponent<CameraTrack> ().immediateLook ();
-			this.GetComponent<CameraTrack> ().immediateStick ();
 
+			//TODO ANIM set camera mounts for running here...
+			this.setCamera (b.gameObject, EMonsterCamPosition.FrontCamera,false, true, false, b.transform);
 			// Get targets
 			
 		}
@@ -514,9 +522,8 @@ namespace Battles
 			this._currentItem.onMoveQueueItemChange += onMoveQueueItemChanged;
 			this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
 			BattleMonster closestOpponent = this.otherTeam (this.teamFromMonster (aActionMonster)).getClosestMonsterTo (aActionMonster.transform.position);
-			this.GetComponent<CameraTrack> ().setTarget(closestOpponent.transform);
-			this.GetComponent<CameraTrack> ().stickTo = closestOpponent.transform.FindChild ("SideCameraMount");
 
+			this.setCamera (closestOpponent.gameObject, EMonsterCamPosition.SideCamera, true, false, true, closestOpponent.transform); 
 			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject));
 			
 

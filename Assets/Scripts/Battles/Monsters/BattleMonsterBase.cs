@@ -58,6 +58,8 @@ namespace Battles
 			this._monsterRef.convertToWild();
 			
 		}
+
+
 		public bool addRemovedWeakness(ElementalType aElementalType) {
 			for(int i = 0;i<removedWeaknesses.size;i++) {
 				if(removedWeaknesses[i]==aElementalType) {
