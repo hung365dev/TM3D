@@ -31,20 +31,10 @@ public class BattleMonsterMakeup : MonoBehaviour
 		_monsterRef = aMonster;
 		
 	}
-	
-	public void Update() {
-		if(debug) {
-			this.transform.Find("MyPosition").gameObject.GetComponent<UILabel>().text = _monsterRef.myPosition.ToString();
-			if(_monsterRef.futureMove!=null) {
-				this.transform.Find("FutureMove").gameObject.GetComponent<UILabel>().text = _monsterRef.futureMove.moveData.Name;
-				this.transform.Find("MyTarget").gameObject.GetComponent<UILabel>().text = _monsterRef.futureMove.targetMonster.ToString();
-				
-			} else {
-				this.transform.Find("FutureMove").gameObject.GetComponent<UILabel>().text = "No Future Move";
-				this.transform.Find("MyTarget").gameObject.GetComponent<UILabel>().text = "";
-			}
-		}
-	}
+	public void OnDisable() {
+		Debug.Log ("I've been disabled"); 
+	} 
+
 	
 }
 

@@ -34,7 +34,8 @@ namespace Battles {
 			this.commentaryEngine.gameObject.SetActive(false);
 			if(BattleInit.REF!=null)
 				StartCoroutine(delayToInitBattle()); else {
-
+				
+				Application.LoadLevel("InitGameScene");
 			}
 			putParticlesInfront();
 			base.Start();
@@ -98,7 +99,7 @@ namespace Battles {
 		}
 		private IEnumerator delayToInitBattle() {
 			
-			yield return new WaitForSeconds(0.1f);
+			yield return new WaitForSeconds(0.2f);
 			this.commentaryEngine.gameObject.SetActive(true);
 			this.teamACameraPath.gameObject.SetActive (false);
 			this.teamBCameraPath.gameObject.SetActive (false);
@@ -109,7 +110,9 @@ namespace Battles {
 			this.unpackTeam2();
 			
 			yield return new WaitForEndOfFrame();
-
+			
+			this.opponentTeam.healthBars = true;
+			this.playersTeam.healthBars = true;
 			this.GetComponent<CameraTrack> ().setTarget (this.opponentTeam.monstersAsBattleMonster [0].transform);
 			_teams[0].initBattleStartPassiveEffects(_teams[1]);
 			_teams[1].initBattleStartPassiveEffects(_teams[0]);
@@ -117,6 +120,7 @@ namespace Battles {
 				unpackInitData();
 			}
 			
+			yield return new WaitForSeconds(10f);
 			this.playersTeam.bringMonsterToFront(playersTeam.nextUnsetMonster);
 			
 			this.topLabel.gameObject.SetActive(true);
@@ -324,9 +328,11 @@ namespace Battles {
 			if(_battlesConversation!=null&&_battlesConversation.Length>0) {
 				startConversation();
 			}
-			
-			yield return new WaitForSeconds(1f);
-			
+			GameObject g = GameObject.Find ("EstablishingPath");
+			CameraPathAnimator cp = g.GetComponent<CameraPathAnimator> ();
+			cp.orientationTarget = this.opponentTeam.monstersAsBattleMonster [0].transform;
+			yield return new WaitForSeconds(5f);
+			cp.enabled = false;
 			this.showMovesForMonster(playersTeam.nextUnsetMonster);
 			
 		}

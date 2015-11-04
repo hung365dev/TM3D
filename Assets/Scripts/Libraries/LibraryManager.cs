@@ -19,6 +19,7 @@ using Battles;
 		public MoveTreeLibrary moveTreeLib;
 		public MonsterLibrary monsterLib;
 		public ElementalLibrary elementalLib;
+		public ESceneToLoad sceneToLoad;
 		public void Awake()
 		{
 			Debug.Log ("Turn on Lib Manager");
@@ -39,12 +40,19 @@ using Battles;
 			yield return new WaitForEndOfFrame();
 			monsterLib.initLib();
 			new PlayerMain ();
-			SpawnAreaMonster m = new SpawnAreaMonster ("Dandylion",50, 1f, "");
 			
 			PlayerMain.REF.initForDebug ();
-			new BattleInit (m,""); 
 		//	Application.LoadLevel ("Greenaway");
-			Application.LoadLevel ("BattleSceneA");
+			switch (sceneToLoad) {
+				case(ESceneToLoad.Greenaway):
+					Application.LoadLevel ("Greenaway");
+				break;
+				case(ESceneToLoad.ThreeV1Battle):
+					SpawnAreaMonster m = new SpawnAreaMonster ("Dandylion",50, 1f, "");
+					new BattleInit (m,""); 
+					Application.LoadLevel ("BattleSceneA");
+				break;
+			}
 		}
 	}
 

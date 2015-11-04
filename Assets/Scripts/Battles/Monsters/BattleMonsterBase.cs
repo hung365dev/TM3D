@@ -343,10 +343,11 @@ namespace Battles
 
 			//	prefab.transform.parent = uiRoot.transform;
 				UIFollowTarget followTarget = prefab.GetComponent("UIFollowTarget") as UIFollowTarget;
-				followTarget.initTarget(gameObject.transform);
-				followTarget.gameCamera = bControl.GlobalCamera;
-				followTarget.uiCamera = bControl.UICamera;
-				if(this.myPosition==EMonsterPos.Bottom) {
+
+				followTarget.target = gameObject.transform.FindChild("HealthBarTop");
+				followTarget.mGameCamera = bControl.GlobalCamera;
+				followTarget.mUICamera = bControl.UICamera;
+		/*		if(this.myPosition==EMonsterPos.Bottom) {
 					followTarget.heightOffset = 115;
 				} else if(this.myPosition==EMonsterPos.Top) {
 					
@@ -354,7 +355,7 @@ namespace Battles
 				} else {
 					followTarget.heightOffset = 70;
 				}
-				
+		*/		
 				hp = this._monsterRef.hp;
 				energy = this._monsterRef.energy;
 				prefab.transform.localScale = new Vector3(1.0f,1.0f,1.0f);

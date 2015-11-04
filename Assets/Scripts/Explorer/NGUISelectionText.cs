@@ -41,8 +41,7 @@ public class NGUISelectionText : MonoBehaviour {
 		
 		float nearest = float.MaxValue;
 		GameObject nearestNPC = null;
-		AvatarMover am = this.GetComponent<AvatarMover>();
-		Vector3 pos = am.transform.localPosition;
+		Vector3 pos = this.transform.localPosition; 
 		GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
 		for(int i = 0;i<npcs.Length;i++) {
 			float diff = Vector3.Distance(npcs[i].transform.localPosition,pos);
@@ -52,9 +51,9 @@ public class NGUISelectionText : MonoBehaviour {
 			}
 		}
 		Debug.Log ("Nearest NPC was: "+nearestNPC+" - Distance away is: "+nearest);
-		if(nearestNPC!=null)
+		/*if(nearestNPC!=null)
 			am.setMyDirection(nearestNPC.gameObject.transform.localPosition-pos);
-		
+*/
 		NGUITools.SetActive(mainControl.gameObject, false);
 	}
 	void OnDeselectedUsable(Usable usable) {

@@ -1,5 +1,15 @@
-﻿
+﻿//--------------------------------------------
+//            NGUI: HUD Text
+// Copyright © 2012 Tasharen Entertainment
+//--------------------------------------------
+
 using UnityEngine;
+
+/// <summary>
+/// Attaching this script to an object will make it visibly follow another object, even if the two are using different cameras to draw them.
+/// </summary>
+
+[AddComponentMenu("NGUI/Examples/Follow Target")]
 public class UIFollowTarget : MonoBehaviour
 {
 	/// <summary>
@@ -9,25 +19,14 @@ public class UIFollowTarget : MonoBehaviour
 	public Transform target;
 	
 	/// <summary>
-	/// Game camera to use.
-	/// </summary>
-	
-	public Camera gameCamera;
-	
-	/// <summary>
-	/// UI camera to use.
-	/// </summary>
-	
-	public Camera uiCamera;
-	
-	/// <summary>
 	/// Whether the children will be disabled when this object is no longer visible.
 	/// </summary>
 	
 	public bool disableIfInvisible = true;
-	public float heightOffset = 0;
-	public float heightToAddPerFrame = 0;
+	
 	Transform mTrans;
+	public Camera mGameCamera;
+	public Camera mUICamera;
 	bool mIsVisible = false;
 	
 	/// <summary>
@@ -44,13 +43,13 @@ public class UIFollowTarget : MonoBehaviour
 	{
 		if (target != null)
 		{
-			if (gameCamera == null) gameCamera = NGUITools.FindCameraForLayer(target.gameObject.layer);
-			if (uiCamera == null) uiCamera = NGUITools.FindCameraForLayer(gameObject.layer);
+			mGameCamera = NGUITools.FindCameraForLayer(target.gameObject.layer);
+			mUICamera = NGUITools.FindCameraForLayer(gameObject.layer);
 			SetVisible(false);
 		}
 		else
 		{
-		//	Debug.LogError("Expected to have 'target' set to a valid transform", this);
+			Debug.LogError("Expected to have 'target' set to a valid transform", this);
 			enabled = false;
 		}
 	}
@@ -69,49 +68,29 @@ public class UIFollowTarget : MonoBehaviour
 		}
 	}
 	
-	public void initTarget(Transform aTarget) {
-		target = aTarget;
-		if (gameCamera == null) gameCamera = NGUITools.FindCameraForLayer(target.gameObject.layer);
-		if (uiCamera == null) uiCamera = NGUITools.FindCameraForLayer(gameObject.layer);
-		SetVisible(false);
-		
-	}
 	/// <summary>
 	/// Update the position of the HUD object every frame such that is position correctly over top of its real world object.
 	/// </summary>
 	
 	void Update ()
-	{	if(gameCamera==null||target==null) {
-			return;
-		}
-		Vector3 pos = gameCamera.WorldToViewportPoint(target.position);
-		pos.y = pos.y + 0.3f;
+	{
+		Vector3 pos = mGameCamera.WorldToViewportPoint(target.position);
+		
 		// Determine the visibility and the target alpha
-		bool isVisible = (gameCamera.orthographic || pos.z > 0f) && (!disableIfInvisible || (pos.x > 0f && pos.x < 1f && pos.y > 0f && pos.y < 1f));
+		bool isVisible = (pos.z > 0f && pos.x > 0f && pos.x < 1f && pos.y > 0f && pos.y < 1f);
 		
 		// Update the visibility flag
-		if (mIsVisible != isVisible && disableIfInvisible) SetVisible(isVisible);
+		if (disableIfInvisible && mIsVisible != isVisible) SetVisible(isVisible);
 		
 		// If visible, update the position
 		if (isVisible)
 		{
-			transform.position = uiCamera.ViewportToWorldPoint(pos);
+			transform.position = mUICamera.ViewportToWorldPoint(pos);
 			pos = mTrans.localPosition;
-			pos.x = Mathf.FloorToInt(pos.x);
-			if(heightToAddPerFrame!=0) {
-				heightOffset+=heightToAddPerFrame;
-			}
-			pos.y = Mathf.FloorToInt(pos.y)+heightOffset;
-			
+			pos.x = Mathf.RoundToInt(pos.x);
+			pos.y = Mathf.RoundToInt(pos.y);
 			pos.z = 0f;
 			mTrans.localPosition = pos;
 		}
-		OnUpdate(isVisible);
 	}
-	
-	/// <summary>
-	/// Custom update function.
-	/// </summary>
-	
-	protected virtual void OnUpdate (bool isVisible) { }
 }
