@@ -81,10 +81,10 @@ public class MoveAnimationLibItem {
 			GameObject prefab = UnityEngine.Object.Instantiate(o) as GameObject;
 			prefab.name = this._prefab;
 			ParticleSystem ps = prefab.GetComponent<ParticleSystem>();
-		//	ps.startSize = ps.startSize * 4;
+			ps.startSize = ps.startSize * 1.5f;
 			ParticleSystem[] particleS = prefab.GetComponentsInChildren<ParticleSystem>();
 			for(int i = 0;i<particleS.Length;i++) {
-		//		particleS[i].startSize = particleS[i].startSize * 4;
+				particleS[i].startSize = particleS[i].startSize * 1.5f;
 			}
 			return prefab;
 		}
