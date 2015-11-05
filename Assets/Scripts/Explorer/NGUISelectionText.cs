@@ -38,7 +38,6 @@ public class NGUISelectionText : MonoBehaviour {
 	public void onClickUse() {
 		if(_trigger!=null) 
 			_trigger.OnUse();
-		
 		float nearest = float.MaxValue;
 		GameObject nearestNPC = null;
 		Vector3 pos = this.transform.localPosition; 

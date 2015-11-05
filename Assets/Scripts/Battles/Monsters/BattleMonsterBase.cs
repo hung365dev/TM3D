@@ -345,8 +345,8 @@ namespace Battles
 				UIFollowTarget followTarget = prefab.GetComponent("UIFollowTarget") as UIFollowTarget;
 
 				followTarget.target = gameObject.transform.FindChild("HealthBarTop");
-				followTarget.mGameCamera = bControl.GlobalCamera;
-				followTarget.mUICamera = bControl.UICamera;
+				followTarget.gameCamera = bControl.GlobalCamera;
+				followTarget.uiCamera = bControl.UICamera;
 		/*		if(this.myPosition==EMonsterPos.Bottom) {
 					followTarget.heightOffset = 115;
 				} else if(this.myPosition==EMonsterPos.Top) {

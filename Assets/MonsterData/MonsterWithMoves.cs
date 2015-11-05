@@ -170,17 +170,15 @@ public class MonsterWithMoves : MonsterDataWithPassiveEffects
 			}
 		}
 		protected void setMoves(EMoveBranch aSelectionBias = EMoveBranch.NoMove,byte aAmountToSet = MAXSELECTABLEMOVES) {
-			Debug.Log("Setting Moves Automatic!");
 			BetterList<MoveTreeCompletionDataRow> unlockedMoves = allUnlockedMoves;
 			//EMoveBranch lastMoveBranch = EMoveBranch.StatusEffectBranch;
 			int c = 0;
 			for(int i = 0; i<aAmountToSet&&i<_selectedMoves.size&&i<unlockedMoves.size;i++) {
 				
 			_selectedMoves[i].setMove(EMoveUnlockType.Automatic,unlockedMoves[i]);
-			Debug.Log ("Move "+i+" is: "+_selectedMoves[i].moveData.Name);
 			//lastMoveBranch = unlockedMoves[c].moveBranch;
 			
-				c++;
+				c++; 
 			}
 		}
 			 

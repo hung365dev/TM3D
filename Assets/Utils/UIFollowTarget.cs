@@ -19,14 +19,24 @@ public class UIFollowTarget : MonoBehaviour
 	public Transform target;
 	
 	/// <summary>
+	/// Game camera to use.
+	/// </summary>
+	
+	public Camera gameCamera;
+	
+	/// <summary>
+	/// UI camera to use.
+	/// </summary>
+	
+	public Camera uiCamera;
+	
+	/// <summary>
 	/// Whether the children will be disabled when this object is no longer visible.
 	/// </summary>
 	
 	public bool disableIfInvisible = true;
 	
 	Transform mTrans;
-	public Camera mGameCamera;
-	public Camera mUICamera;
 	bool mIsVisible = false;
 	
 	/// <summary>
@@ -43,8 +53,8 @@ public class UIFollowTarget : MonoBehaviour
 	{
 		if (target != null)
 		{
-			mGameCamera = NGUITools.FindCameraForLayer(target.gameObject.layer);
-			mUICamera = NGUITools.FindCameraForLayer(gameObject.layer);
+			if (gameCamera == null) gameCamera = NGUITools.FindCameraForLayer(target.gameObject.layer);
+			if (uiCamera == null) uiCamera = NGUITools.FindCameraForLayer(gameObject.layer);
 			SetVisible(false);
 		}
 		else
@@ -74,23 +84,30 @@ public class UIFollowTarget : MonoBehaviour
 	
 	void Update ()
 	{
-		Vector3 pos = mGameCamera.WorldToViewportPoint(target.position);
+		Vector3 pos = gameCamera.WorldToViewportPoint(target.position);
 		
 		// Determine the visibility and the target alpha
-		bool isVisible = (pos.z > 0f && pos.x > 0f && pos.x < 1f && pos.y > 0f && pos.y < 1f);
+		bool isVisible = (gameCamera.orthographic || pos.z > 0f) && (!disableIfInvisible || (pos.x > 0f && pos.x < 1f && pos.y > 0f && pos.y < 1f));
 		
 		// Update the visibility flag
-		if (disableIfInvisible && mIsVisible != isVisible) SetVisible(isVisible);
+		if (mIsVisible != isVisible && disableIfInvisible) SetVisible(isVisible);
 		
 		// If visible, update the position
 		if (isVisible)
 		{
-			transform.position = mUICamera.ViewportToWorldPoint(pos);
+			transform.position = uiCamera.ViewportToWorldPoint(pos);
 			pos = mTrans.localPosition;
-			pos.x = Mathf.RoundToInt(pos.x);
-			pos.y = Mathf.RoundToInt(pos.y);
+			pos.x = Mathf.FloorToInt(pos.x);
+			pos.y = Mathf.FloorToInt(pos.y);
 			pos.z = 0f;
 			mTrans.localPosition = pos;
 		}
+		OnUpdate(isVisible);
 	}
+	
+	/// <summary>
+	/// Custom update function.
+	/// </summary>
+	
+	protected virtual void OnUpdate (bool isVisible) { }
 }

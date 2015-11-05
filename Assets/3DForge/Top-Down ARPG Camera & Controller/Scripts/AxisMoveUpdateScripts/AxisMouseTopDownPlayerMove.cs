@@ -52,7 +52,19 @@ public class AxisMouseTopDownPlayerMove : MonoBehaviour {
 			Debug.LogWarning("No animator attached to character." + e.Message);
 		}			
 	}
+	public void OnConversationStart() {
 	
+	}
+	public void OnConversationEnd() {
+	
+	}
+
+	public void OnEnable() {
+		Debug.Log ("Movement Enabled");
+	}
+	public void OnDisable() {
+		Debug.Log ("Movement Disabled");
+	}
 	public void Update()
 	{			
 		
@@ -60,7 +72,7 @@ public class AxisMouseTopDownPlayerMove : MonoBehaviour {
 		float zMovement = Input.GetAxis("Vertical");// The vertical movement.		
 		
 		// Get mouse position and ignore certain layers.
-		Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);		
+	/*	Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);		
 		RaycastHit hit;
 		Vector3 rotationToPos = Vector3.zero;
 		if (Physics.Raycast(ray,out hit, rayCastDistance, layerMask)) 
@@ -69,18 +81,17 @@ public class AxisMouseTopDownPlayerMove : MonoBehaviour {
 			// Keep target height same as player height for accuracy.
 			rotationToPos.y = myTransform.position.y;			
 		}
-		
+	*/	
 		// Are whe grounded, yes then move.
 		if (IsGrounded()) {
-			
+
+			// move player forward or back by zmovement
 			// Move player the same distance in each direction. Player must move in a circular motion.
 			float tempAngle = Mathf.Atan2(zMovement,xMovement);
 			xMovement *= Mathf.Abs(Mathf.Cos(tempAngle));
 			zMovement *= Mathf.Abs(Mathf.Sin(tempAngle));		
 			
-	       	moveDirection = new Vector3(xMovement, 0, zMovement);
-	       	moveDirection = myTransform.TransformDirection(moveDirection);
-	       	moveDirection *= moveSpeed;
+			moveDirection = this.transform.forward*zMovement*moveSpeed;
 						
 			// Make the player jump.
 	       	if (Input.GetButton("Jump"))
@@ -94,9 +105,9 @@ public class AxisMouseTopDownPlayerMove : MonoBehaviour {
 		moveDirection.y -= gravity * Time.deltaTime;        		
 		
 		// Rotate the player based on mouse position.
-		if(rotationToPos != Vector3.zero)
+		if(xMovement != 0f)
 		{		
-			myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(rotationToPos-myTransform.position), rotationSpeed * Time.deltaTime);	
+			myTransform.Rotate(Vector3.up,rotationSpeed*xMovement);
 		}
 		
 		// Are we moving.
