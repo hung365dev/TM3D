@@ -13,9 +13,9 @@ public class NPCCharacterBase : MonoBehaviour {
 	
 		if (npcName.Length > 0) {
 			NPCDataRow r = NPCCharacterBase.getRowFromNPCName(npcName);
-			this.GetComponent<UMAMaker>().SaveString = r._UMAData;
-			this.GetComponent<UMAMaker>().load = true;
-			this.GetComponent<UMAMaker>().GenerateUMA();
+	//		this.GetComponent<UMAMaker>().SaveString = r._UMAData;
+	//		this.GetComponent<UMAMaker>().load = true;
+	//		this.GetComponent<UMAMaker>().GenerateUMA();
 		}
 	}
 

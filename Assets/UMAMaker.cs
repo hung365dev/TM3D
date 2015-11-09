@@ -171,7 +171,7 @@ public class UMAMaker : MonoBehaviour {
 		umaRecipe.SetRace(raceLibrary.GetRace("BoyRace"));
 		  
 
-		SetSlot(0,"Torso");
+		SetSlot(0,"Body");
 		this.AddOverlay(0,"DefaultOverlay");
 		SetSlot(1,"Arms");
 		SetSlot(2,"Feet");
@@ -181,19 +181,24 @@ public class UMAMaker : MonoBehaviour {
 		SetSlot(6,"ChibiBody_Head");
 		this.LinkOverlay(1,0);
 		this.LinkOverlay(2,0);
-		this.LinkOverlay(3,0);
+		this.LinkOverlay(3,0); 
 		this.LinkOverlay(4,0);
 		this.LinkOverlay(5,0);
 		this.LinkOverlay(6,0);
 		SetSlot(7,"Eyes");
 		
-//		SetSlot(8,"Jeans");
+		SetSlot(8,"Jacket_Hoodie");
+		SetSlot(9,"Jeans");
+		SetSlot(10,"Shoes");
+		SetSlot(11,"BoyHair1");
 	//	SetSlot(9,"Jacket_Hoodie_001_MeshPart0");
 //		SetSlot(10,"Shoes");
 		this.AddOverlay(7,"EyesOverlay");
-	//	this.AddOverlay(8,"JeansOverlay");
-	//	this.AddOverlay(9,"JacketOverlay");
+		this.AddOverlay(8,"JacketOverlay");
+		this.AddOverlay(9,"JeansOverlay");
 	//	this.AddOverlay(10,"ShoesOverlay");
+		this.AddOverlay(10,"ShoesOverlay");
+		this.AddOverlay(11,"BoyHair");
 	//	this.AddOverlay(0,"DefaultOverlay");
 				
 
