@@ -422,10 +422,12 @@ public class MonsterDataBase
 				prefab = Resources.Load("Monsters/"+this._monsterBreed.Name+"") as GameObject;
 				if(prefab==null) {
 					Debug.LogError("Prefab for "+this._monsterBreed.Name+" is null");
-					switch(UnityEngine.Random.Range(0,3)) {
-						default:prefab = Resources.Load("Monsters/Skullywag") as GameObject;break;
+					switch(UnityEngine.Random.Range(0,8)) {
+						default:prefab = Resources.Load("Monsters/Bullibee") as GameObject;break;
 						case(1):prefab  = Resources.Load("Monsters/Villianeard") as GameObject;break;
 						case(2):prefab  = Resources.Load("Monsters/Dandylion") as GameObject;break;
+						case(3):prefab = Resources.Load("Monsters/Skullywag") as GameObject;break;
+						
 					}
 					
 				}
