@@ -36,7 +36,7 @@ public class HumanMaleDNAConverterBehaviour : HumanoidDNAConverterBehaviour
 		skeleton.SetScale(headAdjustHash, 
 		                  new Vector3(
 			Mathf.Clamp(1, 1, 1),
-			Mathf.Clamp(1 + (umaDna.headWidth - 0.5f) * 0.30f, 0.5f, 1.6f),
+			Mathf.Clamp(1 + (umaDna.headWidth - 0.5f) * 0.10f, 0.1f, 1.3f),
 			Mathf.Clamp(1 , 1, 1)));
 		
 		//umaData.boneList["HeadAdjust"].boneTransform.localScale = new Vector3(
@@ -79,15 +79,25 @@ public class HumanMaleDNAConverterBehaviour : HumanoidDNAConverterBehaviour
 		
 		skeleton.SetScale(leftEyeHash, 
 		                  new Vector3(
-			Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f),
-			Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f),
-			Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f)));
+			Mathf.Clamp(umaDna.eyeSize/2f  , 0.15f, 0.5f),
+			Mathf.Clamp(umaDna.eyeSize/2f , 0.15f, 0.5f),
+			Mathf.Clamp(umaDna.eyeSize/2f  , 0.15f, 0.5f)));
 		skeleton.SetScale(rightEyeHash, 
 		                  new Vector3(
-			Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f),
-			Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f),
-			Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f)));
-		
+			Mathf.Clamp(umaDna.eyeSize/2f  , 0.15f, 0.5f),
+			Mathf.Clamp(umaDna.eyeSize/2f , 0.15f, 0.5f),
+			Mathf.Clamp(umaDna.eyeSize/2f  , 0.15f, 0.5f)));
+
+
+		float spacing = (umaDna.eyeSpacing - 0.5f) * 0.2f;
+		float depth = (umaDna.eyeDepth - 0.5f) * 0.2f;
+
+		skeleton.SetPositionRelative(leftEyeHash, new Vector3(0f, 0f, depth));
+		skeleton.SetPositionRelative(rightEyeHash, new Vector3(0f, 0f, depth));
+
+		skeleton.SetPositionRelative(leftEyeHash, new Vector3(0f, -spacing, 0f));
+		skeleton.SetPositionRelative(rightEyeHash, new Vector3(0f, spacing, 0f));
+
 		//umaData.boneList["LeftEye"].boneTransform.localScale = new Vector3(
 		//Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f),
 		//Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f),
@@ -97,9 +107,9 @@ public class HumanMaleDNAConverterBehaviour : HumanoidDNAConverterBehaviour
 		//Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f),
 		//Mathf.Clamp(1 + (umaDna.eyeSize - 0.5f) * 0.3f , 0.7f, 1.4f));     
 		
-		skeleton.SetRotation(leftEyeAdjustHash,
+		skeleton.SetRotation(leftEyeHash,
 		                     Quaternion.Euler(new Vector3((umaDna.eyeRotation - 0.5f) * 20, 0, 0)));
-		skeleton.SetRotation(rightEyeAdjustHash,
+		skeleton.SetRotation(rightEyeHash,
 		                     Quaternion.Euler(new Vector3(-(umaDna.eyeRotation - 0.5f) * 20, 0, 0)));
 		
 		//umaData.boneList["LeftEye"].boneTransform.localEulerAngles = new Vector3((umaDna.eyeRotation - 0.5f) * 20, -90, -180);
@@ -418,9 +428,9 @@ public class HumanMaleDNAConverterBehaviour : HumanoidDNAConverterBehaviour
 		
 		skeleton.SetScale(leftCheekAdjustHash, 
 		                  new Vector3(
-			Mathf.Clamp(1 + (umaDna.cheekSize - 0.5f) * 1.05f, 0.35f, 2.05f),
-			Mathf.Clamp(1 + (umaDna.cheekSize - 0.5f) * 1.05f, 0.35f, 2.05f),
-			Mathf.Clamp(1 + (umaDna.cheekSize - 0.5f) * 1.05f, 0.35f, 2.05f)));
+			Mathf.Clamp(1 + (umaDna.cheekSize - 0.5f) * 1.25f, 0.1f, 3.05f),
+			Mathf.Clamp(1 + (umaDna.cheekSize - 0.5f) * 1.25f, 0.1f, 3.05f),
+			Mathf.Clamp(1 + (umaDna.cheekSize - 0.5f) * 1.25f, 0.3f, 3.05f)));
 		skeleton.SetScale(rightCheekAdjustHash, 
 		                  new Vector3(
 			Mathf.Clamp(1 + (umaDna.cheekSize - 0.5f) * 1.05f, 0.35f, 2.05f),

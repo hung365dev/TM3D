@@ -66,7 +66,9 @@ namespace UMA
 		public float mouthSize = 0.5f;
 		public float eyeRotation = 0.5f;
 		public float eyeSize = 0.5f;
+		public float eyeDepth = 0.5f;
 		
+		public float eyeSpacing = 0.5f;
 		public float breastSize = 0.5f;
 	}
 }

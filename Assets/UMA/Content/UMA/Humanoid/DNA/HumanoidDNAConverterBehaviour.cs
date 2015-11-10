@@ -166,7 +166,8 @@ namespace UMA
 			leftShoulderHash = UMAUtils.StringToHash("LeftShoulder");
 			rightShoulderHash = UMAUtils.StringToHash("RightShoulder");
 			mandibleHash = UMAUtils.StringToHash("Mandible");
-			
+
+
 			builtHashes = true;
 		}
 	}

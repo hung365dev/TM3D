@@ -13,12 +13,12 @@ public class NPCCharacterBase : MonoBehaviour {
 	
 		if (npcName.Length > 0) {
 			NPCDataRow r = NPCCharacterBase.getRowFromNPCName(npcName);
-	//		this.GetComponent<UMAMaker>().SaveString = r._UMAData;
-	//		this.GetComponent<UMAMaker>().load = true;
-	//		this.GetComponent<UMAMaker>().GenerateUMA();
+			this.GetComponent<UMAMaker>().SaveString = r._UMAData;
+			this.GetComponent<UMAMaker>().load = true;
+			this.GetComponent<UMAMaker>().GenerateUMA();
 		}
 	}
-
+	 
 	public static NPCDataRow getRowFromNPCName(string aName) {
 		for(int i = 0;i<NPCData.Instance.Rows.Count;i++) {
 				if(NPCData.Instance.Rows[i]._Name==aName) {
