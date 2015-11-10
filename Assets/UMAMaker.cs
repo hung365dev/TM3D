@@ -171,36 +171,58 @@ public class UMAMaker : MonoBehaviour {
 		umaRecipe.SetRace(raceLibrary.GetRace("BoyRace"));
 		  
 
-		SetSlot(0,"Body");
+		SetSlot(0,"ChibiBody_Head");
 		this.AddOverlay(0,"DefaultOverlay");
+		SetSlot(1,"Legs");
 		SetSlot(1,"Arms");
 		SetSlot(2,"Feet");
 		SetSlot(3,"Head");
 		SetSlot(4,"Legs");
 		SetSlot(5,"Pelvis");
-		SetSlot(6,"ChibiBody_Head");
-		this.LinkOverlay(1,0);
+		SetSlot(6,"Eyes");
+		
+		SetSlot(7,"BoyHair1");
+		this.AddOverlay(6,"EyesOverlay");
+		this.AddOverlay(7,"BoyHair"); 
+
+		
+		SetSlot(8,"Jacket_Hoodie");
+		
+		this.AddOverlay(8,"JacketOverlay",Color.green);
+
+		
+		SetSlot(9,"Shirt");
+		this.AddOverlay(9,"ShirtOverlay");
+
+		
+		SetSlot(9,"Jeans");
+		this.AddOverlay(9,"JeansOverlay");
+
+		//SetSlot(6,"ChibiBody_Head");
+	/*	this.LinkOverlay(1,0);
 		this.LinkOverlay(2,0);
 		this.LinkOverlay(3,0); 
 		this.LinkOverlay(4,0);
 		this.LinkOverlay(5,0);
-		this.LinkOverlay(6,0);
-		SetSlot(7,"Eyes");
+	//	this.LinkOverlay(6,0);
+
 		
 		SetSlot(8,"Jacket_Hoodie");
 		SetSlot(9,"Jeans");
 		SetSlot(10,"Shoes");
 		SetSlot(11,"BoyHair1");
+		SetSlot(12,"Shirt");
 	//	SetSlot(9,"Jacket_Hoodie_001_MeshPart0");
 //		SetSlot(10,"Shoes");
 		this.AddOverlay(7,"EyesOverlay");
-		this.AddOverlay(8,"JacketOverlay");
+		this.AddOverlay(8,"JacketOverlay",Color.green);
 		this.AddOverlay(9,"JeansOverlay");
 	//	this.AddOverlay(10,"ShoesOverlay");
 		this.AddOverlay(10,"ShoesOverlay");
-		this.AddOverlay(11,"BoyHair");
+		this.AddOverlay(11,"BoyHair"); 
+		this.AddOverlay(12,"ShirtOverlay");
 	//	this.AddOverlay(0,"DefaultOverlay");
-				
+				*/
 
 /*
 		colin mcdonald
