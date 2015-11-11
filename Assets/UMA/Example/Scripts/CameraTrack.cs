@@ -79,7 +79,7 @@ public class CameraTrack : MonoBehaviour {
 				_myTransform.rotation = Quaternion.Slerp(_myTransform.rotation, rotation, Time.deltaTime * damping);
 			}
 			else { //Just look at
-				_myTransform.LookAt(target.transform.position);
+				_myTransform.LookAt(target.transform);
 			}
 		}
 	}

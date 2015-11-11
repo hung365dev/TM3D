@@ -357,13 +357,13 @@ public class CameraPathAnimator : MonoBehaviour
                 break;
 
             case orientationModes.target:
-                currentPosition = transform.TransformPoint(cameraPath.GetPathPosition(percent));
+				currentPosition = transform.TransformPoint(cameraPath.GetPathPosition(percent))-this.transform.position;
                 if(orientationTarget != null)
                     forward = orientationTarget.transform.position - currentPosition;
                 else
                     forward = Vector3.forward;
                 output = Quaternion.LookRotation(forward, targetModeUp);
-                break;
+                break; 
 
             case orientationModes.followpath:
                 output = Quaternion.LookRotation(cameraPath.GetPathDirection(percent));

@@ -336,21 +336,7 @@ namespace Battles
 			}
 			
 		}
-		public void setMonstersLayerOffsets() {
-			for(int i = 0;i<this._monsters.Length;i++)
-			{
-				if(_monsters[i]!=null) {
-					int offsetAmount = BattleTeamBase.MIDDLE_LAYER_OFFSET;
-					switch(i) {
-						case(BattleConstants.TOP_INDEX):offsetAmount = BattleTeamBase.TOP_LAYER_OFFSET;break;
-						case(BattleConstants.BOTTOM_INDEX):offsetAmount = BattleTeamBase.BOTTOM_LAYER_OFFSET;break;
-					}
-					BattleMonster monster = _monsters[i].GetComponent("BattleMonster") as BattleMonster;
-					monster.offsetLayers(offsetAmount);
-				}
-			}
-		}
-		
+
 		protected bool containsMonster(BattleMonsterWithMoves aMonster) {
 			BetterList<BattleMonster> ms = this.monstersAsBattleMonster;
 			for(byte c = 0;c<ms.size;c++) {

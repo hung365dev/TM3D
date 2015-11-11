@@ -521,8 +521,7 @@ namespace Battles
 			//			
 			//StartCoroutine(UnpackTeamsThroughFrames(initData));
 			_teams[0].initFromData(initData.teams[0],ETeamPosition.LeftTeam);
-			
-			_teams[0].setMonstersLayerOffsets();
+
 		}
 		
 		protected void unpackTeam2() {
@@ -535,11 +534,9 @@ namespace Battles
 			//			
 			//StartCoroutine(UnpackTeamsThroughFrames(initData));
 			_teams[1].initFromData(initData.teams[1],ETeamPosition.RightTeam);
-			
-			positionMonsters();
+
 			_teams[1].initBattleStartPassiveEffects(_teams[0]);
-			
-			_teams[1].setMonstersLayerOffsets();
+
 			if(_teams[1].teamType==ETeamControllerType.WildAI) {
 				this.baitButton.gameObject.SetActive(true);
 				this.escapeButton.gameObject.SetActive(true);
@@ -558,6 +555,8 @@ namespace Battles
 					oa.name = _teams[1].displayName;
 				}
 			}
+			Vector3 team2MonsterPos = this.opponentTeam.monstersAsBattleMonster [0].transform.position;
+			Debug.Log ("unpackTeam2: Monster 2 Position: " + team2MonsterPos);
 			StartCoroutine(doBattleStartMessage());
 		}
 		private void onEasyTargetClicked (BattleMonster aMonster, BattleTeam aTeam) {
@@ -596,29 +595,9 @@ namespace Battles
 			Debug.Log ("Unpacking team 2");
 			_teams[1].initFromData(aInitData.teams[1],ETeamPosition.RightTeam);
 			yield return null;
-			positionMonsters();
-			_teams[0].setMonstersLayerOffsets();
-			_teams[1].setMonstersLayerOffsets();
 			
 		}
-		protected void positionMonsters() {
-			/*GameOb[] team1Monsters = teams[0].monsters;
-			for(int i = 0 ; i < team1Monsters.Length ; i++ ) {
-				if(team1Monsters[i] != null ) {
-					team1Monsters[i] = Instantiate( team1Monsters[i].gameObject ) as GameObject;
-				
-					}
-			}
-			GameObject[] team2Monsters = teams[1].monsters;
-			for(int i = 0 ; i < team2Monsters.Length ; i++ ) {
-				if(team2Monsters[i] != null ) {
-					team2Monsters[i] = Instantiate( team2Monsters[i].gameObject ) as GameObject;
-					
-					BattleConstants.positionMonster(team2Monsters[i],ETeamPosition.RightTeam,teams[1].positionForMonster(team2Monsters[i]));
-					
-				}
-			}*/
-		}
+	
 	
 		protected BattleTeam opponentTeam {
 			get {

@@ -18,6 +18,7 @@ public class WorldExplorer : WorldExplorerWithButtons
 	public static WorldExplorer REF;
 	public GameObject battleMakeup;
 	public Camera battleCamera;
+	public Light worldLight;
 	public WorldExplorer ()
 	{
 	}
@@ -27,6 +28,7 @@ public class WorldExplorer : WorldExplorerWithButtons
 		Lua.Result maleStatus = DialogueLua.GetActorField("Player","UMA");
 		// TODO Make UMA here!
 		REF = this;
+		worldLight = this.GetComponentInChildren<Light> ();
 		StartCoroutine(createArrowsAfter1Frame());
 	}
 	public void onLaunchSettings() {
@@ -49,8 +51,11 @@ public class WorldExplorer : WorldExplorerWithButtons
 
 	public void StartBattle(SpawnMonsterOnMap aMonster) {
 		Debug.Log ("Starting a Battle");
+		worldLight.gameObject.SetActive (false);
 		SpawnAreaMonster sm = new SpawnAreaMonster (aMonster.name, aMonster.level, 1f, "");
 		new BattleInit (sm, "");
+		Light l = this.GetComponentInChildren<Light> ();
+	
 		this.gameObject.SetActive (false);
 		this.battleCamera.gameObject.SetActive (true);
 		battleMakeup.gameObject.SetActive (true); 

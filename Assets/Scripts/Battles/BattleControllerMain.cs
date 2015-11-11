@@ -328,9 +328,10 @@ namespace Battles {
 			if(_battlesConversation!=null&&_battlesConversation.Length>0) {
 				startConversation();
 			}
-			GameObject g = GameObject.Find ("EstablishingPath");
+			GameObject g = GameObject.Find ("BattleEstablishingPath");
 			CameraPathAnimator cp = g.GetComponent<CameraPathAnimator> ();
 			cp.orientationTarget = this.opponentTeam.monstersAsBattleMonster [0].transform;
+			cp.orientationMode = CameraPathAnimator.orientationModes.target;
 			yield return new WaitForSeconds(5f);
 			cp.enabled = false;
 			this.showMovesForMonster(playersTeam.nextUnsetMonster);

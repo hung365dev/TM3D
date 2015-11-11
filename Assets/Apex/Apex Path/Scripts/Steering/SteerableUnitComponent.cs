@@ -214,12 +214,12 @@ namespace Apex.Steering
         /// </summary>
         /// <param name="behavior">The behavior.</param>
         public void RegisterSteeringBehavior(ISteeringBehaviour behavior)
-        {
+        { 
             int count = _steeringComponents.Count;
             for (int i = 0; i < count; i++)
             {
                 var c = _steeringComponents[i];
-                if (c.priority == behavior.priority)
+                if (c.priority == behavior.priority) 
                 {
                     var grp = c as SteeringGroup;
                     if (grp == null)

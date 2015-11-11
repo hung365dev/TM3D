@@ -101,11 +101,8 @@ namespace Battles
 		} 
 		
 		public void Start() {
-			Debug.Log(this.name);
+			Debug.Log(this.name+" "+this.transform.position);
 			_collider = (Collider) this.GetComponent<Collider>();
-			if(_collider==null) { 
-				Debug.LogError("Monster: "+this.name+" has no collider");
-			}
 		}
 		public void OnDisable() {
 			if(_monsterMakeup!=null)

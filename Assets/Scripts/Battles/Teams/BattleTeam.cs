@@ -307,7 +307,10 @@ namespace Battles
 			}
 			return delayAmount;
 		}
-
+		public void Update() {
+		//	BattleMonster m = this.monstersAsBattleMonster [0];
+		//	m.
+		}
 		public BetterList<BattleMonster> monstersApartFrom(BattleMonster aMonster) {
 			BetterList<BattleMonster> r = new BetterList<BattleMonster>();
 			BetterList<BattleMonster> ms = this.monstersAsBattleMonster;
