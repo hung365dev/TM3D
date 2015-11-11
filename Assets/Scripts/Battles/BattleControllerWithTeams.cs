@@ -353,7 +353,7 @@ namespace Battles
 		
 		protected IEnumerator moveMonsterBackToPosition(MoveQueueItem aItem) {
 			BattleTeam myTeam = aItem.actioningTeam;
-			Vector3 pos = BattleConstants.getMyPosition(this.positionFromTeam(myTeam),myTeam.positionForMonster(aItem.actioningMonster.gameObject));
+			Vector3 pos = BattleConstants.getMyPosition(this.positionFromTeam(myTeam),myTeam.positionForMonster(aItem.actioningMonster.gameObject),this.transform.parent.gameObject.transform.position);
 			Hashtable h = new Hashtable();
 			h.Add("position",pos);
 			h.Add ("time",0.5f);

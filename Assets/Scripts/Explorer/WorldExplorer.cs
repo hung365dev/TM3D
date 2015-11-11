@@ -5,6 +5,7 @@ using UnityEngine;
 using MTX;
 using Utils;
 using utils;
+using Battles;
 
 
 public class WorldExplorer : WorldExplorerWithButtons
@@ -14,6 +15,9 @@ public class WorldExplorer : WorldExplorerWithButtons
 	public UMAMaker umaAvatar;
 	public GameObject mountTransitionGraphic;
 	public static bool MOUNTED = false;
+	public static WorldExplorer REF;
+	public GameObject battleMakeup;
+	public Camera battleCamera;
 	public WorldExplorer ()
 	{
 	}
@@ -21,9 +25,8 @@ public class WorldExplorer : WorldExplorerWithButtons
 	
 	public void Awake() {
 		Lua.Result maleStatus = DialogueLua.GetActorField("Player","UMA");
-
 		// TODO Make UMA here!
-
+		REF = this;
 		StartCoroutine(createArrowsAfter1Frame());
 	}
 	public void onLaunchSettings() {
@@ -43,7 +46,15 @@ public class WorldExplorer : WorldExplorerWithButtons
 
 		}
 	} 
-	
+
+	public void StartBattle(SpawnMonsterOnMap aMonster) {
+		Debug.Log ("Starting a Battle");
+		SpawnAreaMonster sm = new SpawnAreaMonster (aMonster.name, aMonster.level, 1f, "");
+		new BattleInit (sm, "");
+		this.gameObject.SetActive (false);
+		this.battleCamera.gameObject.SetActive (true);
+		battleMakeup.gameObject.SetActive (true); 
+	}
 	private IEnumerator createArrowsAfter1Frame() {
 		yield return new WaitForEndOfFrame();
 		createQuestArrows();

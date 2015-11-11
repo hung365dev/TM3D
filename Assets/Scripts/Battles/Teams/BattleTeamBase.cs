@@ -365,7 +365,7 @@ namespace Battles
 			BattleMonster monster = aMonster.GetComponent("BattleMonster") as BattleMonster;
 			if(monster==null) {
 				aMonster.AddComponent<BattleMonster>();
-				BattleConstants.positionMonster(aMonster,this._position,positionForMonster(aMonster));
+				BattleConstants.positionMonster(aMonster,this._position,positionForMonster(aMonster),GameObject.Find("BattleSetup").transform.position);
 				monster = aMonster.GetComponent("BattleMonster") as BattleMonster;
 			}
 			monster.initMonster(aMonsterData,aPosition);

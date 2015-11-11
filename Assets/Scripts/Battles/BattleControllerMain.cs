@@ -35,7 +35,7 @@ namespace Battles {
 			if(BattleInit.REF!=null)
 				StartCoroutine(delayToInitBattle()); else {
 				
-				Application.LoadLevel("InitGameScene");
+			//	Application.LoadLevel("InitGameScene");
 			}
 			putParticlesInfront();
 			base.Start();

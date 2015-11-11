@@ -17,6 +17,7 @@ public class SpawnAreaMonster
 	private byte _level;
 	private float _percentChance;
 	public string battleTrack;
+
 	public SpawnAreaMonster (string aMonsterName,byte aLevel,float aChance,string aBattleTrack) 
 	{
 		battleTrack = aBattleTrack;

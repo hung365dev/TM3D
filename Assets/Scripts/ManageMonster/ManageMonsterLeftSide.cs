@@ -205,7 +205,7 @@ namespace ManageMonster
 			BattleMonster monster = aMonster.GetComponent("BattleMonster") as BattleMonster;
 			if(monster==null) {
 				aMonster.AddComponent<BattleMonster>();
-				BattleConstants.positionMonster(aMonster,ETeamPosition.MonsterPreview,EMonsterPos.Front);
+				BattleConstants.positionMonster(aMonster,ETeamPosition.MonsterPreview,EMonsterPos.Front,Vector3.forward);
 				monster = aMonster.GetComponent("BattleMonster") as BattleMonster;
 			}
 			monster.initMonster(aMonsterData,aPosition);

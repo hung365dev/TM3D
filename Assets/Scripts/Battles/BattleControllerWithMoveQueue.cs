@@ -312,7 +312,7 @@ namespace Battles
 						int originalTarget = (int) _currentItem.targetMonster;
 						int targetPositionInt = (int) targetTeam.updatedTargetPosition(_currentItem.targetMonster);
 						EMonsterPos pos = targetTeam.updatedTargetPosition(_currentItem.targetMonster);
-						Vector3 targetMonsterPosition = BattleConstants.getFaceOffPosition(_currentItem.targetTeam,pos);
+						Vector3 targetMonsterPosition = BattleConstants.getFaceOffPosition(_currentItem.targetTeam,pos,this.transform.parent.gameObject.transform.position);
 						if(this._currentItem.firstHit) {
 							Debug.Log ("<color=yellow>This was the first hit, I'm taking: "+_currentItem.moveData.energy+"</color>");
 							float energyForMove = _currentItem.moveData.getEnergy(_currentItem.actioningMonster.unlockLevelForMove(_currentItem.moveData));
@@ -436,7 +436,7 @@ namespace Battles
 			BattleTeam targetTeam = teamFromPosition(_currentItem.targetTeam);			
 			EMonsterPos pos = targetTeam.updatedTargetPosition(_currentItem.targetMonster);
 
-			Vector3 targetMonsterPosition = BattleConstants.getFaceOffPosition(this._currentItem.targetTeam,pos);
+			Vector3 targetMonsterPosition = BattleConstants.getFaceOffPosition(this._currentItem.targetTeam,pos,this.transform.parent.gameObject.transform.position);
 			BattleMonster b = targetTeam.getClosestMonsterTo (targetMonsterPosition);
 
 			//TODO ANIM set camera mounts for running here...
@@ -529,7 +529,7 @@ namespace Battles
 			BattleMonster closestOpponent = this.otherTeam (this.teamFromMonster (aActionMonster)).getClosestMonsterTo (aActionMonster.transform.position);
 			
 			this.setCamera (closestOpponent.gameObject, EMonsterCamPosition.FrontSide, true, false, true, closestOpponent.transform); 
-			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject));
+			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject),this.transform.parent.gameObject.transform.position);
 			
 
 		}
@@ -540,7 +540,7 @@ namespace Battles
 			this._currentItem.advanceMoveQueueFromState(EMoveQueueItemStatus.Start);
 			this.setCamera(aActionMonster.gameObject,EMonsterCamPosition.TVCamera,true,true,false,aActionMonster.transform);
 			//this.setCamera (closestOpponent.gameObject, EMonsterCamPosition.FrontSide, true, false, true, closestOpponent.transform); 
-			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject));
+			aActionMonster.returnPosition = BattleConstants.getMyPosition(this.positionFromTeam(this.teamFromMonster(aActionMonster)),this.teamFromMonster(aActionMonster).positionForMonster(aActionMonster.gameObject),this.transform.parent.gameObject.transform.position);
 			
 			
 		}

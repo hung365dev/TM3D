@@ -183,7 +183,7 @@ namespace Battles
 				findSpaceForMonster(monsters);
 			for(byte i = 0;i<this._monsters.Length;i++) {
 				if(_monsters[i]!=null) {
-					BattleConstants.positionMonster(_monsters[i],this._position,positionForMonster(_monsters[i]));
+					BattleConstants.positionMonster(_monsters[i],this._position,positionForMonster(_monsters[i]),GameObject.Find("BattleSetup").transform.position);
 					BattleMonster monster = _monsters[i].GetComponent("BattleMonster") as BattleMonster;
 				//	monster.myPosition = positionForMonster(_monsters[i]);
 					

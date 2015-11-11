@@ -56,7 +56,7 @@ namespace Battles {
 			return monster;
 		}
 		
-		public static Vector3 getFaceOffPosition(ETeamPosition aPosition,EMonsterPos aMonster) {
+		public static Vector3 getFaceOffPosition(ETeamPosition aPosition,EMonsterPos aMonster,Vector3 aOffset) {
 			float faceOffNegator = -1.5f;
 			switch(aPosition) {
 				case(ETeamPosition.LeftTeam):default: 
@@ -89,7 +89,7 @@ namespace Battles {
 				break; 
 			}
 		}
-		public static Vector3 getMyPosition(ETeamPosition aPosition,EMonsterPos aMonster) {
+		public static Vector3 getMyPosition(ETeamPosition aPosition,EMonsterPos aMonster,Vector3 aOffset) {
 			float faceOffNegator = 1.5f;
 			switch(aPosition) {
 			case(ETeamPosition.LeftTeam):default:
@@ -122,7 +122,7 @@ namespace Battles {
 				break;
 			}
 		}
-		public static void positionMonster(GameObject aMonsterObject,ETeamPosition aTeam,EMonsterPos aMonsterPosition) {
+		public static void positionMonster(GameObject aMonsterObject,ETeamPosition aTeam,EMonsterPos aMonsterPosition,Vector3 aOffset) {
 		
 			Vector3 useVec = POSITION_TEAM1_MIDDLE;
 			Quaternion useQ = new Quaternion(0,0,0,0);
@@ -151,12 +151,11 @@ namespace Battles {
 				case(ETeamPosition.MonsterPreviewRight): {
 					useVec = POSITION_PREVIEW_RIGHT;useQ = Quaternion.Euler(0,180,0);break;
 				}
-			
 			}
 			if(aMonsterObject!=null) {
 				BattleMonster monster = aMonsterObject.GetComponent("BattleMonster") as BattleMonster;
-				monster.initTargetDefaults (aTeam, aMonsterPosition);
-				Vector3 tempvect = new Vector3(useVec.x, useVec.y, useVec.z);
+				monster.initTargetDefaults (aTeam, aMonsterPosition); 
+				Vector3 tempvect = new Vector3(useVec.x+aOffset.x, useVec.y+aOffset.y, useVec.z+aOffset.z);
 				aMonsterObject.transform.position = tempvect;
 				aMonsterObject.transform.rotation =useQ;
 				aMonsterObject.transform.localScale = MONSTER_SCALE;
