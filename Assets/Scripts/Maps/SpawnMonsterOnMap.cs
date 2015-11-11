@@ -15,7 +15,7 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 	public IUnitFacade unit;
 	public const int MAX_DISTANCE_TO_PLAYER = 100;
 	public const int MAX_CHASE_DISTANCE = 40;
-	public const int MAX_DISTANCE_TO_START_BATTLE = 10;
+	public const int MAX_DISTANCE_TO_START_BATTLE = 3;
 	public GameObject player;
 	public bool chasePlayer = false;
 	public WanderBehaviour wander;
@@ -47,6 +47,11 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 			anim.SetInteger("AnimState",3);
 		}
 		float distanceToPlayer = Vector3.Distance (player.gameObject.transform.position, this.gameObject.transform.position);
+		if(distanceToPlayer<MAX_DISTANCE_TO_START_BATTLE) {
+			WorldExplorer.REF.StartBattle(this);
+			Destroy(this.gameObject);
+		}
+
 		if (chasePlayer) {
 			if (distanceToPlayer > MAX_CHASE_DISTANCE) {
 				wander.enabled = true;
@@ -58,14 +63,12 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 			}
 		} else {
 			if(distanceToPlayer < MAX_CHASE_DISTANCE) {
-				if(distanceToPlayer<MAX_DISTANCE_TO_START_BATTLE) {
-					WorldExplorer.REF.StartBattle(this);
-				} else {
+				
 					wander.enabled = false;
 					unit.MoveTo(player.transform.position,false); 
 
 					chasePlayer = true;
-				}
+				
 			}
 		}
 
