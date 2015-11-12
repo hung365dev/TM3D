@@ -170,8 +170,7 @@ namespace PixelCrushers.DialogueSystem {
 		private static void SetupCanvas(UnityUIDialogueUI ui, DialogueSystemController dialogueManager) {
 			if (FindObjectOfType<UnityEngine.EventSystems.EventSystem>() == null) {
 				new GameObject("EventSystem", typeof(UnityEngine.EventSystems.EventSystem),
-					typeof(UnityEngine.EventSystems.StandaloneInputModule),
-				    typeof(UnityEngine.EventSystems.TouchInputModule));
+					typeof(UnityEngine.EventSystems.StandaloneInputModule));
 			}
 			var canvas = dialogueManager.GetComponentInChildren<Canvas>();
 			if (canvas == null) {

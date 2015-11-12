@@ -14,8 +14,7 @@ namespace PixelCrushers.DialogueSystem {
 			if (GameObject.FindObjectOfType<UnityEngine.EventSystems.EventSystem>() == null) {
 				if (DialogueDebug.LogWarnings) Debug.LogWarning(DialogueDebug.Prefix + ": The scene is missing an EventSystem. Adding one.");
 				new GameObject("EventSystem", typeof(UnityEngine.EventSystems.EventSystem),
-				               typeof(UnityEngine.EventSystems.StandaloneInputModule), 
-				               typeof(UnityEngine.EventSystems.TouchInputModule));
+				               typeof(UnityEngine.EventSystems.StandaloneInputModule));
 			}
 		}
 

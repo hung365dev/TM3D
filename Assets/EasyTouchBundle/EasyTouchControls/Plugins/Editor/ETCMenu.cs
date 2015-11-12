@@ -149,18 +149,12 @@ public static class ETCMenu{
 		}
 
 		// TouchInput
-		if ( GameObject.FindObjectOfType(typeof(TouchInputModule)) ){
-			TouchInputModule tm = (TouchInputModule)GameObject.FindObjectOfType(typeof(TouchInputModule));
-			tm.forceModuleActive = true;
-		}
-
+		
 		return canvas;
 
 	}
 	
 	static void AddEventSystem(){
-
-		new GameObject("EventSystem",typeof(EventSystem), typeof(TouchInputModule));
 
 	}
 
