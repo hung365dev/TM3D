@@ -402,7 +402,7 @@ public class PlayerWithMonsters : PlayerBase
 			c = monstersOfType(aMonster.elementType);
 			DialogueLua.SetVariable(varName,c);
 			this.saveMonsters();
-			SaveGameUtils.REF.SaveStatsAndQuests();
+//			SaveGameUtils.REF.SaveStatsAndQuests();
 		}
 		
 		public int monstersOfType(ElementalType aType) {
@@ -475,7 +475,7 @@ public class PlayerWithMonsters : PlayerBase
 		}
 		s+= seenPetString;
 		setLuaMonsterCount();
-		SaveGameUtils.REF.saveMonsters(Base64Compressor.Base64Encode(s),this.monsterCount,xpBoostData,repelBoostData);
+//		SaveGameUtils.REF.saveMonsters(Base64Compressor.Base64Encode(s),this.monsterCount,xpBoostData,repelBoostData);
 	}
 	
 	/*

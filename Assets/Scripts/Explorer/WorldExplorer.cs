@@ -28,7 +28,7 @@ public class WorldExplorer : WorldExplorerWithButtons
 		Lua.Result maleStatus = DialogueLua.GetActorField("Player","UMA");
 		// TODO Make UMA here!
 		REF = this;
-		worldLight = this.GetComponentInChildren<Light> ();
+	//	worldLight = this.GetComponentInChildren<Light> ();
 		StartCoroutine(createArrowsAfter1Frame());
 	}
 	public void onLaunchSettings() {
@@ -58,6 +58,7 @@ public class WorldExplorer : WorldExplorerWithButtons
 	
 		this.gameObject.SetActive (false);
 		this.battleCamera.gameObject.SetActive (true);
+this.uiRoot.gameObject.SetActive(false);
 		battleMakeup.gameObject.SetActive (true); 
 	}
 	private IEnumerator createArrowsAfter1Frame() {

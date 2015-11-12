@@ -15,7 +15,7 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 	public IUnitFacade unit;
 	public const int MAX_DISTANCE_TO_PLAYER = 100;
 	public const int MAX_CHASE_DISTANCE = 40;
-	public const int MAX_DISTANCE_TO_START_BATTLE = 3;
+	public const int MAX_DISTANCE_TO_START_BATTLE = 5;
 	public GameObject player;
 	public bool chasePlayer = false;
 	public WanderBehaviour wander;

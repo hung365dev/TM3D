@@ -30,6 +30,10 @@ public class AxisMouseTopDownPlayerMove : MonoBehaviour {
 	
 	private Vector3 moveDirection = Vector3.zero; // The move direction of the player.
 	
+	public static bool useThumbPad = true;
+	public static float angle;
+	public static float THUMB_X;
+	public static float THUMB_Y;
 	void Start()
 	{		
 		layerMask=~layerMask; // Get all the layers to raycast on, this will allow the raycast to ignore chosen layers.		
@@ -70,7 +74,12 @@ public class AxisMouseTopDownPlayerMove : MonoBehaviour {
 		
 		float xMovement = Input.GetAxis("Horizontal");// The horizontal movement.
 		float zMovement = Input.GetAxis("Vertical");// The vertical movement.		
-		
+		if(useThumbPad) {
+			xMovement = THUMB_X;
+			zMovement = THUMB_Y;
+	//		this.transform.localEulerAngles = new Vector3(0f,angle,0f);
+//return;
+		}
 		// Get mouse position and ignore certain layers.
 	/*	Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);		
 		RaycastHit hit;
@@ -139,7 +148,7 @@ public class AxisMouseTopDownPlayerMove : MonoBehaviour {
 	/// </param>
 	private void animateCharacter(float xMovement, float zMovement)
 	{
-
+	
 		animator.SetFloat("Forward", zMovement, 0.1f, Time.deltaTime);
 		animator.SetFloat("Turn", xMovement, 0.1f, Time.deltaTime);
 	//	m_Animator.SetBool("Crouch", m_Crouching);

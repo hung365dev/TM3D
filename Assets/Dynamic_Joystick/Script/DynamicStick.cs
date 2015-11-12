@@ -223,8 +223,19 @@ public class DynamicStick : MonoBehaviour
 
 #endif
 		
-		CrossPlatformInputManager.SetAxis ("Horizontal", this._JoyOffset.x);
-		CrossPlatformInputManager.SetAxis ("Vertical", this._JoyOffset.y);
+	//	CrossPlatformInputManager.SetAxis ("Horizontal", this._JoyOffset.x);
+	//	CrossPlatformInputManager.SetAxis ("Vertical", this._JoyOffset.y);
+		AxisMouseTopDownPlayerMove.useThumbPad = true;
+		
+		float ang = Vector2.Angle(Vector2.zero,this._JoyOffset);
+		Debug.Log (ang);
+		ang = Mathf.Atan2(this._JoyOffset.y,this._JoyOffset.x);
+		ang = ang*Mathf.Rad2Deg;
+		Debug.Log (ang);
+		AxisMouseTopDownPlayerMove.THUMB_X = this._JoyOffset.x;
+		AxisMouseTopDownPlayerMove.THUMB_Y = this._JoyOffset.y;
+		AxisMouseTopDownPlayerMove.angle = ang;
+		
 	}
 }
 

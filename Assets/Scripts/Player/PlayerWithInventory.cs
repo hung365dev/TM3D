@@ -47,8 +47,8 @@ namespace Player
 		}
 		
 		public void saveInventory() {
-			if(_allowSave)
-				SaveGameUtils.REF.saveItems(itemsToString());
+		//	if(_allowSave)
+//				SaveGameUtils.REF.saveItems(itemsToString());
 		}
 		public bool canBuyItem(ITMItem aItem) {
 			return this.softCurrency>=aItem.SoftCost()&&this.hardCurrency>=aItem.HardCost();
