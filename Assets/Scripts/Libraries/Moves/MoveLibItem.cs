@@ -88,7 +88,7 @@ public class MoveLibItem {
 		 
 	
 		this._id = aInitData._ID;
-		this._name = aInitData._MoveName;
+		this._name = aInitData._MoveName; 
 		this._moveSpeedMultiplier = aInitData._MoveSpeedMultiplier;
 
 		switch (aInitData._PowerApplicationType) {

@@ -17,8 +17,10 @@ public class WorldExplorer : WorldExplorerWithButtons
 	public static bool MOUNTED = false;
 	public static WorldExplorer REF;
 	public GameObject battleMakeup;
+	public GameObject map;
 	public Camera battleCamera;
 	public Light worldLight;
+	public bool inBattle = false;
 	public WorldExplorer ()
 	{
 	}
@@ -49,17 +51,24 @@ public class WorldExplorer : WorldExplorerWithButtons
 		}
 	} 
 
+	public void exitBattle() {
+		inBattle = false;
+		this.battleCamera.gameObject.SetActive (false);
+		this.uiRoot.gameObject.SetActive(true);
+		battleMakeup.gameObject.SetActive (false); 
+		map.gameObject.SetActive(true);
+	}
 	public void StartBattle(SpawnMonsterOnMap aMonster) {
+		inBattle = true;
 		Debug.Log ("Starting a Battle");
-		worldLight.gameObject.SetActive (false);
+	//	worldLight.gameObject.SetActive (false);
 		SpawnAreaMonster sm = new SpawnAreaMonster (aMonster.name, aMonster.level, 1f, "");
 		new BattleInit (sm, "");
-		Light l = this.GetComponentInChildren<Light> ();
-	
-		this.gameObject.SetActive (false);
+
 		this.battleCamera.gameObject.SetActive (true);
 this.uiRoot.gameObject.SetActive(false);
 		battleMakeup.gameObject.SetActive (true); 
+		map.gameObject.SetActive(false);
 	}
 	private IEnumerator createArrowsAfter1Frame() {
 		yield return new WaitForEndOfFrame();

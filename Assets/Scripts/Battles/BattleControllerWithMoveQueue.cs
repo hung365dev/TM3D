@@ -510,14 +510,14 @@ namespace Battles
 		}
 
 		public void onDoAttackAnimation(BattleMonster aActionMonster) {
-			aActionMonster.doAttackAnimation(this._currentItem);
 			aActionMonster.onSpawnAttack += onDoSpawnAttack;
+			aActionMonster.doAttackAnimation(this._currentItem);
 			// Stick the camera to the closets opponent monters side camera mount
 	/*	 */
 		}
 		public void onDoRangeAttackAnimation(BattleMonster aActionMonster) {
-			aActionMonster.doAttackAnimation(this._currentItem);
 			aActionMonster.onSpawnAttack += onDoSpawnRangeAttack;
+			aActionMonster.doAttackAnimation(this._currentItem);
 			// Stick the camera to the closets opponent monters side camera mount
 			/*	 */
 		}

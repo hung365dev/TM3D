@@ -195,7 +195,7 @@ namespace Battles {
 		//	SmartfoxHandler.REF.OutputHandlersStatus();
 			BattleInit.REF = null;
 		//	SplashScreenManager.ADTIME = EAdTime.BattleEnd;
-			Application.LoadLevel("MapChangeSplashScreen");
+			WorldExplorer.REF.exitBattle();
 		}
 		//TODO Reenable when multiplayer
 		
@@ -415,6 +415,7 @@ namespace Battles {
 			this.opponentTeam.fadeOutTeam();
 		//	this.playersTeam.fadeOutTeam();
 			this.battleOverScreen.init(playersTeam,opponentTeam,aWon);
+			this.battleOverScreen.onExitBattle += this.onExitBattle;
 			
 		}
 	}

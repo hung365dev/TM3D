@@ -61,12 +61,19 @@ namespace Battles
 			/*
 			 * 
 			 */ 
+		if(aLookAt!=null) {
+			Transform t = aLookAt.FindChild("HeadPoint");
+			if(t!=null) {
+				aLookAt = t;
+			}
+		}
 			CameraTrack c = this.GetComponent<CameraTrack> ();
 			if (aCameraContainer == null) {
 				c.stickTo = null;
 				c.target = aLookAt;
 				return;
 			}
+		
 			Transform camHolder = aCameraContainer.transform.FindChild (findCam);
 			if(findCam=="TVCamMountMiddle") {
 				camHolder = GameObject.Find ("TVCamMountMiddle").transform;

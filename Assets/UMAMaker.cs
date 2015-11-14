@@ -308,19 +308,10 @@ public class UMAMaker : MonoBehaviour {
 
 		Destroy(recipe);
 
-		string filename = "Assets/Test.txt";
-		StreamWriter stream = File.CreateText(filename);
-
-		stream.WriteLine(SaveString);
-		stream.Close();
 	}
 	
 	private void Load() {
-		string filename = "Assets/Test.txt";
-		StreamReader stream = File.OpenText(filename);
-		SaveString = stream.ReadLine();
-		stream.Close();
-
+		
 		UMATextRecipe recipe = ScriptableObject.CreateInstance<UMATextRecipe>();
 		recipe.recipeString = SaveString;
 		umaDynamicAvatar.Load(recipe);

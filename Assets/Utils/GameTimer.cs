@@ -24,14 +24,20 @@ public class GameTimer : MonoBehaviour
 	
 	public bool requestMonsterSave;
 	public float lastTick;
+	public float lastTenth;
 	public static bool WAKE_ON_HEALED = false;
 	public static bool MONSTERS_LISTENING = false;
 	public static bool GAME_START = false;
 	public int catchUpSeconds = 0;
 	
+	public Light mainLight;
 	public int lastSecond = 0;
 	public static int monstersListening = 0;
 	public static int REST_MULTIPLIER = 1;
+
+	public float timeOfDay = 0;
+	public int daysGone = 0;
+	public const float fifthsOfSecondInDay = 2000;
 	public GameTimer()
 	{
 	}
@@ -51,7 +57,8 @@ public class GameTimer : MonoBehaviour
 				millenium = millenium.AddSeconds(lastSecond);
 				int secondsSinceMillenium = Convert.ToInt32((DateTime.Now-millenium).TotalSeconds);
 				if(secondsSinceMillenium>20||Application.loadedLevelName!="WorldViewer") {
-					if(Application.loadedLevelName == "BattleSceneA" || Application.loadedLevelName == "MainMenu" || Application.loadedLevelName == "BattleSceneMultiplayer") {
+					if(WorldExplorer.REF.inBattle||Application.loadedLevelName == "BattleSceneA" || Application.loadedLevelName == "MainMenu" || Application.loadedLevelName == "BattleSceneMultiplayer") {
+					 
 					} else {
 						if(!NPCManager.CONVO_OPEN) {
 							this.catchUpSeconds = secondsSinceMillenium;
@@ -69,6 +76,36 @@ public class GameTimer : MonoBehaviour
 			this.lastSecond = secondsSinceMillenium;
 		}
 
+	}
+	private void progressDay() {
+		
+		if(mainLight==null) {
+			GameObject l = GameObject.FindGameObjectWithTag("MainLight");
+			if(l!=null) {
+				this.mainLight = l.GetComponent<Light>();
+			}
+		} else {
+			// Each second equates to 1/secondsInDay * 90 rotation
+			float angle = this.timeOfDay/fifthsOfSecondInDay * 360;
+			mainLight.transform.eulerAngles = new Vector3(angle-90,65f);
+			timeOfDay++;
+			
+
+			// 0 = midnight
+			// There are 36000 * 24 seconds in a real day
+			// Each fifthsOfSecondInADay = 86400/fifthsOfSecondInADay seconds
+			// 1/2 fifths of second in day = midday
+			int actualSecondThroughDay = (int) (86400/fifthsOfSecondInDay*timeOfDay);
+			if(actualSecondThroughDay>86400) {
+				timeOfDay -= fifthsOfSecondInDay;
+				daysGone++;
+			}
+			int hoursThroughDay = (int) actualSecondThroughDay/3600;
+			actualSecondThroughDay -= hoursThroughDay*3600;
+			int minutesThroughDay = (int) actualSecondThroughDay/60;
+			//Debug.Log ("Time is: "+hoursThroughDay+":"+minutesThroughDay+" On Day: "+daysGone);
+			
+		} 
 	}
 	private void onTick(float aTime) {
 
@@ -106,6 +143,10 @@ public class GameTimer : MonoBehaviour
 	{
 
 		float currentTime = Time.time;
+		if(currentTime-lastTenth>0.05f) {
+			progressDay();
+			lastTenth = currentTime;	
+		}
 		if(currentTime-lastTick>1f) {
 			if (OnTimerTick != null)
 			{

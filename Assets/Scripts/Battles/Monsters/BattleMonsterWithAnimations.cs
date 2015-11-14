@@ -225,7 +225,10 @@ namespace Battles
 			_lastAnimAction = Time.time; 
 			if(this._monsterRef.restingStatus==ERestingStatus.Awake&&!this._monsterRef.lingeringEffects.hasEffect(EStatusEffects.Sleep)) {
 				_anim.SetInteger("AnimState",-1);
-				_anim.SetTrigger(aCurrentItem.moveData.attackMecanim);
+				if(aCurrentItem.moveData.attackMecanim=="NoAnim") {
+					this.OnSpawnEffect();
+				} else
+					_anim.SetTrigger(aCurrentItem.moveData.attackMecanim);
 			//	fadeInMakeup(); 
 			//	StartCoroutine(doReturnToIdle());
 			}
@@ -317,7 +320,7 @@ namespace Battles
 			Debug.Log ("OnSpawnEffect!!");
 			if(onSpawnAttack!=null) {
 				onSpawnAttack(this as BattleMonster);
-			}
+			} 
 		}
 		
 		public void Update() {

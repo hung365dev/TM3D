@@ -259,7 +259,7 @@ public class BattleOverScreen : MonoBehaviour
 		
 	}
 	public void onContinueEvolutions() {
-		if(this._team!=null) {
+		if(this._team!=null&&_monstersToEvolve.size>0) {
 			StartCoroutine(continueToNextEvo());
 		} else {
 			if(onExitBattle!=null) {

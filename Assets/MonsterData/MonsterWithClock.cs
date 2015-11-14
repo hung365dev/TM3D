@@ -39,6 +39,9 @@ using PixelCrushers.DialogueSystem;
 			}
 
 			public void onMonsterTick() {
+				if(WorldExplorer.REF.inBattle) {
+					return;
+				}
 				if((_resting!=ERestingStatus.Awake&&_resting!=ERestingStatus.WaitingToRest)||(GameTimer.WAKE_ON_HEALED)||(Application.loadedLevelName=="RanchOverview")||(Application.loadedLevelName=="ManageMonster")||(Application.loadedLevelName=="MoveAssignMoveTree")) {
 					if(this._resting==ERestingStatus.Awake) {
 					//	Debug.Log ("Resting even though I'm awake :)");
