@@ -5,7 +5,10 @@ using Apex.Steering;
 using Battles;
 using Apex.Units;
 using Apex.Steering.Behaviours;
+#if (UNITY_EDITOR)
 using UnityEditor;
+#endif
+
 using Apex.Steering.Components;
 using Apex.PathFinding;
 using Apex.Steering.HeightNavigation;
@@ -34,8 +37,12 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 	public byte level; 
 	void Start () {
 		
+		#if (UNITY_EDITOR)
 		if(!EditorApplication.isPlaying) {
 		} else {
+		#endif
+
+	
 			var go = this.gameObject;
 			ApexComponentMaster master;
 			Rigidbody rb;
@@ -105,7 +112,9 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 			if (m != null) {
 				Destroy (m);
 			}
-		}
+			#if (UNITY_EDITOR)
+			}
+			#endif
 		player = GameObject.FindGameObjectWithTag ("Player");
 		wander = GetComponent<WanderBehaviour> ();
 
@@ -114,7 +123,10 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		#if (UNITY_EDITOR)
+		
 		if(!EditorApplication.isPlaying) {
+	
 			if(anim!=null) {
 				AnimationMode.BeginSampling();
 				AnimationMode.SampleAnimationClip(childToAnimate, this.defaultClip,1f);
@@ -126,6 +138,9 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 		} else {
 			anim.enabled = true;
 		}
+		#else
+			anim.enabled = true; 
+		#endif
 		if(steerable==null) {
 			return;
 		}

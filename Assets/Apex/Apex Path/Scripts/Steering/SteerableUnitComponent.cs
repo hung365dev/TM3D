@@ -205,7 +205,7 @@ namespace Apex.Steering
         }
 
         private void FixedUpdate()
-        { to 
+        { 
             Steer(Time.deltaTime);
         }
 

@@ -22,6 +22,7 @@ public class GameTimer : MonoBehaviour
 	public delegate void OnTimer();
 	public event OnTimer OnTimerTick;
 	
+	public Color sbColor;
 	public bool requestMonsterSave;
 	public float lastTick;
 	public float lastTenth;
@@ -30,14 +31,24 @@ public class GameTimer : MonoBehaviour
 	public static bool GAME_START = false;
 	public int catchUpSeconds = 0;
 	
-	public Light mainLight;
 	public int lastSecond = 0;
 	public static int monstersListening = 0;
 	public static int REST_MULTIPLIER = 1;
 
-	public float timeOfDay = 0;
-	public int daysGone = 0;
-	public const float fifthsOfSecondInDay = 3600*20;
+	public Light sun;
+	public float secondsInFullDay = 120f;
+	[Range(0,1)]
+	public float currentTimeOfDay = 0;
+	[HideInInspector]
+	public float timeMultiplier = 1f;
+	
+	float sunInitialIntensity;
+	
+	void Start() {
+	}
+	
+
+
 	public GameTimer()
 	{
 	}
@@ -50,6 +61,8 @@ public class GameTimer : MonoBehaviour
 			Destroy (this.gameObject);
 		}
 	}
+
+
 	public void OnApplicationFocus(bool aHasFocus) {
 		if(aHasFocus) {
 			if(lastSecond>0) {
@@ -77,25 +90,46 @@ public class GameTimer : MonoBehaviour
 		}
 
 	}
-	private void progressDay() {
+	void UpdateSun() {
+		if(sun==null) {
+			GameObject g = GameObject.FindGameObjectWithTag("MainLight");
+			if(g!=null) sun = g.GetComponent<Light>();
+			if(sun!=null)
+				sunInitialIntensity = sun.intensity;
+			return;
+		}
+		sun.transform.localRotation = Quaternion.Euler((currentTimeOfDay * 360f) - 90, 170, 0);
 		
-		if(mainLight==null) {
+		float intensityMultiplier = 1;
+		if (currentTimeOfDay <= 0.23f || currentTimeOfDay >= 0.75f) {
+			intensityMultiplier = 0.125f;
+		}
+		else if (currentTimeOfDay <= 0.25f) {
+			intensityMultiplier = Mathf.Clamp01((currentTimeOfDay - 0.23f) * (1 / 0.02f));
+		}
+		else if (currentTimeOfDay >= 0.73f) {
+			intensityMultiplier = Mathf.Clamp01(1 - ((currentTimeOfDay - 0.73f) * (1 / 0.02f)));
+		}
+		
+		sun.intensity = sunInitialIntensity * intensityMultiplier;
+	}
+
+	private void progressDay() {
+		RenderSettings.skybox.color = sbColor;
+		if(this.sun==null) {
 			GameObject l = GameObject.FindGameObjectWithTag("MainLight");
 			if(l!=null) {
-				this.mainLight = l.GetComponent<Light>();
+				this.sun = l.GetComponent<Light>();
 			}
 		} else {
-			// Each second equates to 1/secondsInDay * 90 rotation
-			float angle = this.timeOfDay/fifthsOfSecondInDay * 360;
-			mainLight.transform.eulerAngles = new Vector3(angle-90,65f);
-			timeOfDay++;
+			this.UpdateSun();
 			
 
 			// 0 = midnight
 			// There are 36000 * 24 seconds in a real day
 			// Each fifthsOfSecondInADay = 86400/fifthsOfSecondInADay seconds
 			// 1/2 fifths of second in day = midday
-			int actualSecondThroughDay = (int) (86400/fifthsOfSecondInDay*timeOfDay);
+			/*int actualSecondThroughDay = (int) (86400/fifthsOfSecondInDay*timeOfDay);
 			if(actualSecondThroughDay>86400) {
 				timeOfDay -= fifthsOfSecondInDay;
 				daysGone++;
@@ -103,7 +137,7 @@ public class GameTimer : MonoBehaviour
 			int hoursThroughDay = (int) actualSecondThroughDay/3600;
 			actualSecondThroughDay -= hoursThroughDay*3600;
 			int minutesThroughDay = (int) actualSecondThroughDay/60;
-			//Debug.Log ("Time is: "+hoursThroughDay+":"+minutesThroughDay+" On Day: "+daysGone);
+			Debug.Log ("Time is: "+hoursThroughDay+":"+minutesThroughDay+" On Day: "+daysGone);*/
 			
 		} 
 	}
@@ -143,10 +177,15 @@ public class GameTimer : MonoBehaviour
 	{
 
 		float currentTime = Time.time;
-		if(currentTime-lastTenth>0.05f) {
-			progressDay();
-			lastTenth = currentTime;	
-		}
+		UpdateSun();
+		
+		currentTimeOfDay += (Time.deltaTime / secondsInFullDay) * timeMultiplier;
+		
+		if (currentTimeOfDay >= 1) {
+			currentTimeOfDay = 0;
+		} 
+		
+		
 		if(currentTime-lastTick>1f) {
 			if (OnTimerTick != null)
 			{
