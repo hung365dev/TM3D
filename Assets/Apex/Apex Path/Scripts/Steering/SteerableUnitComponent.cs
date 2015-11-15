@@ -24,7 +24,7 @@ namespace Apex.Steering
 
         /// <summary>
         /// The time over which to stop when waiting or when no steering components have any output (as permitted by deceleration capabilities).
-        /// </summary>
+        /// </summary>I
         [Tooltip("The time over which to stop when waiting or when no steering components have any output (as permitted by deceleration capabilities).")]
         public float stopTimeFrame = 0.2f;
 
@@ -205,7 +205,7 @@ namespace Apex.Steering
         }
 
         private void FixedUpdate()
-        {
+        { to 
             Steer(Time.deltaTime);
         }
 
@@ -353,6 +353,9 @@ namespace Apex.Steering
 
         float? ILoadBalanced.ExecuteUpdate(float deltaTime, float nextInterval)
         {
+			if(_unit==null) {
+				this.Start();
+			}
             if (this.averageActualVelocity)
             {
                 _actualVelocity = (_transform.position - _lastFramePosition) / deltaTime;

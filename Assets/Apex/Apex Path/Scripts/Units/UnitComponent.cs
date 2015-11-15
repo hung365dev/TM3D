@@ -1,4 +1,7 @@
 ﻿/* Copyright © 2014 Apex Software. All rights reserved. */
+using System.Collections;
+
+
 namespace Apex.Units
 {
     using Apex.Common;
@@ -266,7 +269,11 @@ namespace Apex.Units
                 }
             }
         }
-
+		private IEnumerator delayToRegister() {
+			yield return new WaitForEndOfFrame();
+			
+			GameServices.gameStateManager.RegisterUnit(this.gameObject);
+		}
         private void Awake()
         {
             this.WarnIfMultipleInstances<IUnitProperties>();
@@ -275,7 +282,7 @@ namespace Apex.Units
 
             var heightStrat = GameServices.heightStrategy;
             _effectiveHeightCapabilities = heightStrat.useGlobalHeightNavigationSettings ? heightStrat.unitsHeightNavigationCapability : _heightCapabilities;
-            GameServices.gameStateManager.RegisterUnit(this.gameObject);
+            StartCoroutine(delayToRegister());
         }
 
         /// <summary>

@@ -79,7 +79,8 @@ namespace Apex.Steering
         protected virtual void OnDisable()
         {
             var parent = GetComponent<SteerableUnitComponent>();
-            parent.UnregisterSteeringBehavior(this);
+			if(parent!=null)
+      	      parent.UnregisterSteeringBehavior(this);
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
 ﻿/* Copyright © 2014 Apex Software. All rights reserved. */
+using System.Collections;
 
 namespace Apex.Steering.Components
 {
@@ -215,25 +216,29 @@ namespace Apex.Steering.Components
         protected override void Awake()
         {
             base.Awake();
-
-            this.WarnIfMultipleInstances();
-
-            _transform = this.transform;
-
-            _wayPoints = new WaypointList();
-            _navMessage = new UnitNavigationEventMessage(this.gameObject);
-
-            _resultProcessors = this.GetComponents<SteerForPathResultProcessorComponent>();
-            Array.Sort(_resultProcessors, (a, b) => a.processingOrder.CompareTo(b.processingOrder));
-
-            _unit = this.GetUnitFacade();
-            _pathSettings = _unit.pathNavigationOptions;
-
-            _stopped = true;
+			
+			_transform = this.transform;
+			
+			_wayPoints = new WaypointList();
+			_navMessage = new UnitNavigationEventMessage(this.gameObject);
+			
+			_resultProcessors = this.GetComponents<SteerForPathResultProcessorComponent>();
+			Array.Sort(_resultProcessors, (a, b) => a.processingOrder.CompareTo(b.processingOrder));
+			StartCoroutine(delayToInit());
+ 
         }
+		private IEnumerator delayToInit() {
+			yield return new WaitForSeconds(0.5f);
+			this.WarnIfMultipleInstances();
+			
+			_unit = this.GetUnitFacade();
+			_pathSettings = _unit.pathNavigationOptions;
+			
+			_stopped = true;
 
-        /// <summary>
-        /// Asks the object to move to the specified position
+		}
+		/// <summary>
+		/// Asks the object to move to the specified position
         /// </summary>
         /// <param name="position">The position to move to.</param>
         /// <param name="append">if set to <c>true</c> the destination is added as a way point.</param>
@@ -408,7 +413,9 @@ namespace Apex.Steering.Components
                 StopInternal();
                 return;
             }
-
+			if(this._unit==null) {
+				return;
+			}
             if (!ResolveNextPoint())
             {
                 return;

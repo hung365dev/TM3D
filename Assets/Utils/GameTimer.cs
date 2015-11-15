@@ -37,7 +37,7 @@ public class GameTimer : MonoBehaviour
 
 	public float timeOfDay = 0;
 	public int daysGone = 0;
-	public const float fifthsOfSecondInDay = 2000;
+	public const float fifthsOfSecondInDay = 3600*20;
 	public GameTimer()
 	{
 	}

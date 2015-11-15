@@ -1,4 +1,5 @@
 ﻿/* Copyright © 2014 Apex Software. All rights reserved. */
+using System.Collections;
 
 namespace Apex.Units
 {
@@ -571,31 +572,32 @@ namespace Apex.Units
             _speeder.CloneFrom(speedComponent);
         }
 
-        /// <summary>
-        /// Initializes the Unit Facade.
-        /// </summary>
-        /// <param name="unitObject">The unit game object.</param>
-        public virtual void Initialize(GameObject unitObject)
+		/// <summary>
+		/// Initializes the Unit Facade.
+		/// </summary>
+		/// <param name="unitObject">The unit game object.</param>
+		public virtual void Initialize(GameObject unitObject)
         {
-            _props = unitObject.As<IUnitProperties>(false, true);
-            _movable = unitObject.As<IMovable>(false, false);
-            _moving = unitObject.As<IMovingObject>(false, true);
-            _speeder = unitObject.As<IDefineSpeed>(false, true);
-            _pathFinderOptions = unitObject.As<IPathFinderOptions>(false, false) ?? new PathFinderOptions();
-            _pathNavOptions = unitObject.As<IPathNavigationOptions>(false, false) ?? new PathNavigationOptions();
+			_props = unitObject.As<IUnitProperties>(false, true);
+			_movable = unitObject.As<IMovable>(false, false);
+			_moving = unitObject.As<IMovingObject>(false, true);
+			_speeder = unitObject.As<IDefineSpeed>(false, true);
+			_pathFinderOptions = unitObject.As<IPathFinderOptions>(false, false) ?? new PathFinderOptions();
+			_pathNavOptions = unitObject.As<IPathNavigationOptions>(false, false) ?? new PathNavigationOptions();
+			
+			this.isMovable = _movable != null;
+			if (!this.isMovable)
+			{
+				_movable = new MovableDummy(unitObject.name);
+			}
+			
+			this.gameObject = unitObject;
+			this.transform = unitObject.transform;
+			this.collider = unitObject.GetComponent<Collider>();
+			
+			this.isAlive = true;
+			this.hasArrivedAtDestination = true;
 
-            this.isMovable = _movable != null;
-            if (!this.isMovable)
-            {
-                _movable = new MovableDummy(unitObject.name);
-            }
-
-            this.gameObject = unitObject;
-            this.transform = unitObject.transform;
-            this.collider = unitObject.GetComponent<Collider>();
-
-            this.isAlive = true;
-            this.hasArrivedAtDestination = true;
         }
 
         private class MovableDummy : IMovable

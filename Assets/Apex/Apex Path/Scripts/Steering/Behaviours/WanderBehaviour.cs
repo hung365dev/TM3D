@@ -51,19 +51,25 @@ namespace Apex.Steering.Behaviours
             }
         }
 
+		private IEnumerator delayToFirstMove() {
+			yield return new WaitForSeconds(1f);
+			_startPos = _unit.position;
+			
+			MoveNext(false);
+			if (this.lingerForSeconds == 0.0f)
+			{
+				MoveNext(true);
+			}
+
+		}
         /// <summary>
         /// Called on Start and OnEnable, but only one of the two, i.e. at startup it is only called once.
         /// </summary>
         protected override void OnStartAndEnable()
         {
             GameServices.messageBus.Subscribe(this);
-            _startPos = _unit.position;
+			StartCoroutine(delayToFirstMove());
 
-            MoveNext(false);
-            if (this.lingerForSeconds == 0.0f)
-            {
-                MoveNext(true);
-            }
         }
 
         private void OnDisable()
@@ -108,7 +114,7 @@ namespace Apex.Steering.Behaviours
             MoveNext(false);
         }
 
-        private void MoveNext(bool append)
+        public void MoveNext(bool append)
         {
             var unitMask = _unit.attributes;
 
