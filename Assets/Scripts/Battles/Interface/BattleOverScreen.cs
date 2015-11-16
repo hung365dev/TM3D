@@ -39,7 +39,16 @@ public class BattleOverScreen : MonoBehaviour
 	{
 	}
 
-
+	public void cleanUp() {
+		for(int i = 0;i<_completeMonsters.size;i++) {
+			_completeMonsters[i].cleanUp();
+		}
+		_completeMonsters.Clear ();
+		_monstersToEvolve.Clear ();
+		if (onExitBattle != null) {
+			onExitBattle = null;
+		}
+	}
 	public bool evolutionsToConsume {
 		get {
 			if((this._monstersToEvolve!=null&&this._monstersToEvolve.size>0)||(_evolvingMonster!=null)) {

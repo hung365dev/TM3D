@@ -20,7 +20,7 @@ namespace Battles {
 		public AlertQuestionWindow buyMoreTDsBtn;
 		public AlertQuestionWindow cancelEvolves;
 		// Use this for initialization
-		public override void Start () {
+		public void OnEnable () {
 
 			
 			this.topLabel.gameObject.SetActive(false);
@@ -38,7 +38,13 @@ namespace Battles {
 			//	Application.LoadLevel("InitGameScene");
 			}
 			putParticlesInfront();
-			base.Start();
+			InitMoveQueue ();
+			base.InitTeams();
+		}
+
+		public void OnDisable() {
+			
+			this.onBattleCompleted -= onBattleComplete;
 		}
 		private IEnumerator delayToExit() {
 			yield return new WaitForSeconds(1f);
@@ -106,9 +112,11 @@ namespace Battles {
 			BattleInit initData = BattleInit.REF;
 			baseCreate();
 			this.unpackTeam1();
+			this.barController.show = false;
 			yield return new WaitForEndOfFrame();
 			this.unpackTeam2();
 			
+			this.barController.show = false;
 			yield return new WaitForEndOfFrame();
 			
 			this.opponentTeam.healthBars = true;
@@ -119,10 +127,10 @@ namespace Battles {
 			if(initData!=null) {
 				unpackInitData();
 			}
-			
-			yield return new WaitForSeconds(10f);
+			this.barController.show = false;
+			yield return new WaitForSeconds(6f);
 			this.playersTeam.bringMonsterToFront(playersTeam.nextUnsetMonster);
-			
+			this.showMovesForMonster (playersTeam.nextUnsetMonster);
 			this.topLabel.gameObject.SetActive(true);
 			iTween.FadeFrom(this.topLabel.gameObject,0f,0.25f);
 	//		if(multiplayer&&SmartfoxHandler.REF!=null&&allowSendingOfMultiplayerTeam) {
@@ -178,7 +186,14 @@ namespace Battles {
 				cancelEvolves = null;
 			}*/
 		}
+
+		public override void cleanUpBattle() {
+			base.cleanUpBattle ();
+			
+			this.battleOverScreen.onExitBattle -= this.onExitBattle;
+		}
 		public void onExitBattle() {
+			cleanUpBattle ();
 			if (battleOverScreen != null) {
 				if(battleOverScreen.evolutionsToConsume) {
 					BattleMonster monsterEvolving = battleOverScreen.monsterEvolving;
@@ -290,6 +305,7 @@ namespace Battles {
 		}
 		private void onBattleComplete(BattleTeam aWinning,BattleTeam aLosing) {
 			Debug.Log ("onBattleComplete");
+			this.transform.eulerAngles = new Vector3 (0f, 166.64f, 0f);
 			this.hideExtraButtons();
 			this.movesBar.SetActive(false);
 			this.topLabel.gameObject.SetActive(false);
@@ -330,15 +346,18 @@ namespace Battles {
 			}
 			GameObject g = GameObject.Find ("BattleEstablishingPath");
 			CameraPathAnimator cp = g.GetComponent<CameraPathAnimator> ();
+			cp.Seek (0f);
+			cp.Play ();
 			cp.orientationTarget = this.opponentTeam.monstersAsBattleMonster [0].transform;
 			cp.orientationMode = CameraPathAnimator.orientationModes.target;
-			yield return new WaitForSeconds(5f);
+			yield return new WaitForSeconds(4.5f);
 			cp.enabled = false;
 			this.showMovesForMonster(playersTeam.nextUnsetMonster);
 			
 		}
 		protected override void unpackInitData() {
 			base.unpackInitData();
+			this.barController.gameObject.SetActive (false);
 			if(this.playersTeam.nextUnsetMonster==null) {
 				// Go straight to being a loser
 				this.onBattleComplete(this.opponentTeam,this.playersTeam);

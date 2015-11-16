@@ -48,7 +48,21 @@ namespace Battles
 		public BattleTeamBase ()
 		{
 		}
-		
+		public virtual void cleanUp() {
+			onReadyForNextTurn = null;
+			onMoveHasBeenSet = null;
+			onAllMonstersIdle = null;
+			onTeamDead = null;
+			onMonsterFainted = null;
+			onCommentaryMessage = null;
+			for(int i = 0;i<this._monsters.Length;i++) {
+				if(monsters[i]!=null) {
+					Destroy (monsters[i]);
+				}
+
+			}
+
+		}
 		public float monsterMaxSpeed {
 			get {
 				float currentMax = 0;

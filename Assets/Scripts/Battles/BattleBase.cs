@@ -47,7 +47,12 @@ namespace Battles
 
 		}
 		
-
+		public virtual void cleanUpBattle() {
+			_currentItem = null;
+			battleOverScreen.cleanUp ();
+			battleOverScreen.gameObject.SetActive (false);
+			_moveQueue = null;
+		}
 		public void setCamera(GameObject aCameraContainer,EMonsterCamPosition aCamPosition,bool aImmediateLookAt,bool aImmediateStickTo,bool aOnlyMoveTo,Transform aLookAt) {
 			
 			string findCam = "";

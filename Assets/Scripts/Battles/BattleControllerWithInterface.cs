@@ -25,7 +25,7 @@ namespace Battles
 		public GameObject movesBar;
 		public GameObject worldStoreBtn;
 		public UILabel topLabel;
-		protected MovesBarController barController;
+		public MovesBarController barController;
 		public GameObject baitButton;
 		public GameObject escapeButton;
 		protected string _battlesConversation = "";
@@ -126,12 +126,16 @@ namespace Battles
 		//	iTween.FadeTo(this.blackScreen,aEndLevel,aTime);
 		}
 		void Awake() {
-			barController = movesBar.GetComponent(typeof(MovesBarController)) as MovesBarController;
-			barController.show = false;
-			barController.gameObject.SetActive(false);
+
 		}
 		public void onWorldStore() {
 	
+		}
+		public override void cleanUpBattle ()
+		{
+			barController.show = false;
+			barController.gameObject.SetActive (false);
+			base.cleanUpBattle ();
 		}
 		protected void onHideInventory() {
 			if(this._inventory!=null) {

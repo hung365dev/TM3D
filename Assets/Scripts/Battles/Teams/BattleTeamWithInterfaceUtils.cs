@@ -39,7 +39,18 @@ namespace Battles
 				}
 			}
 		}
-
+		public override void cleanUp() {
+			for(byte i = 0;i<this._monsters.Length;i++) {
+				if(_monsters[i]!=null) {
+					BattleMonster m = _monsters[i].GetComponent<BattleMonster>();
+					
+					if(m!=null) {
+						m.onMoveSet -=  onMonsterMoveSet;
+					}
+				}
+			}
+			base.cleanUp ();
+		}
 		
 		public void findTargetForMove(MoveQueueItem aMoveInit) {
 			_opponentsTargettingMove = aMoveInit;

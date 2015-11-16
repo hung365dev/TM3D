@@ -33,7 +33,12 @@ namespace Battles
 			this.onMonstersIdle -= onMonstersIdled;
 			
 		}
-		
+		public void InitMoveQueue ()
+		{
+			this.onMoveQueueGenerated += onMoveQueueCreated;
+			this.onMonstersIdle += onMonstersIdled;
+
+		}
 		protected void doEndBattle() {
 			if(_teams[0].teamIsDead) {
 				if(onBattleCompleted!=null) {
@@ -60,10 +65,10 @@ namespace Battles
 			this._positionOfMoveQueueEntry = 0;
 			this._battleTurn = 0;
 		}
+
 		public BattleControllerWithMoveQueue ()
 		{
-			this.onMoveQueueGenerated += onMoveQueueCreated;
-			this.onMonstersIdle += onMonstersIdled;
+
 			
 		}
 

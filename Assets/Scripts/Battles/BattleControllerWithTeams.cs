@@ -23,7 +23,32 @@ namespace Battles
 		{ 
 		
 		}
-		public virtual void Start() {
+
+		public override void cleanUpBattle() {
+			onMoveQueueGenerated = null;
+			onMonstersIdle = null;
+			base.cleanUpBattle ();
+
+			
+			_teams[0].onReadyForNextTurn -= onTeamReady;
+			_teams[0].onMoveHasBeenSet -= onMoveHasBeenSet;
+			_teams[0].onAllMonstersIdle -= onTeamIdle;
+			_teams[0].onMonsterFainted -= onMonsterFainted;
+			_teams[0].onCommentaryMessage -= onCommentaryMessage;
+			_teams[0].onTargetFound -= onFoundTargetForMove;
+			_teams [0].cleanUp ();
+
+			_teams[1].onReadyForNextTurn -= onTeamReady;
+			_teams[1].onMoveHasBeenSet -= onMoveHasBeenSet;
+			_teams[1].onAllMonstersIdle -= onTeamIdle;
+			_teams[1].onMonsterFainted -= onMonsterFainted;
+			_teams[1].onCommentaryMessage -= onCommentaryMessage;
+			_teams[1].onTargetFound -= onFoundTargetForMove;
+			_teams [1].cleanUp ();
+			base.cleanUpBattle ();
+		}
+
+		public virtual void InitTeams() {
 			
 			_teams[0].onReadyForNextTurn += onTeamReady;
 			_teams[0].onMoveHasBeenSet += onMoveHasBeenSet;
@@ -585,7 +610,7 @@ namespace Battles
 			} else {
 				_commentaryManager.addCommentaryMessage("Battle Begins",ECommentaryMessageType.StandardMessage,ECommentaryMessagePosition.CenterMessage);
 			}
-			this.showMovesForMonster(playersTeam.nextUnsetMonster);
+		//	this.showMovesForMonster(playersTeam.nextUnsetMonster);
 		}
 		private IEnumerator UnpackTeamsThroughFrames(BattleInit aInitData) {
 			yield return null;

@@ -38,7 +38,9 @@ namespace Battles {
 		
 		}
 		
-		
+		public void OnEnable() {
+			Debug.Log ("OnEnable");
+		}
 		public MonsterDataMain currentMonster {
 			get {
 				return _monsterRef.monster;
@@ -83,7 +85,8 @@ namespace Battles {
 		}
 		public void AutoSelectMove(int aMoveIndex) {
 			_autoSelectMove = aMoveIndex;
-			this.gameObject.SetActive(true);
+			if(aMoveIndex>-1)
+				this.gameObject.SetActive(true);
 			this.baitButtonHint.gameObject.SetActive(false);
 			for(int i = 0;i<this.moveButtons.Length;i++) {
 				if(i!=aMoveIndex&&aMoveIndex>-1) {

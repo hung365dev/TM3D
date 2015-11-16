@@ -44,7 +44,11 @@ namespace Battles
 		public BattleCompleteMonster ()
 		{
 		}
-		
+
+
+		public void cleanUp() { 
+			Destroy (this.gameObject);
+		}
 		public void init(BattleMonster aMonster,int aXPToAdd,double aDelayToAdd,float aBestMeleeAtck,float aBestMeleeDef,float aBestRangeAtck,float aBestRangeDef,float aBestSpeed,float aBestAccuracy,float aBestAgility) {
 			aMonster.healthBarEnabled = false;
 			_xpToAdd = (int) Convert.ToInt32((float) aXPToAdd * XP_MULTIPLIER);

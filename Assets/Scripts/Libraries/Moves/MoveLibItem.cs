@@ -299,7 +299,12 @@ public class MoveLibItem {
 	
 	public GameObject attackAnimationPrefab {
 		get {
-			return this._particlesAnimation.prefab;
+			if(this._particlesAnimation!=null)
+			return this._particlesAnimation.prefab; else
+			{
+				Debug.LogError("Getting attackAnimationPrefab for: "+this.Name+" Failed!");
+				return null;
+			}
 		}
 	}
 	
