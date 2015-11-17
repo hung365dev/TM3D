@@ -29,6 +29,7 @@ namespace Battles {
 			REF = this;
 			this.onBattleCompleted += onBattleComplete;
 
+
 			if(this.battleOverScreen!=null)
 				this.battleOverScreen.gameObject.SetActive(false);
 			this.commentaryEngine.gameObject.SetActive(false);

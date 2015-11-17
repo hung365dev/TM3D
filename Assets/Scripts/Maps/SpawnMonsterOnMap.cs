@@ -117,10 +117,15 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 			#endif
 		player = GameObject.FindGameObjectWithTag ("Player");
 		wander = GetComponent<WanderBehaviour> ();
-
+		StartCoroutine(toggleOnOffRootMotion());
 		
 	} 
 	
+	private IEnumerator toggleOnOffRootMotion() {
+		this.anim.applyRootMotion = true;
+		yield return new WaitForEndOfFrame();
+		this.anim.applyRootMotion = false;
+	}
 	// Update is called once per frame
 	void Update () {
 		#if (UNITY_EDITOR)
@@ -136,9 +141,11 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 			}
 			Debug.Log ("Animator is: "+anim);
 		} else {
+			if(!anim.isActiveAndEnabled)
 			anim.enabled = true;
 		}
 		#else
+		if(!anim.isActiveAndEnabled)
 			anim.enabled = true; 
 		#endif
 		if(steerable==null) {

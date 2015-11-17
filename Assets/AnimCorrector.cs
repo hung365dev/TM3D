@@ -28,6 +28,7 @@ public class AnimCorrector : MonoBehaviour {
 			Debug.Log ("Animator is: "+anim);
 		} else {
 			anim.enabled = true;
+			Destroy(this);
 		}
 		#else
 		anim.enabled = true; 

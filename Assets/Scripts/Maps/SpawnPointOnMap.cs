@@ -41,7 +41,7 @@ public class SpawnPointOnMap : MonoBehaviour {
 		if(maxMonstersResponsibleFor>active.Count) {
 			for(int i = 0;i<monsters.Count;i++) {
 				
-				SpawnPointOptions o = monsters[0];
+				SpawnPointOptions o = monsters[i];
 				bool shouldSpawn = false;
 				switch(o.rareness) {
 					case(ERareity.VeryCommon):shouldSpawn = (Random.Range (0,5) == 0);break;
