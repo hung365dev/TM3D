@@ -9,7 +9,7 @@ public class SpawnPointOnMap : MonoBehaviour {
 	public List<SpawnPointOptions> monsters;
 
 	public float wanderDistance = 20f;
-
+	public float wanderLinger = 3f;
 	public int maxMonstersResponsibleFor = 5;
 
 
@@ -36,6 +36,13 @@ public class SpawnPointOnMap : MonoBehaviour {
 		if(GameTimer.REF!=null)
 			GameTimer.REF.OnTimerTick -= onSecondPassed;
 	}
+
+	private IEnumerator delayToInitWanderer(SpawnMonsterOnMap aWanderer) {
+		yield return new WaitForEndOfFrame ();
+		aWanderer.anim.applyRootMotion = !aWanderer.anim.applyRootMotion;
+		aWanderer.wander.radius = this.wanderDistance;
+		aWanderer.wander.lingerForSeconds = this.wanderLinger;
+	}
 	// Update is called once per frame
 	void onSecondPassed () {
 		if(maxMonstersResponsibleFor>active.Count) {
@@ -52,12 +59,13 @@ public class SpawnPointOnMap : MonoBehaviour {
 					case(ERareity.SuperRare):shouldSpawn = (Random.Range(0,600) == 0);break;
 				}
 
-				if(o!=null) {
+				if(o!=null&&shouldSpawn) {
 					GameObject m = GameObject.Instantiate(o.monsterToSpawn);
 					m.transform.position = this.transform.position;
 					SpawnMonsterOnMap s = m.AddComponent<SpawnMonsterOnMap>();
 					s.name = o.monsterToSpawn.name;
 					s.level = (byte) UnityEngine.Random.Range(o.levelLow,o.levelHigh);
+					StartCoroutine(delayToInitWanderer(s));
 					active.Add(s);
 				} 
 

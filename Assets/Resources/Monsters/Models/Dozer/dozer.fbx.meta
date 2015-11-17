@@ -1,0 +1,1901 @@
+fileFormatVersion: 2
+guid: ea855b5c3c6d1de4d80ae58b1e837656
+timeCreated: 1447769542
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_R
+    100004: Cube
+    100006: //RootNode
+    100008: Fingers_L
+    100010: Fingers_L_end
+    100012: Fingers_R
+    100014: Fingers_R_end
+    100016: Foot_L
+    100018: Foot_L_end
+    100020: Foot_R
+    100022: Foot_R_end
+    100024: Forearm_L
+    100026: Forearm_R
+    100028: Hand_L
+    100030: Hand_R
+    100032: Head
+    100034: Head_end
+    100036: Leg_L
+    100038: Leg_R
+    100040: Neck
+    100042: Root
+    100044: Shoulder_L
+    100046: Shoulder_R
+    100048: Spine
+    100050: Thigh_L
+    100052: Thigh_R
+    100054: Two Leg Bones
+    400000: Arm_L
+    400002: Arm_R
+    400004: Cube
+    400006: //RootNode
+    400008: Fingers_L
+    400010: Fingers_L_end
+    400012: Fingers_R
+    400014: Fingers_R_end
+    400016: Foot_L
+    400018: Foot_L_end
+    400020: Foot_R
+    400022: Foot_R_end
+    400024: Forearm_L
+    400026: Forearm_R
+    400028: Hand_L
+    400030: Hand_R
+    400032: Head
+    400034: Head_end
+    400036: Leg_L
+    400038: Leg_R
+    400040: Neck
+    400042: Root
+    400044: Shoulder_L
+    400046: Shoulder_R
+    400048: Spine
+    400050: Thigh_L
+    400052: Thigh_R
+    400054: Two Leg Bones
+    4300000: Cube
+    7400000: Idle
+    7400002: Walk
+    7400004: Run
+    7400006: JumpFromStandstill
+    7400008: JumpFromRun
+    7400010: MidJump
+    7400012: TackleRun
+    7400014: ScratchAttack
+    7400016: HitAnimation
+    7400018: HitAnimation2
+    7400020: JumpIntoRangeAttack
+    7400022: RangeAttack
+    7400024: Faint
+    7400026: Rest
+    7400028: AggressiveStance1
+    7400030: GroundPunch
+    7400032: Flip
+    7400034: FootStomp
+    7400036: AggressiveStance2
+    7400038: RangeAttackArms
+    7400040: AggressiveStance3
+    9500000: //RootNode
+    13700000: Cube
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 0
+      lastFrame: 38
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 40
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 73
+      lastFrame: 92
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JumpFromStandstill
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 94
+      lastFrame: 113
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JumpFromRun
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 96
+      lastFrame: 111
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: MidJump
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 102
+      lastFrame: 105
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TackleRun
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 114
+      lastFrame: 134
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .192488447
+        functionName: OnSpawnEffect
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ScratchAttack
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 135
+      lastFrame: 176
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .331233561
+        functionName: OnSpawnEffect
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: HitAnimation
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 135
+      lastFrame: 176
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: HitAnimation2
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 176
+      lastFrame: 258
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JumpIntoRangeAttack
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 258
+      lastFrame: 315
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RangeAttack
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 333
+      lastFrame: 355
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .242205799
+        functionName: OnSpawnEffect
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Faint
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 355
+      lastFrame: 420
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Rest
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 417
+      lastFrame: 477
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AggressiveStance1
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 480
+      lastFrame: 520
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GroundPunch
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 520
+      lastFrame: 612
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Flip
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 612
+      lastFrame: 630
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FootStomp
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 630
+      lastFrame: 665
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AggressiveStance2
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 665
+      lastFrame: 784
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .262824416
+        functionName: OnSpawnEffect
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RangeAttackArms
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 784
+      lastFrame: 822
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: AggressiveStance3
+      takeName: Two Leg Bones|Two Leg BonesAction
+      firstFrame: 822
+      lastFrame: 948
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Two Leg Bones
+        weight: 1
+      - path: Two Leg Bones/Root
+        weight: 1
+      - path: Two Leg Bones/Root/Spine
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Neck/Head/Head_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_L/Arm_L/Forearm_L/Hand_L/Fingers_L/Fingers_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R
+        weight: 1
+      - path: Two Leg Bones/Root/Spine/Shoulder_R/Arm_R/Forearm_R/Hand_R/Fingers_R/Fingers_R_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_L/Leg_L/Foot_L/Foot_L_end
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: Two Leg Bones/Root/Thigh_R/Leg_R/Foot_R/Foot_R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .660000026
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

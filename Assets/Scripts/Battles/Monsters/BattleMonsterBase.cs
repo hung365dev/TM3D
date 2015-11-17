@@ -89,8 +89,8 @@ namespace Battles
 
 		public Vector3 SpawnPosition {
 			get {
-				return new Vector3(this.transform.position.x,this.transform.position.y,this.transform.position.z);
-			}
+				return new Vector3(this.transform.position.x,this.transform.position.y+this.transform.FindChild("HeadPoint").position.y/2,this.transform.position.z);
+			} 
 		}
 		public Vector3 ConfuseSpawnPosition {
 			get {

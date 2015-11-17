@@ -123,12 +123,12 @@ public class PlayerWithMonsters : PlayerBase
 		this.saveMonsters();
 		return;*/
 		allowMonsterSave = false;
-			for(int i = 0;i<128;i++) {
-				int r = (int) UnityEngine.Random.Range(1,200);
-				if(MonsterLibrary.REF.getMonster(r)!=null) {
-					addMonster (r,(byte) UnityEngine.Random.Range(1,50));
-					}
-			}
+
+		// Bullibee
+
+		addMonster (177,(byte) UnityEngine.Random.Range(10,20));
+		addMonster (150,(byte) UnityEngine.Random.Range(10,20));
+		addMonster (125,(byte) UnityEngine.Random.Range(10,20)); 
 		allowMonsterSave = true;
 			this.saveMonsters ();
 		}

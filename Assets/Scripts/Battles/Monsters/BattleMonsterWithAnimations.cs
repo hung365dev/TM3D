@@ -227,8 +227,10 @@ namespace Battles
 				_anim.SetInteger("AnimState",-1);
 				if(aCurrentItem.moveData.attackMecanim=="NoAnim") {
 					this.OnSpawnEffect();
-				} else
+				} else {
+					Debug.Log ("Setting ANim Trigger: "+aCurrentItem.moveData.attackMecanim);
 					_anim.SetTrigger(aCurrentItem.moveData.attackMecanim);
+				}
 			//	fadeInMakeup(); 
 			//	StartCoroutine(doReturnToIdle());
 			}

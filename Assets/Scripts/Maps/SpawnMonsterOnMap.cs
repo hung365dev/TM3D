@@ -32,6 +32,8 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 	public bool chasePlayer = false;
 	public WanderBehaviour wander;
 	public MonsterLibraryRecord monster;
+
+	public float lingerTime = 3f;
 	// Use this for initialization
 	public string name;
 	public byte level; 
@@ -118,12 +120,19 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		wander = GetComponent<WanderBehaviour> ();
 		StartCoroutine(toggleOnOffRootMotion());
-		
 	} 
 	
 	private IEnumerator toggleOnOffRootMotion() {
 		this.anim.applyRootMotion = true;
 		yield return new WaitForEndOfFrame();
+		this.anim.applyRootMotion = false;
+		yield return new WaitForEndOfFrame();
+		this.anim.applyRootMotion = true;
+		yield return new WaitForEndOfFrame();
+		this.anim.applyRootMotion = false;
+		yield return new WaitForSeconds (1f);
+		this.anim.applyRootMotion = true;
+		yield return new WaitForSeconds (1f);
 		this.anim.applyRootMotion = false;
 	}
 	// Update is called once per frame
@@ -191,6 +200,9 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 					wander.enabled = true;
 					chasePlayer = false;
 					wander.MoveNext(false);
+				} else if(unit.hasArrivedAtDestination) {
+					Debug.Log ("I Arrived!");
+					this.anim.applyRootMotion = !this.anim.applyRootMotion;
 				}
 			}
 		}
