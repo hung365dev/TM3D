@@ -28,6 +28,11 @@ public class PlayerMain : PlayerWithMultiplayer
 		public string name {
 			get {
 				Lua.Result r = DialogueLua.GetActorField("Player","Name");
+				if(r.AsString.Length==0) {
+					return "Demo";
+				}
+
+
 				return r.AsString;
 			}
 		}

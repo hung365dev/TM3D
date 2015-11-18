@@ -70,6 +70,7 @@ ModelImporter:
     7400010: Faint
     7400012: Rest
     7400014: Taunt
+    7400016: TackleRun
     9500000: //RootNode
     13700000: Bullibee
   materials:
@@ -703,6 +704,95 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bullibee
+        weight: 1
+      - path: BullibeeBones
+        weight: 1
+      - path: BullibeeBones/Root
+        weight: 1
+      - path: BullibeeBones/Root/Arm_L
+        weight: 1
+      - path: BullibeeBones/Root/Arm_L/Arm_L_end
+        weight: 1
+      - path: BullibeeBones/Root/Arm_R
+        weight: 1
+      - path: BullibeeBones/Root/Arm_R/Arm_R_end
+        weight: 1
+      - path: BullibeeBones/Root/Neck
+        weight: 1
+      - path: BullibeeBones/Root/Neck/Ant_L
+        weight: 1
+      - path: BullibeeBones/Root/Neck/Ant_L/Ant_L.001
+        weight: 1
+      - path: BullibeeBones/Root/Neck/Ant_L/Ant_L.001/Ant_L.001_end
+        weight: 1
+      - path: BullibeeBones/Root/Neck/Ant_R
+        weight: 1
+      - path: BullibeeBones/Root/Neck/Ant_R/Ant_R.001
+        weight: 1
+      - path: BullibeeBones/Root/Neck/Ant_R/Ant_R.001/Ant_R.001_end
+        weight: 1
+      - path: BullibeeBones/Root/Neck/Head
+        weight: 1
+      - path: BullibeeBones/Root/Neck/Head/Head_end
+        weight: 1
+      - path: BullibeeBones/Root/Root_L
+        weight: 1
+      - path: BullibeeBones/Root/Root_L/Root_L_end
+        weight: 1
+      - path: BullibeeBones/Root/Root_R
+        weight: 1
+      - path: BullibeeBones/Root/Root_R/Root_R_end
+        weight: 1
+      - path: BullibeeBones/Root/Tail
+        weight: 1
+      - path: BullibeeBones/Root/Tail/Tail_end
+        weight: 1
+      - path: BullibeeBones/Root/UpWing_L
+        weight: 1
+      - path: BullibeeBones/Root/UpWing_L/UpWing_L_end
+        weight: 1
+      - path: BullibeeBones/Root/UpWing_R
+        weight: 1
+      - path: BullibeeBones/Root/UpWing_R/UpWing_R_end
+        weight: 1
+      - path: Hemi
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TackleRun
+      takeName: BullibeeBones|BullibeeBonesAction
+      firstFrame: 30
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: OnSpawnEffect
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

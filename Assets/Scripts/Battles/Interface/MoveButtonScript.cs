@@ -42,7 +42,10 @@ namespace Battles
 				
 				this.progressBar.value = energy / maxEnergy;;
 				if(aMoveData.moveData.energy<=aMonster.energy) {
-					
+					if(aMoveData.moveData.Name==null) {
+						Debug.LogError("Move Data: "+aMoveData.moveData+" is null");
+						return;
+					}
 					title.text = aMoveData.moveData.Name.ToUpper();
 					isLit = true;
 				} else {

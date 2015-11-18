@@ -27,6 +27,8 @@ namespace Battles
 		public PassiveEffect passiveEffect;
 		public BattleMonster battleMonster;
 		
+
+		public GameObject hudTextPrefab;
 		
 		public PassiveEffect defendersPassiveEffect;
 		public BattleMonster defenderMonster;
@@ -54,35 +56,54 @@ namespace Battles
 		}
 		
 		public void addCommentaryInEffectiveMessage(string aMessage,GameObject aMonster) {
-			GameObject prefab = NGUITools.AddChild(this.gameObject.transform.parent.gameObject,this.commentaryInEffective);
+			BattleMonster bm = aMonster.GetComponent<BattleMonster>();
+			HUDText h = bm.healthBar.GetComponentInChildren<HUDText>();
+			
+			
+			if(h!=null)
+			h.Add(aMessage,Color.red,1f);
+			/*GameObject prefab = NGUITools.AddChild(this.gameObject.transform.parent.gameObject,this.commentaryInEffective);
 			UILabel label = prefab.GetComponent<UILabel>();
 			label.text = aMessage;
 /*			UIFollowTarget followTarget = (UIFollowTarget) prefab.AddComponent<UIFollowTarget>();
 			followTarget.initTarget(aMonster.gameObject.transform);;
 			followTarget.heightOffset = 0f;
 			followTarget.heightToAddPerFrame = 0f;*/
-			prefab.transform.localScale = new Vector3(1f,1f,1f);
+		/*	prefab.transform.localScale = new Vector3(1f,1f,1f);
 			
 			TweenAlpha.Begin(prefab,damageFadeSpeed,0.0f);
-			Destroy(prefab,damageFadeSpeed);
+			Destroy(prefab,damageFadeSpeed);*/
 			
 		}
 		public void addCommentaryEffectiveMessage(string aMessage,GameObject aMonster) {
-			GameObject prefab = NGUITools.AddChild(this.gameObject.transform.parent.gameObject,this.commentaryEffective);
+
+			BattleMonster bm = aMonster.GetComponent<BattleMonster>();
+			HUDText h = bm.healthBar.GetComponentInChildren<HUDText>();
+			
+			
+			if(h!=null)
+			h.Add(aMessage,Color.green,1f);
+		/*	GameObject prefab = NGUITools.AddChild(this.gameObject.transform.parent.gameObject,this.commentaryEffective);
 			UILabel label = prefab.GetComponent<UILabel>();
 			label.text = aMessage;
 	/*		UIFollowTarget followTarget = (UIFollowTarget) prefab.AddComponent<UIFollowTarget>();
 			followTarget.initTarget(aMonster.gameObject.transform);;
 			followTarget.heightOffset = 0;
 			followTarget.heightToAddPerFrame = 0f;*/
-			prefab.transform.localScale = new Vector3(1f,1f,1f);
+		/*	prefab.transform.localScale = new Vector3(1f,1f,1f);
 			
 			TweenAlpha.Begin(prefab,damageFadeSpeed,0.0f);
-			Destroy(prefab,damageFadeSpeed);
+			Destroy(prefab,damageFadeSpeed);*/
 			
 		}
+
 		public void addCommentaryMessage(string aMessage,ECommentaryMessageType aType,ETeamPosition aTeamPosition,EMonsterPos aMonsterPosition,GameObject aMonster) {
-			GameObject prefab;
+			BattleMonster bm = aMonster.GetComponent<BattleMonster>();
+			HUDText h = bm.healthBar.GetComponentInChildren<HUDText>();
+ 
+			if(h!=null)
+			h.Add(aMessage,Color.blue,1f); else Debug.Log (aMonster);
+	/*		GameObject prefab;
 			if(aType!=ECommentaryMessageType.DmgCritical) {
 				prefab = NGUITools.AddChild(this.gameObject.transform.parent.gameObject,commentaryDamageMessage);
 				
@@ -103,13 +124,13 @@ namespace Battles
 			} else {
 				followTarget.heightToAddPerFrame = 2f;
 				followTarget.heightOffset = 10;
-			}*/
+			}
 			prefab.transform.localScale = new Vector3(1f,1f,1f);
 			
 			TweenAlpha.Begin(prefab,damageFadeSpeed,0.0f);
 			
 			//TweenPosition.Begin(prefab,damageMoveSpeed,new Vector3(prefab.transform.position.x,prefab.transform.position.y+yDistance,prefab.transform.position.z));
-			Destroy(prefab,damageFadeSpeed);
+			Destroy(prefab,damageFadeSpeed);*/
 		}
 		
 		public void Update() {

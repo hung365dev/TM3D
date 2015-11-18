@@ -201,7 +201,6 @@ public class SpawnMonsterOnMap : MonoBehaviour {
 					chasePlayer = false;
 					wander.MoveNext(false);
 				} else if(unit.hasArrivedAtDestination) {
-					Debug.Log ("I Arrived!");
 					this.anim.applyRootMotion = !this.anim.applyRootMotion;
 				}
 			}

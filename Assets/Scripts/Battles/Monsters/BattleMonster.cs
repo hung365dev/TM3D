@@ -19,9 +19,21 @@ namespace Battles
 	{
 		public string ownersName;
 		public float hp;
+		private Vector3 _cachedFaceOffPosition;
 		public BattleMonster()
 		{
 			
+		}
+
+		public Vector3 faceOffPosition {
+			get {
+				if(_cachedFaceOffPosition==null||_cachedFaceOffPosition.magnitude==0f) {
+					if(this.transform.FindChild("FaceOffPosition")!=null) {
+						_cachedFaceOffPosition = this.transform.FindChild("FaceOffPosition").position;
+					}
+				}
+				return _cachedFaceOffPosition;
+			}
 		}
 		
 		public void applyHPBoostForMove(MoveLibItem aItem,float aSplashPercent,ETeamPosition aTeamPosition,EMonsterPos aPosition) {

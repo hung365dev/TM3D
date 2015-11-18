@@ -58,7 +58,7 @@ namespace Battles
 		}
 		public byte unlockLevelForMove(MoveLibItem aMove) {
 			for(int i = 0;i<monster.selectedMoves.size;i++) {
-				if(monster.selectedMoves[i]._forcedMove==aMove) {
+				if(monster.selectedMoves[i].forcedMove==aMove) {
 					return (byte) monster.selectedMoves[i].forcedMoveUnlockLevel;
 				}
 			}

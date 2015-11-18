@@ -88,6 +88,7 @@ ModelImporter:
     7400014: Faint
     7400016: Rest
     7400018: Taunt
+    7400020: TackleRun
     9500000: //RootNode
     13700000: Misslbee
   materials:
@@ -833,6 +834,111 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/Spine
+        weight: 1
+      - path: Armature/Root/Spine/Head
+        weight: 1
+      - path: Armature/Root/Spine/Head/Ant_L
+        weight: 1
+      - path: Armature/Root/Spine/Head/Ant_L/Ant_L_end
+        weight: 1
+      - path: Armature/Root/Spine/Head/Ant_R
+        weight: 1
+      - path: Armature/Root/Spine/Head/Ant_R/Ant_R_end
+        weight: 1
+      - path: Armature/Root/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Root/Spine/Shoulder_L/Arm_L
+        weight: 1
+      - path: Armature/Root/Spine/Shoulder_L/Arm_L/ForeArm_L
+        weight: 1
+      - path: Armature/Root/Spine/Shoulder_L/Arm_L/ForeArm_L/ForeArm_L_end
+        weight: 1
+      - path: Armature/Root/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Root/Spine/Shoulder_R/Arm_R
+        weight: 1
+      - path: Armature/Root/Spine/Shoulder_R/Arm_R/ForeArm_R
+        weight: 1
+      - path: Armature/Root/Spine/Shoulder_R/Arm_R/ForeArm_R/ForeArm_R_end
+        weight: 1
+      - path: Armature/Root/Spine/Wing
+        weight: 1
+      - path: Armature/Root/Spine/Wing/Wing_end
+        weight: 1
+      - path: Armature/Root/Spine/Wing1_L
+        weight: 1
+      - path: Armature/Root/Spine/Wing1_L/Wing1_L_end
+        weight: 1
+      - path: Armature/Root/Spine/Wing1_R
+        weight: 1
+      - path: Armature/Root/Spine/Wing1_R/Wing1_R_end
+        weight: 1
+      - path: Armature/Root/Spine/Wing2_L
+        weight: 1
+      - path: Armature/Root/Spine/Wing2_L/Wing2_L_end
+        weight: 1
+      - path: Armature/Root/Spine/Wing2_R
+        weight: 1
+      - path: Armature/Root/Spine/Wing2_R/Wing2_R_end
+        weight: 1
+      - path: Armature/Root/Tail
+        weight: 1
+      - path: Armature/Root/Tail/Root_L
+        weight: 1
+      - path: Armature/Root/Tail/Root_L/Root_L_end
+        weight: 1
+      - path: Armature/Root/Tail/Root_R
+        weight: 1
+      - path: Armature/Root/Tail/Root_R/Root_R_end
+        weight: 1
+      - path: Armature/Root/Tail/Tail2
+        weight: 1
+      - path: Armature/Root/Tail/Tail2/Tail3
+        weight: 1
+      - path: Armature/Root/Tail/Tail2/Tail3/Tail3_end
+        weight: 1
+      - path: Misslbee
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TackleRun
+      takeName: Armature|ArmatureAction
+      firstFrame: 30
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: OnSpawnEffect
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

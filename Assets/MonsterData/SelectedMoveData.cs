@@ -16,7 +16,7 @@ public class SelectedMoveData
 {
 	private EMoveUnlockType _unlockType;
 	public MoveTreeCompletionDataRow _moveSelected;
-	public MoveLibItem _forcedMove;
+	private MoveLibItem _forcedMove;
 	public int forcedMoveUnlockLevel;
 	public ITMItem item;
 	public SelectedMoveData ()
@@ -28,6 +28,14 @@ public class SelectedMoveData
 		item = aItemToUse;
 	//	_moveSelected = new MoveTreeCompletionDataRow(item);
 	}
+	public MoveLibItem forcedMove {
+		get {
+			if(_forcedMove==null||_forcedMove.id==0||_forcedMove.Name==null) {
+				return null;
+			}
+			return _forcedMove;
+		}
+	}
 	public bool hasMoveData {
 		get {
 			if(_forcedMove==null&&_moveSelected==null) {
@@ -38,7 +46,7 @@ public class SelectedMoveData
 	}
 	public MoveLibItem moveData {
 		get {
-			if(_forcedMove!=null) {
+			if(_forcedMove!=null&&_forcedMove.id>0) {
 				return _forcedMove;
 			}
 			if(_moveSelected==null||_moveSelected.moveData==null) {

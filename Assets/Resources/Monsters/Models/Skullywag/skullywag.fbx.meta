@@ -55,6 +55,7 @@ ModelImporter:
     7400012: Flip
     7400014: Rest
     7400016: Faint
+    7400018: TackleRun
     9500000: //RootNode
     13700000: Skullywag
   materials:
@@ -624,6 +625,72 @@ ModelImporter:
       takeName: Fish Bones|Fish BonesAction
       firstFrame: 268
       lastFrame: 322
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish Bones
+        weight: 1
+      - path: Fish Bones/Root
+        weight: 1
+      - path: Fish Bones/Root/Root.001
+        weight: 1
+      - path: Fish Bones/Root/Root.001/Root.001_end
+        weight: 1
+      - path: Fish Bones/Root/Spine
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_L/BottomFin_L_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/BottomFin_R/BottomFin_R_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Head Fin/Head Fin_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth
+        weight: 1
+      - path: Fish Bones/Root/Spine/Spine.02/Neck/Head/Mouth/Mouth_end
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin
+        weight: 1
+      - path: Fish Bones/Root/Spine/Top Fin/Top Fin_end
+        weight: 1
+      - path: Skullywag
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TackleRun
+      takeName: Fish Bones|Fish BonesAction
+      firstFrame: 63
+      lastFrame: 73
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

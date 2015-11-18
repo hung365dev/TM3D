@@ -317,7 +317,9 @@ namespace Battles
 						int originalTarget = (int) _currentItem.targetMonster;
 						int targetPositionInt = (int) targetTeam.updatedTargetPosition(_currentItem.targetMonster);
 						EMonsterPos pos = targetTeam.updatedTargetPosition(_currentItem.targetMonster);
-						Vector3 targetMonsterPosition = BattleConstants.getFaceOffPosition(_currentItem.targetTeam,pos,this.transform.parent.gameObject.transform.position);
+						BattleMonster bm = targetTeam.monsterFromPosition(pos);
+
+						Vector3 targetMonsterPosition = bm.faceOffPosition;
 						if(this._currentItem.firstHit) {
 							Debug.Log ("<color=yellow>This was the first hit, I'm taking: "+_currentItem.moveData.energy+"</color>");
 							float energyForMove = _currentItem.moveData.getEnergy(_currentItem.actioningMonster.unlockLevelForMove(_currentItem.moveData));
