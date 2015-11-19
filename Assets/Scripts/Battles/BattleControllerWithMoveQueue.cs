@@ -356,9 +356,15 @@ namespace Battles
 							Hashtable h = new Hashtable();
 							h.Add("position",targetMonsterPosition);
 							h.Add ("time",1.5f); 
-							h.Add ("oncompletetarget",this.gameObject);
-							h.Add ("oncomplete","onDoAttackAnimation"); 
-							h.Add ("oncompleteparams",actionMonster);
+
+							if(_currentItem.moveData.attackMecanim=="TackleRun") {
+								StartCoroutine(delayedToStartTackleRunAnim(actionMonster,1.2f));
+								
+							} else {
+								h.Add ("oncompletetarget",this.gameObject);
+								h.Add ("oncomplete","onDoAttackAnimation"); 
+								h.Add ("oncompleteparams",actionMonster);
+							}
 							h.Add("easetype",iTween.EaseType.easeInQuad); 
 							iTween.MoveTo(actionMonster.gameObject,h);
 							
@@ -435,7 +441,13 @@ namespace Battles
 			yield return new WaitForSeconds (aDelay);
 			this.onDoRangeAttackAnimation((BattleMonster) aMonster);
 		}
-
+		private IEnumerator delayedToStartTackleRunAnim(BattleMonsterWithMoves aActionMonster,float aDelay) {
+			
+			aActionMonster.onSpawnAttack += onDoSpawnAttack;
+			yield return new WaitForSeconds(aDelay);
+			
+			aActionMonster.doAttackAnimation(this._currentItem);
+		}
 		private IEnumerator delayedToStartRunAnim(BattleMonsterWithMoves aActionMonster,float aDelay,float aSecondDelay) {
 			yield return new WaitForSeconds (aDelay);
 			aActionMonster.setAnimation(EMonsterAnimations.Run);

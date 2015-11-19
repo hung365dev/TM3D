@@ -690,7 +690,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .97709465
+      - time: .401484907
         functionName: OnSpawnEffect
         data: 
         objectReferenceParameter: {instanceID: 0}

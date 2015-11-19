@@ -67,10 +67,8 @@ public class AxisMouseTopDownPlayerMove : MonoBehaviour {
 		}
 	}
 	public void OnEnable() {
-		Debug.Log ("Movement Enabled");
 	}
 	public void OnDisable() {
-		Debug.Log ("Movement Disabled");
 	}
 
 	public void OnDrawGizmos() {
