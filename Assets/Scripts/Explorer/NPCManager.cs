@@ -26,7 +26,7 @@ public class NPCManager : MonoBehaviour {
 		REF = this;
 		CONVO_OPEN = false;
 	}
-	public void initNpcsForMap(string aMapName,WorldExplorer aExplorer,GameObject aAvatar) {
+	public void initNpcsForMap(WorldExplorer aExplorer,GameObject aAvatar) {
 		_explorer = aExplorer;
 		_avatar = aAvatar;
 		DialogueManager.AllowLuaExceptions = true;
@@ -46,13 +46,13 @@ public class NPCManager : MonoBehaviour {
 				start.target = this.gameObject.transform;
 				
 				
-			}
+			} 
 			
 		}
 		doTriggerMovers(true);
 	}
-	public void initNpcsForMap(string aMapName,WorldExplorer aExplorer,GameObject aAvatar,string aConversationToTrigger) {
-		this.initNpcsForMap(aMapName,aExplorer,aAvatar);
+	public void initNpcsForMap(WorldExplorer aExplorer,GameObject aAvatar,string aConversationToTrigger) {
+		this.initNpcsForMap(aExplorer,aAvatar);
 		StartCoroutine(waitToTriggerMapStartConvo(aAvatar,aConversationToTrigger));
 		
 	}
@@ -81,7 +81,7 @@ public class NPCManager : MonoBehaviour {
 	
 	public void createQuestArrows() {
 		
-		//this._explorer.createQuestArrows();
+		this._explorer.createQuestArrows();
 	}
 	public void saveQuests() {
 		SaveGameUtils.REF.SaveStatsAndQuests();
@@ -185,8 +185,7 @@ public class NPCManager : MonoBehaviour {
 		float nearest = float.MaxValue;
 		GameObject nearestNPC = null;
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		AvatarMover am = player.GetComponent<AvatarMover>();
-		Vector3 pos = am.transform.localPosition;
+		Vector3 pos = player.transform.localPosition;
 		GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
 		for(int i = 0;i<npcs.Length;i++) {
 			float diff = Vector3.Distance(npcs[i].transform.localPosition,pos);
@@ -202,8 +201,8 @@ public class NPCManager : MonoBehaviour {
 				}
 			}
 		}
-		if(nearestNPC!=null)
-			am.setMyDirection(nearestNPC.gameObject.transform.localPosition-pos);
+	/*	if(nearestNPC!=null)
+			am.setMyDirection(nearestNPC.gameObject.transform.localPosition-pos);*/
 		StartCoroutine(restartCollidersIn(0.5f));
 	}
 	
@@ -256,7 +255,7 @@ public class NPCManager : MonoBehaviour {
 		Lua.Result cutscene = DialogueLua.GetVariable("Cutscene");
 		if(cutscene.AsString.Length>0||false) {
 			switch(cutscene.AsString) {
-			case("End"):default:
+			case("End"):
 				Application.LoadLevel("CreditsMainMenu");
 				
 				break;
@@ -368,7 +367,7 @@ public class NPCManager : MonoBehaviour {
 		
 		Lua.Result autoStartConvo = DialogueLua.GetVariable("AutoStartNewConvo");
 		if(autoStartConvo.AsString.Length>0) {
-			ConversationTrigger[] ct = _explorer.allMap.GetComponentsInChildren<ConversationTrigger>();
+			ConversationTrigger[] ct = GameObject.FindObjectsOfType<ConversationTrigger>();
 			for(int i = 0;i<ct.Length;i++) {
 				if(ct[i].conversation == autoStartConvo.AsString) {
 					if(!changingScene)

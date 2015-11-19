@@ -31,6 +31,7 @@ public class WorldExplorer : WorldExplorerWithButtons
 		// TODO Make UMA here!
 		REF = this;
 	//	worldLight = this.GetComponentInChildren<Light> ();
+
 		StartCoroutine(createArrowsAfter1Frame());
 	}
 	public void onLaunchSettings() {
@@ -72,6 +73,7 @@ this.uiRoot.gameObject.SetActive(false);
 	}
 	private IEnumerator createArrowsAfter1Frame() {
 		yield return new WaitForEndOfFrame();
+		NPCManager.REF.initNpcsForMap (this, GameObject.FindGameObjectWithTag ("Player"));
 		createQuestArrows();
 		GameObject go = GameObject.FindGameObjectWithTag("MultiplayerController");
 		if(go!=null) {

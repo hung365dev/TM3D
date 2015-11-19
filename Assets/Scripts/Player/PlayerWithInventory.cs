@@ -106,12 +106,14 @@ namespace Player
 		public void addToInventory(string aNames) {
 			string[] s = aNames.Split(new char[] {'|'});
 			for(int i = 0;i<s.Length;i++) {
+				if(s[i]!="nil") {
 				ITMItem thisItem = ItemLibrary.REF.getItemFromName(s[i]);
 				if(thisItem==null) {
 					Debug.LogError("Item "+s[i]+" Could not be found!");
 					return;
 				}
 				addToInventory(thisItem);
+				}
 			}
 			
 			aNames = aNames.Replace("|",", ");

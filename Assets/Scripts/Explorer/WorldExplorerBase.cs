@@ -197,13 +197,13 @@ public class WorldExplorerBase : MonoBehaviour {
 			if (PlayerMain.REF.monsterCount == 0) {
 				// Start of game forced convo
 				Debug.Log ("My monster count is zero");
-				npcManager.initNpcsForMap (aMapToLoad, this as WorldExplorer, selectedAvatar, "ZinaPreSelectMonster");
+				npcManager.initNpcsForMap (this as WorldExplorer, selectedAvatar, "ZinaPreSelectMonster");
 			
 			} else 
 		if (PlayerMain.REF.futureDoorway != null && PlayerMain.REF.futureDoorway.futureNPCChat != null) {
-				npcManager.initNpcsForMap (aMapToLoad, this as WorldExplorer, selectedAvatar, PlayerMain.REF.futureDoorway.futureNPCChat);
+				npcManager.initNpcsForMap ( this as WorldExplorer, selectedAvatar, PlayerMain.REF.futureDoorway.futureNPCChat);
 			} else {
-				npcManager.initNpcsForMap (aMapToLoad, this as WorldExplorer, selectedAvatar);
+				npcManager.initNpcsForMap ( this as WorldExplorer, selectedAvatar);
 			
 			}
 		}
